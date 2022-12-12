@@ -85,6 +85,11 @@ class Pokemon
   # Whether this Pokémon can be traded
   attr_accessor :cannot_trade
 
+  # Whether this Pokémon is in its echo form
+  attr_accessor :echo
+  # Whether this Pokémon has had an Echo Ability Capsule used
+  attr_accessor :echoabilityflag
+
   # Max total IVs
   IV_STAT_LIMIT = 31
   # Max total EVs
@@ -311,6 +316,7 @@ class Pokemon
 
   # @return [Array<Symbol>] an array of this Pokémon's types
   def types
+    return species_data.echo_types.clone if self.echo?
     return species_data.types.clone
   end
 
@@ -445,13 +451,17 @@ class Pokemon
   def ability_id
     if !@ability
       sp_data = species_data
-      abil_index = ability_index
-      if abil_index >= 2   # Hidden ability
-        @ability = sp_data.hidden_abilities[abil_index - 2]
-        abil_index = (@personalID & 1) if !@ability
-      end
-      if !@ability   # Natural ability or no hidden ability defined
-        @ability = sp_data.abilities[abil_index] || sp_data.abilities[0]
+      if hasEchoAbility && (self.echo? || @echo_capsule)
+        @ability = sp_data.echo_ability
+      else
+        abil_index = ability_index
+        if abil_index >= 2   # Hidden ability
+          @ability = sp_data.hidden_abilities[abil_index - 2]
+          abil_index = (@personalID & 1) if !@ability
+        end
+        if !@ability   # Natural ability or no hidden ability defined
+          @ability = sp_data.abilities[abil_index] || sp_data.abilities[0]
+        end
       end
     end
     return @ability
@@ -579,6 +589,11 @@ class Pokemon
   # @return [Array<Array<Symbol>>] the items this species can be found holding in the wild
   def wildHoldItems
     sp_data = species_data
+    return [
+      sp_data.echo_wild_item_common,
+      sp_data.echo_wild_item_uncommon,
+      sp_data.echo_wild_item_rare
+    ] if self.echo?
     return [sp_data.wild_item_common, sp_data.wild_item_uncommon, sp_data.wild_item_rare]
   end
 
@@ -618,6 +633,7 @@ class Pokemon
   # Returns the list of moves this Pokémon can learn by levelling up.
   # @return [Array<Array<Integer,Symbol>>] this Pokémon's move list, where every element is [level, move ID]
   def getMoveList
+    return species_data.echo_moves if self.echo?
     return species_data.moves
   end
 
@@ -707,6 +723,7 @@ class Pokemon
   # @return [Boolean] whether the Pokémon is compatible with the given move
   def compatible_with_move?(move_id)
     move_data = GameData::Move.try_get(move_id)
+    return move_data && species_data.echo_tutor_moves.include?(move_data.id) if self.echo?
     return move_data && species_data.tutor_moves.include?(move_data.id)
   end
 
@@ -893,17 +910,19 @@ class Pokemon
 
   # @return [Integer] the height of this Pokémon in decimetres (0.1 metres)
   def height
+    return species_data.echo_height if self.echo?
     return species_data.height
   end
 
   # @return [Integer] the weight of this Pokémon in hectograms (0.1 kilograms)
   def weight
+    return species_data.echo_weight if self.echo?
     return species_data.weight
   end
 
   # @return [Hash<Integer>] the EV yield of this Pokémon (a hash with six key/value pairs)
   def evYield
-    this_evs = species_data.evs
+    this_evs = self.echo? ? species_data.echo_evs : species_data.evs
     ret = {}
     GameData::Stat.each_main { |s| ret[s.id] = this_evs[s.id] }
     return ret
@@ -1060,7 +1079,7 @@ class Pokemon
 
   # @return [Hash<Integer>] this Pokémon's base stats, a hash with six key/value pairs
   def baseStats
-    this_base_stats = species_data.base_stats
+    this_base_stats = self.echo? ? species_data.echo_base_stats : species_data.base_stats
     ret = {}
     GameData::Stat.each_main { |s| ret[s.id] = this_base_stats[s.id] }
     return ret
@@ -1209,6 +1228,8 @@ class Pokemon
     @personalID       = rand(2**16) | (rand(2**16) << 16)
     @hp               = 1
     @totalhp          = 1
+    @echo             = false
+    @echo_capsule     = false
     calc_stats
     if @form == 0 && recheck_form
       f = MultipleForms.call("getFormOnCreation", self)
@@ -1217,5 +1238,9 @@ class Pokemon
         reset_moves if withMoves
       end
     end
+  end
+
+  def echo?
+    return @echo
   end
 end

@@ -627,7 +627,7 @@ module Compiler
           next if nil_or_empty?(contents[key])
           FileLineData.setSection(species_id, key, contents[key])   # For error reporting
           # Compile value for key
-          if ["EVs", "EffortPoints"].include?(key) && contents[key].split(",")[0].numeric?
+          if ["EVs", "EffortPoints", "EchoEVs", "EchoEffortPoints"].include?(key) && contents[key].split(",")[0].numeric?
             value = pbGetCsvRecord(contents[key], key, [0, "uuuuuu"])   # Old format
           else
             value = pbGetCsvRecord(contents[key], key, schema[key])
@@ -636,13 +636,13 @@ module Compiler
           contents[key] = value
           # Sanitise data
           case key
-          when "BaseStats"
+          when "BaseStats", "EchoBaseStats"
             value_hash = {}
             GameData::Stat.each_main do |s|
               value_hash[s.id] = value[s.pbs_order] if s.pbs_order >= 0
             end
             contents[key] = value_hash
-          when "EVs", "EffortPoints"
+          when "EVs", "EffortPoints", "EchoEVs", "EchoEffortPoints"
             if value[0].is_a?(Array)   # New format
               value_hash = {}
               value.each { |val| value_hash[val[0]] = val[1] }
@@ -655,7 +655,7 @@ module Compiler
               end
               contents[key] = value_hash
             end
-          when "Height", "Weight"
+          when "Height", "Weight", "EchoHeight", "EchoWeight"
             # Convert height/weight to 1 decimal place and multiply by 10
             value = (value * 10).round
             if value <= 0
@@ -670,7 +670,7 @@ module Compiler
         types = contents["Types"] || [contents["Type1"], contents["Type2"]]
         types = [types] if !types.is_a?(Array)
         types = types.uniq.compact
-        extra_types = contents["ExtraTypes"] || [contents["Type3"], contents["Type4"]]
+        extra_types = contents["EchoTypes"] || [contents["Type3"], contents["Type4"]]
         extra_types = [extra_types] if !extra_types.is_a?(Array)
         extra_types = extra_types.uniq.compact
         species_hash = {
@@ -680,7 +680,6 @@ module Compiler
           :category           => contents["Category"] || contents["Kind"],
           :pokedex_entry      => contents["Pokedex"],
           :types              => types,
-          :extra_types        => extra_types,
           :base_stats         => contents["BaseStats"],
           :evs                => contents["EVs"] || contents["EffortPoints"],
           :base_exp           => contents["BaseExp"] || contents["BaseEXP"],
@@ -707,7 +706,19 @@ module Compiler
           :shape              => contents["Shape"],
           :habitat            => contents["Habitat"],
           :generation         => contents["Generation"],
-          :flags              => contents["Flags"]
+          :flags              => contents["Flags"],
+          # Echo attributes
+          :echo_types              => extra_types,
+          :echo_base_stats         => contents["EchoBaseStats"],
+          :echo_evs                => contents["EchoEVs"] || contents["EchoEffortPoints"],
+          :echo_moves              => contents["EchoMoves"],
+          :echo_tutor_moves        => contents["EchoTutorMoves"],
+          :echo_abilities          => contents["EchoAbilities"] || contents["EchoAbility"],
+          :echo_wild_item_common   => contents["EchoWildItemCommon"],
+          :echo_wild_item_uncommon => contents["EchoWildItemUncommon"],
+          :echo_wild_item_rare     => contents["EchoWildItemRare"],
+          :echo_height             => contents["EchoHeight"],
+          :echo_weight             => contents["EchoWeight"]
         }
         # Add species' data to records
         GameData::Species.register(species_hash)
@@ -826,7 +837,7 @@ module Compiler
           end
           FileLineData.setSection(section_name, key, contents[key])   # For error reporting
           # Compile value for key
-          if ["EVs", "EffortPoints"].include?(key) && contents[key].split(",")[0].numeric?
+          if ["EVs", "EffortPoints", "EchoEVs", "EchoEffortPoints"].include?(key) && contents[key].split(",")[0].numeric?
             value = pbGetCsvRecord(contents[key], key, [0, "uuuuuu"])   # Old format
           else
             value = pbGetCsvRecord(contents[key], key, schema[key])
@@ -835,13 +846,13 @@ module Compiler
           contents[key] = value
           # Sanitise data
           case key
-          when "BaseStats"
+          when "BaseStats", "EchoBaseStats"
             value_hash = {}
             GameData::Stat.each_main do |s|
               value_hash[s.id] = value[s.pbs_order] if s.pbs_order >= 0
             end
             contents[key] = value_hash
-          when "EVs", "EffortPoints"
+          when "EVs", "EffortPoints", "EchoEVs", "EchoEffortPoints"
             if value[0].is_a?(Array)   # New format
               value_hash = {}
               value.each { |val| value_hash[val[0]] = val[1] }
@@ -854,7 +865,7 @@ module Compiler
               end
               contents[key] = value_hash
             end
-          when "Height", "Weight"
+          when "Height", "Weight", "EchoHeight", "EchoWeight"
             # Convert height/weight to 1 decimal place and multiply by 10
             value = (value * 10).round
             if value <= 0
@@ -882,10 +893,20 @@ module Compiler
         types ||= base_data.types.clone
         types = [types] if !types.is_a?(Array)
         types = types.uniq.compact
+        extra_types = contents["EchoTypes"]
+        extra_types ||= [contents["Type3"], contents["Type4"]] if contents["Type3"]
+        extra_types ||= base_data.echo_types.clone
+        extra_types = [extra_types] if !extra_types.is_a?(Array)
+        extra_types = extra_types.uniq.compact
         moves = contents["Moves"]
         if !moves
           moves = []
           base_data.moves.each { |m| moves.push(m.clone) }
+        end
+        echo_moves = contents["EchoMoves"]
+        if !echo_moves
+          echo_moves = []
+          base_data.echo_moves.each { |m| moves.push(m.clone) }
         end
         evolutions = contents["Evolutions"]
         if !evolutions
@@ -902,7 +923,6 @@ module Compiler
           :pokedex_entry      => contents["Pokedex"] || base_data.real_pokedex_entry,
           :pokedex_form       => contents["PokedexForm"],
           :types              => types,
-          :extra_types        => contents["ExtraTypes"],
           :base_stats         => contents["BaseStats"] || base_data.base_stats,
           :evs                => contents["EVs"] || contents["EffortPoints"] || base_data.evs,
           :base_exp           => contents["BaseExp"] || contents["BaseEXP"] || base_data.base_exp,
@@ -933,7 +953,19 @@ module Compiler
           :mega_stone         => contents["MegaStone"],
           :mega_move          => contents["MegaMove"],
           :unmega_form        => contents["UnmegaForm"],
-          :mega_message       => contents["MegaMessage"]
+          :mega_message       => contents["MegaMessage"],
+          # Echo attributes
+          :echo_types              => extra_types,
+          :echo_base_stats         => contents["EchoBaseStats"] || base_data.echo_base_stats,
+          :echo_evs                => contents["EchoEVs"] || contents["EchoEffortPoints"] || base_data.echo_evs,
+          :echo_moves              => echo_moves,
+          :echo_tutor_moves        => contents["EchoTutorMoves"] || base_data.echo_tutor_moves.clone,
+          :echo_abilities          => contents["EchoAbilities"] || contents["EchoAbility"] || base_data.echo_abilities.clone,
+          :echo_wild_item_common   => contents["EchoWildItemCommon"] || base_data.echo_wild_item_common.clone,
+          :echo_wild_item_uncommon => contents["EchoWildItemUncommon"] || base_data.echo_wild_item_uncommon.clone,
+          :echo_wild_item_rare     => contents["EchoWildItemRare"] || base_data.echo_wild_item_rare.clone,
+          :echo_height             => contents["EchoHeight"] || base_data.echo_height,
+          :echo_weight             => contents["EchoWeight"] || base_data.echo_weight
         }
         # If form has any wild items, ensure none are inherited from base species
         if (contents["WildItemCommon"] && !contents["WildItemCommon"].empty?) ||
@@ -942,6 +974,13 @@ module Compiler
           species_hash[:wild_item_common]   = contents["WildItemCommon"]
           species_hash[:wild_item_uncommon] = contents["WildItemUncommon"]
           species_hash[:wild_item_rare]     = contents["WildItemRare"]
+        end
+        if (contents["EchoWildItemCommon"] && !contents["EchoWildItemCommon"].empty?) ||
+           (contents["EchoWildItemUncommon"] && !contents["EchoWildItemUncommon"].empty?) ||
+           (contents["EchoWildItemRare"] && !contents["EchoWildItemRare"].empty?)
+          species_hash[:wild_item_common]   = contents["EchoWildItemCommon"]
+          species_hash[:wild_item_uncommon] = contents["EchoWildItemUncommon"]
+          species_hash[:wild_item_rare]     = contents["EchoWildItemRare"]
         end
         # Add form's data to records
         GameData::Species.register(species_hash)

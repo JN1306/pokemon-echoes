@@ -467,5 +467,9 @@
 003_CompileQuests
 004_CompressMap
 ---------------------------~blank
+@101_Echoes
+001_Settings
+002_EchoesSetup
+---------------------------~blank
 @999_Main
 999_Main

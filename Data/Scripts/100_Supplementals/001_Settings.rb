@@ -161,23 +161,23 @@ module Supplementals
   ### GAME SWITCHES ###
   #=============================================================================
 
-  MAP_UPDATE            = 67  # Used for a common event to check quest updates and such
-  HIDE_REFLECTIONS      = 117 # Toggle when a map has unwanted reflections
-  HIDE_MARKERS          = 68
+  MAP_UPDATE            = 101  # Used for a common event to check quest updates and such
+  HIDE_REFLECTIONS      = 102  # Toggle when a map has unwanted reflections
+  HIDE_MARKERS          = 103
 
   #=============================================================================
   ### GAME VARIABLES ###
   #=============================================================================
 
-  WILD_MODIFIER         = 80  # Used for pbModifier to tweak the next upcoming wild battle
-  BOSS_BATTLE           = 85  # Used for pbBoss to create custom scripted boss battles
-  TIME_AND_DAY          = 90  # Used to store the in-game time (if using in-game time is enabled)
-  BOSSES_DEFEATED       = 87  # Dictionary of all defeated bosses
-  SAVED_CHOICES         = 59  # A dictionary of saved choice from pbDialog
-  PLAYER_LEVEL          = 48  # An exponentially weighted moving average, used in Battle/ScaleLevel
-  RECENT_TRAINERS       = 113 # List of the level scaling for recently battled trainers
-  GUIDE_LIST            = 114
-  NEW_GUIDE             = 115
-  LAST_GUIDE            = 116
+  WILD_MODIFIER         = 101  # Used for pbModifier to tweak the next upcoming wild battle
+  BOSS_BATTLE           = 102  # Used for pbBoss to create custom scripted boss battles
+  TIME_AND_DAY          = 103  # Used to store the in-game time (if using in-game time is enabled)
+  BOSSES_DEFEATED       = 104  # Dictionary of all defeated bosses
+  SAVED_CHOICES         = 105  # A dictionary of saved choice from pbDialog
+  PLAYER_LEVEL          = 106  # An exponentially weighted moving average, used in Battle/ScaleLevel
+  RECENT_TRAINERS       = 107  # List of the level scaling for recently battled trainers
+  GUIDE_LIST            = 108
+  NEW_GUIDE             = 109
+  LAST_GUIDE            = 110
 
 end

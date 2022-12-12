@@ -13,6 +13,7 @@ class EncounterModifiers
   attr_accessor(:hpmult)
   attr_accessor(:form)
   attr_accessor(:species)
+  attr_accessor(:echo)
 
   def initialize()
     @iv      = nil
@@ -29,6 +30,7 @@ class EncounterModifiers
     @hpmult  = nil
     @form    = nil
     @species = nil
+    @echo    = nil
     @next    = nil
   end
 
@@ -90,6 +92,7 @@ class Pokemon
       @natureflag = mod.nature if mod.nature
       @shinyflag = mod.shiny if mod.shiny
       @status = mod.status if mod.status
+      @echo = mod.echo if mod.echo
       calc_stats
       @hp = @totalhp
       @hp = mod.hp if mod.hp
@@ -127,6 +130,7 @@ def pbWildModify(pokemon)
   pokemon.calc_stats
   pokemon.hp = pokemon.totalhp * mod.hpmult if mod.hpmult
   pokemon.hp = mod.hp if mod.hp
+  pokemon.echo = mod.echo if mod.echo
 
   $game_variables[Supplementals::WILD_MODIFIER] = (mod.next || 0)
 end

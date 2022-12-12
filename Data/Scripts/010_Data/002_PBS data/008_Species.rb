@@ -77,7 +77,6 @@ module GameData
         "Category"          => [0, "s"],
         "Pokedex"           => [0, "q"],
         "Types"             => [0, "eE", :Type, :Type],
-        "ExtraTypes"        => [0, "eE", :Type, :Type],
         "BaseStats"         => [0, "vvvvvv"],
         "EVs"               => [0, "*ev", :Stat],
         "BaseExp"           => [0, "v"],
@@ -107,6 +106,18 @@ module GameData
         "BattlerAltitude"   => [0, "i"],
         "BattlerShadowX"    => [0, "i"],
         "BattlerShadowSize" => [0, "u"],
+        # These properties apply to the Echo Form of the Pokémon
+        "EchoTypes"             => [0, "eE", :Type, :Type],
+        "EchoBaseStats"         => [0, "vvvvvv"],
+        "EchoEVs"               => [0, "*ev", :Stat],
+        "EchoMoves"             => [0, "*ue", nil, :Move],
+        "EchoTutorMoves"        => [0, "*e", :Move],
+        "EchoAbilities"         => [0, "*e", :Ability],
+        "EchoWildItemCommon"    => [0, "*e", :Item],
+        "EchoWildItemUncommon"  => [0, "*e", :Item],
+        "EchoWildItemRare"      => [0, "*e", :Item],
+        "EchoHeight"            => [0, "f"],
+        "EchoWeight"            => [0, "f"],
         # All properties below here are old names for some properties above.
         # They will be removed in v21.
         "Type1"             => [0, "e", :Type],
@@ -187,6 +198,22 @@ module GameData
       @mega_move          = hash[:mega_move]
       @unmega_form        = hash[:unmega_form]        || 0
       @mega_message       = hash[:mega_message]       || 0
+      # Echo attributes
+      @echo_types              = hash[:echo_types]              || @types
+      @echo_base_stats         = hash[:echo_base_stats]         || @base_stats
+      @echo_evs                = hash[:echo_evs]                || @evs
+      GameData::Stat.each_main do |s|
+        @echo_base_stats[s.id] = 1 if !@echo_base_stats[s.id] || @echo_base_stats[s.id] <= 0
+        @echo_evs[s.id]        = 0 if !@echo_evs[s.id] || @echo_evs[s.id] < 0
+      end
+      @echo_moves              = hash[:echo_moves]              || @moves
+      @echo_tutor_moves        = hash[:echo_tutor_moves]        || @tutor_moves
+      @echo_abilities          = hash[:echo_abilities]          || @abilities
+      @echo_wild_item_common   = hash[:echo_wild_item_common]   || @wild_item_common
+      @echo_wild_item_uncommon = hash[:echo_wild_item_uncommon] || @wild_item_uncommon
+      @echo_wild_item_rare     = hash[:echo_wild_item_rare]     || @wild_item_rare
+      @echo_height             = hash[:echo_height]             || @height
+      @echo_weight             = hash[:echo_weight]             || @weight
     end
 
     # @return [String] the translated name of this species
