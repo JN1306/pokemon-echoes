@@ -2,6 +2,8 @@ def pbStarter
   return $game_variables[SETUP] 
 end
 
+# Hello
+
 def pbDifficulty
   return pbStarter[0]
 end
