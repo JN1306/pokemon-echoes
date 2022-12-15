@@ -61,18 +61,16 @@ def pbSetup(style=1,type=1,dfc=0)
     if $game_variables[CURRENT_CHAPTER] > 2
       pbTrainerName("Lawrence")
       pbInitUniquePokemon
-      pbUnlockDex
-      $Trainer.pokedex=true
-      $PokemonGlobal.runningShoes=true
+      $player.has_pokedex=true
+      $player.has_running_shoes=true
     else
       pbChapterSkip
     end
   else
     pbTrainerName("Lawrence")
     pbInitUniquePokemon
-    pbUnlockDex
-    $Trainer.pokedex=true
-    $PokemonGlobal.runningShoes=true
+    $player.has_pokedex=true
+    $player.has_running_shoes=true
   end
 end
 
@@ -80,9 +78,9 @@ def pbChapterSkip(ch=pbChapter,st=pbType,lv=5,p1=false,p2=false,p3=false,p4=fals
   pbTrainerName("Debug")
   pbInitUniquePokemon
   pbUnlockDex
-  $Trainer.pokedex=true
-  $PokemonGlobal.seenStorageCreator=true
-  $PokemonGlobal.runningShoes=true
+  $player.has_pokedex=true
+  $player.seen_storage_creator=true
+  $player.has_running_shoes=true
   $quests.enabled=true if ch > 0
   if ch >= 2
     pbText("Second Starter?\\ch[500,0,Inlys,Licit,Vinette]")
