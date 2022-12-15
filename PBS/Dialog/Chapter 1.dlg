@@ -1,0 +1,3923 @@
+##################### CHAPTER 1 ########################
+#### Waking up ##########
+[CH_1_Intro,0]
+/event set Eevee 1¤
+/speaker Amy
+/hidename 1
+/expression none
+> Brother!
+/wait 12
+
+/speaker PLAYER
+>.WT.WT.
+/wait 12
+
+/speaker Amy
+/hidename 1
+/expression none
+!> BROTHER!!!
+/wait 12
+> Eevee come here
+>*mumble* *mumble* *whisper* *whisper*
+
+/speaker Eevee
+> .WT.WT.
+
+/speaker Amy
+/hidename 1
+/expression none
+> *giggle*
+/speaker Eevee
+/expression gentle
+> vee!
+/wait 40
+/se Entering Door
+/wait 60
+/cry EEVEE
+/speaker Eevee
+> VUI!!!
+/speaker PLAYER
+!> !!!
+/event Eevee switch A true
+/fade normal 12
+/wait 12
+/speaker Eevee
+/expression gentle
+> vee!
+
+#### Amy Introduction Scene #####
+[CH_1_Intro,1]
+/event set Lawrence 7
+/fade normal 12
+/wait 12
+/event Lawrence turn up
+
+/speaker Lawrence
+> Ah! there you are sleepyhead. Why don't you join us for breakfast?
+
+[CH_1_Intro,2]
+/event set Amy 3
+/event set Eevee 4
+/event set Lawrence 7
+/event set Ralts 12
+/event set Box 13
+
+/speaker Amy
+/hidename 1
+/expression happy
+> Good morning!
+
+/speaker PLAYER
+> ...WT ...WT ...
+
+/speaker Amy
+/hidename 1
+> Sorry for waking you up like that, but I was impatient and wanted to enjoy breafast with all of you.
+
+/speaker Lawrence
+> You just had to wake me up early too, didn't you [P]Amy[/]?
+> *Yaaaaaawn*
+
+/speaker Amy
+> Heehee, the old-cold-snout-to-the-back trick, works every time!
+/event Amy turn down
+> Especially when done by an expert like Eevee.
+/event Eevee turn up
+/cry EEVEE
+/speaker Eevee
+/expression happy
+> Eevui!
+/event Amy turn right
+/event Eevee turn right
+
+/speaker Lawrence
+> Hehe, always the cheeky one eh?
+
+/speaker Amy
+> It's a fun thing to do sometimes!
+
+/speaker Lawrence
+> Heh. I suppose it is.
+> *Yaaaaaawn*
+
+/speaker Amy
+> Why are you so tired today [B]Uncle Lawrence[/]?
+
+/speaker Lawrence
+> Aside from the fact that I was woken early by a certain someone...
+
+/speaker Amy
+/expression happy
+> *giggle*
+
+/speaker Lawrence
+> Being a policeman is tiring work. Lots of cases to work on y'know?
+
+/speaker Amy
+> No I don't. I'm a kid. I don't know what it's like to be a police-person.
+
+/speaker Lawrence
+> *sigh* I swear, sometimes you are hopelessly literal.
+
+/speaker Amy
+/expression happy
+> tee-hee.
+
+/speaker PLAYER
+> .WT.WT.
+
+/speaker Lawrence
+> How was the food everyone?
+
+/speaker Amy
+/expression happy
+> It was delicious-tastic!
+/wait 1s
+
+/speaker PLAYER
+> ...!
+
+/speaker Lawrence
+> That makes a hobby chef very happy to hear!
+
+/speaker Amy
+> So what are doing today [B]Uncle Lawrence[/]?
+
+/speaker Lawrence
+> I've got work to take care of... Why don't you and mr.Sleepyhead over there take a walk in [B]Fukuri Forest[/]?
+
+/speaker Amy
+/expression sad
+> Awwww, you are working on your day off? I thought the whole point of a day off was to NOT work.
+
+/speaker Lawrence
+> I am really sorry sweetie, but your Uncle got to earn money to buy you those Vanillish Deluxe Supremes.
+> Oh and food and bills I suppose.
+
+/speaker Amy
+> Who is Bill?
+
+/speaker Lawrence
+> You'll know when you're older dear.
+> Speaking of getting things. I was just waiting for...
+
+/se computeropen 125 100
+/wait 30
+/se computeropen 125 100
+/wait 30
+/se computeropen 125 100
+/wait 30
+
+/speaker Lawrence
+> Ah, here we are!
+/hidename 2
+> *click*
+/hidename 0
+> Chi...
+> [B]Lawrence[/] speaking...
+/hidename 2
+> ...WT ...WT [B]RnG delivery service[/]. WT... WT...
+/hidename 0
+> Send it over right away.
+/hidename 2
+> *click*
+/wait 30
+/cry RALTS
+/event Ralts switch A true
+/event Box switch A true
+/event Lawrence turn right
+/speaker Lawrence
+> Hey there, got a package for me?
+/cry RALTS 
+
+/speaker Package
+> Thank you for using the RnG teleport delivery service. Please deliver your payment to our Ralts or Gothita courier.
+> Enjoy using our super-convenient PC storage system and look out for our ...
+/eval $PokemonGlobal.seenStorageCreator=true
+
+/speaker Lawrence
+> Alright alright I know the drill. Here is the payment and a little extra for your trainer.
+/cry RALTS 
+/speaker Ralts
+/expression happy
+> Ralts!
+
+/speaker Lawrence
+> My pleasure. Take care now.
+/cry RALTS
+/event Ralts switch A false
+/event Lawrence turn left
+
+/speaker Lawrence
+> I swear that RnG speech gets really annoying after a while.
+
+/speaker Amy
+/expression happy
+> I think it's cute!
+/expression neutral
+> What did you get?
+
+/speaker Lawrence
+> Just a little something for sleepyhead over there.
+/event Lawrence turn down
+/event Player turn up
+> Why don't you go and see what's in it?
+/wait 40
+/event Player move right
+/event Player move up
+/event Player turn right
+/wait 40
+/eval pbStarterItems
+/eval $quests.enabled = true
+
+/speaker Amy
+> What's in it? What's in it?
+/event Player move down
+/event Player move left
+/event Player turn up
+/event Lawrence turn down
+
+/speaker Lawrence
+> There is a [B]Pokédex[/], a set of items, a handy-dandy notebook and a [O]Data Chip[/].
+
+/speaker Amy
+> What's a [O]Data Chip?[/]
+/event Player turn left
+/event Lawrence turn left
+
+/speaker Lawrence
+> It's a neat little thing that lets you teach certain moves to your Pokémon [O]from any PC[/]
+> All you need to do is [G]go into the Storage System and select *Edit Movesets*[/] then select the move you want to unlock and finally you pay the necessary amount of [O]Data Chips[/].
+> After that you can teach that move to any Pokémon that can learn it [O]as many times as you like[/] for free.
+
+/speaker Amy
+> That sounds really cool!
+
+/speaker Lawrence
+> I thought it would be nice for a budding trainer like PLAYER, but I didn't forget you [P]Amy[/] go and take a look!
+ 
+/speaker Amy
+> Oooh I can't wait!
+
+[CH_1_Intro,3]
+/event set Amy 3
+/event set Eevee 4
+/event set Lawrence 7
+/event set Box 13
+/event set Inlys 14
+/event set Licit 15
+/event set Vinette 26
+
+/speaker Amy
+!> A LUXURY BALL!!!!
+
+/event Player turn left
+/event Lawrence turn left
+/wait 12
+/speaker Lawrence
+> I...take it you are happy then?
+
+/speaker Amy
+/expression happy
+> It's my favorite. Thank you thank you thank you thank you!!!
+
+/speaker Lawrence
+> My pleasure dear. I happened to get a hold of one and I thought of you.
+
+/speaker Amy
+/expression happy
+> Awww thank you [B]Uncle Lawrence[/]
+/expression neutral
+> Hey! there is a CD in here.
+
+/speaker Lawrence
+> Oh I forgot all about that. Would you hand it to your brother please?
+/speaker Amy
+/expression happy
+> Sure!
+
+/event Amy move left
+/event Amy move down
+/event Amy move down
+/event Amy turn left
+/event Player turn right
+/expression neutral
+> Here you go!
+
+/speaker PLAYER
+> ...!
+
+/speaker Amy
+/expression happy
+> *giggle*
+/if !pbHasBagItem?(:TM54)
+  /eval Kernel.pbReceiveItem(PBItems::TM54,1) # False Swipe
+/end
+/eval pbRegisterDestination(42,19,14,0,0)
+/eval $game_self_switches[[42,36,"B"]]=true # Fukuri Town Trading Post (Teleport)
+
+/speaker Lawrence
+> A complimentary gift from RnG. Teaching this to a Pokémon will let them leave any Pokémon with at least 1 HP, making them easier to catch.
+
+/speaker Amy
+> .WT.WT.
+
+/event Lawrence turn right
+/event Amy turn up
+/speaker Lawrence
+> Something on your mind dear?
+
+/speaker Amy
+> Can IWT have a battle with brother please?
+
+/speaker Lawrence
+> What brought this on?
+
+/speaker Amy
+> Probably all these items Brother got.
+
+/speaker Lawrence
+> Fair enough, but no big attacks alright? I don't want to have to repair the front doorWT again.
+> Bill got really angry with me for that one.
+
+/speaker Amy
+/expression happy
+> I promise!
+
+/speaker Lawrence
+> Let me just clean up the box first.
+/event Lawrence move right
+/event Box switch A false
+/event Lawrence move left
+/event Lawrence turn right
+> There we go! All ready.
+> .WT.WT.
+
+/speaker Amy
+> What is it [B]Uncle Lawrence[/]?
+
+/speaker Lawrence
+> You only have one Pokémon each. Wouldn't it be more interesting if you both had two?
+
+/speaker Amy
+> Does that mean we can borrow your Pokémon!?
+
+/speaker Lawrence
+> Certainly young lady.
+> .WT.WT.
+> actually...
+> I was thinking more of letting you have one each.
+
+/speaker Amy
+/expression happy
+!> REALLY!?
+
+/speaker Lawrence
+> Well here is the thing, I'm old, and taking care of three Pokémon at once is quite demanding.
+
+/speaker Amy
+/expression happy
+> Demanding, schemanding. I think you just want to be nice to us. 
+
+/speaker Lawrence
+> Well... I'm not saying you're wrong...
+
+/speaker Amy
+/expression happy
+> But you're too grumpy and serious to say I am right.
+
+/speaker Lawrence
+> *sigh*
+> You got me...
+
+/speaker Amy
+/expression happy
+> *giggle* I knew it!
+
+
+# Move Amy over to Lawrence
+/event Amy move up
+/wait 12
+/event Amy turn left
+/wait 12
+
+/speaker Amy
+/expression happy
+> Thank you very much [B]Uncle Lawrence[/]
+
+/speaker Lawrence
+> You're welcome dear.
+> ...
+> ...
+> ...
+> [P]Amy[/] dear, if you hug me any longer it will get embarassing.
+
+/speaker Amy
+/expression happy
+> Tee-hee OK!
+/event Amy move down
+/wait 12
+/event Amy move down
+/wait 12
+/event Amy turn up
+/event Lawrence switch B true
+/event Amy switch B true
+
+[CH_1_Intro,4]
+/speaker Lawrence
+> Come on out you three!
+/se Open Pokeball
+/wait 2s
+/event Inlys switch A true
+/wait 2s
+/se Open Pokeball
+/wait 2s
+/event Licit switch A true
+/wait 2s
+/se Open Pokeball
+/wait 2s
+/event Vinette switch A true
+/wait 2s
+/se Open Pokeball
+/wait 2s
+/eval $Trainer.setSeen(:INLYS)
+/eval $Trainer.setSeen(:LICIT)
+/eval $Trainer.setSeen(:VINETTE)
+
+[CH_1_Starter,0]
+/event set Story 8
+/if pbSt_Pkmn=="Inlys"
+  ?> Do you want the Rime Fox Pokémon [B]Inlys[/]?
+  /choice Yes
+    /eval $game_variables[CS_TEMP]=1
+    /eval $Trainer.setOwned(:INLYS)
+    /event Story switch A true
+  /cancelchoice No
+  ?/>
+/elsif pbSt_Pkmn=="Licit"
+  ?> Do you want the Spark Cat Pokémon [Y]Licit[/]?
+  /choice Yes
+    /eval $game_variables[CS_TEMP]=1
+    /eval $Trainer.setOwned(:LICIT)
+    /event Story switch A true
+  /cancelchoice No
+  ?/>
+/elsif pbSt_Pkmn=="Vinette"
+  ?> Do you want the Brave Wyrm Pokémon [R]Vinette[/]?
+  /choice Yes
+    /eval $game_variables[CS_TEMP]=1
+    /eval $Trainer.setOwned(:VINETTE)
+    /event Story switch A true
+  /cancelchoice No
+  ?/>
+/end
+
+[CH_1_Intro,5]
+/event set Amy 3
+/event set Eevee 4
+/event set Lawrence 7
+/event set Inlys 14
+/event set Licit 15
+/event set Vinette 26
+/if pbSt_Pkmn=="Inlys"
+  /cry INLYS
+  /speaker Inlys
+  /expression happy
+  > Een!
+  /event Inlys switch A false
+  /wait 12
+  /speaker Amy
+  > Hi [Y]Licit[/]!
+  /cry LICIT
+  /speaker Licit
+  /expression happy
+  > Liiroowrr!
+  /speaker Amy
+  /expression happy
+  > H-hey that t-tickles
+  /wait 6
+  /speaker Amy
+  /expression happy
+  > S-stop licking my face, you'll paralyze me haha!
+  /cry LICIT
+  /speaker Licit
+  /expression happy
+  > ciiit!
+  /event Licit turn left
+  /cry LICIT
+  /cry EEVEE
+  /speaker Eevee
+  /expression gentle
+  > Vee!
+  /event Licit turn down
+    /speaker Amy
+  > I'm gonna do my best!
+  /cry LICIT
+  /speaker Licit
+  /expression happy
+  > Licee!
+  /se Open Pokeball
+  /event Licit switch A false
+  /wait 6
+  /event Eevee move down
+  /wait 12
+  /event Eevee turn right
+  /event Amy turn left
+  > You'll do your best too, won't you Eevee?
+  /cry EEVEE
+  /speaker Eevee
+  /expression gentle
+  > Vee-Vee!
+  /event Lawrence turn right
+  /speaker Lawrence
+  > Sorry [R]Vinette[/] that means you're stuck here with me.
+  /event Vinette turn left
+  /cry VINETTE
+  /speaker Vinette
+  /expression happy
+  > Nette!
+  /wait 12
+  /se Open Pokeball
+  /event Vinette switch A false
+  /speaker Lawrence
+  > ...WT thank you.
+  /event Lawrence turn down
+/elsif pbSt_Pkmn=="Licit"
+  /cry LICIT
+  /speaker Licit
+  /expression happy
+  > Lirrrr!!!
+  /event Licit switch A false
+  /wait 12
+
+  /speaker Amy
+  > Hi [R]Vinette[/]!
+  /cry VINETTE
+  /speaker Vinette
+  /expression happy
+  > Net!
+  /speaker Amy
+  /expression happy
+  > H-hey that t-tickles
+  /wait 6
+  /speaker Amy
+  /expression happy
+  > S-stop it...You'll burn me! ... haha!
+  /cry VINETTE
+  /speaker Vinette
+  /expression happy
+  > Vee
+  /speaker Amy
+  /expression happy
+  > Hee-hee you sound like [B]Eevee[/]
+  /event Vinette turn right
+  /cry VINETTE
+  /wait 12
+  /cry EEVEE
+  /speaker Eevee
+  /expression gentle
+  > Vee!
+  /event Vinette turn down
+  /speaker Amy
+  > I'm gonna do my best!
+  /cry VINETTE
+  /speaker Vinette
+  /expression happy
+  > Veee!
+  /se Open Pokeball
+  /event Vinette switch A false
+  /event Eevee move down
+  /wait 12
+  /event Eevee turn left
+  /wait 12
+  /event Amy turn right
+  > You'll do your best too, won't you Eevee?
+  /cry EEVEE
+  /speaker Eevee
+  /expression gentle
+  > Vee-Vee!
+  /event Player move down
+  /wait 12
+  /event Amy move down
+  /wait 12
+  /event Player turn up
+  /wait 12
+  /event Amy turn up
+
+  /speaker Lawrence
+  > Sorry [B]Inlys[/] that means you're stuck here with me.
+  /event Vinette turn up
+  /cry INLYS
+  /event Inlys turn up
+  /speaker Inlys
+  /expression happy
+  > Lees!
+  /wait 12
+  /se Open Pokeball
+  /event Inlys switch A false
+  /speaker Lawrence
+  > ...WT thank you.
+/elsif pbSt_Pkmn=="Vinette"
+  /cry VINETTE
+  /speaker Vinette
+  /expression happy
+  > Veenette!
+  /event Vinette switch A false
+  /wait 12
+
+  /speaker Amy
+  > Hi [B]Inlys[/]!
+  /cry INLYS
+  /speaker Inlys
+  /expression happy
+  > Een!
+  /speaker Amy
+  /expression happy
+  > H-hey that t-tickles
+  /wait 6
+  /speaker Amy
+  /expression happy
+  > S-stop it...it's cold ... I'll be frozen haha!
+  /cry INLYS
+  /speaker Inlys
+  /expression happy
+  > Lys!
+  /event Inlys turn down
+  /speaker Amy
+  > I'm gonna do my best!
+  /cry INLYS
+  /speaker Inlys
+  /expression happy
+  > Inlee!
+  /se Open Pokeball
+  /event Inlys switch A false
+  /event Amy turn left
+  /event Eevee move down
+  /event Eevee turn right
+  /speaker Inlys
+  > You'll do your best too, won't you Eevee?
+  /cry EEVEE
+  /speaker Eevee
+  /expression gentle
+  > Vee-Vee!
+  /event Eevee move left
+  /wait 12
+  /event Amy move left
+  /wait 12
+  /event Player move down
+  /wait 12
+  /event Player turn up
+  /event Amy turn up
+  /event Eevee turn up
+ 
+  /event Lawrence turn left
+  /speaker Lawrence
+  > Sorry [Y]Licit[/] that means you're stuck here with me.
+  /event Licit turn up
+  /cry LICIT
+  /event Licit turn right
+  /speaker Licit
+  /expression happy
+  > Lirrow!
+  /wait 12
+  /se Open Pokeball
+  /event Licit switch A false
+  /speaker Lawrence
+  > ...WT thank you.
+    /event Lawrence turn down
+/end
+
+[CH_1_Intro,6]
+/speaker Lawrence
+> If you're both ready. Let's begin!
+
+/speaker Amy
+> I'm ready!
+
+/speaker PLAYER
+> ...!
+
+/eval pbCreateStarter(2)
+
+[CH_1_Intro,7]
+/event set Amy 3
+/event set Eevee 4
+/event set Lawrence 7
+/event set Growlithe 14
+/event set Deino 15
+/speaker Lawrence
+> How was that?
+
+/speaker Amy
+/expression happy
+> It was fun!
+
+/if pbSt_Pkmn=="Inlys"
+/elsif pbSt_Pkmn=="Licit"
+/elsif pbSt_Pkmn=="Vinette"
+/end
+
+/speaker Lawrence
+> But now I suggest the two of you...
+
+/cry EEVEE
+/speaker Eevee
+> Vui!!!
+
+/speaker Lawrence
+> Excuse me, the three of you, go out and enjoy the fresh forest air while I take care of some paperwork.
+
+/speaker Amy
+> Don't work too hard. It's supposed to be your day off remember?
+
+/speaker Lawrence
+> Alright, alright I won't I promise!
+
+/speaker Amy
+/expression happy
+> That's what I wanted to hear!
+/expression neutral
+> I will wait for you outside!
+
+/speaker Eevee
+/expression gentle
+> Ee-vee!
+
+[CH_1_Intro,8]
+/speaker Lawrence
+> There she goes.
+> Sometimes I wish I had her boundless positivity.
+> ...
+> Oh I forgot to mention. That notebook I got you can come in handy when [G]helping people[/]. I thought it might come in handy someday.
+
+/speaker PLAYER
+> ...WT ...WT ...
+
+/speaker Lawrence
+> Don't mention it..
+> Now, if you will excuse me there is an old case demanding my attention. Why don't you go out and see [P]Amy[/]? I am sure the forest air will do you good.
+/eval $game_self_switches[[95,6,"A"]]=true # Home 2nd Floor Computer
+/eval $game_self_switches[[95,10,"A"]]=true # Home 2nd Floor exit
+
+
+#### Chapter Intro #####
+[CH_1_Intro,9]
+/event set Amy 10
+/event set Eevee 11
+/event Amy turn up
+/event Eevee turn up
+
+/speaker Amy
+> There you are! Did [B]Uncle Lawrence[/] hold you up long?
+
+/speaker PLAYER
+> .WT.WT.
+/speaker Amy
+> Heehee, he always does that. Eevee is really excited for the forest trip.
+/event Amy turn right
+> Aren't you?
+/speaker Eevee
+/cry EEVEE
+/expression happy
+> VEE!!!
+
+/event Amy turn up
+/speaker Amy
+> Umm...
+
+/speaker PLAYER
+> ...?
+
+/speaker Amy
+> I just...
+/expression happy
+> I just wanted to thank you for letting me have a battle with you.
+/expression neutral
+> I...I know I wasn't very good but...
+
+/speaker PLAYER
+/expression happy
+> ...WT ...WT ...
+
+/speaker Amy
+/expression happy
+> Yeah...I did my best.
+/expression neutral
+> I can't wait to go to [B]Fukuri Forest[/]. It has my favorite spot in the whole little part of the world that I know about.
+> Just go [R]All the way to the weast[/] and you will get there.
+> ...
+> I mean Est...
+> ...
+/expression happy
+> You know what I mean, go to the [R]right[/].
+/expression neutral
+> Eevee and I will go with you to make sure you're safe.
+> or...maybe it is the other way around. 
+/expression happy
+> *giggle*
+
+#### Picnic Cutscene #####
+[CH_1_Picnic,0]
+/event set Amy 16
+/event set Eevee 17
+/bgm peace_and_quiet.ogg
+/wait 3s
+/speaker Amy
+> ...
+> I love this place, It always makes me feel calm happy.
+/expression happy
+> Almost as happy as when I am with you and [B]Uncle Lawrence[/].
+/expression neutral
+> I think...it's the wind.
+> SometimesWT if I concentrate. It feels like I can hear someone whispering.
+/cry EEVEE 80 100
+/expression gentle
+/speaker Eevee
+> Vee-Vui!
+/event Amy turn down
+/event Eevee turn up
+/speaker Amy
+> .WT.WT.
+/event Amy turn left
+/event Eevee turn left
+> It feelsWT [P]really nice[/]...
+> When I feel down or sad, I will go here and justWT listen to the wind for a bit.
+
+/speaker PLAYER
+> .WT.WT.
+
+/speaker Amy
+/expression happy
+> .WT.WT.
+> [B]Uncle Lawrence[/] made lots of food for us.
+/event Amy turn down
+/event Eevee turn up
+/expression gentle
+/speaker Eevee
+> Vee?
+/speaker Amy
+> No worries, I brought your favorite VeeVeeCandies too!
+/event Amy turn down
+/event Eevee turn up
+/cry EEVEE 80 100
+/speaker Eevee
+/expression happy
+> VUIVUI!!!
+/speaker Amy
+/expression happy
+> Of course! It wouldn't be fair to you if I didn't.
+/event Amy turn left
+/event Eevee turn left
+/speaker Amy
+/expression happy
+> Tuck in!
+/fade black 20
+/wait 12
+/expression neutral
+> ...
+/wait 12
+/speaker PLAYER
+> ...
+/wait 12
+/speaker Eevee
+> *munch* *munch*
+/fade black 12
+/wait 20
+/fade normal 12
+/wait 20
+/speaker Amy
+> I am stuffed!
+/speaker PLAYER
+> .WT.WT.
+> ...WT ...WT ...!
+
+/speaker Amy
+/expression happy
+> I am glad you liked it!
+/expression neutral
+> .WT.WT.
+> Ummm... can I ask you something?
+
+/speaker PLAYER
+> ...?
+
+/speaker Amy
+> Do youWT have a dream, something you want to try and come true no matter what?
+
+/speaker PLAYER
+!> ...!?
+
+/speaker Amy
+> I-I know it came sorta out of nowhere, but I've been wondering for a while and...WT now seemed like the right time to ask.
+ 
+/speaker PLAYER
+> .WT.WT.
+
+/speaker Amy
+/expression happy
+> It's OK, I know it was a surprising question.
+
+/speaker PLAYER
+> ...WT ...WT ...?
+
+/speaker Amy
+> I don't really know, but...
+> I...
+> I wanna help peopleWT and Pokémon too.
+> I want to help those that are hurting. I want to be one they can listen to and help solve their problems if I can.
+> I don't know how I will do that, but If I try really hard I am sure I can find a way.
+/event Eevee turn up
+/cry EEVEE 80 100
+/expression gentle
+/speaker Eevee
+> Vee!
+/event Amy turn down
+/speaker Amy
+/expression happy
+> Of course I am kind to you, You're my Pokémon!
+/event Amy turn left
+/event Eevee turn left
+/eval pbBGSFade(2)
+/speaker Amy
+/expression worried
+/wait 4s
+> The wind...stopped.
+/cry UNOWN 80 100
+/bgm presence.ogg
+/speaker Amy
+/expression worried
+> ugh!!!
+> m-my h-head
+> s-stop it... it hurts...
+/event Eevee turn up
+/cry EEVEE 80 80
+/expression scared
+/speaker Eevee
+> V-vee!?
+
+[CH_1_Picnic,1]
+/event set Amy 16
+/event set Eevee 17
+/event set Unown 18
+/event Player turn down
+/cry EEVEE 80 80
+/speaker Eevee
+/expression scared
+> Vui vui...
+/speaker Amy
+/expression worried
+> N..no... using a p-potion on m-me won't h-help...
+/cry EEVEE 50 80
+/speaker Eevee
+/expression sad
+> Vee...
+/event Eevee turn right
+/event Player turn right
+/speaker Amy
+/expression worried
+> D-don't worry about me. I'll be f...
+
+[CH_1_Picnic,2]
+/event set Absol 6
+/event set Amy 16
+/event set Eevee 17
+/event set Unown 18
+/event Unown switch A true
+/speaker Amy
+/expression worried
+> P-lease...I don't know...
+/cry UNOWN 80 80
+/speaker Unown
+/hidename 2
+U> S-shadow...S-eer...
+/speaker Amy
+/expression worried
+> W-what a-are y...
+/speaker Unown
+/hidename 2
+U> understand
+/speaker Amy
+/expression worried
+> W-what?
+/eval pbFadeEvent(18,255,0,20)
+/event Unown switch A false
+/event Absol switch A true
+/wait 12
+/eval pbFadeEvent(6,0,255,20)
+/wait 20
+/cry ABSOL 80 60
+/eval pbBGMFade(2)
+/bgs Ambience - Forest Wind 80 100
+/speaker Amy
+/expression worried
+> an [B]Absol[/]...
+> T-they're beautiful.
+/cry ABSOL 80 60
+/speaker Absol
+>.WT.WT.
+/speaker Amy
+/expression worried
+> You're hurt, aren't you?
+/speaker Absol
+>.WT.WT.
+/event Absol exclaim
+/wait 6
+/event Absol move left
+/cry ABSOL 80 60
+/speaker Absol
+>...!
+/speaker Amy
+/expression worried
+> No Absol, don't...
+
+[CH_1_Picnic,3]
+/event set Absol 6
+/event set Amy 16
+/event set Eevee 17
+/speaker Amy
+/expression worried
+> Absol...
+/event Absol turn right
+> We won't hurt you, I promise.
+/event Eevee move right
+/wait 4
+/event Eevee turn up
+/event Absol turn down
+/wait 4
+/cry EEVEE 80 80
+/speaker Eevee
+/expression sad
+> eevui...
+/speaker Absol
+> .WT.WT.
+/speaker Amy
+/expression worried
+> Can I...
+> Will you let meWT pet you?
+/speaker Absol
+> .WT.WT.
+/speaker Amy
+/expression worried
+> Please?
+/event Absol move right
+/wait 4
+/speaker Amy
+/expression neutral
+> Look at me...
+> ...
+> No one here will hurt you.
+> I promise.
+/wait 12
+/speaker Absol
+> .WT.WT.
+/event Absol move right
+/speaker Absol
+> .WT.WT.
+/speaker Amy
+/expression worried
+> ...
+/cry ABSOL 80 80
+/speaker Absol
+>.WT.WT.
+/speaker Amy
+/expression happy
+> See? 
+/speaker Absol
+>...sol!
+/speaker Amy
+/expression happy
+> H-hey that tickles!
+/cry ABSOL 80 100
+/speaker Absol
+/expression sad
+>...WT ...WT ...
+/speaker Amy
+/expression worried
+> It's gonna be alright.
+> ...
+/speaker Absol
+> ...sol?
+/speaker Amy
+> Would it be OK if... if I caught you? I have a Luxury Ball.
+> It's j-just for a bit so you can rest and I'll release you later if you want and...
+/cry ABSOL 80 100
+/wait 20
+/se Open Pokeball
+/wait 20
+/event Absol switch A false
+/wait 20
+/speaker PLAYER
+/hidename 2
+> Gotcha! Absol caughtWT... themself?
+/speaker Amy
+> Oh... I guess that is a yes...
+/event Amy move left
+/wait 8
+/event Amy move left
+/wait 8 
+> I'll go to [B]Uncle Lawrence[/] and see what I can do for Absol.
+> Please come back as fast as you can.
+> I want Absol to know they can trust you too.
+/eval $game_self_switches[[42,10,"A"]]=false # Fukuri Forest Amy Event
+/eval $game_self_switches[[42,11,"A"]]=false # Fukuri Forest Eevee Event
+
+#### Absol Cutscene #####
+[CH_1_Absol,0]
+/event set Absol 2
+/event set Amy 3
+/event set Eevee 4
+/event set Lawrence 7
+/speaker Lawrence
+> Ah! there you are.
+> Would you mind telling me what happened? [P]Amy[/] comes home with an Absol of all Pokémon and won't tell me anything!
+/fade black 12
+/wait 20
+/speaker PLAYER
+> ...WT ...WT ...
+/fade normal 12
+> Are you standing here,WT telling meWT that you saw one of those [G]eyes[/]?
+
+/speaker PLAYER
+> .WT.WT.
+
+/speaker Lawrence
+> ...
+> I'mWT... sorry.
+> It's just thatWT I have seen them before. 
+
+/event Amy turn down
+/event Absol turn down
+
+/speaker Amy
+/expression neutral
+> What do you mean [B]Uncle Lawrence[/]?
+
+/event Lawrence turn up
+/speaker Lawrence
+> .WT.WT.
+> A manWT... disappeared because of them.
+
+[CH_1_Absol,1]
+/event set Absol 2
+/event set Amy 3
+/event set Eevee 4
+/event set Lawrence 7
+
+/cry ABSOL 80,80
+/speaker Absol
+/expression neutral
+> .WT.WT.WT.
+
+/event Amy turn up
+/speaker Amy
+/expression neutral
+> It's ok...WT I promise
+/expression happy
+> [B]Uncle Lawrence[/] is really nice, he will help you feel better.
+> Will you let him pet you?
+/speaker Absol
+/expression neutral
+> .WT.WT.WT.
+/event Absol move down
+/event Amy turn down
+/wait 12
+/event Player move down
+/event Player turn up
+/event Lawrence move left
+/event Lawrence turn up
+/speaker Lawrence
+> I promise I'll do all I can to help you, and [P]Amy[/] will too.
+/speaker Absol
+/expression neutral
+> ...sol?
+/wait 6
+/speaker Amy
+/expression happy
+> Of course!
+/event Lawrence move right
+/event Lawrence turn up
+/event Player move up
+/event Absol turn right
+/event Amy turn left
+/speaker Amy
+/expression happy
+> See? That wasn't so bad, was it?
+/speaker Absol
+/expression neutral
+/cry ABSOL 80,80
+> .WT.WT.
+/event Absol turn down
+/event Amy turn down
+/wait 6
+
+/speaker Amy
+/expression neutral
+> Can you please tell me what happened to the man?
+
+/speaker Lawrence
+> I told you already, he disappeared.
+
+/speaker Amy
+/expression neutral
+> Yeah, I got that, but I meant a little more.
+> Please?
+
+/speaker Lawrence
+> .WT.WT.
+
+/speaker Amy
+/expression neutral
+> Pretty please with an Eevee on top?
+
+/speaker Eevee
+/expression neutral
+/cry EEVEE
+> Veeee...?
+
+/speaker Lawrence
+> .WT.WT.
+> Oh alright, but no getting nightmares from this alright?
+
+/speaker Amy
+/expression neutral
+> I promise.
+
+/speaker Lawrence
+> So it was a rainy night about twelve years ago....
+/fade black 20
+/wait 10s
+/fade normal 20
+/wait 20
+
+/speaker Amy
+/expression neutral
+> Oh that's why you came back with that funny colored Eevee! You never told me.
+/expression worried
+> I wonder where they are now.
+
+/speaker Lawrence
+> I didn't want to worry you at the time.
+> Of course we investigated the incident, but we are still as blank as the day it happened.
+> Since then, there haven't been any reported sightings of those [G]eyes[/]...
+
+/speaker Amy
+/expression neutral
+> Until now...
+
+/speaker Lawrence
+> Exactly.
+
+/speaker Amy
+/expression neutral
+> I...
+
+/speaker Lawrence
+> Yes dear?
+
+/speaker Amy
+/expression worried
+> I...WT feel sorry for the man.
+
+/speaker Lawrence
+> Really?
+
+/speaker Amy
+/expression worried
+> What if he is alone or hurt or something...
+
+/event Absol turn right
+/cry ABSOL
+/speaker Absol
+> ...sooool
+
+/event Amy turn left
+
+/speaker Amy
+/expression happy
+> Don't worry, I'm fine
+/expression neutral
+> I am just a little worried is all.
+/event Amy turn down
+/event Absol turn down
+
+/speaker Lawrence
+> *sigh* here we go again.
+
+/speaker Amy
+/expression neutral
+> What's wrong with being worried!?
+
+/speaker Lawrence
+> There is nothing wrong with that sweetie, but there is nothing you can do about it and worrying won't make it any better.
+
+/speaker Amy
+/expression neutral
+> I guess...
+
+/speaker Lawrence
+> Don't feel too bad about it dear, it shows you have empathy.
+
+/speaker Amy
+/expression neutral
+> Hey, I am not empty! I'm full of stuff, like a brain and feelings and...
+
+/speaker Lawrence
+> Haha, no not empty, em-WTpa-WTthy. It means you are able to understand the feelings of others.
+
+/speaker Amy
+/expression happy
+> Oh, OK then! I can deal with being good at that!
+
+/speaker Eevee
+/expression happy
+/cry EEVEE
+> Vui!
+
+/speaker Lawrence
+> Now why don't you be a darling and take Absol upstairs, I'll come up to you with food for Absol in a little while.
+
+/speaker Amy
+/expression happy
+> OK!
+
+/event Amy turn left
+/event Absol turn right
+
+/speaker Amy
+/expression happy
+> Come on, I'll read you a story!
+/cry ABSOL
+/fade black 20
+/wait 60
+/eval pbMultiSwitch(95,[11,12,13,14],A)
+/eval pbMultiSwitch(95,[3],B)
+/if pbSt_Pkmn=="Inlys"
+  /eval $game_self_switches[[95,19,"B"]]=true
+/elsif pbSt_Pkmn=="Licit"
+  /eval $game_self_switches[[95,19,"C"]]=true
+/elsif pbSt_Pkmn=="Vinette"
+  /eval $game_self_switches[[95,19,"A"]]=true
+/end
+/event Amy switch A false
+/event Eevee switch A false
+/event Absol switch A false
+/event Player move left
+/event Player turn down
+/event Lawrence move down
+/event Lawrence move left
+/event Lawrence move left
+/event Lawrence turn up
+/wait 60
+/fade normal 20
+/speaker Lawrence
+> Truth be told, I think that girl is too kind for her own good sometimes.
+> I just...I want her to be careful.
+> Then again, I want her to not lose it either.
+> I just hope she can manage the balance. Trust me, it ain't an easy thing to do.
+> You slip up once, you try to correct, you over-correct and you slip up in the opposite direction. 
+> Then, if you're lucky the pendulum finally settles somewhere in the middle.
+> ...
+> Please forgive an old, bitter man his ramblings. There is something I want you to do.
+
+ /speaker PLAYER
+> ...?
+
+/speaker Lawrence
+> The wounds on that Absol were...harsh, to say the least, so it will require especially strong remedies.
+> I want you to head down to [B]Fukuri Town[/] and see a doctor friend of mine. He ought to know how to make it.
+> He is usually in the [B]Pokémon Cen[/]...
+> ...
+> Ah, force of habit, we don't use those anymore.
+> What I meant to say is that he is by the [G]Trading Post[/] in [B]Fukuri Town[/].
+> Don't worry it's easy enough to spot, in fact, there is one right outside of here.
+> Handy how they all look similar eh?
+> Anyway I got some work to take care of, I will see you when you come back with the [G]medicine[/].
+> Oh... to get to [B]Fukuri Town[/] go to [B]Fukuri Forest[/] and take the road [R]South[/], from there, it's pretty straight forward. 
+
+
+
+#### Doctor #####
+[CH_1_Fukuri_Town,0]
+/event set Doctor 9
+/speaker Doc
+> Hello there. Can I help you with something?
+
+/speaker PLAYER
+> ...WT ...WT ...
+
+/speaker Doc
+> Oh my... an [B]Absol[/], that is certainly something.
+> Severe injuries you say.
+> Hmmmm....
+> ...
+> Yes, I think I will be able to whip something up that will at least dull the poor thing's pain.
+> Though, with Absol being so rare, I am not sure I have all the ingredients.
+> Give me just a moment...
+/fade black 12
+/wait 20
+/fade normal 12
+> Only missing one, provided you can get that for me I will be happy to make the medicine for you.
+> Heaven knows I owe that old coot [B]Lawrence[/] a favor or two.
+> He helped me set up business in this town after my colleague [B]Marty[/] disappeared.
+> I wonder where...
+
+/speaker PLAYER
+> ...
+
+/speaker Doc
+> Ah yes, the ingredient. 
+> It's a rather potent herb that grows in a place not too far from here, in a place called the [G]Secluded Grove[/].
+> Though, I suppose I should do my part to help you. I will go talk to the Monk that is O so rudely blocking the way.
+> Well, rude is way too harsh a word. I'm sure he has his reasons.
+> In the meantime, I suggest you brush up on your battle skills in the square right over there.
+> I will see you here once things are done.
+
+[CH_1_Fukuri_Town,1]
+/speaker Doc
+> Well, that was easier than expected, Turned out the old gee... I mean Monk was much more cooperative than I thought.
+> I'll be by the [G]Trading Post[/] getting things ready for you.
+
+[CH_1_Fukuri_Town,2]
+/speaker Aurelius
+/hidename 1
+> Ah yes, you would be the young man wanting entrance into the [G]Secluded Grove[/] correct?
+> You will have to excuse my somewhat rude barring of your way before. Of course I shall move aside.
+> May the divine grant you wisdom.
+
+#### Yoru Cutscene #####
+[CH_1_Yoru,0]
+/eval pbMultiSwitch(132,[12],A,false)
+/eval pbMultiSwitch(132,[14,15],A)
+/eval pbBGSFade(1)
+/bgm yoru 125 100
+/speaker Yoru
+/hidename 1
+> Why...
+> Why are you the way you are?
+> YourWT [Y]power[/] does itWT make you happy?
+> Is itWT a good thing to have?
+
+[CH_1_Yoru,1]
+/speaker Yoru
+/hidename 1
+> .WT.WT.
+> Hmmm?
+
+[CH_1_Yoru,2]
+/speaker Yoru
+/hidename 1
+> Who are you? You're not....
+/speaker PLAYER
+> ...WT ...WT ...
+
+/speaker Yoru
+/hidename 1
+> O-oh, he were let in. That's fineWT... I think.
+
+[CH_1_Yoru,3]
+/speaker Yoru
+/hidename 1
+> What's your name?
+/speaker PLAYER
+> ...
+/speaker Yoru
+/hidename 1
+> PLAYER...
+> It's nice to meet you.
+/speaker Yoru
+/expression neutral
+> I'm [B]Yoru[/]. At least, that's what I've been told.
+> If... you don't mind me asking, why are you here?
+/speaker PLAYER
+> ...WT ...WT
+/speaker Yoru
+/expression neutral
+> The herb is right over there, but...
+> Can I pleaseWT have a battle with you first?
+> I think... My pokémon would like toWT get to know you.
+/cry NOCTAPHEM
+/speaker Noctaphem
+/hidename 1
+> kuuu!
+
+#### Yoru Post-Battle ####
+[CH_1_Yoru,4]
+/bgm Yoru 150 100
+/event set Yoru 5
+/event set Noctaphem 2
+/speaker Yoru
+> Thank you for the battle.
+> IWT feel like you and I can be friends..
+/event Yoru turn down
+/event Noctaphem turn up
+> What do you think?
+
+[CH_1_Yoru,5]
+/event set Yoru 5
+/event set Noctaphem 2
+/speaker Noctaphem
+/hidename 1
+> .WT.WT.
+> ...WT ...WT ...
+/cry NOCTAPHEM
+> kuu!!!
+/wait 6
+
+[CH_1_Yoru,6]
+/event set Yoru 5
+/event set Noctaphem 2
+/speaker Yoru
+> I think she likes you.
+
+/speaker PLAYER
+> ...?
+
+/speaker Yoru
+/expression neutral
+> Oh, I s-should probably tell you about that.
+> I...
+> .WT.WT.
+
+/speaker Noctaphem
+/hidename 1
+/cry NOCTAPHEM
+> kuu!!!
+
+/speaker Yoru
+/expression neutral
+> I'm half-Umbreon, when I feel an emotion strong enough, the rings light up...
+
+/speaker PLAYER
+> ...?
+
+/speaker Yoru
+/expression neutral
+> It's...aWTWT long story...
+
+/speaker Noctaphem
+/hidename 1
+/cry NOCTAPHEM
+> noooo....?
+/event Yoru turn down
+/event Noctaphem turn up
+
+[CH_1_Yoru,7]
+/event set Yoru 5
+/event set Noctaphem 19
+/speaker Yoru
+> Don't worry about me.
+> We haven't met PLAYER before remember?
+
+/speaker Noctaphem
+/hidename 1
+> ...
+
+/speaker Yoru
+> Don't look at me like that. I will tell him someday, once I trust him enough OK?
+
+/speaker Noctaphem
+/hidename 1
+/cry NOCTAPHEM
+> taph!
+/event Yoru turn left
+/event Noctaphem turn left
+/speaker Yoru
+> I should probably introduce you.
+> This is [B]Noctaphem[/]. She is my first Pokémon and best friend.
+
+/speaker Noctaphem
+/cry NOCTAPHEM
+> Kuuuu!
+
+[CH_1_Yoru,8]
+/event set Yoru 5
+/event set Noctaphem 2
+/speaker Yoru
+> I came here becauseWT It makes me feel calm, just listening to the wind or to hear [B]Noctaphem[/] sing.
+> Heh, I-I bet that was really annoying in the battle. She likes doing that alot.
+> Her song ,it reminds me of the friends and family I have, those who accept me for who and what I am.
+> if "family" is the right word to use...
+/speaker Noctaphem
+/cry NOCTAPHEM
+> Kuuuu!
+/speaker Yoru
+> Sometimes I just need to empty my head...
+> .WT.WT.
+/event Yoru move left
+> What's yourWT favorite type?
+/speaker PLAYER
+> ...
+/speaker Yoru
+/expression neutral
+# Normal Type
+/if pbType==1
+  > Normal hmmm?
+  > You can have this. 
+  /eval Kernel.pbReceiveItem(:NORMALELEMENT,1)
+# Grass Type
+/elsif pbType==2
+  > Grass hmmm?
+  > You can have this. 
+  /eval Kernel.pbReceiveItem(:GRASSELEMENT,1)
+# Fire Type
+/elsif pbType==3
+  > Fire? That reminds me of [B]someone[/] I know!
+  > GrowlIthe would be happy to hear that.
+  > You can have this. 
+  /eval Kernel.pbReceiveItem(:FIREELEMENT,1)
+# Water Type
+/elsif pbType==4
+  /if pbStarter[0]==2
+    > Water hmmm? Horsea would be happy to hear that.
+  /else
+    > Water hmmm?
+  /end
+  > You can have this. 
+  /eval Kernel.pbReceiveItem(:WATERELEMENT,1)
+# Bug Type
+/elsif pbType==5
+  > Bug hmmm?
+  > You can have this. 
+  /eval Kernel.pbReceiveItem(:BUGELEMENT,1)
+# Electric Type
+/elsif pbType==6
+  /if pbStarter[0]==0
+    > Electric hmmm? Shinx would be happy to hear that.
+  /else
+    > Electric hmmm?
+  /end
+  > You can have this. 
+  /eval Kernel.pbReceiveItem(:ELECTRICELEMENT,1)
+# Rock Type
+/elsif pbType==7
+  > Rock hmmm?
+  > You can have this. 
+  /eval Kernel.pbReceiveItem(:ROCKELEMENT,1)
+# Ground Type
+/elsif pbType==8
+  > Ground hmmm?
+  > You can have this. 
+  /eval Kernel.pbReceiveItem(:GROUNDELEMENT,1)
+# Steel Type
+/elsif pbType==9
+  > Steel hmmm?
+  > You can have this. 
+  /eval Kernel.pbReceiveItem(:STEELELEMENT,1)
+# Fighting Type
+/elsif pbType==10
+  > Fighting... do you like meditation too?
+  > You can have this. 
+  /eval Kernel.pbReceiveItem(:FIGHTINGELEMENT,1)
+# Flying Type
+/elsif pbType==11
+  > Flying hmmm?
+  > You can have this. 
+  /eval Kernel.pbReceiveItem(:FLYINGELEMENT,1)
+# Flying Type
+/elsif pbType==12
+  > Poison hmmm?
+  > You can have this. 
+  /eval Kernel.pbReceiveItem(:POISONELEMENT,1)
+# Ice Type
+/elsif pbType==13
+  > Ice... [B]Noctaphem[/] can learn some Ice moves I think
+  /speaker Noctaphem
+  /expression neutral
+  /cry NOCTAPHEM
+  > no  
+  /speaker Yoru
+  /expression neutral
+  > I saw you trying to use Icy Wind the other day.
+  /speaker Noctaphem
+  /expression neutral
+  > taphem!
+  /speaker Yoru
+  /expression neutral
+  > You joke too much!
+  > Anyway. You can have this.
+  /eval Kernel.pbReceiveItem(:ICEELEMENT,1)
+# Fairy Type
+/elsif pbType==14
+  /speaker Noctaphem
+  /cry NOCTAPHEM
+  > Kuu!!!
+  /speaker Yoru
+  /expression neutral
+  > I think she liked that! She is part Fairy-type 
+  > Please take this.
+  /eval Kernel.pbReceiveItem(:FAIRYELEMENT,1)
+# Psychic Type
+/elsif pbType==15
+  > Psychic... I-I hope you can't read minds
+  > You can have this. 
+  /eval Kernel.pbReceiveItem(:PSYCHICELEMENT,1)
+# Dark Type
+/elsif pbType==16
+  > Dark-type... That's my favorite too.
+  /speaker Noctaphem
+  /cry NOCTAPHEM
+  > noct!  
+  /speaker Yoru
+  /expression neutral
+  > ...after Dragon and Fairy of course.
+  /cry NOCTAPHEM
+  /speaker Noctaphem
+  /expression happy
+  > Kuuu!  
+  /speaker Yoru
+  /expression neutral
+  > I am one... kind of.
+  > I want you to have this.
+  /eval Kernel.pbReceiveItem(:DARKELEMENT,1)
+# Ghost Type
+/elsif pbType==17
+  > Ghost... Have you seen any?
+  > Please take this.
+  /eval Kernel.pbReceiveItem(:GHOSTELEMENT,1)
+# Dragon Type
+/elsif pbType==18
+  /speaker Noctaphem
+  /expression happy
+  /cry NOCTAPHEM
+  > Kuu!!!
+  /speaker Yoru
+  /expression neutral
+  > Hehe, I think she liked that! She is part Dragon-type 
+  > Please take this
+  /eval Kernel.pbReceiveItem(:DRAGONELEMENT,1)
+/end
+> That is an [G]element[/], they're like...
+> ...
+> Like, everything a type "is", if that makes sense.
+> A [B]friend[/] told me they can be used to [G]evolve Pokémon like Kadabra or Machoke[/] if you have one of their type.
+> There was one more...
+>...
+/event Yoru exclaim 
+> Oh! It's Eevee [G]you can use elements on Eevee to make them evolve[/], though you can use evolution stones or other items.
+/wait 12
+/speaker Yoru
+/expression neutral
+> Do youWT see that [Y]Surskit[/] over there?
+
+[CH_1_Yoru,9]
+/event set Yoru 5
+/event set Noctaphem 2
+/speaker Yoru
+/expression neutral
+> They're kind of like... a Pokémon version of an element. They've been blessed with [Y]power[/] and protects other Pokémon.
+> Seeing them...
+> .WT.WT.
+
+[CH_1_Yoru,10]
+/event set Yoru 5
+/event set Noctaphem 2
+/speaker Yoru
+/expression neutral
+> They're called [Y]Aura Pokémon[/], there are many of them all over the world.
+> I think they don't mind you battling them, but you [R]cannot catch them[/]
+> ...
+> I should go, I got [B]someone[/] waiting for me.
+> I hope we meet again someday.
+
+[CH_1_Yoru,11]
+/event set Noctaphem 19
+/speaker Noctaphem
+/expression neutral
+> kuuu...
+/eval Kernel.pbReceiveItem(:MOONBALL,1)
+/if pbDifficulty<2
+  /eval Kernel.pbReceiveItem(:PIXIEDUST,1)
+/end
+/wait 20
+
+########### Yoru-Aurelius conversation ##########
+[CH_1_Yoru,12]
+/speaker Aurelius
+/hidename 1
+> Did you find the inner peace you desired child?
+
+/speaker Yoru
+> I...I did, I feel much better now.
+
+/speaker Aurelius
+/hidename 1
+> So I can see, you are positively glowing.
+
+/speaker Yoru
+/expression neutral
+> Why did you ask then?
+
+/speaker Aurelius
+/hidename 1
+> I find that it has more of an effect if one utters the words oneself.
+
+/speaker Yoru
+/expression happy
+> You always know the right things to say.
+
+/speaker Aurelius
+/hidename 1
+> It comes with being obcenely old and having a lot of experience...as well as trying to look at the world in a humorous light.
+> You will look yourself in the mirror one morning and find that you too, have as many wrinkles as I do.
+> That is if the moonlight does not smooth them out for you.
+> Being part Umbreon certainly does have its advantages wouldn't you agree [B]Moonsinger[/]?
+
+[CH_1_Yoru,13]
+/event set Aurelius 13
+/event set Yoru 17
+/speaker Yoru
+/expression happy
+> That name fits [B]Noctaphem[/] better. She's the one doing all the singing.
+
+/speaker Aurelius
+/hidename 1
+> You share such a close bond, she has taken after you I am sure.
+> Speaking of, is she doing well after the battle?
+
+/speaker Yoru
+/expression neutral
+/if pbDifficulty<2
+  > She is, She did steal one of my Moon Balls and some Pixie Dust though.
+/else
+ > She is, She did steal one of my Moon Balls though.
+/end
+
+/speaker Aurelius
+/hidename 1
+> hohoho! Like I said, she takes after the people she meets...and a certain Houndour in this case.
+
+/speaker Yoru
+/expression neutral
+> I suppose so...
+/wait 12
+/event Yoru exclaim
+> Oh!
+
+/speaker Aurelius
+/hidename 1
+> Hmmm?
+
+/speaker Yoru
+/expression neutral
+> PLAYER has been listening to us... 
+/event Aurelius exclaim
+/speaker Aurelius
+/hidename 1
+> Oh!
+
+/event Aurelius turn up
+/event Yoru turn up
+/speaker Aurelius
+/hidename 1
+> Well, what are you doing standing around there for? Come down here and join us in our merry conversation.
+
+/event Player move left
+/wait 4
+/event Player move left
+/wait 4
+/event Player move down
+/wait 1s
+/speaker Yoru
+/expression neutral
+> Father...
+
+/speaker Aurelius
+/expression neutral
+> Oh [B]Yoru[/] I have told you many times, I am only Father to those I pray with, I am [B]Aurelius[/] to you.
+
+/speaker Yoru
+/expression neutral
+> You call me [B]Moonsinger[/]...
+
+/speaker Aurelius
+/expression neutral
+> Hoho! fair enough... You may call me whatever you wish.
+
+/speaker Yoru
+/expression neutral
+> A-anyway, I didn't e-expect to see you again this soon. 
+
+/speaker PLAYER
+> ...WT ...WT ...
+
+/speaker Yoru
+/expression neutral
+/if pbDifficulty<2
+  > She gave the Moon Ball and Pixie Dust to you?
+  > That's fine, you can keep them, I had too many anyway.
+/else
+ > She gave the Moon Ball to you?
+ > That's fine, you can keep it, I have too many anyway.
+/end
+
+/speaker Aurelius
+/expression neutral
+> Hohoho!
+
+/speaker Aurelius
+/expression neutral
+> You will have to excuse me for not introducing myself before.
+> As you may or may not have heard while listening to our word exchange, I am [B]Brother Aurelius[/]
+> Pleased to meet you... PLAYER was it?
+> I must thank you for battling and conversing with [B]Moonsinger[/] here. it did him well.
+
+[CH_1_Yoru,14]
+/event set Aurelius 13
+/event set Yoru 17
+/speaker Aurelius
+/expression neutral
+> Like I said, positively glowing. Hoho!
+> I take it you fought the [Y]Aura Pokémon[/] in there as well?
+> ...
+> They are resillient creatures, they will [G]return to their place in time.[/] .
+> The powers that be see to it that their [Y]aura[/] never fade unless the Pokémon themself willingly gives it up.
+> In which case, the [Y]aura[/] will be returned to the high ones.
+/speaker Yoru
+/expression neutral
+> I like that...
+> It makes me feel...
+
+[CH_1_Yoru,15]
+/event set Aurelius 13
+/event set Yoru 17
+/event Aurelius turn right
+/event Yoru turn left
+/wait 1s
+/speaker Aurelius
+/expression neutral
+> Hmmm... truly...
+
+/speaker Yoru
+/expression neutral
+> ...
+
+/speaker Aurelius
+/expression neutral
+> You will have to excuse me, but I have matters elsewhere that require my attention.
+> Will you come with, [B]Moonsinger[/]?
+
+/speaker Yoru
+/expression neutral
+> I think I'll go visit [B]someone[/]
+
+/speaker Aurelius
+/expression neutral
+> Ah! Then I wish you a merry time and ask you humbly that you take care of yourself.
+
+/speaker Yoru
+/expression neutral
+> I willWT...WTFather
+
+/speaker Aurelius
+/expression neutral
+> Hohoho!
+
+/event Aurelius turn up
+/event Yoru turn up
+
+/speaker Aurelius
+/expression neutral
+> The ever-so-charming doctor told me about some sick Pokémon you are trying to help.
+> When you meet them... will you tell them that my thoughts are with them in their times of need?
+
+/speaker PLAYER
+> ...!
+
+/speaker Aurelius
+/expression neutral
+> You have my thanks O silent one.
+> It was a pleasure meeting you PLAYER. 
+# Normal Type
+/if pbType==1
+  > I pray that we meet again one bright, sunny day where the [B]Transluceon[/] shimmer peacefully on the window sill.
+# Grass Type
+/elsif pbType==2
+  > I pray that we meet again one bright, sunny day where the [B]Leafeon[/] diligently help the plants grow in the garden.
+# Fire Type
+/elsif pbType==3
+  > I pray that we meet again one bright, sunny day where the [B]Flareon[/] warms our hearts, minds and homes alike.
+# Water Type
+/elsif pbType==4
+  > I pray that we meet again one bright, sunny day where the [B]Vaporeon[/] lets the water in the lake marvel us with its beauty.
+# Electric Type
+/elsif pbType==5
+  > I pray that we meet again one bright, sunny day where the [B]Jolteon[/] Gives those who need it a jovial jolt of awakeneing.
+# Bug-Type
+/elsif pbType==6
+  > I pray that we meet again one bright, sunny day where the [B]Morpheon[/] Spins there silk and makes our connections ever stronger.
+# Rock-Type
+/elsif pbType==7
+  > I pray that we meet again one bright, sunny day where the [B]Adamanteon[/] valiantly digs and find us all gems of hope.
+# Ground-Type
+/elsif pbType==8
+  > I pray that we meet again one bright, sunny day where the [B]Antiqueon[/] gleefully plays in the warm, desert sand.
+# Steel-Type
+/elsif pbType==9
+  > I pray that we meet again one bright, sunny day where the [B]Valoreon[/] train against one another, giving us strength of mind.
+# Fighting-Type
+/elsif pbType==10
+  > I pray that we meet again one bright, sunny day where the [B]Harmoneon[/] calmly meditate giving all who watch peace of mind.
+# Flying-Type
+/elsif pbType==11
+  > I pray that we meet again one bright, sunny day where the [B]Zephyreon[/] sing merrily and frolick in the blue skies.
+# Poison-Type
+/elsif pbType==12
+  > I pray that we meet again one bright, sunny day where the [B]Pandemeon[/] let's their poison lead to new discoveries for us all.
+# Ice-Type
+/elsif pbType==13
+  > I pray that we meet again one bright, sunny day where the [B]Glaceon[/]'s glittering breath create sculptures that marvel us all.
+# Fairy-Type
+/elsif pbType==14
+  > I pray that we meet again one bright, sunny day where the [B]Sylveon[/] shows their trainer the affection that makes them stronger.
+# Psychic-Type
+/elsif pbType==15
+  > I pray that we meet again one bright, sunny day where the [B]Espeon[/] bask in the sunlight and discerns what is to come.
+# Dark-Type
+/elsif pbType==16
+  > I pray that we meet again one bright, clear night where the [B]Umbreon[/] glow in the moonlight amd gives those who see an eerie comfore.
+# Ghost-Type
+/elsif pbType==17
+  > I pray that we meet again one bright, clear night where the [B]Phantasmeon[/] ring the bells whose sound heralds the comfort of night.
+# Dragon-Type
+/elsif pbType==18
+  > I pray that we meet again one bright, sunny day where the [B]Kirineon[/] ripple through the water and dazzles us all with their beauty.
+/end
+
+/speaker Yoru
+/expression neutral
+> ...
+> Why did you use all those words?
+
+/speaker Aurelius
+/expression neutral
+> No particular reason except that us old folks have a lot to say.
+
+/speaker Yoru
+/expression neutral
+> R-right...
+> I hope to meet you again PLAYER.
+
+[CH_1_Fukuri_Town,3]
+/speaker Doc
+> Got the herb did you?
+> Right then, let's get on making the medicine.
+/fade black 12
+/wait 20
+/eval $PokemonBag.pbDeleteItem(PBItems::SPECIALHERB,1)
+/me Pokemon Healing
+/wait 20
+/fade normal 12
+> There we go! All done.
+/wait 12
+> I really hope you can help Absol. They are quite rare these days.
+> Truth be told, I am a little jealous of [P]your sister[/]. I always wanted an Absol when I was little.
+> But now they have become quite rare, so you hardly ever see one-
+> I'm doing what I can to help one though, that makes me happy.
+> Actually...
+> Would you mind if I delivered the medicine personally? I got something I need to speak with [B]Lawrence[/] about anyway.
+
+/speaker PLAYER
+> ...!
+
+/speaker Doc
+> Alright then, I'll head there right away, You come after as soon as possible alright?
+####### Pre-Kanai Cutscene ##########
+[CH_1_Doc,0]
+/event set Absol 2
+/event set Amy 3
+/event set Eevee 4
+/event set Lawrence 7
+/event set Doc 18
+
+/speaker Lawrence
+> How is Absol doing?
+
+/speaker Doc
+> They will be fine, though I cannot say I have seen wounds quite like that before. Bless [P]Amy[/] for taking so good care of them.
+
+/speaker Lawrence
+> Heh, she always had a way with Pokémon.
+> I think...WT they can tell she has a kind heart.
+
+/speaker Doc
+> Undoubtedly, though they don't communicate in the same way we do, Pokémon generally have the same emotional range and ability to empathize as us.
+> Varies by species of course, but for the most part it holds true.
+> A Salamence could be timid and playful while a Togepi could be the most vicious blighter you ever saw.
+> You see things like that a lot as a Pokémon Doctor.
+
+/speaker Lawrence
+> Oh! I have seen that quite a bit in my Pokémon too.
+/if pbSt_Pkmn==0 
+  # Inlys
+  > Deino will playfully smash her head against my side as a way to tell me to stop working.
+  > It's quite painful really.
+  /speaker Doc
+  > Haha! I've told you before, raising a Deino is a quite demanding.
+  /speaker Lawrence
+  > You got that right.
+/elsif pbSt_Pkmn==1
+  # Licit
+  > Growlithe will bark my ear off when he wants me to stop working or just wants to play. 
+  /speaker Doc
+  > Haha! No better company for a policeman eh?
+  /speaker Lawrence
+  > True indeed.
+/else
+  # Vinette
+/end
+
+/speaker Lawrence
+> On another note, there wasWT something you wanted to talk to me about?
+
+/speaker Doc
+> Y-yes, You remember my colleague [B]Marty[/]?
+
+/speaker Lawrence
+> Did something happen to him?
+
+/speaker Doc
+> Well...WT he disappeared actually.
+
+/event Lawrence exclaim
+/speaker Lawrence
+> Really!? Why haven't you reported this to the police? 
+
+/speaker Doc
+> I...I wasn't sure how to approach the matter, if I would be believed.
+
+/speaker Lawrence
+> Well, here you are, I am the Chief of Police, I suggest you fire away.
+
+/speaker Doc
+> I was expecting him over for a cup of coffee yeah? He shows up at my door, There is a bright flash of light and the man is gone.
+
+/speaker Lawrence
+> .WT.WT.
+
+/speaker Doc
+> I saw his face you know, he seemed shocked and sort ofWT happy. It weirded me out to be honest.
+
+/speaker Lawrence
+> Hmmm....did you hear or see anything after he disappeared?
+
+/speaker Doc
+> I saw a blurry... something, looking like the letter V with an [G]eye[/] on it.
+> I could have sworn I heard a faint voice whispering oh...what was it again?
+> .WT.WT.
+/event Doc exclaim
+/wait 6
+> "Wanderer" that was it, definetely.
+
+/speaker Lawrence
+> hmmm...
+
+/speaker Doc
+> What do you make of it?
+
+/speaker Lawrence
+> Not much I'm afraid except that you are not the first one to see those [G]eyes[/]. I have seen one as well, though mine was a question mark.
+> ...
+> I can't make any promises, but I will investigate the matter.
+
+/speaker Doc
+> Thank you. That's means a lot to me.
+
+/speaker Lawrence
+> For now though, I suggest we involve PLAYER in the conversation, he has been standing in the doorway for a while.
+/event Doc exclaim
+/wait 6
+> O-oh!
+
+/event Doc turn down
+/event Lawrence turn down
+/event Player move up
+/event Player move up
+/wait 1s
+/se Exit Door
+/wait 2s
+/event Amy switch A true
+# Amy,Eevee,Absol and the book #
+/eval pbMultiSwitch(95,[11..14],A,false)
+/speaker Amy
+/expression neutral
+> Can I be in the conversation too?
+/event Lawrence turn up
+/event Doc turn up
+/speaker Lawrence
+/expression neutral
+> I don't see why not...
+/event Amy move left
+/se Exit Door
+/wait 1s
+/event Eevee switch A true
+/event Amy move left
+/event Eevee move left
+/se Exit Door
+/wait 1s
+/event Absol switch A true
+/wait 1s
+/event Absol turn down
+/event Eevee turn down
+/event Amy turn down
+
+[CH_1_36]
+/event set Absol 2
+/event set Amy 3
+/event set Eevee 4
+/event set Lawrence 7
+/event set Doc 18
+/speaker Amy
+/expression neutral
+> Absol wants to say something to you.
+/event Amy turn right
+/event Absol turn left
+> Don't you?
+/event Amy turn down
+/event Absol turn down
+
+/cry ABSOL
+/speaker Absol
+> sool...
+
+/speaker Doc
+> Hmmm? 
+
+/speaker Amy
+/expression neutral
+> She didn't mean to scratch your hand when you gave her the medicine.
+
+/cry ABSOL 80,80
+/speaker Absol
+> sool...
+/event Doc move right
+/wait 3s
+/event Doc move right
+/wait 3s
+/event Doc turn up
+
+/speaker Doc
+> Oh that...don't you worry about it.
+> You don't know me and was hurt and nervous, it's only natural to want to defend yourself. 
+> Small wounds like that is to be expected when treating Pokémon.
+
+/cry ABSOL
+/event Amy turn right
+/event Absol turn left
+
+/speaker Amy
+/expression happy
+> See? I told you he would be nice like that.
+
+/event Amy turn down
+/event Absol turn down
+
+/speaker Amy
+/expression happy
+> Thank you so much for helping Absol, Do you know what hurt her?
+
+/speaker Doc
+> Well, it was a Pokémon but....
+
+/speaker Amy
+/expression neutral
+> It was a Pokémon's butt!?
+
+/speaker Doc
+> What!?...haha no.
+> To be honest, they are awfully strange wounds.
+
+/speaker Amy
+/expression worried
+> I hope you figure it out, I don't want Absol to get worse or something.
+
+/speaker Absol
+> ab...
+
+/speaker Doc
+> I'm sure we will eventually, for now though, just keep treating her as kindly as you have. 
+
+/speaker Amy
+/expression happy
+> I will!
+
+/event Doc turn left
+/event Lawrence turn right
+
+/speaker Doc
+> Well [B]Lawrence[/] I will be heading out, there is a sick [B]Zephyreon[/] requiring my attention, they lost their voice and I have to pay their trainer a home visit.
+
+/speaker Amy
+/expression worried
+> Is that bad?
+
+/event Doc turn up
+/speaker Doc
+> Well, Zephyreon is known for their voice and the songs they sing so it is kind of a problem.
+> In this case, it isn't anything too serious though.
+/speaker Amy
+/expression happy
+> I hope they get better soon!
+/if $PokemonBag.pbQuantity(PBItems::THROATSPRAY) > 0
+  /speaker Player
+  /hidename 2
+  ?> Do you want to give Doc a Throat Spray?
+  /choice Yes
+    /speaker Player
+    > ...WT ...WT ...
+    /event Doc move down
+    /wait 3s
+    /event Doc move left
+    /wait 3s
+    /event Player turn right
+
+    /speaker Doc
+    > What ? You have want to give me a Throat Spray.
+    > That saves me a lot of trouble thank you!
+    > You can have these as thanks.
+    /eval Kernel.pbReceiveItem(:REDCAPSULE,1)
+    /eval Kernel.pbReceiveItem(:BLUECAPSULE,1)
+    /eval $PokemonBag.pbDeleteItem(PBItems::THROATSPRAY,1)
+    /wait 4s
+    /event Doc move up
+    /wait 3s
+    /event Doc move right
+    /wait 3s
+    /event Doc turn down
+  /cancelchoice No
+  ?/>
+/end 
+/event Doc turn left
+/speaker Lawrence
+> Take care of yourself [B]Doc[/]. I'll keep in touch.
+/speaker Doc
+> Will do and thank you.
+
+[CH_1_37]
+/event set Music 17
+/event set Lawrence 7
+/cry TYPENULL 70 70
+/wait 2s
+/se Slash2 100 70
+/speaker Doc
+!> UWAAAH!
+/event Music switch A true
+/bgm Strangeevent
+/wait 4s
+
+/speaker Amy
+/expression Worried
+> What was that!?
+
+/event Lawrence exclaim
+/speaker Lawrence
+> Doc!!!
+
+[CH_1_38]
+/event set Absol 2
+/event set Amy 3
+/cry ABSOL 100 150
+/speaker Absol
+> Sol! Sol!
+
+/speaker Amy
+/expression worried
+> Please be careful Absol! It could be dan..
+
+/event Absol turn left
+/cry ABSOL
+/speaker Absol
+!> AB..SOL!!!
+
+/event Amy turn right
+/speaker Amy
+/expression worried
+> I...
+> I only want you to not be hurt again.
+/speaker Absol
+> .WT.WT.
+/cry ABSOL 70 70
+> ...soool...
+/speaker Amy
+/expression neutral
+> I'm coming with you then!
+/event Absol exclaim
+/wait 1s
+/speaker Amy
+/expression neutral
+> That's final, I am your trainer and I will be with you no matter what!
+/speaker Absol
+> .WT.WT.
+/event Amy turn down
+/speaker Amy
+/expression worried
+> Please come too brother...
+
+####### Kanai Introduction Cutscene ##########
+[CH_1_Kanai,0]
+/event set Amy 10
+/event set Kanai 39
+/event set TypeNull 40
+/event set Doc 41
+/event set Lawrence 42
+/event set Absol 43
+
+/speaker Doc
+> Why did you attack me, You had no reason!
+
+/speaker Kanai
+/hidename 1
+> ...
+
+/speaker Doc
+> Well, speak up!
+
+/speaker Kanai
+/hidename 1
+> ...
+
+/speaker Lawrence
+> I suggest you do as you're told. If you don't, I'll have to detain you as the chief of police.
+
+/speaker Kanai
+/hidename 1
+> .WT.WT.
+> YouWT...heal.
+
+/speaker Doc
+> Attacking me won't make me stop excercising my passion.
+
+/speaker Kanai
+/hidename 1
+> I hadWT no choice.
+
+/speaker Lawrence
+> Nonsense! You activately chose to attack [B]Doc[/] didn't you?
+> Not to mention the fact that your Pokémon willingly did so.
+> That is, in itself, a grave offense.
+> Will you talk to us willingly or do I have to take you by force?
+
+/speaker Kanai
+/hidename 1
+> You'reWT too weak...
+
+/speaker Lawrence
+> Excuse me!?
+
+/speaker Kanai
+/hidename 1
+> I told you, You're too weak...
+
+/speaker Lawrence
+> You rude, lawless little--
+
+/event Doc exclaim
+/speaker Doc
+> Lawrence! Calm yourself
+
+/speaker Lawrence
+> ...
+/wait 20
+/cry ABSOL 70 70
+/speaker Absol
+> soool....
+
+/event Kanai turn up
+/event Kanai exclaim
+/eval pbBGMFade(2)
+/wait 4s
+/fade black 40
+/bgs heartbeat 200 100
+/eval pbBGSFade(3)
+/wait 2s
+/fade normal 40
+/wait 3s
+/bgm Strangeevent
+/wait 2s
+/event Amy exclaim
+/speaker Amy
+/expression worried
+> .WT.WT.
+
+/speaker Kanai
+/hidename 1
+> Y-you!?
+
+/event TypeNull move right
+/wait 2s
+/event TypeNull move up
+/wait 2s
+/cry TYPENULL
+/wait 1s
+/cry ABSOL 70 70
+/speaker Absol
+> s-sol...
+
+/speaker Kanai
+/hidename 1
+> No... n-notWT you.
+> I won't let you... n-not again...
+
+/cry TYPENULL
+/wait 3s
+!> SHADOW STORM!!!
+
+/cry TYPENULL 125 75
+/wait 12
+
+[CH_1_Kanai,1]
+/event set Amy 10
+/event set Eevee 11
+/event set Kanai 39
+/event set TypeNull 40
+/event set Doc 41
+/event set Lawrence 42
+/event set Absol 43
+/cry ABSOL
+/speaker Absol
+> SOL!!!
+
+[CH_1_Kanai,2]
+/speaker Amy
+/expression worried
+> Absol what are you...
+
+[CH_1_Kanai,3]
+/event set Amy 10
+/event set Eevee 11
+/event set Kanai 39
+/event set TypeNull 40
+/event set Doc 41
+/event set Lawrence 42
+/event set Absol 43
+/cry TYPENULL 125 75
+/wait 12
+/speaker All
+!> AAAH!
+/se Wind8 125 50
+/wait 20
+/fade normal 20
+
+/speaker Doc
+> Ugh! What... was that?
+
+/speaker Lawrence
+> That was... WT excessive...
+
+/speaker Amy
+/expression worried
+> AbsolWT are you ok?
+
+/speaker Absol
+> s-sool...
+
+/speaker Kanai
+/hidename 1
+> Why did you protect her!?
+> All it will do is cause a disaster and you know it!
+
+/speaker Absol
+> .WT.WT.
+
+/speaker Amy
+/expression worried
+> ...no
+> She is kind!
+
+/speaker Kanai
+/hidename 1
+> .WT.WT.
+
+/speaker Amy
+/expression neutral
+> She is kind just like any other Pokémon can be. 
+> The thing with disasters is only some old people said because they didn't know better.
+> They didn't understand!
+
+/speaker Kanai
+/hidename 1
+> Do you?
+> You're just a kid, how could you understand?
+
+/speaker Amy
+/expression neutral
+> I don't.
+> There is lots of things I don't understand, but I can tell she doesn't want to hurt me or anyone.
+
+
+/speaker Kanai
+/hidename 1
+> .WT.WT.
+/wait 12
+
+/cry TYPENULL
+/speaker Kanai
+/hidename 1
+> You cannotWT know that.
+
+/speaker Amy
+/expression neutral
+> ...and you cannot know that she won't.
+
+/event Absol turn down
+/wait 2s
+
+/cry TYPENULL
+/speaker TypeNull
+/hidename 1
+> .WT.WT.
+
+/speaker Amy
+/expression neutral
+> I won't let you hurt Absol!
+> I want to learn to understand her, just like the [G]eye[/] said!
+
+/event Kanai exclaim
+/speaker Kanai
+/hidename 1
+> T-the [G]eye[/]!?
+> Why did they come to you?
+> Why did theyWT talk to you!?
+!> TELL ME!
+/eval pbBGMFade(2)
+/wait 8s
+/fade black 40
+/bgs heartbeat 200 100
+/eval pbBGSFade(3)
+/wait 8s
+/fade normal 40
+/wait 3s
+
+/bgm Strangeevent
+/speaker Amy
+/expression worried
+> I don't know.
+
+/speaker Kanai
+/hidename 1
+> Enough of this!
+> Attack!
+
+/speaker Amy
+/expression worried
+> No, Don't do it!
+
+[CH_1_Kanai,4]
+/event Player exclaim
+/speaker PLAYER
+!> !!!
+/speaker Kanai
+/hidename 1
+> I warn you, don't get in the way of my Pokémon. It will crush you!
+
+/speaker Player
+> ...!
+
+/speaker Kanai
+/hidename 1
+> Why do you care? This hasn't got anything to do with you.
+> ...
+> It doesn't matter, I will stop you here and now!
+
+/speaker Doc
+> PLAYER be careful!
+
+/speaker Lawrence
+> .WT.WT.
+
+[CH_1_Kanai,5]
+/event set Amy 10
+/event set Eevee 11
+/event set Kanai 39
+/event set TypeNull 40
+/event set Doc 41
+/event set Lawrence 42
+/event set Absol 43
+
+/speaker Kanai
+/hidename 1
+> There wasWT no other choice.
+> I... I had to do this.
+/wait 3s
+/cry TYPENULL
+> .WT.WT.
+
+/event Kanai turn up
+/wait 1s
+> You'll tell me how and why the [G]eyes[/] responded to you!
+> I have to know!
+/eval pbBGMFade(2)
+/wait 4s
+/fade black 40
+/bgs heartbeat 200 100
+/eval pbBGSFade(3)
+/wait 2s
+/fade normal 40
+/wait 3s
+
+/speaker Amy
+/expression worried
+> I don't know. I really don't.
+> I would have told you if I did...
+
+/speaker Kanai
+/hidename 1
+> I...
+/wait 3s
+/cry TYPENULL
+> .WT.WT.
+/wait 3s
+/event Kanai turn right
+/speaker Kanai
+/hidename 1
+> ...
+> I'llWT leave you alone this time, but get in my way again and you will regret it.
+/event Kanai move left
+/wait 2s
+/event Kanai move left
+/wait 2s
+/speaker Amy
+/expression worried
+> Wait!
+/event Kanai exclaim
+/wait 1s
+> Can you at least tell me your name?
+
+/speaker Kanai
+/hidename 1
+> I don't have one...
+
+/cry ABSOL 70 70
+
+/speaker Amy
+/expression worried
+> ...
+
+/speaker Kanai
+/hidename 1
+> .WT.WT.
+
+/speaker Kanai
+/expression hood
+> If you mustWT give me one, then call me [R]Kanai[/].
+> ...
+> I will stop at nothing to get what I want.
+> Nothing
+/wait 60
+/eval pbBGMFade(2)
+/cry TYPENULL
+/wait 4s
+/cry ABSOL 80 80
+/wait 4s
+
+[CH_1_Kanai,6]
+/event set Amy 10
+/event set Lawrence 42
+/event set Absol 43
+/event Lawrence turn left
+/speaker Lawrence
+/event Amy turn right
+> [P]Amy[/] dear are you alright!?
+/speaker Amy
+/expression worried
+> y-yeah, I'm fine... [B]Absol[/] protected me.
+/speaker Lawrence
+> ...thank you [B]Absol[/]
+/wait 2s
+/event Absol turn up
+/cry ABSOL
+
+[CH_1_Kanai,7]
+/event set Amy 10
+/event set Doc 41
+/event set Lawrence 42
+/event set Absol 43
+
+/speaker Lawrence
+/expression neutral
+> Are you alright [B]Doc[/]?
+
+/speaker Doc
+> S-somehow.
+> W-what was that attack? I've never seen anything like it, or like that Pokémon either for that matter.
+
+/speaker Lawrence
+/expression neutral
+> I wish I knew...
+
+/event Lawrence turn up
+/speaker Lawrence
+/expression neutral
+> [P]Amy[/], can you be a darling and take care of the house for a bit while I follow [B]Doc[/] home?
+
+/speaker Doc
+> But the [B]Zephyreon[/]...
+
+/event Lawrence turn right
+/speaker Lawrence
+/expression neutral
+> I'll personally deliver them the medicine and see to it that it's properly administered OK?
+
+/speaker Doc
+> A-alright, that's very kind of you.
+
+/speaker Lawrence
+/expression neutral
+> Don't mention it.
+
+/event Amy turn right
+/event Lawrence turn up
+/speaker Amy 
+/expression neutral
+> I'll take care of the house [B]Uncle Lawrence[/]!
+/expression netural
+> Absol, you know what?
+/event Amy turn down
+/event Absol turn up
+/speaker Absol
+/expression neutral
+> ...?
+
+/speaker Amy 
+/expression happy
+> I'll take care of you too!
+
+/cry ABSOL
+
+[CH_1_Kanai,8]
+/event set Amy 10
+/event set Eevee 11
+/event set Absol 43
+/speaker PLAYER
+> ...!?
+
+/speaker Amy 
+/expression worried
+> I'm fine, but...
+> ...
+> Something is wrong somewhere, very wrong.
+> [R]Kanai[/] seemed so...far away...
+> .WT.WT.
+/event Amy exclaim
+/expression neutral
+> Oh!
+> I think someone else wants to say thanks too!
+/se Open Pokeball
+/wait 1s
+/event Eevee switch A true
+/cry EEVEE
+/speaker Eevee
+/expression gentle
+> Vee!
+/event Absol move right
+/wait 3s
+/event Absol move right
+/wait 3s
+/event Absol turn up
+/event Eevee turn down
+/cry ABSOL
+/speaker Absol
+> sol!
+/wait 1s
+/event Amy turn right
+/speaker Amy 
+/expression neutral
+> Eevee, can you be a sweetheart and take Absol inside so you both can get something to eat?
+> There should still be enough VeeVee candies for the both of you.
+/event Eevee turn left
+/wait 3s
+/speaker Eevee
+/expression gentle
+> Vee!
+/speaker Amy 
+/expression neutral
+> Sorry I don't have any Absol candies.
+/cry ABSOL
+/speaker Absol
+> ab!
+/wait 6
+/speaker Amy
+/expression happy
+> I'm glad!
+
+####### Arglos Introduction Cutscene ##########
+[CH_1_Arglos,0]
+/speaker Amy 
+/expression neutral
+> Thank you for being there for me brother!
+> I wanted to do something, I couldn't just let him attack Absol like that for no reason.
+
+/speaker PLAYER
+> ...WT ...WT ...!
+
+/speaker Amy 
+/expression neutral
+> It being dangerous didn't stop you though.
+
+/speaker PLAYER
+> .WT.WT.
+
+/speaker Amy 
+/expression neutral
+> I...
+> I want Absol to be happy.
+> ...
+
+/speaker PLAYER
+> ...?
+
+/speaker Amy 
+/expression neutral
+> .WT.WT.
+/expression worried
+> She has...
+> ummm...I don't really know how to say it.
+/event Amy exclaim
+/expression neutral
+> She has a lot of bad experience points. 
+> She is very sad...
+/expression happy
+> I know she likes being with me and Eevee though.
+> I don't know how I know. I just know...you know?
+
+/speaker Noone
+/hidename 1
+> Curious...
+/event Amy turn down
+/event Player turn down
+
+[CH_1_Arglos,1]
+/event set Amy 10
+/event set Arglos 44
+
+/speaker Amy
+/expression neutral
+> Ummm...who are you?
+
+/speaker Arglos
+/hidename 1
+> You need not worry, I am not your enemy.
+> .WT.WT.
+> Do you trust me on this?
+
+/speaker Amy
+/expression neutral
+> Why shouldn't I?
+
+/speaker Arglos
+/expression ponder
+/hidename 1
+> ...
+
+/speaker Amy
+/expression neutral
+> Ummm hello?
+
+/speaker Arglos
+/expression ponder
+/hidename 1
+> ...
+
+/speaker Amy
+/expression neutral
+> Earth to strange man...hello!?
+
+/speaker Arglos
+/expression hand
+/hidename 1
+> Ah, apologies.
+/expression neutral
+> Of course you ought be trusting, though as far as you know, I may be a stranger wishing you harm.
+
+/speaker Amy
+/expression neutral
+> I don't think a stranger wishing me harm would tell me they are a stranger wishing me harm.
+/expression happy
+> You ARE strange though...
+
+/speaker Arglos
+/hidename 1
+> ...and you, young lady, are quite witty.
+> I assure you, it is not the first time I have been given the monicker ofWT...WT "strange". 
+
+/speaker Amy
+/expression happy
+> *giggle*
+
+/speaker Arglos
+/expression neutral
+> You may call me [B]Arglos[/]
+> ...
+> It was quite admirable how the two...
+> ...no the three of you stood up to [R]him[/]. 
+
+/speaker Amy
+/expression neutral
+> You mean [B]Kanai[/]?
+
+/event Arglos exclaim
+/wait 4s
+
+/speaker Arglos
+/expression neutral
+> ...
+> Yes...
+> May we head inside? I wish to speak with you.
+
+/speaker Amy
+/expression happy
+> Sure!
+
+[CH_1_Arglos,2]
+/speaker Amy
+/expression neutral
+> Do you want me to get a chair for you [B]Mr.Arglos[/]?
+
+/speaker Arglos
+/expression neutral
+> There is no need, though I do appreciate you being so polite.
+
+/speaker Amy
+/expression happy
+> I was raised well!
+/expression neutral
+> What do want to talk to us about?
+
+/speaker Arglos
+/expression neutral
+> A rather curious matter.
+> Before that though--
+
+/speaker Amy
+/expression neutral
+> You want to battle brother right?
+
+/speaker Arglos
+/expression neutral
+> How VERY perceptive of you.
+
+/speaker Amy
+/expression neutral
+> Well, all my Pokémon are upstairs and I am not much of a trainer anyways.
+/expression happy
+> Plus almost everyone that meets Brother for the first time wants to battle him.
+> That's usually how things go.
+
+/speaker Arglos
+/expression neutral
+> Well I would certainly fall into that category.
+
+[CH_1_Arglos,3]
+/event set Amy 3
+/event set Eevee 4
+/speaker Amy
+/expression neutral
+> What was that strange glow around your [B]Honedge[/]?
+
+/speaker Arglos
+/expression neutral
+> I'm afraid...
+/expression ponder
+> .WT.WT.
+/expression neutral
+> ...that is a story for another time
+
+/speaker Amy
+/expression neutral
+> Awww, but I wanna know now!
+
+/event Player exclaim
+/wait 12
+/speaker Player
+> ...!
+
+/speaker Arglos
+/expression neutral
+> You've seen one like this before?
+> ...
+> Ah yes! the [Y]one[/] in [B]Secluded Grove[/]. Of course.
+/expression ponder
+> Hmmm....
+/expression hand
+> Suffice it to say that my Honedge is the same and not the same at once.
+
+/speaker Amy
+/expression neutral
+> That makes no sense!
+
+/speaker Arglos
+/expression neutral
+> I find it rather amusing to be mysterious.
+> That...and it might be that I have my own reasons for speaking as such.
+
+/speaker Amy
+/expression neutral
+> There you go doing it again!
+
+/speaker Arglos
+/expression ponder
+> Hmmm....yes, curious isn't it?
+
+/speaker Amy
+/expression neutral
+> Geez, you're hopeless.
+
+/speaker Arglos
+/expression neutral
+> Hehe, Forgive me young lady, but now is not the time for that story.
+> Rest assured though, you will both know when the time is right.
+
+/speaker Amy
+/expression neutral
+> Aww... alright then
+> A-anyway. What did you want to talk to us about [B]Mr.Arglos[/]?
+
+/speaker Arglos
+/expression neutral
+> There is no need to be so formal. [B]Arglos[/] will do fine.
+
+/speaker Amy
+/expression happy
+> *giggle*
+
+/speaker Arglos
+/expression neutral
+> Am I correct in assuming, you have an Eevee?
+
+/speaker Amy
+/expression happy
+> Yup! The bestest...WTWTest Eevee in the whole world!
+
+/speaker Arglos
+/expression neutral
+> Would you mind calling them down here? I would like them to be present.
+
+/event Amy turn up
+/speaker Amy
+/expression neutral
+!> EEVEE!!!
+/wait 2s
+/cry EEVEE 20 100
+/se Exit Door 
+/wait 3s
+/event Eevee switch A true
+
+[CH_1_Arglos,4]
+/event set Arglos 5
+/cry EEVEE
+/speaker Eevee
+/expression gentle
+> Vui?
+
+/speaker Amy
+/expression happy
+> This [B]Strange Man[/] wants to speak with you.
+> Well with us, but he wants you to be here.
+/event Eevee turn right
+/event Amy turn right
+
+/speaker Arglos
+/expression neutral
+> I wanted to ask...did you hear or feel anything particular while you were close to [R]him[/]?
+
+/speaker Amy
+/expression worried
+> Umm...
+> It's kinda hard to explain.
+
+/speaker Arglos
+/expression neutral
+> I urge you to try regardless.
+
+/speaker Amy
+/expression worried
+> There were a few times that...
+> ...
+> I heard something sounding like a heartbeat.
+> It sounded like it was really, reallyWT far away 
+
+/speaker Arglos
+/expression ponder
+> .WT.WT.
+
+/speaker Amy
+/expression worried
+> I'm not really sure though.
+> I was a little busy being protecting [B]Absol[/]...
+
+/speaker Arglos
+/expression ponder
+> ...
+> It is alright to let your mask fall from time to time.
+
+/speaker Amy
+/expression worried
+> w-what do you mean?
+
+/speaker Arglos
+/expression ponder
+> Do not try to push away the toll this event took on you.
+> While I do not doubt your cheerfulness is genuine...
+> You ought give the other feelings some space.
+
+/speaker Amy
+/expression worried
+> I...
+> I was scared, but I wanted to help Absol more...
+
+/speaker Arglos
+/expression netural
+> You did admirably.
+
+/speaker Amy
+/expression worried
+> I couldn't really do much though.
+
+/speaker Arglos
+/expression neutral
+> Perhaps not, but your intentions were good, that certianly counts for something.
+> Though, you did one thing...
+
+/speaker Amy
+/expression neutral
+> ?
+
+/speaker Arglos
+/expression neutral
+> You made [R]him[/] take on a name, albeit a false one. That is a start.
+
+/speaker Amy
+/expression worried
+> [B]Arglos[/]... who is [B]Kanai[/]?
+
+/speaker Arglos
+/expression ponder
+> .WT.WT.
+> He isWT a searching man.
+> Though he cannot have what he truly seeks. Deep down he knows this.
+> This is reflected in the Pokémon he uses, a tragic being indeed.
+
+/speaker Amy
+/expression worried
+> Is there anything I can do to help?
+
+/speaker Arglos
+/expression neutral
+> You are too kind...
+
+/speaker Amy
+/expression neutral
+> Hey!
+
+/speaker Arglos
+/expression hand
+> It is worth remembering he did just attack you and those you care about.
+
+/speaker Amy
+/expression worried
+> Yeah, but...
+
+/speaker Arglos
+/expression neutral
+> I am only asking that you exercise care when you eventually decide what is right.
+> It is ultimately his battle to fight.
+> Our own respective battles are just that, our own.
+
+/speaker Amy
+/expression worried
+> I...
+> I just wanna help.
+
+/speaker Arglos
+/expression neutral
+> Do not dwell on it child, take solace in knowing that you did all you could in the moment.
+> Whatever you do, do not forget your kind heart.
+> Not many would have helped Absol so free of prejudice.
+> Undoubtedly, this is why she has taken a liking to you.
+/expression ponder
+> Though...WT I suppose using a Luxury Ball did help.
+
+/speaker Amy
+/expression neutral
+> I could tell she was hurt, I had to do something.
+> ...
+/expression worried
+> What's going on? 
+
+/speaker Arglos
+/expression neutral
+> hmmm?
+
+/speaker Amy
+/expression neutral
+> I mean, first I see that weird [G]eye[/] thing and then Absol appears out of nowhere. 
+> And now you show up out of nowhere with lots of questions after some stranger attacks [B]Absol[/] for NOWT REASON!
+> I don't get any of it!
+
+/speaker Arglos
+/expression ponder
+> [G]They[/] are WT restless, disorganized one could say.
+> Something is upsetting them deeply.
+
+/speaker Amy
+/expression neutral
+> [B]Kanai[/] also got really mad when I mentioned them.
+
+/speaker Arglos
+/expression neutral
+> .WT.WT.
+
+/speaker Arglos
+/expression neutral
+> I ask that you keep your Eevee close and let your friendship shine.
+
+/speaker Amy
+/expression neutral
+> Of course I will!
+
+/speaker Arglos
+/expression neutral
+> Live your life, help those you feel you can help and don't forget who you are deep down.
+> Let that knowledge shine through to your actions.
+
+/speaker Amy
+/expression neutral
+> O-OK...
+
+/event Arglos turn down
+/event Player turn up
+
+/speaker Arglos
+/expression neutral
+> As for you. I suggest you confer with [B]Lawrence[/] about what to do.
+> These disappearances need to be throughly looked into. It is of utmost importance.
+> ...
+> Before I leave. I wish to give you this.
+/wait 3s
+/eval Kernel.pbReceiveItem(:EXPSHARE,1)
+/if $game_self_switches[[$game_map.map_id,@event_id,"C"]]
+  > As well as this. A little something for beating me.
+  /eval Kernel.pbReceiveItem(:RARECANDY,1)
+  /eval $game_self_switches[[$game_map.map_id,@event_id,"C"]]=false
+/end
+
+[CH_1_Arglos,5]
+/event set Arglos 5
+/event Arglos exclaim
+/speaker Arglos
+/expression neutral
+> Ah, but where are my manners.
+
+[CH_1_Arglos,6]
+/speaker Arglos
+/expression neutral
+> You are, of course, also deserving of my gratitude.
+
+/speaker Eevee
+/expression normal
+> vee?
+
+/speaker Arglos
+/expression neutral
+> You stood by [P]Amy[/] in what I am sure was a trying conversation for her. Can I count on you to keep doing that?
+
+/cry EEVEE
+/speaker Eevee
+/expression gentle
+> Ee-vui!
+
+/speaker Amy
+/expression neutral
+> I WTneverWT told youWT my name...
+
+/speaker Arglos
+/expression neutral
+> Splendid.
+> I also want you to promise me one thing.
+
+/speaker Eevee
+/expression neutral
+> vee?
+
+/speaker Arglos
+/expression neutral
+> When the times comes for you to evolve, make sure what you evolve into is the form you most want to take.
+
+/speaker Eevee
+/expression gentle
+> Vui!
+
+/speaker Arglos
+/expression neutral
+> Then all is well.
+
+[CH_1_Arglos,7]
+/event set Amy 3
+/event set Eevee 4
+/speaker Arglos
+/expression ponder
+> A curious creature, Eevee.
+> They possess the ability to evolve into many different forms.
+> To wander down many different paths.
+> I wonder...WT which path is the right one?
+> Is thatWT an individual choice?WT Or one made for us?
+> If it was made for us, was our individual free will accounted for when the choice was made?
+> Curious...
+/se Exit Door
+/wait 2s
+/event Arglos switch A false
+/eval pbBGMFade(2)
+/wait 3s
+/bgm silence
+
+/event Amy turn up
+/event Eevee turn down
+
+/speaker Amy
+/expression neutral
+> I didn't get any of that last part, did you?
+
+/speaker Eevee
+/expression neutral
+> v...vee?
+
+/speaker Amy
+/expression neutral
+> He didn't seem like a bad guy or anything though.
+> still...
+> I wonder how he knew my name.
+
+/event Player turn left
+/event Amy turn right
+/event Eevee turn right
+
+/speaker Amy
+/expression neutral
+> What do you think brother?
+
+/speaker PLAYER
+> .WT.WT.
+
+/speaker Amy
+/expression neutral
+> I know what you mean.
+> I don't know what to think either.
+/expression happy
+> That's why I asked you for a second opinion!
+/expression neutral
+> I should probably go up and see how Absol is doing. She must be terrified after all this.
+/expression worried
+> I could use her company honestly.
+####### Chapter-End Cutscene ##########
+# Part 1 - Arglos and Absol
+[CH_1_End,0]
+/event set Arglos 3
+/event set Absol 4
+/speaker Arglos
+/expression ponder
+> .WT.WT.
+> The wheel is spinning...
+> Towards which outcome I wonder...
+> Is the result inevitable?
+> ...curious...
+/cry ABSOL
+/wait 20
+/speaker Arglos
+/expression neutral
+> Hmmm?
+
+[CH_1_End,1]
+/event set Absol 6
+/event set Arglos 24
+/speaker Absol
+/expression netural
+/cry ABSOL
+> Sol...
+
+/speaker Arglos
+/expression neutral
+> Out for a stroll are we?
+> Does [P]Amy[/] know you are here?
+
+/speaker Absol
+/expression netural
+> .WT.WT.
+
+/speaker Arglos
+/expression neutral
+> Let her dream, let her imagination wander freely.
+
+/speaker Absol
+/expression netural
+/cry ABSOL 70 70
+> ...
+
+/speaker Arglos
+/expression neutral
+> You have come here with a heavy heart no doubt.
+/expression ponder
+> You are...WTWT torn.
+
+/speaker Absol
+/expression netural
+> ab-sool...
+
+/speaker Arglos
+/expression neutral
+> You need not fear me child, your burden is quite plain to see.
+> Your eyes,WT they speak of many hardships.
+> I will say that you can trust me, but whether you do or not, is up to you to decide.
+
+/speaker Absol
+/expression netural
+> sol.
+/wait 2s
+/event Absol move up
+
+/speaker Arglos
+/expression neutral
+> I will listen to your plight if you wish.
+
+/speaker Absol
+/expression netural
+> ab..soool?
+
+/speaker Arglos
+/expression hand
+> You need not worry, I understand every word child.
+/expression ponder
+> .WT.WT.
+/expression neutral
+> I would be quite keenWT to hear about the world from your perspective.
+
+/speaker Absol
+/expression netural
+/cry ABSOL 70 70
+> ab-sol...
+
+/speaker Arglos
+/expression neutral
+> I understand that you are hesitant, it is natural given that I am a stranger to you.
+> Many years in the wild has taught you wariness, but do you have the courage to talk to me?
+/expression ponder 
+> The choice is yours.
+
+/event Absol move up
+/speaker Absol
+/expression netural
+/cry ABSOL 70 70
+> s-oo-oool...
+
+/speaker Arglos
+/expression ponder
+> Then, let us talk, Noble Beast. 
+> Show [G]those who see[/] your heart, ease your burden and be healed, at least, for the moment.
+> I shall listen and not judge. That is my promise to you.
+
+[CH_1_End,2]
+/event set Absol 6
+/event set Arglos 24
+/fade black 20
+/wait 20
+/speaker Absol
+/expression neutral
+> ...
+/speaker Arglos
+/expression neutral
+> ...
+/speaker Arglos
+/expression ponder
+> ...?
+/speaker Absol
+/expression neutral
+> .WT.WT.
+/speaker Arglos
+/expression hand
+> ...WT ...WT ...
+/speaker Absol
+/expression neutral
+> ...WT ...WT ...
+/speaker Arglos
+/expression neutral
+> ...!
+/speaker Arglos
+/expression ponder
+> .WT.WT.
+/speaker Arglos
+/expression hand
+> ...
+/speaker Absol
+/expression neutral
+> ...WT ...WT ...
+/speaker Arglos
+/expression ponder
+> Curious...
+/wait 20
+/fade normal 20
+/speaker Arglos
+/expression neutral
+> Noble beast... you have my deepest sympathy.
+> Have you made up your mind?
+
+/speaker Absol
+/expression netural
+> .WT.WT.
+
+/speaker Arglos
+/expression hand
+> To wait is also a decision.
+/expression neutral
+> If you want my opinion, it is a wise one.
+> Stay by [P]Amy[/]'s side for now, do what you can to help her.
+/expression ponder
+> Perhaps...
+
+/speaker Absol
+/expression netural
+> sol?
+
+/speaker Arglos
+/expression ponder
+> .WT.WT.
+
+/speaker Absol
+/expression netural
+> Ab...sol!
+
+/speaker Arglos
+/expression ponder
+> Hmmm...You take after your trainer.
+/expression neutral
+> My apologies.
+> It will do you good to be by a trainer's side for a time.
+> I think it will benefit you and your goals.
+> For now, you should return to her, [P]she[/] will be worried if you are not there in the morning. 
+
+/speaker Absol
+/expression netural
+> Sol!
+
+[CH_1_End,3]
+/speaker Arglos
+/expression ponder
+> Hehe, strange man indeed.
+> ...
+> I hope you find what you seek Noble Beast...
+/fade black 12
+/wait 12
+/expression neutral
+> ...for everyone's sake.
+/eval pbBGMFade(3)
+/wait 5s
+
+# Part 2 - Flashback (Lawrence meeting Amy)
+[CH_1_End,4]
+/event set Lawrence 12
+/speaker Lawrence
+/expression neutral
+> ...
+> Breathe in, breathe out...
+> ...
+> Aaah! Damn it all! Why can't I solve these disappearances!?
+> Every time I get closer to solving one, some obscure detail gets in the way.
+> That's not even mentioning the [R]Whitestone Cliff[/] murder.
+> What is a man to do !?
+/if $game_variables[PLAYER2_CHOSEN]="Deino"
+  > What I wouldn't do to be home giving Deino a bath  or cooking a meal right now.
+  > Then again, She would probably bite my hand off.
+/elsif $game_variables[PLAYER2_CHOSEN]="GrowlIthe"
+  > What I wouldn't do to be home giving Growlithe a bath or cooking a meal right now.
+  > Then again, they would probably run away barking like mad. They are a Fire-Type for pete's sake.
+/end 
+> Still beats this though...
+> ...
+> *sigh*
+> No reast for the weary I guess, back to work.
+
+[CH_1_60]
+/event set Lawrence 12
+/event set Unown 18
+/eval pbBGSFade(2)
+/wait 60
+/speaker Lawrence
+/expression neutral
+> The windWT stopped...
+/cry UNOWN
+/event Unown switch A true
+/wait 12
+/eval pbFadeEvent(18,0,255,40)
+/wait 6s
+U> LAWRENCE
+/bgm visitor 120 80
+/event Lawrence exclaim
+/event Lawrence turn up
+/wait 12
+> What the!?
+> Who... or what are you?
+
+[CH_1_End,5]
+/speaker Lawrence
+/expression neutral
+U> ...
+> Why are you looking at me like that!?
+U> desperate?
+/speaker Lawrence
+/expression neutral
+> Me? Never! I won't rest until these bloody disappearance cases are solved.
+> Some lawless fool is behind them and I intend to get them behind bars ASAP!
+U> ...
+> Well, how else is a policeman supposed to keep the peace?
+> Can you tell me?
+U> ...
+> Thought so...
+> Now will you please stop bothering me so can I get back to work?
+U> ...
+/eval pbFadeEvent(18,255,128,40)
+U> ...
+/wait 2s
+
+[CH_1_End,6]
+/event set Lawrence 12
+/event set Amy 16
+/event set Unown 18
+U> HELP!!!
+/speaker Lawrence
+/expression neutral
+> W-what do you--
+/wait 12
+/cry UNOWN
+/wait 12
+U> COMPASSION!
+U> PLEASE!
+U> SHADOW SEER!
+U> HELP!!!
+/wait 4s
+
+[CH_1_End,7]
+/event set Lawrence 12
+/event set Amy 16
+/eval pbFadeEvent(16,255,0,1)
+/eval pbFadeEvent(18,128,0,20)
+/event Amy switch B true
+/eval pbBGMFade(2)
+/wait 6s
+/bgs Ambience - Forest Wind 70 70
+/eval pbFadeEvent(16,0,255,40)
+/wait 4s
+/event Lawrence exclaim
+/speaker Lawrence
+/hidename 0
+> !?
+> What's going on here?
+
+/speaker Amy
+/expression none
+/hidename 1
+> *sob*
+
+/speaker Lawrence
+/expression neutral
+> Who might you be little one?
+
+/speaker Amy
+/expression none
+/hidename 1
+> ...
+
+/speaker Lawrence
+/expression neutral
+> I am not dangerous, I promise you are safe.
+> I'm [B]Lawrence[/]. What's your name?
+
+/speaker Amy
+/expression none
+/hidename 1
+> ...?
+
+/speaker Lawrence
+/expression neutral
+> You...WT do have a name don't you?
+
+/speaker Amy
+/expression none
+/hidename 1
+> *sob*
+
+/speaker Lawrence
+/expression neutral
+> Oh dear...
+> Hmmm I think you should have a name don't you?
+
+/speaker Amy
+/expression none
+/hidename 1
+> *sob* *sob*
+
+/speaker Lawrence
+/expression neutral
+> There there, calm down I am here for you.
+> What you call you though? 
+> What do you think little one?
+
+/speaker Amy
+/expression none
+/hidename 1
+> ...?
+
+/speaker Lawrence
+/expression neutral
+> hmmm....
+/fade black 20
+/wait 20
+/hidename 2
+U> SHADOW SEER!
+U> HELP!!!
+/hidename 0
+> (Shadow Seer huh?)
+/wait 20
+/fade sepia 20
+/wait 20
+> How about I call you... [P]Amy[/]. Would you like that?
+
+/speaker Amy
+/expression none
+/hidename 1
+> Ei...mee?
+
+/speaker Lawrence
+/expression neutral
+> Yes [P]Amy[/].
+
+/speaker Amy
+/expression none
+/hidename 1
+> .WT.WT.
+/hidename 0
+> *giggle*
+
+/speaker Lawrence
+/expression neutral
+> I'm glad you like it.
+> You're going to live with me and my nephew OK?
+
+/speaker Amy
+/expression none
+> *sob* *sob*
+
+/speaker Lawrence
+/expression neutral
+> Don't worry [P]Amy[/] It's not far and I will be with you all the way.
+> While I walk, you listen to the wind, maybe it has something nice to say.
+
+/speaker Amy
+/expression none
+> .WT.WT.
+> *giggle*
+
+/speaker Lawrence
+/expression neutral
+> We are going to go home now and meet your brother now OK?
+> But I am gonna tell you a big secret about him first.
+
+/speaker Amy
+/expression none
+> ...?
+
+/speaker Lawrence
+/expression neutral
+> He is a big sleepyhead.
+
+/speaker Amy
+/expression none
+> *giggle*
+
+/speaker Lawrence
+/expression neutral
+> Time to go [P]Amy[/].
+
+[CH_1_End,8]
+/fade black 20
+/wait 12
+/speaker Lawrence
+> (I wonder if...)
+> ...she would like some Strawberry Miltank Pie?
+
+/speaker Amy
+/expression none
+> ...?
+
+/speaker Lawrence
+> Oh... I said that out loud didn't I?
+> Guess I gotta make it them.
+> (Phew, finally an excuse to take a day or two off.)
+> (Still though... talk about a rough day.)
+
+/speaker Amy
+/expression none
+> *giggle* broWTther!
+/eval pbBGSFade(3)
+/bgs silence
+
+[CH_1_End,9]
+/speaker Doctor
+> The Old gentleman blocking the way has agreed to let you in to the [G]Secluded Grove[/].
+> I'll be by the [G]Trading Post[/] getting the medicine ready.

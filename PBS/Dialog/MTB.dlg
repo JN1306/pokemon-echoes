@@ -1,0 +1,916 @@
+#### ENTRANCE #####
+[MTB,0]
+##### AREA 1 #####
+# ZONE 1
+[MTB_Area_1,0] # Pre-Battle
+/speaker Endre
+!> I GOT IN!
+!> OH MY GOD I GOT IN!
+> I became a trainer last week and I got in to Mt.Battle. Isn't that awesome!?
+> Let's battle!
+# Post-Battle
+[MTB_Area_1,1] # Post-Battle
+/speaker Endre
+> That was awesome!
+> I'm only the first trainer though so you got a long way to go.
+[MTB_Area_1,2] # Fluff
+/speaker Endre
+> Imma keep training and become an Area Leader one day!
+
+# ZONE 2
+[MTB_Area_1,3] # Pre-Battle
+/speaker Tora
+> I wanna be a mechanic when I grow up!
+> Mommy sent me here to make a work for my own for a little bit to get monies!
+> I think that's smart and battling is fun too! 
+[MTB_Area_1,4] # Post-Battle
+/speaker Tora
+> I wonder how long it will take to become a mechanic!
+[MTB_Area_1,5] # Fluff
+/speaker Tora
+> Have you heard of Pokémon called Zeraora?
+> I saw one once!
+
+# ZONE 3
+[MTB_Area_1,6] # Pre-Battle
+/speaker Trevor
+> I was so surprised when it was announced I got a spot.
+> It makes me happy though, maybe I will see some cool bug Pokémon from challengers
+[MTB_Area_1,7] # Post-Battle
+/speaker Trevor
+> I'm gonna be the best Bug Catcher that ever was!
+[MTB_Area_1,8] # Fluff
+/speaker Trevor
+> I wonder how many Pokémon are out there?
+
+# ZONE 4
+[MTB_Area_1,9] # Pre-Battle
+/speaker Firenze
+>Hey! Welcome to Area o...
+> Oh! That's right, I actually got placed higher than Zone 1 haha.
+> So.... WT what do we talk about?
+> ...
+> Iwannastartaperfumerywithmyauntthatsgonnabeawesomeletsbattle
+[MTB_Area_1,10] # Post-Battle
+/speaker Firenze
+> I wanna open a perfumery with my aunt, is what I was trying to say.
+> I got a little nervous there hehe!
+> I wonder how we would do that?
+[MTB_Area_1,11] # Fluff
+/speaker Firenze
+> My aunt is on Mt.Battle too, somewhere in Area 4 I think.
+
+# ZONE 5
+[MTB_Area_1,12] # Pre-Battle
+/speaker Femme
+> Zone number <outln>[R]5[/]</outln>. You're getting through at a brisk pace.
+> I m may be the first Ace trainer, but I am putting my all into this battle.
+[MTB_Area_1,13] # Post-Battle
+/speaker Femme
+> Every zone ending with 5 has an Ace Trainer in it, sort of a mid-area test!
+> Of course my Zone also starts with 5 since it's the first one, but that besides the point.
+> I wonder if you can beat us all?
+[MTB_Area_1,14] # Fluff
+/speaker Femme
+> I wonder if you can beat us all?
+
+# ZONE 6
+[MTB_Area_1,15] # Pre-Battle
+/speaker Seistre
+> I love the Poison-Type.
+> I also love music, So I got Pokémon that makes me think of those!
+> Can't wait to show them to you!
+[MTB_Area_1,16] # Post-Battle
+/speaker Seistre
+> Maybe I should become a Rocker one day?
+[MTB_Area_1,17] # Fluff
+/speaker Seistre
+> Maybe I should become a Rocker one day?
+
+# ZONE 7
+[MTB_Area_1,18] # Pre-Battle
+/speaker Sjur
+> Camping in a cave. Sounds like fun to me.
+> I wonder what the rest of the Mt.Battle is like?
+> Anyway. Let's have at it.
+[MTB_Area_1,19] # Post-Battle
+/speaker Sjur
+> The world is a large place. I would like to see it all one day!
+[MTB_Area_1,20] # Fluff
+/speaker Sjur
+> I hope I can get that White Vulpix one day...
+
+# ZONE 8
+[MTB_Area_1,21] # Pre-Battle
+/speaker Otto
+> Woo! This sure beats being a handyman.
+> Headmaster [B]Flemming[/] pays nice'n'all, but a little variation is nice yeah?
+> Let's see how I do in battle!
+[MTB_Area_1,22] # Post-Battle
+/speaker Otto
+> Hmmm...I need to engineer a better strategy.
+> Maybe I should find something to tinker with while thinking about it
+[MTB_Area_1,23] # Fluff
+/speaker Otto
+> Multi-tasking...yeah!
+
+# ZONE 9
+[MTB_Area_1,24] # Pre-Battle
+/speaker Nicole
+> I almost got to be the first Area Leader. It's a little frustrating, but I am still proud of myself.
+> Let me show you my precious Pokémon. Both of them!
+!> BAM!
+[MTB_Area_1,25] # Post-Battle
+/speaker Nicole
+> I train martial arts in my spare time, so it makes sense to use Fighting-Types right?
+> One of the teachers at my Martial-Arts gym is a Mienshao. Isn't that cool?
+[MTB_Area_1,26] # Fluff
+/speaker Nicole
+> ...Maybe I should bring them a Razz Berry. It'll make their attacks stronger after all.
+> hmmm....
+
+# ZONE 10 - Area Leader I
+[MTB_Area_1,27] # Pre-Battle
+/speaker Tiffany
+> Heyo! You've done nicely getting to Zone <outln2>[R]10[/]</outln>
+> The name's [B]Tiffany[/] and the O'so honorable [B]Prof Zeathus[/] hired me to be first Area Leader.
+> It was kinda hard to say no. He's a humorous fellow.
+> Besides, I like this job alot! I get to be a teacher and test for new trainers. 
+> I mean, how cool is that?
+> I love the Normal-Type, they are so versatile, like a blank canvas. It's really fun to bring out their potential.
+> Not to mention the fact that they can learn a ridiculous amount of moves.
+> Looking forward to see how you do aganist my team!
+[MTB_Area_1,28] # Post-Battle
+/speaker Tiffany
+> That was a good battle!
+> Of course I am only the first Area Leader. You still got a long way to go.
+> Well since you beat me. You deserve a little something.
+#/se ItemGet
+/if !pbHasBagItem?(:TM1) 
+    # Work Up
+    /eval Kernel.pbReceiveItem(PBItems::TM1,1) 
+/else
+    /eval Kernel.pbReceiveItem(PBItems::DATACHIP,1)
+/end
+/speaker Tiffany
+> Here you go.
+> Before you head on, do you see the miscolored part of the floor behind me?
+> Why don't you try stepping on it? I think you will like what happens.
+> Oh and every Area has one of those, you should be on the lookout for them.
+> Anyway, should you get to Zone </outln>[R]20[/]</outln> say hi to [B]Sarah[/] for me. 
+> I gotta stay here in case a challenger comes along.
+> I hope to battle you again someday! See ya!
+/speaker PLAYER
+> .WT.WT.
+/speaker Tiffany
+> What? I promise stepping on that floor isn't dangerous WT...probably...
+/speaker PLAYER
+> .WT.WT.
+/speaker Tiffany
+> HA! I'm yanking your chain. It's not like we keep a [Y]Salamence[/] back there or something.
+[MTB_Area_1,29] # Fluff
+/speaker Tiffany
+> I wonder if [B]Sarah[/] has gotten her Pokémon to calm down.
+> They were a little heavy on the attacks before.
+
+##### AREA 2 #####
+# ZONE 11
+[MTB_Area_2,0] # Pre-Battle
+/speaker Freddie
+> You beat Auntie Tiffy!? Wow that's amazing!
+> It took me YEARS to beat her.
+> She is a great teacher though! I'm just a little slow sometimes, but she said that's OK as long as I have fun trying.
+> A-Anyway! We should probably battle'n'stuff! 
+[MTB_Area_2,1] # Post-Battle
+/event set Freddie 12
+/speaker Freddie
+> When I finally beat Aunt Tiffany, she was so impressed we asked the professor guy who runs this place and he gave me a spot as a trainer.
+> I remember him saying "mhm" a lot.
+> Isn't that AWESOME though!? he also let me pet his Shellos. 
+> Shellos is my favorite Pokémon, they are so squishy and cute and...
+> ummm...I should probably let you move on'n'all.
+> Good luck!
+[MTB_Area_2,2] # Fluff
+/speaker Freddie
+> I hope I can catch a Shellos one day!
+/if !$game_self_switches[[$game_map.map_id,@event_id,"B"]] && pbHasSpecies?(:SHELLOS) 
+    /event Freddie exclaim
+    /wait 12
+    !> WHOA!
+    > You have a Shellos with you!?
+    ?> Can I pet them please, can I? can I?
+    /choice Yup!
+        /eval $game_self_switches[[@map_id,@event_id,"B"]]=true 
+        /if pbHasSpeciesWithItem?(:SHELLOS,0) 
+            /if pbHasSpeciesWithAbility?(:SHELLOS,:STICKYHOLD) 
+                !> Yay!
+                /fade black 12
+                /me Pokemon Healing
+                /wait 60
+                /cry SHELLOS
+                /wait 20
+                /fade normal 12
+                > Thank you! They even have my favoritest ability!
+                > How do I know?
+                /se ItemGet
+                /hidename 2
+                > Freddie gave your Shellos an [B]Eviolite[/] to hold.
+                /hidename 0
+                > See? Their squishy body is holding on to it! No one can take it from them, NEVER!
+                > You can keep the item! You just made my day.
+                /eval pbExtraItem(:SHELLOS,:EVIOLITE)
+            /else
+                > Yay!
+                /fade black 12
+                /me Pokemon Healing
+                /wait 60
+                /cry SHELLOS
+                /wait 12
+                /fade normal 12
+                > Thank you! Here I will give your Shellos a berry that is really good for them!
+                /se ItemGet
+                > Freddie gave your Shellos a [B]Rindo Berry[/] to hold.
+                /hidename 0
+                /eval pbExtraItem(:SHELLOS,:RINDOBERRY)
+            /end
+        /else
+            > Aww thank you.
+            /fade black 12
+            /me Pokemon Healing
+            /wait 60
+            /cry SHELLOS
+            /wait 12
+            /fade normal 12
+            > Thank you! You can have this!
+            /eval Kernel.pbReceiveItem(:ANTIDOTE,1)  
+        /end
+        /eval $game_map.need_refresh = true 
+    /cancelchoice Naw!
+        > Oh! Ummm...I should probably let you move on'n'all then.
+    ?/>
+/end
+
+# ZONE 12
+[MTB_Area_2,3] # Pre-Battle
+/speaker Isaac
+> Hey there, how's it hanging?
+> Huh... Who? Me? I am just a hiker enjoying my time in this here cave.
+> So what I am only in [R]Zone 12[/]. I get enjoy both my passions at once, hiking and battling. How cool is that?
+> Uh...speaking of, we should probably start the battle.
+[MTB_Area_2,4] # Post-Battle
+/speaker Isaac
+> I can always re-apply for a higher position next season. I hear Area 5 is a really nice lake.
+[MTB_Area_2,5] # Fluff
+/speaker Isaac
+> I once found an old painting of a sword striking monsters from the heavens.
+> I wonder who painted it and how long ago it was.
+
+
+# ZONE 13
+[MTB_Area_2,6] # Pre-Battle
+/speaker Nemu
+> ....*yaaawn*....
+> Huh? What? whazz happenin'?
+> Oh right Mt.Battle... Sorry, my Pokémon make me sleepy.
+> Let's do this before I...fall....asleep... again.
+[MTB_Area_2,7] # Post-Battle
+/speaker Nemu
+> Good...luck...
+[MTB_Area_2,8] # Fluff
+/speaker Nemu
+> *zzz*
+/if !$game_self_switches[[$game_map.map_id,@event_id,"B"]] && (pbHasType?(:PSYCHIC) || pbHasType?(:GHOST))
+    /eval $game_self_switches[[$game_map.map_id,@event_id,"B"]]=true 
+    > *zzz* what a nice dream. *zzz*
+    > *zzz* you can have this. *zzz*
+    /eval Kernel.pbReceiveItem(:DREAMBALL,1)  
+    /if pbHasSpecies?(:MUNNA) || pbHasSpecies?(:MUSHARNA) || pbHasSpecies?(:LUNATONE) || pbHasSpecies?(:LUNALA)
+        > *zzz* I wanna travel to the moon *zzz*
+        > *zzz* where am I getting all the item from? Maybe it's someone from the moon teleporting them to me? *zzz*
+        > *zzz* I don't need...all of them though...you can have some...*zzz*
+        /eval Kernel.pbReceiveItem(:LUNARSEED,1)
+        /eval Kernel.pbReceiveItem(:MOONBALL,1)  
+        /if pbHasSpecies?(:LUNATONE) || pbHasSpecies?(:LUNALA)
+          /eval Kernel.pbReceiveItem(:MOONGODDESSMASK,1)
+        /end 
+        >  *zzz* riding a Lunala would be nice *zzz*
+    /end
+    /if pbHasSpecies?(:LUNALA)
+        /wait 60
+        /cry LUNALA
+        /wait 60
+        > *zzz* I could sworn I heard... Lunala... *zzz*
+        > *zzz* Lucky you, maybe you get to ride them one day *zzz*
+    /end
+    /eval $game_map.need_refresh = true 
+/else
+>  *zzz* riding a Lunala would be nice *zzz* 
+    /if pbHasSpecies?(:LUNALA) && $game_self_switches[[$game_map.map_id,@event_id,"B"]]
+        > Let me know... what it feels like!
+        > *zzz*
+    /end
+/end
+
+# ZONE 14
+[MTB_Area_2,9] # Pre-Battle
+/speaker Gemma
+> Hmmm... certainly an optimal enviroment for raising Rock an' Ground types.
+> Oh hey! there it's a human type Pokémon! Or was that a Poké-type Humon?
+> I kid I kid. You wanna battle me right? Sure thing. It will be fun!
+[MTB_Area_2,10] # Post-Battle
+/speaker Gemma
+> There has been a lot of fun challengers lately.
+> I hope you make it far!
+[MTB_Area_2,11] # Fluff
+/speaker Gemma
+> Knowing the type chart is important for breeders and trainers alike.
+
+# ZONE 15
+[MTB_Area_2,12] # Pre-Battle
+/speaker Hjalmar
+> Halfway through an area now and that means it is time for the Ace Trainer. In this case, me!
+> Gotta hand it to [B]Prof. Zeathus[/], he has good taste when it comes to Area Leaders.
+> I was a senior student at Miss [B]Tiffany[/]'s school back in the day. Though I was in Miss [B]Sarah[/]'s class.
+> They are great tests for young trainers. They motivated me to work hard to become an Ace Trainer.
+> Shall we get going?
+[MTB_Area_2,13] # Post-Battle
+/speaker Hjalmar
+> Keep goin' you'll make it far.
+/if !$game_self_switches[[$game_map.map_id,@event_id,"B"]]
+    > That really was a fun battle. I want you to have this.
+    /eval Kernel.pbReceiveItem(:AWAKENING,1)
+    /eval $game_self_switches[[$game_map.map_id,@event_id,"B"]]=true
+/end
+[MTB_Area_2,14] # Fluff
+/speaker Hjalmar
+> I remember one day when I was a youngster, I was being bullied for a liking Stantler.
+> [B]Tiffany[/] took me aside and told me that it was OK to like any Pokémon.
+> She even let me pet her [B]Transluceon[/] while we talked.
+> I think that conversation is what made me want to be an Ace Trainer and to raise a Stantler to boot.
+/if pbHasSpecies?(:STANTLER)
+    > I hope you raise your Stantler well.
+/end
+
+# ZONE 16
+[MTB_Area_2,15] # Pre-Battle
+/speaker George
+> A fisherman in a cave, talk about a Corphish out of water.
+> It ain't so bad here though. Just hoping to get promoted to Area 5 someday.
+> Let's cast out our lures eh?
+[MTB_Area_2,16] # Post-Battle
+/speaker George
+> It was fun battling you. Though I feel out of my element.
+[MTB_Area_2,17] # Fluff
+/speaker George
+/event set George 18
+> I wonder if cave-fishing is a thing.
+/if !$game_self_switches[[$game_map.map_id,@event_id,"B"]] && pbHasSpeciesWithLevel?(:MAGIKARP,21)
+        > You actually have a Magikarp in your party and an unevolved one above level 20 at that!? Now that's some style! 
+        > I'll tell you a secret then.
+        > If Magikarp uses Splash and they are level 21 or higher there is a small chance all their stats will be raised a whopping 3 stages, THREE!
+        > The higher level they are, the higher the chance of this happening.
+        > Why level 21 or higher? Haven't got a clue really.
+        /wait 12
+        /event George exclaim
+        > Oh! and the chance will be doubled if Magikarp uses Lotus Dance first.
+        > Yeah they learn Lotus Dance at Level 21, funny that!
+        /if pbGetQuestStatus(:ASplashofFortune)==2 
+            /event George exclaim
+            > You've actually had it happen !? Whoa you are one lucky guy!
+        /else 
+            > No really they do, I've raised several myself.
+            /if pbGetQuestStatus(:ASplashofFortune)==-1 
+                /eval pbDiscoverQuest(:ASplashofForutne)
+            /end
+        /end 
+    /if !pbHasBagItem?(:FORTUNEFIN) && !pbHasPartyItem?(:FORTUNEFIN)
+        > It just so happens that I have one. See there is a very small amount of Magikarp that hold a Fortune Fin when caught.
+        > I normally charge $ 100 to give them to people but for you I will charge $ 500!
+        > Haha, no no I joke, you can have it for free!
+        /eval Kernel.pbReceiveItem(:FORTUNEFIN,1)
+    /end
+    /eval $game_self_switches[[$game_map.map_id,@event_id,"B"]]=true 
+    /eval $game_map.need_refresh = true    
+/end
+
+# ZONE 17
+[MTB_Area_2,18] # Pre-Battle
+/speaker Stanley
+> Heh, no worries kid, *Burglar* is only my designated trainer class. I won't nick anything from ya...Most Likely.
+[MTB_Area_2,19] # Post-Battle
+/speaker Stanley
+> I ran a knick-knack shack a few years back. I miiiiiight have befuuddled a customer...WT or two....WT our all of'em.
+> Made a tidy profit though.
+> That [B]Zethu[/]-somethingorother guy seemed oddly interested though, said it reminded him of someone...
+> Aaaanyway, its about time we duked it out eh?
+[MTB_Area_2,20] # Fluff
+/speaker Stanley
+> I keep using that phrase but I have no idea what a "belgian" even is...
+> Hey kid, if you get to [R]Zone 70[/] say hi to my bro. He is the Area Leader there.
+> Y'know what would be nice? A new hat! I should go buy one someday....yes get one....eheheh!
+
+# ZONE 18
+[MTB_Area_2,21] # Pre-Battle
+/speaker Carl
+> I was hoping to get far enough to set up camp in the forest of Area 4 but [B]Sarah[/] sandblasted me all the way back here.
+> I am disappointed ,not gonna lie, but at least I didn't get placed in Area 3... way too hot down there.
+> Oh well... it's battlin' time.
+[MTB_Area_2,22] # Post-Battle
+/speaker Carl
+> Thanks for the battle.
+> *sigh*  Area 4 seems very far away.
+[MTB_Area_2,23] # Fluff
+/speaker Carl
+> Eh, I suppose I will get another shot at Area 4 someday.
+
+# ZONE 19
+[MTB_Area_2,24] # Pre-Battle
+/speaker Alisha
+> I was talking to a friend one night and I managed to recite all of Goldeen's level up off the top of my head.
+> He was so shocked he fell off huis chair in surprise.
+> The day after that, I went and caught myself one.
+[MTB_Area_2,25] # Post-Battle
+/speaker Alisha
+> That was an awesome awesome battle.
+[MTB_Area_2,26] # Fluff
+/speaker Alisha
+> I will learn every moveset, that I promise.
+
+# ZONE 20
+[MTB_Area_2,27] # Pre-Battle
+/speaker Sarah
+> Hi there! I'm [B]Sarah[/], but I s'pose you already knew that! [B]Tiffy[/] sung high praises about you!
+> So, how does it feel to be at the end of area 2?
+/if pbTrainerHighestLevel < 14
+    > Hmmm... by my guess I would say your Pokémon have lower levels than the average of this area.
+    > That's quite impressive. I look forward to seeing how you do against me!
+/elsif pbTrainerHighestLevel == 14
+    > Hmmm... by my guess I would say you are on par with the average of this area.
+    > My team should make for a fun challenge then!
+/else
+    > Hmmm... by my guess I would say your Pokémon have higher levels than the average of this area.
+    > I get those challengers a lot, but that doesn't stop me from doing m'best!
+/end
+> I like the Ground type alot, I love reading stories set in deserts, the hot and sandy kind mind.
+> There so mystical and cool. [B]Tiffy[/] found them a little scary though.
+> I am not gonna blab too much. How about we get this battle underway
+[MTB_Area_2,28] # Post-Battle
+/speaker Sarah
+> That was an awesome battle, heated as a scorching desert.
+> I really enjoyed it and my Pokémon did too!
+> I found my Eevee while travelling in a desert y'know. 
+> One day, I accidentally spilled some sand on their fur and they evolved!
+> I was so happy I hugged them on the spot, and they hugged me back!
+> I really wanna give you this now!
+/if !pbHasBagItem?(:TM107) 
+    /se ItemGet
+    # Desert Terrain
+    /eval Kernel.pbReceiveItem(PBItems::TM107,1) 
+/else
+    /eval Kernel.pbReceiveItem(PBItems::DATACHIP,1)
+/end
+> Man, my next tea session with [B]Tiffy[/] and [B]Flemming[/] will be awesome! So many fun challengers to discuss.
+> Stay safe on your journey. I hope we meet again one day!
+[MTB_Area_2,29] # Fluff
+/speaker Sarah
+> I am glad [B]Antiqueon[/] managed to calm down a bit.
+> See, when I told him to use an Entry Hazard move. He would use EVERY entry hazard move he knew all at once.
+> I must have gotten light burns or a light fever a million times 'cause of that. 
+> Bless him though, he just wanted cuddles and praise.
+> Good things Rawst Berries and Pecha Berries exist yeah?
+/if $game_self_switches[[$game_map.map_id,@event_id,"A"]]
+    /eval $game_self_switches[[$game_map.map_id,@event_id,"A"]]=false
+    /eval $game_map.need_refresh = true 
+/end
+
+##### AREA 3 #####
+# ZONE 21
+[MTB_Area_3,0] # Pre-Battle
+/speaker Alma
+> Y'know, my idea of a picnick is NOT being in a boiling hot lava-cave.
+> Though it IS better than last time I applied, I got placed in Zone 3 back then.
+> So it is my great pleasure to welcome you to Area 3!
+[MTB_Area_3,1] # Post-Battle
+/speaker Alma
+> It is kind of exciting being inside a volcano. When I am not being boiled alive that is.
+> Someone told me a lot of effort went in to heatproofing the trainers.
+> I wonder how they managed all that.
+[MTB_Area_3,2] # Fluff
+/speaker Alma
+> I heard [R]Zone 100[/] is on top of a volcano on a mountain a little away from this one.
+
+# ZONE 22
+[MTB_Area_3,3] # Pre-Battle
+/speaker Fred
+> I am SO MAD that I got placed in an earlier zone than both of my bros...WT not really.
+> I mean I wanted to beat'em but somebody had to get placed in a higher zone.
+> Besides I am the youngest one, by about 2 minutes... They would be right embarassed if I did beat'em right?
+> Well I'm gonna stomp you!WT...maybe.
+[MTB_Area_3,4] # Post-Battle
+/speaker Fred
+> I wanna be a Juggler when I grow up! Maybe even open up a joke shop with my bros.
+> Yeah!!!
+[MTB_Area_3,5] # Fluff
+/speaker Fred
+> I wonder how much it would take to open a Joke Shop.
+/if !$game_self_switches[[$game_map.map_id,@event_id,"B"]] && (pbHasSpecies?(:VOLTORB) || pbHasSpecies?(:ELECTRODE) || pbHasSpecies?(:MIMEJR) || pbHasSpecies?(:MRMIME) || pbHasSpecies?(:MRRIME))
+    > Hey, you have some pretty joke-shop like Pokémon with you.
+    > I have a spare something from when made lots of stuff for our future joke shop.
+    > You can have one!
+    /eval Kernel.pbReceiveItem(:SMOKEBALL,1)
+    /eval $game_self_switches[[$game_map.map_id,@event_id,"B"]]=true
+/end
+/eval $game_map.need_refresh = true
+
+# ZONE 23
+[MTB_Area_3,6] # Pre-Battle
+/speaker Frank
+> Hey you beat my bro!
+> Truth be told, he is stronger between the two us.
+> It is isn't his fault I got a lucky critical hit when we battled to see who got placed where.
+> Our biggest brother [B]Lee[/] beats us all though, but now you are
+[MTB_Area_3,7] # Post-Battle
+/speaker Frank
+> Well you beat me, but mr.Professor dude gives us galleons of money for being here.
+> To a kid like me $ 2303 a week is a lot. JustWT...WT365 more weeks and we can get that joke shop we want.
+> ...
+> *sigh* Saving up is gonna take a while
+[MTB_Area_3,8] # Fluff
+/speaker Frank
+> I wonder what sort of things we could use to prank someone...
+> Wouldn't it be cool if there was a powder that made everything go dark?
+/if !$game_self_switches[[$game_map.map_id,@event_id,"B"]] && $game_self_switches[[229,3,"B"]] && $Trainer.money > 0 && pbCheckDonation == 0
+    /hidename 2
+    ?> Do you wish to donate to the Joke Shop?
+    /choice Yes
+        /eval $game_self_switches[[$game_map.map_id,@event_id,"B"]]=true 
+        /eval pbShopDonation(true,false)
+        /if pbCheckDonation == 9999 
+            > H-hey, I don't really know what to say. Thank you. Wow!
+        /elsif pbCheckDonation <= 9998 && pbCheckDonation > 8000
+            > We might be close to be able to rent locales with this money! This means the world to us.
+        /elsif pbCheckDonation <= 8000 && pbCheckDonation > 5000
+            > Wow! I am actually getting a little moved here. Thank you
+        /elsif pbCheckDonation <= 5000 && pbCheckDonation > 2000
+            > Thanks! That helps a lot!
+        /else
+            > Thanks a lot! Every little $ helps!
+        /end
+        /eval $game_map.need_refresh = true
+    /cancelchoice No
+    ?/>
+/end 
+
+# ZONE 24
+[MTB_Area_3,9] # Pre-Battle
+/speaker Matthew
+!> I CAUGHT A LARVESTA!
+> Applying for Mt.Battle was SO worth it!
+> I wanna battle you, right here, right now using my Larvesta!
+[MTB_Area_3,10] # Post-Battle
+/speaker Matthew
+> Larvesta is my favorite Pokémon, I was so glad when I caught one in a jungle somewhere.
+/if $game_variables[CURRENT_CHAPTER]>=4
+    /speaker PLAYER
+    > ...
+    /speaker Matthew
+    > Oh! you've been there?
+    > Did you catch a Larvesta?
+    /if $Trainer.hasOwned?(:LARVESTA)
+        /speaker PLAYER
+        > ...!
+        /speaker Matthew
+        > Wow that is awesome! I hope you raise them well.
+    /else
+        /speaker PLAYER
+        > .WT.WT.
+        /speaker Matthew
+        > Aww, you'll find one eventually if you search the jungle, they ARE really rare though.
+    /end
+/end
+[MTB_Area_3,11] # Fluff
+/speaker Matthew
+> I bet Larvesta is super happy being in a hot place like this!
+> Its a little too hot for me though.
+
+# ZONE 25
+[MTB_Area_3,12] # Pre-Battle
+/speaker Akane
+> Zone number <outln>[R]25[/]</outln>... One quarter of the way there.
+> I think you will find battles get a little more difficult from here on out.
+> Y'know I keep hearing my battle style is very similar to someone.
+> Why don't you battle me and see for yourself.
+[MTB_Area_3,13] # Post-Battle
+/speaker Akane
+> You are now officialy in the second quarter of the Mt.Battle challenge. Congratulations!
+> Good luck beating [B]Flemming[/], the Area Leader here.
+> He's the headmaster at the [B]Iphondria Trainer School[/].
+> He's got a substitute now that the challenge is running though.
+> [B]Arceus[/] knows how many times I caught him eating breakfast during battle lessons.
+> [B]Tiffany[/] would join in too as they watched us train.
+/if !$game_self_switches[[$game_map.map_id,@event_id,"B"]]
+    > Hmmm...You can have this
+    /eval Kernel.pbReceiveItem(:METRONOME,1)
+    /eval $game_self_switches[[$game_map.map_id,@event_id,"B"]]=true
+/end
+[MTB_Area_3,14] # Fluff
+/speaker Akane
+> Nobody tells me who I remind them of though.
+> It's quite frustrating really.
+
+# ZONE 26
+[MTB_Area_3,15] # Pre-Battle
+/speaker Lee
+> Impressive that you beat both of my li'l bros [B]Fred[/] and [B]Frank[/].
+> Y'know the O so merry men in Zones [R]22[/] and [R]23[/].
+> I really wanna help'em with their Joke Shop idea. I mean it sounds so awesome.
+> Was [B]Fred[/] that came up with it, genius really. I'm honestly a little jelly, the good kind mind.
+> Miss [B]Akane[/] taught me lots of things. I was even allowed to have an extra Pokémon on my team since she only had two.
+> I feel PUMPED! Let's go!
+[MTB_Area_3,16] # Post-Battle
+/speaker Lee
+> I wasn't really good enough to get placed in [R]Zone 26[/]. 
+> The rules say that an Ace Trainer has to be in every zone ending with 5 so I was placed here.
+[MTB_Area_3,17] # Fluff
+/speaker Lee
+> Wow that was fun! I will give you a coupon when the joke shop is done!
+> Might still take a while though.
+> Y'know...I really wanna make a joke contraption shaped diagonally. I don't know why. I just wanna do it.
+/if !$game_self_switches[[$game_map.map_id,@event_id,"B"]] && (pbHasBagItem?(:SMOKEBALL) || pbHasBagItem?(:STCIKYBARB) || pbHasBagItem?(:TOXICORB) || pbHasBagItem?(:FLAMEORB)) && (pbHasSpecies?(:ZORUA) || pbHasSpecies?(:ZOROARK)) && $game_self_switches[[229,3,"B"]] && $game_self_switches[[229,4,"B"]] && pbCheckDonation > 0
+    > I "heard" from Lee that you donated to the Joke Shop idea and hey you have one of my favorite Pokémon in the party too!
+    > How did I hear from them? Hehe, that's a secret between us three brothers.
+    > I mean [B]Zorua[/] and [B]Zoroark[/] are the ultimate Joke Shop Pokémon, they can trick people by turning into them.
+    > Well, [B]Ditto[/] can do that too, but those beady eyes creep me out. Besides, [B]Zorua[/] is much cuter and [B]Zoroark[/] is just...awesome.
+    /eval $game_self_switches[[$game_map.map_id,@event_id,"B"]]=true
+    /if pbCheckDonation == 9999
+        > Words cannot say how glad I am for your donations. 
+        /if !pbHasBagItem?(:TM125) 
+            # Paradox Room
+            > Words cannot say how glad I am for your donations. 
+            > As thanks I am going to give you a super-secret prototype we have been working on.
+            /se "ItemGet"
+            /eval Kernel.pbReceiveItem(:TM125,1)
+            > Don't tell anybody about this though, it is a brand new move we developed.
+            > If our Joke Shop can get enough donations, we will sell it, but that's gonna take a while.
+        /else
+            /if $game_variables[JOKE_SHOP_STATE] >= 5
+                > Hmmm... we already gave you one though, Yeah, it's been selling like there is no tomorrow.
+                > I'll give you these instead. Enjoy!
+            /else
+                > H-hey, how did you get that!? 
+                > Did you use some wizardry or something to get a hold of our super-secret prototype TM?
+                > Ummm...you can have these instead I guess. 
+            /end
+            /eval Kernel.pbReceiveItem(:RARECANDY,3)
+        /end
+    /elsif pbCheckDonation <= 9998 && pbCheckDonation > 8000
+        > You literally gave us galleons of money to help us get started, so I'll give you something really cool in return. 
+        /eval Kernel.pbReceiveItem(:FLAMEORB,1)
+        > It's a really good item! Try giving it to your Pokémon. Especially one with the ability Guts.
+        > If our Joke Shop can get enough donations, we will be able to sell these. 
+    /elsif pbCheckDonation <= 8000 && pbCheckDonation > 5000
+        > You literally gave us galleons of money to help us get started, so I'll give you something really cool in return. 
+        /eval Kernel.pbReceiveItem(:TOXICORB,1)
+        > It's a really good item! Try giving it to your Pokémon. Especially one with the ability Guts.
+        > If our Joke Shop can get enough donations, we will be able to sell these. 
+    /elsif pbCheckDonation <= 5000 && pbCheckDonation > 2000
+        > I wanna give you something as thanks for helping us reach our dream.
+        /eval Kernel.pbReceiveItem(:STCIKYBARB,1)
+        > It's a really fun item! Try giving it to our Pokémon.
+        > If our Joke Shop can get enough donations, we will be able to sell these. 
+    /else
+        > I wanna give you something as thanks for helping us reach our dream.
+        /eval Kernel.pbReceiveItem(:SMOKEBALL,1)
+        > I know you already got one of those, but hey, one can never have too many contraptions right.
+        > If our Joke Shop can get enough donations, we will be able to sell these. 
+    /end
+    /eval $game_map.need_refresh = true
+/end 
+
+# ZONE 27
+[MTB_Area_3,18] # Pre-Battle
+/speaker Robert
+> I love working at a circus, it is really refreshing.
+> Though a little variation couldn't hurt so I applied for Mt.Battle.
+> I had no idea I would end up in a volcanic crater though. It's kinda cool actually!
+[MTB_Area_3,19] # Post-Battle
+/speaker Robert
+> Well that was fun!
+> Now on bigger and better things!
+[MTB_Area_3,20] # Fluff
+/speaker Robert
+> I once had a nightmare where I stuck in a sewer and got sucked into a drainage pipe.
+> Creepy huh?
+
+# ZONE 28
+[MTB_Area_3,21] # Pre-Battle
+/speaker Drinian
+> I love Flying-type Pokémon, the sight of them flying across the sea is so relieving.
+> I want to captain my own ship one day, but for now I am happy being here. It gives me more experience points.
+[MTB_Area_3,22] # Post-Battle
+/speaker Drinian
+> Hmmm... I need to improve my strategy.
+[MTB_Area_3,23] # Fluff
+/speaker Drinian
+> To sail the open seas and search for new lands, what could be better?
+#/if !$game_self_switches[[$game_map.map_id,@event_id,"B"]] && ($Trainer.hasSeen?(:ELENVAILE) && $Trainer.hasSeen?(:ELENDOME) && $Trainer.hasSeen?(:ELENIQUE) && $Trainer.hasSeen?(:ELENAURE))
+#/end
+
+# ZONE 29
+[MTB_Area_3,24] # Pre-Battle
+/speaker Melvin
+> Being a Pokémon Ranger takes you all sorts of places.
+> I am your final hurdle before Headmaster [B]Flemming[/]
+> I'll make sure to make myself, him and you proud. Come on!
+[MTB_Area_3,25] # Post-Battle
+/speaker Melvin
+> I used to be a student a [B]Flemming[/]'s before I became a ranger, so when he called and said they were one short of 27, of course I said yes.
+> He gave me the trainer skills I have today, and he is a pretty cool dude.
+> I hope you manage to go toe-to-toe with him.
+[MTB_Area_3,26] # Fluff
+/speaker Melivn
+> Good luck against headmaster [B]Flemming[/]
+
+# ZONE 30
+[MTB_Area_3,27] # Pre-Battle
+/speaker Flemming
+> Welcome to <outln>[R]Zone 30[/]</outln>
+> As you may or may not have gathered from my studentsWT...and [B]Melvin[/].WT I am [B]Flemming[/], The Area Leader here and your final hurdle in this cave
+> Beat me and you will be out of here on your way towards the mountain looming in the distance.
+> I don't really have a type speciality per se, I just try to use Pokémon that I like and that work well together.
+> That's what I try to pass on to [B]Tiffy[/] and [B]Sarah[/] and that they pass on to their students. Bless them.
+> However you chose to fight is right for you and I look forward to seeing how your style empowers you.
+> I warn you though. I am not going to hold back against you!
+[MTB_Area_3,28] # Post-Battle
+/speaker Flemming
+> Heh, I see now why you beat [B]Sarah[/] and [B]Tiffy[/] You got talent.
+> I took 26 of our most promising, WTand MelvinWT and signed us up for Mt.Battle.
+> Turned out to be one hell of a field trip.
+> You've earned your keep though, go on take it.
+/if !pbHasBagItem?(:TM130) 
+    /se ItemGet
+    # Burning Spikes
+    /eval Kernel.pbReceiveItem(PBItems::TM130,1) 
+/else
+    /eval Kernel.pbReceiveItem(PBItems::DATACHIP,1)
+/end
+> Good luck! Maybe I will meet you in battle again someday
+[MTB_Area_3,29] # Fluff
+/speaker Flemming
+> So, how did you find the first three Areas? Did [B]Sarah[/]'s [B]Antiqueon[/] use a billion different entry hazard at once?
+> No? Huh, She must have managed to calm him down then, great! Maybe I can let him and my [B]Growlithe[/] play together.
+> She got very senesitive paws see, and getting poked by spikes scattered by a certian some-mon doesn't help.
+> Anyway...
+> I am so proud of my students! I think I'll organize a little for all of them when we get back to school.
+> If you haven't been there, it is in [B]East Iphondria City[/]. You should come pay us a visit someday.
+/if $game_self_switches[[$game_map.map_id,@event_id,"A"]]
+    /eval $game_self_switches[[$game_map.map_id,@event_id,"A"]]=false
+    /eval $game_map.need_refresh = true 
+/end
+
+########## AREA 4 ##########
+# ZONE 40
+[MTB_Area_4,27] # Pre-Battle
+/speaker Selene
+[MTB_Area_4,28] # Post-Battle
+/speaker Selene
+/if !pbHasBagItem?(:TM110) 
+    /se ItemGet
+    # Celestial Dance
+    /eval Kernel.pbReceiveItem(PBItems::TM110,1) 
+/else
+    /eval Kernel.pbReceiveItem(PBItems::DATACHIP,1)
+/end
+[MTB_Area_4,29] # Fluff
+/speaker Selene
+/if $game_self_switches[[$game_map.map_id,@event_id,"A"]]
+    /eval $game_self_switches[[$game_map.map_id,@event_id,"A"]]=false
+    /eval $game_map.need_refresh = true 
+/end
+
+########## AREA 5 ##########
+# ZONE 50
+[MTB_Area_5,27] # Pre-Battle
+/speaker Ariana
+[MTB_Area_5,28] # Post-Battle
+/speaker Ariana
+/if !pbHasBagItem?(:TM120) 
+    /se ItemGet
+    # Lotus Dance
+    /eval Kernel.pbReceiveItem(PBItems::TM120,1) 
+/else
+    /eval Kernel.pbReceiveItem(PBItems::DATACHIP,1)
+/end
+[MTB_Area_5,29] # Fluff
+/speaker Ariana
+/if $game_self_switches[[$game_map.map_id,@event_id,"A"]]
+    /eval $game_self_switches[[$game_map.map_id,@event_id,"A"]]=false
+    /eval $game_map.need_refresh = true 
+/end
+
+########## AREA 6 ##########
+# ZONE 60
+[MTB_Area_6,27] # Pre-Battle
+/speaker Regis
+[MTB_Area_6,28] # Post-Battle
+/speaker Regis
+/if !pbHasBagItem?(:TM143) 
+    /se ItemGet
+    # Speed Steal
+    /eval Kernel.pbReceiveItem(PBItems::TM143,1) 
+/else
+    /eval Kernel.pbReceiveItem(PBItems::DATACHIP,2)
+/end
+[MTB_Area_6,29] # Fluff
+/speaker Regis
+/if $game_self_switches[[$game_map.map_id,@event_id,"A"]]
+    /eval $game_self_switches[[$game_map.map_id,@event_id,"A"]]=false
+    /eval $game_map.need_refresh = true 
+/end
+
+########## AREA 7 ##########
+# ZONE 70
+[MTB_Area_7,27] # Pre-Battle
+/speaker Stanford
+[MTB_Area_7,28] # Post-Battle
+/speaker Stanford
+/if !pbHasBagItem?(:TM108) 
+    /se ItemGet
+    # Black Hole
+    /eval Kernel.pbReceiveItem(PBItems::TM108,1) 
+/else
+    /eval Kernel.pbReceiveItem(PBItems::DATACHIP,2)
+/end
+[MTB_Area_7,29] # Fluff
+/speaker Stanford
+/if $game_self_switches[[$game_map.map_id,@event_id,"A"]]
+    /eval $game_self_switches[[$game_map.map_id,@event_id,"A"]]=false
+    /eval $game_map.need_refresh = true 
+/end
+
+########## AREA 8 ##########
+# ZONE 80
+[MTB_Area_8,27] # Pre-Battle
+/speaker Aurora
+[MTB_Area_8,28] # Post-Battle
+/speaker Aurora
+/if !pbHasBagItem?(:TM104) 
+    /se ItemGet
+    # Aurora Terrain
+    /eval Kernel.pbReceiveItem(PBItems::TM104,1) 
+/else
+    /eval Kernel.pbReceiveItem(PBItems::DATACHIP,2)
+/end
+[MTB_Area_8,29] # Fluff
+/speaker Aurora
+/if $game_self_switches[[$game_map.map_id,@event_id,"A"]]
+    /eval $game_self_switches[[$game_map.map_id,@event_id,"A"]]=false
+    /eval $game_map.need_refresh = true 
+/end
+
+########## AREA 9 ##########
+# ZONE 90
+[MTB_Area_9,27] # Pre-Battle
+/speaker Leonid
+[MTB_Area_9,28] # Post-Battle
+/speaker Leonid
+/if !pbHasBagItem?(:TM104) 
+    /se ItemGet
+    # Aurora Terrain
+    /eval Kernel.pbReceiveItem(PBItems::TM104,1) 
+/else
+    /eval Kernel.pbReceiveItem(PBItems::DATACHIP,3)
+/end
+[MTB_Area_9,29] # Fluff
+/speaker Leonid
+/if $game_self_switches[[$game_map.map_id,@event_id,"A"]]
+    /eval $game_self_switches[[$game_map.map_id,@event_id,"A"]]=false
+    /eval $game_map.need_refresh = true 
+/end
+
+########## AREA 10 ##########
+# ZONE 100
+[MTB_Area_10,27] # Pre-Battle
+/speaker Zeathus
+[MTB_Area_10,28] # Post-Battle
+/speaker Zeathus
+/if !pbHasBagItem?(:SHINKO) 
+    /eval Kernel.pbReceiveItem(PBItems::SHINKO,1) 
+/else
+    /eval Kernel.pbReceiveItem(PBItems::DATACHIP,5)
+/end
+[MTB_Area_10,29] # Fluff
+/speaker Zeathus
+/if $game_self_switches[[$game_map.map_id,@event_id,"A"]]
+    /eval $game_self_switches[[$game_map.map_id,@event_id,"A"]]=false
+    /eval $game_map.need_refresh = true 
+/end
+
+########## EXTRA ##########
+# ZONE ???
+[MTB_Secret,0] # Pre-Battle
+/speaker Asako
+/hidename 1
+[MTB_Secret,1] # Post-Battle
+/speaker Asako
+/hidename 1

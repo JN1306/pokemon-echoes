@@ -1,0 +1,268 @@
+############ IPHONDRIA CITY PROLOGUE CUTSCENE ###########
+[PROLOGUE,0]
+/fade sepia 20
+
+[PROLOGUE,1]
+/event set Thief 3
+/event set Eevee 14
+
+/speaker Policeman
+/hidename 1
+> Stop, in the name of the law!
+
+/event Thief turn down
+/event Eevee turn down
+
+/speaker Man
+> Damnit!
+
+/cry EEVEE 80 80
+/speaker Eevee
+/expression sad
+> ee-vui
+
+[PROLOGUE,2]
+/event set Man 3
+/event set Eevee 14
+/event set Police1 16
+/event set Lawrence 21
+/event set Police2 57 
+
+/speaker Policeman
+> We order you to stop at once!
+
+/speaker Man
+> You've got no right!
+
+
+/speaker Policeman
+> ThatWT Eevee is WTnot WTyours.
+> It should be obvious to you that Pokémon theft is illegal.
+
+/speaker Man
+> Eevee came with me willingly. How many times do I have to tell you!?
+
+/cry EEVEE 80 80
+/speaker Eevee
+/expression sad
+> veee...
+
+
+/speaker Policeman
+> Can it! We've got plenty of evidence against you.
+> You've got some nerve, fleeing here of all places.
+> Never mind breaking into--
+
+/speaker Man
+> I NEVER BROKE IN ANYWHERE!
+
+/speaker Policeman
+> Why you...!
+
+/speaker Lawrence
+/hidename 1
+> Quiet down please...
+
+/event Police1 exclaim
+/event Police2 exclaim
+/event Police1 turn down
+/event Police2 turn down
+/speaker Policeman
+> Chief [B]Lawrence[/]...
+
+[PROLOGUE,3]
+/event set Man 3
+/event set Eevee 14
+/event set Police1 16
+/event set Lawrence 21
+/event set Police2 57
+ 
+/speaker Lawrence
+> While I appreciate your dedication to your work. You are going about this a little harshly no?
+
+/speaker Policeman
+> But Chief...
+
+/speaker Lawrence
+> At least give the man a chance to explain himself...WT in a calmWT and collected manner.
+
+/speaker Policeman
+> The evidence clearly suggests...
+
+/speaker Lawrence
+> I amWT perfectlyWT awareWT of the evidence constable.
+> Hurry back to the station and let me handle this.
+
+/speaker Policeman
+> .WT.WT.
+
+/speaker Lawrence
+> Now!
+
+/speaker Policeman
+> Y-Yes Chief...
+
+[PROLOGUE,4] 
+/event set Man 3
+/event set Eevee 14
+/event set Police1 16
+/event set Lawrence 21
+/event set Police2 57
+ 
+/speaker Lawrence
+> Now..
+> Do you have anything you wish to say?
+
+/speaker Man
+> I already told those buffoons of yours. I didn't steal Eevee from anyone or anywhere.
+> I happened across their den one day and they just...WTwent with me, that's all there is to it!
+
+/speaker Lawrence
+> Hmmm...
+> That is no ordinary Eevee though, judging by their fur colors.
+> If I recall correctly, an Eevee that fits the description of this one recently--
+
+/speaker Man
+> So they escaped and I happened across them sometime after that!
+> I've been trying to find their trainer, if they have one. That ain't illegal as far as I know!
+> They've been a real good friend actually. I don'tWT have any Pokémon of my own.
+/cry EEVEE
+/speaker Eevee
+/expression gentle
+> Vui!
+/event Eevee turn left
+/event Man turn right
+/speaker Man
+> Aww... thanks little fella.
+
+/speaker Eevee
+/expression gentle
+> Eee-vui
+/event Eevee turn down
+/event Man turn down
+
+/speaker Lawrence
+> Hmmm....I suppose not...
+
+/speaker Man
+> Then why the chase!? It's been hell on my nerves.
+
+/speaker Lawrence
+> I'm quite the sceptic.
+> Add to that the fact that you ran from my, O so dilligent, constables for so long ...
+> It does lessen your credibilty quite a bit.
+> Wouldn't you agree?
+
+/speaker Man
+> I don't want to be jailed now do I !?
+> Sheesh, I help a Pokémon and this is the thanks I get.
+/speaker Eevee
+/expression sad
+> vuui..
+
+/speaker Lawrence
+> I must admit I find your story hard to believe after your escapades.
+
+/speaker Man
+> I am telling the truth damnit!
+> I swear I did not not steal this Eevee.
+
+
+/speaker Lawrence
+> .WT.WT.
+> Will you at least come with me to the station for an official statement?
+
+/speaker Man
+> I.WT.WT.
+
+/event Eevee turn left
+/cry EEVEE 80 80
+/speaker Eevee
+/expression scared
+> EE-VUVUI!!
+
+[PROLOGUE,5] 
+/event set Man 3
+/event set Eevee 14
+/event set Lawrence 21
+
+/speaker Lawrence
+> Are you alright!?
+
+/speaker Man
+> h-help me!!!
+
+/eval pbFadeEvent(3,255,0,40)
+/event Man sprite pkmn201_28
+
+/speaker Lawrence
+> !!!
+/cry UNOWN 80 80
+/wait 12
+/eval pbFadeEvent(3,0,255,40)
+/wait 12
+/cry UNOWN 80 80
+
+[PROLOGUE,6] 
+/event set Man 3
+/event set Eevee 14
+/event set Lawrence 21
+/cry UNOWN 60 60
+/wait 12
+
+/speaker Lawrence
+> .WT.WT.
+/wait 6
+/event Lawrence move up
+/event Lawrence move up
+/wait 6
+/event Lawrence turn right
+> Are your alright?
+/event Eevee turn left
+/cry EEVEE 80 80
+/speaker Eevee
+/expression scared
+> v-eee...
+
+/speaker Lawrence
+> I know you're scared, but I won't hurt you. I promise.
+> .WT.WT.
+/speaker Eevee
+/expression sad
+> eevu?
+
+/speaker Lawrence
+> There there...
+> Did heWT take good care of you?
+/cry EEVEE 
+/speaker Eevee
+/expression gentle
+> Vui!
+
+/speaker Lawrence
+> Heh, that wagging tail tells me all I need to know.
+> .WT.WT.
+> *Sigh* being a policeman is a tiring job.
+/speaker Eevee
+/expression gentle
+> veee?
+
+/speaker Lawrence
+> Oh I'm alright...it'sWT just...
+> It's all quite heavy on me.
+
+/cry EEVEE 
+/speaker Eevee 70 100
+/expression gentle
+> Ee-vee!
+
+/speaker Lawrence
+> Well aren't you the sweetheart. Thank you!
+> .WT.WT.
+> Why don't you come with me to the station? You look like you could use a good drying up and some proper food.
+> Then I will take you to meet [P]someone[/]. She is kind and sweet, just like you.
+
+/cry EEVEE 
+/speaker Eevee
+/expression happy
+> VUI!

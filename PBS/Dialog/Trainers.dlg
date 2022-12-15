@@ -1,0 +1,194 @@
+# Class, Name, Location 
+
+# Youngster Adam (Fukuri Forest)
+[Trainer_Adam,0] # Pre-Battle
+/speaker Adam
+> Mommy finally let me go here and train. I will train by battling you.
+[Trainer_Adam,1] # Post-Battle
+/speaker Adam
+> Dad always told me I would be number 1!
+[Trainer_Adam,2] # Fluff
+/speaker Adam
+> I will train hard to be the best like no one ever was.
+> ...
+> Why does that sound so familiar?
+
+
+# Lass Eve (Fukuri Forest)
+[Trainer_Eve,0] # Pre-Battle
+/speaker Eve
+> I like listening to the sounds of the river. I like battling more though.
+[Trainer_Eve,1] # Post-Battle
+/speaker Eve
+> I saw a very old man come into Fukuri Town a while ago. He was taking to a strange man.
+[Trainer_Eve,2] # Fluff
+/speaker Eve
+> Fukuri Town is really close. That's why mom let's me go here alone.
+
+# Bug Catcher Tom (Fukuri Forest)
+[Trainer_Tom,0] # Pre-Battle
+/speaker Tom
+> My dad travels a lot and he caught Bug Pokémon for me from all over the world. I want to battle you with them.
+[Trainer_Tom,1] # Post-Battle
+/speaker Tom
+/if pbDifficulty==3
+    > I liked battling you alot. You can have this.
+/else
+    > I liked battling you alot. You can have these.
+/end
+/eval Kernel.pbReceiveItem(:NETBALL,[(3-pbDifficulty),1].max)
+/if pbDifficulty==3
+    > Daddy gave me many of then, but I had a spare so you can have it.
+/else
+    > Daddy gave me many of then, but I had spares so you can have them.
+/end
+[Trainer_Tom,2] # Fluff
+/speaker Tom
+> I wonder how many bug Pokémon there are in the world, do you know?
+
+# Fisherman Zacharias (Fukuri Forest)
+[Trainer_Zacharias,0] # Pre-Battle
+/speaker Zacharias
+> This is such a quiet river, I'm sure water Pokémon thrive here.
+> Let me show you my newest catches!
+[Trainer_Zacharias,1] # Post-Battle
+/speaker Zacharias
+> My poor [B]Wingull[/]... it can't have been easy for them getting a fishing hook through their wing.
+> Thankfully I managed to heal them and they stayed with me.
+[Trainer_Zacharias,2] # Fluff
+/speaker Zacharias
+> I saw a [B]Kingdra[/] once. It made love Water Pokémon even more
+
+# Beauty Violetta (Fukuri River)
+[Trainer_Violetta,0] # Pre-Battle
+/speaker Violetta
+> These flowers does wonders for my skin. My Pokémon get super peppy too!
+> Let me show you!
+
+[Trainer_Violetta,1] # Post-Battle
+/speaker Violetta
+> These flowers are super pretty! My Fomantis absolutely loves them.
+
+[Trainer_Violetta,2] # Fluff
+/speaker Violetta
+> I read somewhere that there are flowers like these that are red somewhere.
+> I wanna travel there someday, I bet it is a place with a lot of sun.
+
+
+# Painter Kode (Fukuri River - After defeating all other trainers on the route.)
+[Trainer_Kode,0] # Pre-Battle
+/speaker Kode
+> There! Commission painting done.
+> Oh! Hi there, did you want to battle me?
+> Well, I have the time now so why not?
+> Here I go!
+
+[Trainer_Kode,1] # Post-Battle
+/event set Kode 15
+/event set Kode_2 16
+/speaker Kode
+> That was a very fun time indeed!
+> Tell you what, I'm gonna give you something, I don't really need it anyway!
+/eval Kernel.pbReceiveItem(:DATACHIP,1)
+> Here you go!
+> ...
+> You probably want the item behind me too huh?
+> Who am I to stop you!
+/event Kode move right
+/wait 12
+/event Kode turn left
+/event Kode_2 switch A true
+/event Kode switch B true
+> Go ahead!
+
+[Trainer_Kode,2] # Fluff
+/speaker Kode
+> I think I'll travel the world and try to paint all the Ghost-Type Pokémon. Yeah, that sounds like a worthwhile thing to do.
+> Gotta do something in between those commissions after all.
+> ...
+> Or maybe I should become a teacher.
+> Hmmm... decisions decisions.
+
+# Zamarand first encounter (optional - Chapter 2)
+[Trainer_Zamarand,0]
+/event set Zamarand 2
+/event set Tyco 8
+
+/speaker Zamarand
+/hidename 1
+> Hey! no talking!
+> Unless you comply I'll have to use force!
+
+/event Zamarand exclaim
+/event Zamarand turn down
+
+/speaker Zamarand
+/hidename 1
+> Who are you!?
+> ...
+> You're the kid [B]Alcar[/] mentioned.
+> Why are you here, to "rescue" these people?
+> If you really want to, You'll have to get through me.
+
+/speaker PLAYER
+> ... ... ...?
+
+/speaker Zamarand
+/hidename 1
+> A mask? What on earth are you talking about!?
+
+/event Tyco exclaim
+/speaker Tyco
+> But you did wear--
+
+/event Zamarand exclaim
+/event Zamarand turn up
+
+/speaker Zamarand
+/hidename 1
+> I told you to stay quiet!!!
+
+/speaker Tyco
+> ...
+/event Zamarand move down
+/wait 12
+/event Zamarand move down
+
+/speaker Zamarand
+/hidename 1
+> Listen, it's none of your business if I wore a mask or not.
+/hidename 0
+> I am [B]Zamarand[/] and if you want to "Rescue" those people. I'll stop you in your tracks.
+> Such are the ordersWTWT "Master" [B]Alcar[/] gave me.
+
+[Trainer_Zamarand,1]
+/speaker Zamarand
+/if !$game_self_switches[[$game_map.map_id,@event_id,"B"]]
+    # Win
+    > [B]Alcar[/] will have trouble with you. 
+/else
+    # Lose
+    > ...I don't really see why [B]Alcar[/] would be interested in you. 
+/end
+> I never asked to be prison guard for these men. I have my own goals to reach
+> I thought joining the Aeonites would lead me closer to them, but I am having serious doubts.
+
+/speaker PLAYER
+> ..--
+
+/speaker Zamarand
+> Don't ask about the mask!
+> Whether I stay or leave. These men will be kept here as long as [B]Alcar[/] needs them to regardless.
+> I am not much for following orders anyway.
+
+[Trainer_Zamarand,2]
+/speaker Zamarand
+> Beneath the frozen surface...
+> Under the ice of the lake that cannot be seen on top of the mountain that cannot be found...
+> Beyond the [R]Nine Gates[/] where all repeats and repeats again.
+> There lies my goal. The road to [B]LaGlace[/], the road...WT to paradise.
+
+/speaker PLAYER
+> .WT.WT.
+
+

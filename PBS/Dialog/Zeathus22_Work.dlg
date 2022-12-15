@@ -1,0 +1,2613 @@
+# Anything marked with <> are meant to be replaced with something
+
+################### Quest 1 - Shade #########################
+# Locations:
+# Five-Year Hill - Small hill with a single tree (or one very noticeable one among other tress) can be placed whereever you want :)
+
+
+# In a tall building in any city.
+# When entering a certain floor with no other people. A man will walk slowly towards the player and a woman will rush up to the man.
+[Z-22,0]
+/event set Cincero ??
+/speaker Cincero
+/hidename 1
+> ...ugh....
+/event Cincero move <towards player>
+> ...uwaahh....
+> shade...WT find...shade...
+> ...five...year...hill...
+/event Cincero move <towards player>
+> ...young man...do you know...find...shade?
+
+/speaker Assistant
+> Director [B]Cincero[/]!!!
+# Assistant runs over to the man
+
+[Z-22,1]
+/event Cincero turn <Towards Assistant>
+/speaker Cincero
+> ...ch-[B]Chevy[/]...
+
+/speaker Chevy
+> Director! Please, you need to rest. You are not well. 
+
+/speaker Cincero
+> .WT.WT. I ...
+/event Cincero exclaim
+> !!!
+
+/fade black
+/speaker Chevy
+> Director !!!
+> You, stay there. I will get back to you in a second.
+/wait 20
+/se "Entering Door"
+/wait 20
+/se "Exit Door"
+/wait 20
+/fade normal
+/speaker Chevy
+> I'm...WT sorry you had to see that.
+
+/speaker PLAYER
+> ...!?
+
+/speaker Chevy
+> I would rather not speak about it here.
+> Please, could you come to the [R]Director's office[/]? We can discuss it there.
+> It's <Directions to the office>.
+
+/event Chevy exclaim
+> Oh! I am [B]Chevy[/] by the way. I'll uh... see you in the Director's office.
+#Discover Quest: "Shade"
+# At the Director's Office
+    # Director is sitting behind a desk with Chevy standing beside it, Chevy approaches the player.
+[Z-22,2]
+/speaker Chevy
+> I'm glad to see you.
+> As you may or may not have guessed I didn't want to uh... cause panic among our employees.
+> The thing is...
+
+# Director and Chevy turn towards each other
+/speaker Cincero
+> It's...ok [B]Chevy[/] you canWT let me tell him, I at least owe him an explanation.
+> ...as good one as I can give anyway.
+
+/speaker Chevy
+> But director...
+
+/speaker Cincero
+> No protest please. 
+
+/speaker Chevy
+> ...
+
+# Director and Chevy turn towards player
+/speaker Cincero
+> As you may or may not know, I am director [B]Cincero[/] of [B]Femal Pharmaseutics[/] specializing in...
+
+/speaker Chevy
+> Director. A business meeting this is not.
+
+/speaker Cincero
+> right...
+> ...
+> *ahem*
+> I.. I've been havingWT...WTfits like the one you saw for a while now. I will mumble about "shade" and "five-year hill"
+> Though wandering about the halls like a zombie is a new one.
+> Thank Xerneas that [B]Chevy[/] was there to help.
+> If this got out to the public, people would never buy our products again.
+
+/speaker Chevy
+> Director, perhaps the situation at hand is more important than the company's reputation?
+
+/speaker Cincero
+> right... thank you [B]Chevy[/]
+> ...
+> *ahem*
+> It started ten years ago, when I was a mere university graduate wishing to get up in the world.
+> I had a passion for healing Pokémon and people and wanted to develop means to do so.
+> I searched tirelessly for knowledge and one day I met a kindred spirit in [B]Femal[/].
+/fade black 
+> We had been travelled together for about five years or so, when one day...
+
+# Cutscene part I - Banter
+    # In the living room of a large house Cincero is sitting in a living room with another man walking back and forth.
+    # Cincero is lookig up at the man. 
+[Z-22,3]
+/fade sepia 
+/wait 20
+/event Cincero exclaim
+/speaker Cincero
+> Are you serious!?
+
+# Femal turns towards Cincero.
+/speaker Femal
+> Sure I am! [R]Racine des Rois[/] could improve our medicine dramatically.
+
+/speaker Cincero
+> [B]Femal[/] we ain't in those stories of yours anymore, could you at least call it by its proper name?
+
+/speaker Femal
+> Hey! that's kinda mean, but alright, [R]Kingsroot[/] then.
+
+/speaker Cincero
+> *sigh* I've told you over and over again living in the past isn't good for you.
+
+/speaker Femal
+> *sigh* my left hiney, I have told YOU over and over again ignoring the past isn't good either.
+
+/speaker Cincero
+> .WT.WT. alright how about we meet in the middle, you look a little more at the now and I'll look at the past every now the then.
+> ...
+> Probably.
+
+/speaker Femal
+> Hah! Probably my right hiney, you wouldn't look at the past if it came up to you and used Hyper Beam on your face.
+
+/speaker Cincero
+> Then I DEFINETELY wouldn't do it. Do you know how much Hyper Beam hurts!?
+
+/speaker Femal
+> Well yes, remember when your [B]Golem[/] missed my [B]Tauros[/] and hit me instead?
+
+/speaker Cincero
+> ...You're never gonna let me live that down are you?
+
+/speaker Femal
+> Only if you stop telling me that teaching a Tauros Hyper Beam is... What do you call it again?
+
+/speaker Cincero
+> Old School.
+
+/speaker Femal
+> Will you stop telling me that?
+
+/speaker Cincero
+> Nope.
+
+/speaker Femal
+> That you'll never live it down. Simple as that.
+
+/speaker Cincero
+> Hehe...
+> ...
+> hahaha!
+
+/speaker Femal
+> What are you laughing at!?
+
+/speaker Cincero
+> You gotta admit, it's kind of funny, us quarreling like an old married couple.
+
+/speaker Femal
+> Now that you mention it, yeah that is pretty funny!
+> You ARE kind of an old man though.
+
+/speaker Cincero
+> Two weeks isn't THAT much!
+> ...
+> Alright then... tell me about [B]Kingsroot[/].
+
+/speaker Femal
+> Alright, but I'm gonna make a meal worthy of it first!
+/fade black 20
+
+# Cutscene part II - Kingsroot
+    # Two dinner plates and drinks are now visible.
+[Z-22,4]
+/fade sepia 20
+/wait 20
+/speaker Femal
+> [R]Racine des Rois[/] or [R]Kingsroot[/] is the root of a, now extinct, plant growing far to the <Direction of your choice>
+> Its healing properties was so potent that those who discovered built a grand fortress whose sole purpose was to protect its secret from being stolen.
+> [R]Kingsroot[/] became so revered that those worthy of protecting it were known as the [B]Chevaliers[/] or simply [B]Knights[/] in our language.
+> ...
+> "Frost and Shade in hidden glade."
+> "Where old root stand is sacred land."
+> "Beasts and King, together they sing."
+> "Rejoice! See Kingsroot born by regal hand."
+> This is a poem passed down among the [B]Chevalier[/]s and gave the root its name. 
+> I happened to come across it in one of those, as you put it, "old stories of mine"
+
+/speaker Cincero
+> Look...I never told you that the stories were useless.
+
+/speaker Femal
+> Hey! You don't need to defend yourself. We've known each other for [G]five years[/]. I kinda know how you work [B]Cincero[/].
+> You just put a little less stock in them than I do. Simple as that.
+
+/speaker Cincero
+> I suppose...
+> ...
+> So you really think [R]Kingsroot[/] still exists then.
+
+/speaker Femal
+> Yeah! I do, sure it's not spread anywhere beyond the old [R]Chevalier[/] fortress, but I think it might still be there.
+> There was one [R]Jardin[/] that only the leader and the highest members of the [B]Chevalier[/] were allowed to enter.
+
+/speaker Cincero
+> [B]Femal[/] english please...
+
+/speaker Femal
+> Oh...uh [R]Jardins[/] is what they called their gardens. They had a lot of them in their hayday.
+> The stories tell that the Pokémon that blessed the Kingsroot and their companions swore fealty to the [B]Chevailers[/] and blessed their garden so that it could grow there.
+> Their sole duty was to protect the fortress and help Kingsroot grow so that it could heal the ailing people of the villages nearby.
+
+/speaker Cincero
+> ...
+> That poem, it mention "beasts" plural, who was the king then?
+
+/speaker Femal
+> The Chevalier leader I suppose. I could easily see them being granted that title.
+
+/speaker Cincero
+> There must have been more than one Pokémon too.
+> ...
+> So you believe this garden still exists and that [R]Kingsroot[/] still grows there after all this time?
+
+/speaker Femal
+> I do.
+
+/speaker Cincero
+> I find that hard to believe.
+
+/speaker Femal
+> Why?
+
+/speaker Cincero
+> First off, that must have been centuries ago, The Pokémon and all the knights must be long gone by now.
+
+/speaker Femal
+> Yeah but...
+
+/speaker Cincero
+> .WT.WT.
+> Always the stupidly hopeful eh?
+
+/speaker Femal
+> .WT.WT.
+
+/speaker Cincero
+> Listen, I am not saying the garden isn't there anymore...or at least its ruins, but if that Pokémon's power is what made [R]Kingsroot[/] grow then it simply wouldn't be around anymore.
+> right?
+
+/speaker Femal
+> ...
+
+/speaker Cincero
+> Did you find proof to the contrary in one of the stories?
+
+/speaker Femal
+> ...
+> You wouldn't believe me if I told you.
+
+/speaker Cincero
+> Hey, don't be like that.
+
+/event Femal exclaim
+/speaker Femal
+> Why shouldn't be like this [B]Cincero[/] Why shouldn't I !?
+
+/speaker Cincero
+> I...
+
+/speaker Femal
+> You keep mocking old stories and my interests in them!
+
+/speaker Cincero
+> ...
+
+/speaker Femal
+> Oh I know you don't mean to do it, but it happens anyway, don't think I can't hear it in you choice of words or your tone.
+> You think "my stories" are rubbish, nothing more than old fantasies to keep children, or childish people, entertained.
+
+/speaker Cincero
+> That's not true [B]Femal[/] I...
+
+/speaker Femal
+> They are so much more than that and if you would only read some instead of being so damn "in-the-momnent" all the time you would see that.
+> On top of that, you have the SHEER GALL to tell me to "don't be like that" when I finally let my feelings loose and even go as far as calling me "Stupidly hopeful".
+> so tell me again [B]Cincero[/]...
+!> WHY SHOULDN'T I !?
+
+/speaker Cincero
+> [B]Femal[/] I...
+
+/speaker Femal
+> Can it [B]Cincero[/] I ain't interested.
+> I am going to <Snowy Area> tomorrow whether you like it or not.
+> You can come if you like because I still think [R]Kingsroot[/] can help our...
+> YOUR research a lot.
+> I'm gonna give my hope a shot and if that's being a fool, then call me a fool.
+
+/speaker Cincero
+> ...
+
+/fade black
+/wait 20
+/speaker Cincero
+/hidename 2 
+> That night...I had the nightmare for the first time.
+> The nightmare I see over and over and over again each time I have one of these fits.
+/wait 40
+/fade sepia 
+# Transfer to Snowy Area and set weather to heavy snow / blizzard
+
+# Cutscene part III
+[Z-22,5]
+/speaker Cincero 
+/hidename 2
+> I am walking aimlessly in the middle of a snowy no-man's land...
+# Cincero moves about randomly for a bit more
+
+[Z-22,6]
+/speaker Cincero 
+!> FEMAL!
+> I'm sorry!
+> I didn't mean to...
+> I wanted...
+> I...WT wanted...
+
+# A silhouette appears in front of him
+/spaker lady
+/hidename 1
+> Pas ton temps!
+
+/speaker Cincero 
+> W-who are you?
+
+/spaker lady
+/hidename 1
+> PasWT tonWT temps!
+> ...
+> You did this, you made it like this!
+> It shall haunt you till you lie in the grave.
+# Heavy snow starts blowing
+/se <Wind-Related SE>
+/wait 20
+> Seek ...
+> ...beast of shade...[B]Five-Year hill[/]
+> PasWT tonWT temps!
+/fade black
+/wait 20
+# Transfer to Cincero's office
+/fade normal 20
+
+# Post Cutscene
+[Z-22,7]
+/speaker Cincero 
+> There is more to it, but that's hoe the nightmare usually goes.
+> It's downright frightening, imagine seeing it before your eyes when you're wide awake and wandering about.
+> Well...you saw the result.
+
+/speaker Cincero 
+> I need to try and visit [B]Five-Year Hill[/] again
+
+/event Chevy exclaim
+/event Chevy turn <Towards Cincero>
+/speaker Chevy
+> Director please reconsider! Each time you go there--
+
+/speaker Cincero 
+> I get worse, yes I know [B]Chevy[/] and I thank you for your consideration, but I gotta give it just one more shot.
+
+/speaker Chevy
+> Are you insane Director !?
+
+/speaker Cincero 
+> Well doing the same thing over and over expecting different results is the very definition of insanity so, make your judgment.
+
+/speaker Chevy
+> PLEASE don't do something so foolish, what makes you think things are going to be different this time?
+
+/speaker Cincero 
+> I don't know, I really don't. I have NO IDEA [B]Chevy[/]!
+> All I know is, I have to try until I succeed or...go insane trying.
+
+/speaker Chevy
+> ...
+> You're angry.
+> You're angry with yourself because of what happened to [B]Femal[/]. You feel you failed him and you wish to somehow make it up to him by doing what that...[G]lady[/] said.
+> You don't feel like you can turn your back on it.
+
+
+/speaker Cincero 
+!> MAYBE I AM!
+> If only I'd been more considerate, if only I'd taken more of his thoughts and feelings into account.
+> Then maybe, just maybe... 
+
+/speaker Chevy
+> Director I...
+> ...
+> You WT You went with him to those ruins right?
+
+/speaker Cincero 
+> Don't remind me...
+
+/speaker Chevy
+> Please [B]Cincero[/]. I know how you feel and under normal circumstances I'd tell you to go, but...
+> I can't bear it to see you get worse and worse not only mentally, but physically too. You need to deal with this somehow.
+
+/speaker Cincero 
+> That's exactly why I need to go!
+
+/speaker Chevy
+> Some OTHER way.
+> Get in a support group, get help from a therapist or an Auramancer even.
+> Anything other than going there and risking your well-being, your LIFE.
+
+/speaker Cincero 
+> This is the ONLY way [B]Chevy[/].
+> ...
+> But alright, if it doesn't work this time. I will go see an someone, alright?
+
+/speaker Chevy
+> At least, bring PLAYER along this time.
+
+/event Player exclaim
+/event Cincero exclaim
+
+/speaker PLAYER
+> ...!
+
+/speaker Cincero
+> Why mix him in with this all of a sudden!?
+
+/speaker Chevy
+> Someone's gotta come along, and I need to run the company in your stead and PLAYER here is the closest one.
+/event Chevy turn/move <Towards Player>
+
+/speaker Chevy
+> Please do it, I will pay you out of my own pocket if you do.
+
+/speaker PLAYER
+> .WT.WT.
+
+/speaker Chevy
+> Thank you.
+
+/speaker Cincero
+> Thank you very much for helping me with this.
+> I will meet you by the <big/biggest> tree on [B]Five-Year Hill[/] right by <Location>
+
+# Cincero exits
+
+
+# At Five-Year Hill
+    # Cincero is standing at the bottom of a staircase (of 3+ steps) leading up to the (noticeable) tree.
+[Z-22,8]
+/speaker Cincero
+> H-hi PLAYER I'm glad you could c-come.
+
+/speaker PLAYER
+> ...!?
+
+/speaker Cincero
+> I'm a-alright, t-this always happens when I get t-too c-close
+>...
+!> ACHOO!
+> ...
+> ...and now I got a cold on top of it too, great!
+> Listen, no matter what happens to me as we walk, you MUST help me up to that tree.
+> If for no other reason, I want to tell it my feelings, those I have a hard time telling other humans about, unless they force me too.
+
+/speaker PLAYER
+> .WT.WT.
+
+/speaker Cincero
+> Thank you.
+
+# Stair event I
+# Screen flashes black / dark purple
+[Z-22,9]
+/speaker Cincero
+> N-no not this time. I will m-make it...
+
+# Stair event II
+# Screen flashes black / dark purple
+[Z-22,10]
+/cry SPECTRIER
+/speaker Cincero
+> D-damn it...I won't let you make i-it worse
+
+# Top of the Stairs
+# Screen flashes black / dark purple
+# A silhouette of Spectrier appears.
+[Z-22,10]
+/cry SPECTRIER
+/speaker Cincero
+> Aaah Get a-away from m-me! I don't care how many times I have to see that nightmare! This time...
+!> I SHALL PASS!
+
+/cry SPECTRIER
+# Screen flashes black / dark purple, the sound of wind plays
+
+/speaker Cincero
+> Aaah!
+# Cincero gets blown down the stairs and the shadow approaches player
+
+#### BATTLE: Spectrier LV ?? (Name: ???) ####
+# Silhouette sprite
+# Spectrier is uncatchable.
+# Should PLAYER lose, spectrier will be waiting on top of the stairs for a re-match.
+
+
+# Post-Battle
+# The silhouetted Spectrier does NOT disappear.
+# Cincero moves up to player
+[Z-22,11]
+/speaker Cincero
+> You beat it, you actually beat it!
+> ...
+
+/speaker Leara
+/hidename 1
+> Calm thyself [G]Shadeprince[/] it is time to let him pass at last.
+
+/event switch Leara <X> true/false
+/eval pbFadeEvent(<Leara>,0,128,20)
+
+# Leara Appears
+/event Cicero exclaim
+> I, [G]Leara[/], maiden of things live and things that pass, ask thee humbly [B]Spectrier[/], let thine duty fare, now that a cycle has passed that befits this humble hill...
+/hidename 0
+> I ask thee, the pleas of thine [G]king[/] resonating with me. Let [B]Cincero of the here-and-now[/] pass and ease his heart.
+> Moreover I ask that we both see him take these steps on the journey he must take.
+> What you say you [G]Prince of Shade[/], willst thou cast away thine cloak of shadow and be an ally in his sorrow?
+
+/eval pbFadeEvent(<XX>,255,0,20)
+/wait 20
+/event Spectrier switch <X> false
+/event Spectrier switch <Y> true
+/wait 20
+/eval pbFadeEvent(<XX>,0,255,20)
+# Spectrier looks normal and moves aside
+/cry SPECTRIER
+# Cicero moves towards the tree and turns towards Leara
+
+[Z-22,12]
+/speaker Cincero
+> [G]Leara[/] I...
+
+/speaker Leara
+> Speak not to me, let Five-Year Hill hear your innermost feelings and speak without fear for both I and the [G]Prince of shade[/] are with you.
+> Such is the gratitude you can gift to me.
+/event Cincero turn <Toward tree>
+
+/speaker Leara
+> [B]Cincero of the here-and-now[/] I bid thee, speak!
+
+/speaker Cincero
+> I...WT
+> I regret being angry and careless with [B]Femal[/] that day.
+> I wish I could have enjoyed that last night with him before...
+> ...
+/wait 20
+/cry SPECTRIER 100 80
+/wait 20
+> I hope, beyond hope, that he is out there somewhere...
+> ...even if... he still hates me for how I acted that night.
+> I wish... I had seen clearer, that I had seen the world through his eyes, that I could...WT be more like him.
+> Able to hope disregarding logic and probability.
+> Able to appreciate the wonders of the past with such child-like joy.
+/wait 20
+/cry SPECTRIER
+/wait 20
+> I wish I wasn't so bound to charts, numbers and minutia.
+> I wish [B]Femal[/] was here... 
+> I...
+> I...
+
+# Spectrier moves next to Cincero
+[Z-22,13]
+/cry SPECTRIER
+/speaker Leara
+> Cry if thou needst to. Let it all out ,and feel no shame, for it is the most natural of things.
+
+/speaker Cincero
+> .WT.WT.
+> .WT.WT.
+> ...
+
+/speaker Leara
+> Regrettably I cannot bestow upon thee the wisdom that comes from overcoming ones own shadows.
+> That is something you must acquire for yourself, though in my heart, I truly I possessed such power.
+
+/speaker Cincero
+> ...
+
+/speaker Leara
+> The [G]Prince of Shade[/] shall accompany you for a time, he shall be a shoulder to cry on, someone to be with you in silence when you feel others cannot understand your burden.
+> Such is the wishes of his [G]king[/] as they reasonate through me.
+> Although...
+> I would still encourage you to listen to the words of thine assistant.
+> Her concern for you is genuine.
+
+/speaker Cincero
+> IWT... thank you.
+
+/speaker Leara
+> I'm but a spirit, I know little of, or have forgotten, the mundane. 
+> Seeking those who understand how to deal with such matters is of vital importance.
+> ...
+> If I may make a wish.
+
+/speaker Cincero
+> Yes?
+
+/speaker Leara
+> Willst thou bring the [G]Prince of Shade[/] with you when you speak to such an individual?
+
+/event Cincero exclaim
+/wait 20
+/speaker Leara
+> From beyond the end of his last adventure and the start of his next one, his [G]king[/] wishes to learn more of the world as it is now.
+> As do I,for the sake of not only the [G]king[/] but also...myself.
+
+/speaker Cincero
+> I will.
+
+/speaker Leara
+> You have my deepest gratitude [B]Cincero of the here-and-now[/]
+> For now, I bid thee rest for a while, think of how [R]Kingsroot[/] can aid the sick and, when you are ready, continue your journey of reflection andWTWTWT[R]discovery[/]
+> Farewell brave and honest one, may light shine on you at the end of the journey.
+/eval pbFadeEvent(<Leara>,128,0,20)
+
+# Cincero moves over to the player
+[Z-22,14]
+/speaker Cincero
+> ...
+> I...think I'll take [G]Leara[/]'s advice and rest for a bit, I still feel under the weather.
+> Many thank yous for hearing me out after...that...
+> There are still things I want to know, but I'll let them be...for now...
+> Here's a little something as thanks, due to the nature of our research, we...have quite the surplus.
+/eval Kernel.pbReceiveItem(:REVIVALHERB,3)
+
+/speaker Cincero
+> You're always welcome at [B]Femal Pharmaseutics[/].
+> I'll see you later.
+
+# Cincero leaves the screen
+# When leaving the screen in any direction
+# Chevy is standing close to the tree with a semi-transparent (Opacity 128) Leara
+[Z-22,15]
+/fade black
+/wait 40
+/fade sepia
+/speaker Leara
+> [B]Chevy that-was[/]... I, with the [G]King[/]'s will resonating from me, will not advise you on which path thou must take when the time comes.
+> We advise only that you follow your heart...
+
+/speaker Chevy
+> .WT.WT.
+> I will [G]Lady Leara[/], I promise.
+
+/speaker Leara
+> Your words are wise...
+/wait 20
+> [G]Milady[/]
+/wait 20
+/eval pbFadeEvent(<Leara>,128,0,20)
+
+/speaker Chevy
+> .WT.WT.
+/fade black
+/wait 40
+/fade normal
+# Finish Quest : "Shadow"
+
+# Proposed Post-Quest changes
+    # A therapy session with Cincero and Spectrier can be walked in on somewhere.
+    # Chevy expresses pride that Cincero is seeing a therapist and surprise at Spectrier, with it being a creature of legend.
+    # A hidden Revival Herb can be found next to the tree on the hill.
+
+################### Quest 2 - Frost ###############################
+# Req: "Shadow" cleared, <Story progress>
+# New Location: Couroige Ruins
+    # A (large) ruin in the snow area looking like the remnants of on old castle.
+    # Imagine the area where Calyrex is encountered in the Crown Tundra.
+    # Ref: https://www.youtube.com/watch?v=wfE8O_A_a14   
+[Z-22,16]
+# When visitting the floor with "Femal Pharmaseutics" Cincero will approach player-
+/speaker Cincero
+> Ah! PLAYER, Good to see you!
+> I was just about to contact you actually.
+> Why don't you stop by my office in a bit for a cup of coffee with me and [B]Chevy[/].
+
+/speaker PLAYER
+> ...!
+
+/speaker Cincero
+> See you there then!
+
+# Discover Quest: "Frost"
+# At Cincero's Office.
+    # Chevy and Cincero is sitting by a table with two coffee cups. Spectrier standing besides them.
+    # There is an open book on the table.
+[Z-22,17]
+/speaker Cincero
+> [B]Chevy[/]...
+> I've been thinking and...I want to go and see these ruins that [B]Femal[/] spoke of for myself.
+> ... 
+> [B]Shade[/] is coming along of course, I think they want to return home too.
+> Y'knowWT...For being a litteral nightmare for years and, if I may be so bold, looking rather eerie, they've been a good help coping with things.
+> Or trying to anyway..
+
+/speaker Chevy
+> Are you really sure about this director?
+
+/speaker Cincero
+> ...
+> Look [B]Chevy[/]. I get that you are worried about me, I really do, but I wouldn't feel alright with myself If I didn't-
+> It is something I have to do for my own sake.
+> If for no other reason then...
+> Well...I told you what happened at [B]Five-Year Hill[/].
+
+/speaker Chevy
+> I get that, but first of all it is a cold and unhospitable place.
+> I mean the mountains around there are known for their blizzards and sometimes they carry down in the valley where the ruins are.
+
+/speaker Cincero
+> You surprise me [B]Chevy[/].
+
+/speaker Chevy
+> What? Why?
+
+/speaker Cincero
+> I thought you were terrible at geography.
+
+/event Chevy exclaim
+/speaker Chevy
+> What!? O-oh that...
+> Yeah I am, but...
+> umm...
+
+/speaker Cincero
+> Yes?
+
+/speaker Chevy
+> Well, I've been reading up on place for a while now.
+> I figured you would...want to go one day. So I wanted to know what you are getting yourself into.
+
+/speaker Cincero
+> How considerate of you [B]Chevy[/] I should give you a raise! 
+
+/speaker Chevy
+> M-my salary is more than sufficient director, there is no need t-to.
+
+/speaker Cincero
+> No need to be so formal!
+
+/cry SPECTRIER
+/event Spectrier turn <Towards Player>
+/event Chevy turn <Towards Player>
+/event Cincero turn <Towards Player>
+# Move player to the table.
+
+[Z-22,18]
+/speaker Cincero
+> Ah! There you are. Sorry you had to listen to us going on.
+> Anyway as you may have heard. I want to go to [R]Couroige Ruins[/].
+> Would you please give PLAYER a road description [B]Chevy[/].
+
+/speaker Chevy
+> R-right. First you travel to [R]<Snowy Area>[/] then go [R]<Direction>[/] from there to go [R]<direction>[/] until you reach [R]Couroige Valley[/].
+> The ruins are at the end of the valley.
+
+/speaker Cincero
+> There you have it. I will meet you there. 
+
+/event Chevy exclaim
+/speaker Chevy
+> You're leaving now!?
+
+/speaker Cincero
+> That's the idea.
+
+/speaker Chevy
+> I...
+
+/speaker Cincero
+> Something on your mind [B]Chevy[/]?
+
+/speaker Chevy
+> ...
+> N-no. It's nothing.
+
+/speaker Cincero
+> Are you sure about?
+
+/speaker Chevy
+> Y-yes.
+
+/speaker Cincero
+> If you say so.
+> I will meet you at/in [B]<Snowy Area>[/]
+# Cincero moves out of the room Spectrier follows but stops in front of Chevy and turns to her.
+[Z-22,19]
+/cry SPECTRIER
+/speaker Chevy
+> .WT.WT.
+# Spectrier leaves the room.
+
+# Just as player is leaving the room. Chevy moves down to PLAYER
+[Z-22,20]
+/speaker Chevy
+> PLAYER...
+> If [B]Cincero[/] tries to do anything reckless.
+> ...
+> Make sure he doesn't, OK?
+
+/speaker PLAYER
+> ...
+
+/speaker Chevy
+> Merci
+
+/speaker PLAYER
+> ...?
+
+/event Chevy exclaim
+/speaker Chevy
+> O-oh I mean thank you... Sorry, force of habit.
+
+# Interacting with the open book.
+[Z-22,21]
+/speaker PLAYER
+/hidename 2
+> History, Geography and Genealogy of the Couroige Kingdom
+> Chapter IX - Those who came after.
+?> Read on?
+/choice Yes
+    > The most notable of the descendants became known as the "Delciné" clan, taken form the words "De la Racine", meaning Those of the root.
+    > This connection can be seen in their clan symbol, resembling the Kingsroot, whose roots can be traced to the oath sworn by the [B]Chevaliers[/] to protect the sanctity of this plant.
+    > ...
+    > There is no time to read more.
+/cancelchoice No
+?/>
+
+# Somewhere in <Snowy Area> Cincero and Spectrier is waiting for PLAYER.
+[Z-22,22]
+/speaker Cincero
+> Well, here we are!
+> I get what Chevy was saying. It is bitterly cold here.
+> ...
+> a--a---ah---
+!> ACHOO!
+> ...
+> Excuse me!
+> Don't really see the lack of hospitality though. It seems nice enough.
+/event Cincero turn <Towards Spectrier>
+> What do you think [G]Shade[/]?
+# Cincero turns towards Spectrier
+
+/speaker Spectrier
+> ...
+/wait 20
+/cry SPECTRIER 100 80
+
+/speaker Cincero
+> You miss your home don't you?
+> Don't worry, we'll get you there soon enough.
+> It's the least I can do for being there during the therapy sessions.
+> It really helped y'know.
+> ...
+> I've tried looking through historical records. I wanted to find out who [G]Lady Leara[/] is and why she keeps appearing. 
+> It's odd really, the stories I did find was completely different from each other.
+> I did have fun doing it though.
+> I wonder if...
+> if this is how [B]Femal[/] felt when he read about old times...
+> .WT.WT.
+/wait 20
+/cry SPECTRIER
+> right...
+> We should get going to [R]Couroige Valley[/] ASAP.
+> I don't wanna stand here and get more of a cold than I already have.
+> [B]Chevy[/] said to the [R]<Direction>[/]. It would be wise to trust her.
+
+/speaker Brown
+/hidename 1
+!> WAIT!!!
+# A man appears and runs towards Cincero.
+# Cincero turns towards him.
+[Z-22,23]
+/event Cincero turn <towards man>
+/speaker Cincero
+/hidename 0
+> Ah [B]Doctor Brown[/].
+/event Cincero turn <towards player>
+> I should introduce you.
+> This is...
+> a-ah
+!> ACHOO!
+
+# Brown moves to player
+/speaker Brown
+> The name's [B]Brown[/], esteemed author, Doctor Philos in medicine and...
+
+/event Brown turn <Towards Cincero>
+> Really freakin' worried about you mister!
+> WhatWT areWT youWT THINKINGWT going out there!?
+
+/event Cincero turn <Towards Brown>
+/speaker Cincero
+> I told you already, I have to do it, for my own sanity.
+
+/event Cincero turn <Towards Player>
+> As you may have gathered--
+
+/speaker Brown
+> I am very much against the idea yes of you going to the ruins yes.
+> When [B]Cincero[/] sent me the mail...
+
+/speaker PLAYER
+> ...?
+
+/event Brown turn <Towards Player>
+/speaker Brown
+> PLAYER was it?
+> See, [B]Cincero[/] has a great mind for business, charts and numbers, but apart from that--
+
+/speaker Cincero
+> Can we please discuss somewhere else?
+
+/speaker Brown
+> Sure! As long as you promise to LISTEN this time.
+
+/speaker Cincero
+> You know I can't give you any guarantees [B]Brown[/].
+
+/speaker Brown
+> You REALLY want to do this, don't you?
+
+/speaker Cincero
+> I do.
+
+/speaker Brown
+> ...
+> Alright, meet me at the [R]<Nearest Location> Pokémon Center[/] then.
+
+/speaker Cincero
+> Alright we will meet you there.
+
+# Brown goes off towards the nearest Pokémon Center.
+[Z-22,24]
+/event Cincero turn <Towards Player>
+/speaker Cincero
+> We will see you there.
+
+/cry SPECTRIER 100 80
+# Cincero walks off.
+
+# At the nearest Pokémon Center.
+    # Brown and Cincero are sitting by a table at the Pokémon Center with Spectrier standing besides them.
+
+# Player moves over to the table / when Player approaches the table.
+[Z-22,25]
+/event Cincero turn <Towards Player>
+/speaker Cincero
+> There you are.
+
+/event Cincero turn <Towards Brown>
+> Well, What was it that you wanted to tell PLAYER about me?
+
+/speaker Brown
+> *sigh*
+> I am surprised you haven't told him yourself.
+> See, [B]Cincero[/] here is quite the reckless fellow.
+
+/speaker Cincero
+> ...
+
+/speaker Brown
+> Don't look at me like that! You know as well as I do why you and I became friends.
+
+/speaker Cincero
+> Yeah, you saved my life.
+
+/speaker Brown
+> Only because you were stupid enough to endanger it in the first place.
+
+/cry SPECTRIER
+
+/speaker Brown
+> See? even Ghost-pidash over there agrees with me.
+
+/speaker PLAYER
+> ???
+
+/speaker Brown
+> Oh, uh excuse me. I was about to say. Five years ago...
+/fade black 
+/wait 40
+
+# Quest II Cutscene - Doctor Brown
+    # No map transfer needed.
+    # Brown, Cincero and Femal are sitting around the same table.
+[Z-22,26]
+/fade sepia
+/speaker Brown 
+> Listen you two, it's none of my business, but I found it hard to believe that you two are travelling companions.
+> You both seem awfully cold towards each other.
+
+/speaker Cincero
+> ...
+
+/speaker Femal
+> Look, I don't mean to be rude [B]Doctor Brown[/], but it's really not...
+
+/speaker Brown 
+> Of course, My apologies. What was it you wanted to ask?
+
+/speaker Femal
+> We want to know, what exactly you mean about it being dangerous to go alone out there.
+
+/speaker Brown 
+> Well, there is the unstable weather for one.
+> Violent blizzards often ravage the valley and that's bad enough but...
+
+/speaker Femal
+> ...but what?
+
+/speaker Brown 
+> Well... those who try making it through to the ruins have reported...strange symptoms.
+> Frostbites that are difficult to heal or, in rare cases, outright refuse to.
+> Strange recurring nightmares involving a ghostly woman chanting "Tu n'es pas celui" or something to that effect.
+> It translates to "You are not the one" in the old tongue of the [B]Chevaliers[/].
+
+/event Cincero exclaim
+
+/speaker Brown 
+> Something the matter?
+
+/speaker Cincero
+> She...
+> ...
+> She said something different to me.
+
+/event Femal exclaim
+/event Brown exclaim
+
+/speaker Brown
+> Have you been to the ruins before?
+
+/speaker Cincero
+> N-no, but I've had a...
+> a...
+!> ACHOO!
+> ...
+> Excuse me.
+> I've had a dream like the one you describe, but the [G]lady[/] said something different to me.
+
+/speaker Brown
+> Out with it man, what did she say to you?
+
+/speaker Cincero
+> Pass ton ton or something like that. It sounded like gibberish to me, but she would repeat it over and over again.
+
+/speaker Brown
+> Hmmm...
+> ...
+> Pas ton temps perhaps?
+
+/speaker Cincero
+> That sounds right.
+
+/speaker Brown
+> Hmmm... 
+
+/speaker Femal
+> Are you going to tell us or just sit there and "hmmm" at us all day!?
+> We've got somewhere to be.
+
+/event Cincero turn <towards Femal>
+/speaker Cincero
+> Hey, don't be--
+
+/event Femal exclaim
+/wait 6
+/event Femal turn <towards Cincero>
+/speaker Femal
+> What was that!?
+
+/speaker Cincero
+> n-nothing...
+
+/speaker Femal
+> Exactly.
+
+/event Femal turn <towards Brown>
+/speaker Femal
+> What were you about to say?
+
+/speaker Brown
+> O-oh It means "Not your time."
+
+/speaker Cincero
+> ...
+
+/speaker Brown
+> Why are you going to the [B]Couroige Ruins[/]anyway ? If you don't mind me asking.
+
+/speaker Femal
+> To see if there is any truth to the rumors of [R]Kingsroot[/] still growing there.
+
+/event Brown exclaim
+/speaker Brown
+> That is bold indeed!
+> If that is the case I advise you to tread extra carefully.
+> You two are not the first ones to look for the Blessed Garden.
+> I already told you what happened to those who tried and I don't even want to think of what would happen if you found it and tried to steal it.
+
+/speaker Cincero
+> Oh no, we would never steal it. We only want to study it to aid in our medicinal research.
+
+/speaker Femal
+> YOUR research [B]Cincero[/].
+
+/speaker Cincero
+> ...
+
+/speaker Brown
+> I sincerely hope the Pokémon that guard the place agree with your sentiment.
+> Forgiv me for  asking mr...[B]Femal[/]. Why are you coming along on this trip? You seem very against the idea.
+
+/speaker Femal
+> I...
+> I've got something to prove.
+
+/speaker Brown
+> Is that all?
+
+/speaker Femal
+> It is, as far as you're concerned.
+
+/speaker Brown
+> IfWT you say so...
+> ...
+> When will you be leaving?
+
+/speaker Cincero
+> Right away.
+
+/speaker Brown
+> While I would advise you to rest first, I cannot but wish you the best of luck.
+/fade black 
+/wait 40
+
+# Quest II Cutscene - Blizzard
+    # Transfer to Couroige Valley Map
+    # Set weather to Blizzard
+    # Add wind related SE?
+# Femal is in front with Cincero slightly behind. Tauros is besides Femal
+/fade sepia
+[Z-22,27]
+/speaker Cincero
+!> FEMAL!
+> It's madness to go on like this! We got to turn back.
+
+/event Femal turn <towards Cincero>
+
+/speaker Femal
+> No...
+> I'm going, no matter what.
+
+/speaker Cincero
+> We can leave the Kingsroot alone. We will be in serious danger if we stay here. This blizzard will--
+
+/event Femal exclaim
+/speaker Femal
+!> YOU IDIOT!!!
+
+/event Femal move <towards Cincero>
+
+> You think this is only about the Kingsroot!?
+> I suppose it may be for you, narrow-minded as you are, but not for me.
+> This means way more to me.
+
+/speaker Cincero
+> Femal, please listen to me! We can come back here later when the weather has calmed down.
+> The Kingsroot isn't worth dying for!
+
+/speaker Femal
+> Would you please STOP and consider my feelings for once!?
+> I want to get the Kingsroot because you want it, because you NEED it for your research because I want to help ypu.
+> I, on the other hand, want to see what once was, or what is left of it anyway for my own sake.
+> I want to learn what I can from it so that maybe, just MAYBE it can lead to something good down the line.
+> I want to prove to you that the past matters!!!
+
+/speaker Cincero
+> Listen, I get all that, whether you believe me or not, I do.
+> But do we HAVE to do it now? 
+> We are going to freeze to death if we don't head back.
+> That is what's happening NOW [B]Femal[/] in this moment.
+
+/speaker Femal
+> ...
+
+> Sure I am not as occupied with things that happened and more about what is happening, but I never meant to say they are worthless or meaningless.
+> Will you please listen to me and come with me back to [B]Doctor Brown[/]!?
+
+/speaker Femal
+> .WT.WT.
+> alright, let's head ba--
+/wait 20
+/cry BISHARP
+/wait 20
+/event Femal exclaim
+/event Cincero exclaim
+/event Bisharp switch A true #Make visible
+/event Pawniard_A switch A true #Make visible
+/event Pawniard_B switch A true #Make visible
+/event Pawniard_C switch A true #Make visible
+# Bisharp and one Pawniard A in front of them, Pawniard B and C behind them.
+
+/event Tauros turn <Towards Bisharp>
+/cry TAUROS
+/speaker Femal
+> [B]Cincero[/] cover me!
+
+/event Cincero turn <Towards Pawniard B & C>
+/speaker Cincero
+> You got it!
+> Come on out Golem
+/se Open_Pokeball
+/wait 6
+/event Golem switch A on #Make visible turned in the same direction as Cincero.
+/cry GOLEM
+/fade black
+/wait 20
+/cry BISHARP
+/wait 20
+/cry TAUROS
+/wait 20
+/cry GOLEM
+/wait 20
+/cry PAWNIARD
+/wait 20
+/cry GOLEM 100 70
+/speaker Cincero
+> Golem!!!
+/wait 20
+/cry TAUROS
+/wait 20
+/speaker Femal
+> Tauros HYPER BEAM!
+/se Hyper Beam
+/wait 20
+/cry Pawniard 100 70
+/wait 20
+/event Golem switch A false
+/event Pawniard_A switch A false 
+/event Pawniard_B switch A false 
+/event Pawniard_C switch A false 
+/event Femal turn <away from Bisharp>
+/fade sepia
+
+/speaker Cincero
+!> BEHIND YOU!
+/event Femal exclaim
+/cry TAUROS
+/event Tauros move <towards Bisharp>
+/hidename 2
+> Tauros used Close Combat
+/event Bisharp move <backwards>
+/cry Bisharp 100 60
+/hidename 2
+> Bisharp used Metal Burst!
+
+/speaker Femal
+/hidename 0
+> A Focus Band! of ALL the times to be unluc--
+/cry Bisharp
+
+/se <Wind Related SE>
+
+/event Femal exclaim
+
+/speaker Cincero
+> F-[B]Femal[/] We need to g-get b...
+
+# Screen fades from top and bottom. Mid-fade, a shadowed out Glastrier sprite appears before fade is complete.
+# Transfer back to Pokémon Center map, Brown, PLAYER and Cincero are positioned like before the cutscene began.
+#### END OF CUTSCENE ####
+[Z-22,28]
+/fade normal
+/speaker Brown
+> If it hadn't been for [G]Ice-Pidash[/] being O so benevolent and carrying you here. You would have frozen to death.
+
+/speaker Cincero
+> Don't understate your own contributions [B]Brown[/], you did cure me of the hypothermia.
+
+/speaker Brown
+> Barely... not to mention the numerous frostbites.
+
+/speaker Cincero
+> .WT.WT.
+
+/speaker Brown
+> Despite that, you are sitting here telling me that you want to go back there?
+
+/speaker Cincero
+> I do, I want to find out what happened to [B]Femal[/], I want to find the [R]Kingsroot[/], I want to...
+
+/speaker Brown
+> Easy there, I get it.
+> If you really want to go that badly, I can't stop you.
+> I'm just asking you to be careful.
+
+/event Brown turn <towards PLAYER>
+> Though, I suppose you've got his back eh?
+
+/speaker PLAYER
+> ...!
+
+/speaker Brown
+> Right. I hope you fare better this time.
+
+/speaker Cincero
+> I will meet you at the entrance to [R]Couroige Valley[/], you know, where the ever-so-charming [B]Brown[/] interrupted us.
+
+/speaker Brown
+> Ever-so-charming, don't have a more creative insult under your belt?
+
+# Cincero leaves the Pokémon Center
+
+[Z-22,29]
+# At the entrance to Couroige Valley
+/speaker Cincero
+?> Well... ready to head for the ruins?
+/choice Yes
+    > Right! Let's go then.
+    /event Cincero move <Into player>
+    /event Cincero switch <X> true/false
+    /hidename 2
+    > Cincero is now travelling with you.
+/cancelchoice Not yet
+    > I will wait here until you're ready.
+?/>
+
+
+# At the same part of the valley where the flashback occured.
+    # Cincero and Spectrier are standing facing <Towards Ruins>
+[Z-22,30]
+/speaker Cincero
+> This is whereWT it happened.
+> .WT.WT.
+
+/speaker PLAYER
+> ...!
+
+/speaker Cincero
+> .WT.WT.
+
+/speaker PLAYER
+!> !!!
+
+/speaker Cincero
+> Oh... sorry I was l-lost.. in tho--
+> in tho--
+!> ACHOO!!!
+> ...
+> Excuse me.
+
+/cry SPECTRIER
+/speaker Cincero
+> What's wrong?
+/wait 20
+/cry SPECTRIER 100 80
+/wait 20
+/se <Wind Related SE>
+# Set weather to snow.
+/wait 20
+/cry BISHARP 20 100
+/wait 20
+/event Cincero turn <Towards Player>
+/speaker Cincero
+> Did you just h-hear t-that?
+/wait 20
+/cry Bisharp 60 100
+/event Cincero exclaim
+/event Bisharp switch <X> true #Make visible
+/event Pawniard_A switch <X> true #Make visible
+/event Pawniard_B switch <X> true #Make visible
+/event Pawniard_C switch <X> true #Make visible
+# Bisharp and one Pawniard A in front of them, Pawniard B and C behind them.
+/event Cincero turn <Towards Bisharp>
+/speaker Cincero
+> Y-you again!?
+
+/se <Wind Related SE>
+# Set weather to blizzard / increase intensity of snow
+/event Cincero turn <Towards Player>
+/speaker Cincero
+> You take care of the Pawniard in the back. Leave Bisharp to me.
+
+/speaker PLAYER
+> ...!
+######## DOUBLE WILD BATTLE: Pawniard LV <Appropriate> x 2 ###########
+[Z-22,31]
+/event Pawniard_B switch <X> false
+/event Pawniard_C switch <X> false
+/speaker Cincero
+> D-damnit... They beat Golem again
+> [G]Shade[/] you're--
+
+/hidename 2
+> Bisharp used Flash C--
+
+/event Cincero exclaim
+/wait 20
+/Speaker Leara
+/hidename 1
+!> CESSER!
+/event Leara switch <X> true # make visible
+/event Glastrier switch <X> true # make visible
+/event Leara move <Direction opposite of ruins> # so she is visible on screen.
+/event Glastrier move <Direction opposite of ruins> # so she is visible on screen.
+/event Bisharp turn <Towards Leara> 
+# Stop / weaken snow effect.
+
+/Speaker Leara
+/hidename 0
+> Desist at once, O Vanguard!
+> [B]Cincero not quite of the here-and-now[/] does not wish any harm on thee or thine domain.
+> His right to be here and see what lies beyond is just and true.
+> By the [G]Authority[/] for whom I speak, I bid thee return home and bother us no more.
+
+/cry Bisharp 100 80
+# Bisharp moves out of the screen
+# PLAYER, Spectrier and Cincero moves over to Leara and Glastrier
+[Z-22,32]
+/Speaker Leara
+> By my side stands the [B]Frostprince[/] guardian of the ruins and brother of the noble beast by thine side [B]Cincero[/].
+
+/speaker Cincero
+> [G]Lady Leara[/], words cannot express how much your gift has helped me since [B]Five-year Hill[/]
+
+/Speaker Leara
+> Thou speak too highly of me, the gift was not mine, though it was [G]our[/] wish. The gift was given you willingly by the [G]Prince of Shade[/].
+
+/event Spectrier move <towards Cincero>
+/cry SPECTRIER
+/speaker Cincero
+> Thank you.
+
+/Speaker Leara
+> The time at which thou must part with the [B]Shadeprince[/] draws ever nearer, but his gratitude will always go with you.
+> Not far from here lies the [G]Blessed[/] ground you seek. It is there thou will learn the truth. 
+
+/speaker Cincero
+> .WT.WT.
+
+/speaker Leara
+> It is not for me to decide what is right.
+> Ultimately it is your decision to make.
+
+/speaker Cincero
+> .WT.WT.
+/cry SPECTRIER
+
+/speaker Leara
+> For now though, I ask you allow yourself to rejoice, for you shall see something granted to few outside the lineage of [B]Knights of old[/].
+/cry GLASTRIER
+> Princely dignity does not hinder fole-like eagerness and energy.
+> The [G]king[/] expresses great happiness at thine energy [B]Frostprince[/]
+> He expresses a will to battle you [B]Cincero the wavering[/] or, should not be able to, PLAYER shall battle in your stead.
+
+/speaker Cincero
+> PLAYER it is then.
+
+/speaker Leara
+> Then PLAYER, once again, I ask thee let the prince see thine strength show the frost the same force thou exerted against the shade.
+/cry GLASTRIER
+
+#### BATTLE: Glastrier LV ?? (Name: ???) ####
+# Glastrier is uncatchable.
+# Should PLAYER lose, Glastrier will be waiting for a rematch.
+
+########### POST-BATTLE ###########
+[Z-22,33]
+/speaker Leara
+> You continue to impress me and the [G]king[/].
+> O [B]Prince of Frost[/] with the authority granted me by thine [G]king[/] I bid thee grant [B]Cincero the wavering[/] passage to what remains of your sacred halls.
+> Let your kin guide his friend for the joys...and trials soon to come.
+/cry GLASTRIER
+/wait 20
+> As for you, O questing one I ask that you accompany [B]The wavering one[/] as well.
+> As good a company as two princely steeds are, I whole-heartedly believe someone who understand human matters will be a valuable addition.
+/eval pbFadeEvent(<Leara>,255,128,10)
+> For now, I bid you both fare--
+/cry BIHSARP
+/wait 20
+> hmmm?
+/event Bisharp switch <X> true # Make visible
+
+# Move Bisharp to Cincero.
+[Z-22,34]
+/event Cincero turn <towards Bisharp>
+/speaker Cincero
+> Did you...want anything?
+/cry BISHARP
+/wait 20
+/event Cincero exclaim
+/wait 20
+> I... I don't really know what to say.
+
+/speaker Leara
+> I am not well versed in the finer details of human interactions, though I have learned that the appropriate response to this is "thank you"
+
+/speaker Cincero
+> W-what?
+> I-I mean yes, thank you.
+
+/speaker Leara
+> Judge them not too harshly for attacking you, they were following their own instincts as well as a decree by their [G]king[/].
+> Though... [G]we[/] acknowledge it caused thee great sorrow.
+
+/speaker Cincero
+> That's putting it mildly.
+> I cannot make up my mind on whether I should be glad, sad or mad about this.
+> ...
+> I supposeWT I am little bit of each.
+
+# Bisharp moves over to Player.
+# Player Receives: 1 x Focus Band
+# Bisharp cries and leaves the screen
+
+[Z-22,35]
+/speaker Leara
+> This is where we part for now, though we shall meet again soon, for I too shall join you in the [R]Jardin Béni[/] where [R]Kingsroot[/] once thrived.
+> Until then, stay strong.
+/eval pbFadeEvent(<Leara>,128,0,10)
+/event Leara switch <X> false
+
+# Cincero moves over to Player.
+[Z-22,36]
+/speaker Cincero
+> I won't lie...I got a bad feeling about this, but I got this far, I might as well go the whole hog.
+> I would curse myself forever if I didn't.
+> ...
+> Really though, thank you very much for helping me with the Pawniard and Bisharp.
+> I found this on the way here. You can have it.
+
+# Player Receives: 1 x Rare Candy / <Other fitting reward>
+# Cincero walks over to Spectrier and Glastrier
+
+[Z-22,37]
+/speaker Cincero
+> I will be waiting for you, along with Ghost-pidash and Ice-pidash.
+/cry SPECTRIER
+/wait 12
+/cry GLASTRIER
+/wait 12
+> Huh, I think they like being called that.
+> ...
+> Anyway. I will see at the [R]ruins entrance[/].
+> ...
+> ...
+!> ACHOO!
+> Excuse me.
+
+# Cincero, Glastrier leaves the screen.
+# Screen fades to black.
+# Transfer to Cincero's office.
+
+##### POST-QUEST #####
+[Z-22,37]
+/fade sepia
+# Chevy is behind Cincero's desk.
+/speaker Chevy
+> *sigh*
+> It's driving me mad.
+> Why couldn't I tell him, Why!?
+> I just had to go and say "nothing" just like that and now he's out there freezing to death.
+> Oh! What should I do !?
+> I gotta go there, I just GOT TO.
+> ...
+
+/speaker Leara
+/hidename 1
+> [G]Milady[/]
+
+/speaker Chevy
+> ....
+
+/speaker Leara
+/hidename 1
+> [R]Lady Delciné[/]
+/event Chevy exclaim
+/wait 12
+/eval pbFadeEvent(<Leara>,0,128,10)
+
+/speaker Chevy
+> [G]Lady Leara[/] you scared me.
+
+/speaker Leara
+> My sincerest apology, though thou surely know why I am here?
+
+/speaker Chevy
+> I...
+> I have to go, don't I?
+
+/speaker Leara
+> Thine ancestors call thee.
+
+/speaker Chevy
+> .WT.WT.
+> I...WT can't decide.
+
+/speaker Leara
+> 'Tis a heavy choice to make. You have [G]our[/] sympathy.
+
+/speaker Chevy
+> "our"?
+> ...
+> Oh!
+
+/speaker Leara
+> Regardless, thou must hurry to the ruins.
+> It is there, in the [R]Blessed Garden[/] that thine choice must be made.
+> Hurry [B]Chevy the torn[/].
+> The [G]king[/] awaits your decision.
+
+# Finish Quest: "Frost"
+/fade normal
+
+################### Final Quest - Roots #####################################
+# Req: "Shadow" cleared, "Frost" Cleared  
+[Z-22,38]
+# At the entrance to the Couroige ruins.
+# Cincero, Glastrier and Spectrier are standing facing towards the entrance.
+/speaker Cincero
+> So this is where you used to live...
+# Turns towards Spectrier
+> Oh [B]Shade[/] If only you could speak, then you could tell me what it was like in its hayday.
+/cry SPECTRIER 100 80
+> I know...
+/event Cincero exclaim
+/event Cincero turn <Toward Player>
+> Well...
+?> Are you ready to go in?
+/choice Yes
+    > Alright.
+    > Phew...
+    > Let's Go!
+    # Cincero and the Pokémon enter the ruins.
+    # Accept Quest: "Roots"
+/cancelchoice Not yet
+    > Alright. We will wait here until you are ready.
+?/>
+# Somewhere "inside" the ruins (A straight hallway with a split in the path): 
+# one straight up, one diagonally right and one diagonally left.
+# Glastrier and Spectrier both cry (pitch: 80), Cincero is standing one tile below the same, slightly below the split,
+[Z-22,38]
+/speaker Cincero
+> I get what you mean...
+> It feels...WT sad here somehow.
+> [B]Shade[/], [B]Frost[/]. I...
+/event Glastrier turn down (towards Cincero)
+/event Spectrier turn down (towards Cincero)
+/wait 12
+/speaker Cincero
+> I wanted to thank you for all you've done for me.
+> [B]Shade[/], I would've been much worse off if not for you.
+> Sure, you gave me lots of nightmares, but once they stopped you...
+>...
+/cry SPECTRIER
+> You are someone I could talk to, someone that listens.
+> I can't tell you enough, how much that means to me.
+> [B]Frost[/] I've only met you once before recently, but...
+> You DID save my life by helping me back to [B]Doctor Brown[/].
+/cry GLASTRIER
+> Can you tell me...what happened to [B]Femal[/]? 
+/wait 12
+/cry GLASTRIER 100 80
+> Right, you can't speak.
+/wait 20
+/event Glastrier exclaim
+# Glastrier walks off towards any path that is NOT the middle one.
+/speaker Cincero
+> H-Hey!
+# Cincero and Spectrier runs off in the same direction.
+
+
+# Going straight up leads to a closed door with a sign beside it:
+    # None may enter [R]Jardin Béni[/] without the King's consent."
+    # "Ice and Shade in hidden Glade."
+    # "Where old root stand is sacred land."
+    # "Beasts and King, together they sing..."
+    # "Rejoice! See Kingsroot born by regal hand."
+
+# Going the opposite direction leads to garden area with a cloud fog graphic to indicate shade.
+# Somewhere in the middle there is a tree (Possibly on a hill, the tree is the same graphic as the important one on Five-Year hill.)
+# Beside the tree there is a sign:
+    # "Serment del [R]Jardin Nuit[/]"
+    # "In glade of shade, once we swore, to protect the king forevermore."
+    # "In the dark, [B]Spectrier[/] neighs, his voice upon our shoulders weigh."
+    # "Here under cloud, the seeds they sleep, while we of the root, our promise keep.
+
+
+# Going the correct direction leads to garden area with snow tiles
+# Somewhere in the middle there is a tree (Possibly on a hill, the tree is the same graphic as the important one on Five-Year hill.)
+# Beside the tree there is a sign:
+    # "Serment del [R]Jardin Neige[/]"
+    # "In winter's grasp, we pledge to thee. To aid the king and never flee."
+    # [B]Glastrier[/]'s call, O crystal clear, will sound again when night draws near."
+
+# In fron of the tree Glastrier stands with Cincero a few steps behind them.
+# "King" event is a Calyrex silhouette.
+[Z-22,39]
+/speaker Cincero
+> Huff...pant...
+> W-Why did you run off like that?
+> .WT.WT.
+> O-oh, this... this is your home isn't it?
+> It's beautiful here.
+/wait 20
+/cry GLASTRIER 125 100
+/wait 20
+/speaker Leara
+/hidename 1
+> I hear thine call [B]Glastrier[/], prince of the drifting snow.
+/event Leara switch <X> true/false # Make Visible
+/event King switch <X> true/false # Make Visible
+/eval pbFadeEvent(<Leara>,0,128,20)
+/eval pbFadeEvent(<King>,0,128,20)
+/hidename 0
+> You shall have to search no more, for here thine questions shall be answered.
+/event Leara turn <towards King>
+> What is thine order [G]lingering one[/]?
+/speaker King
+/hidename 1
+> ...
+/speaker Leara
+> Very well. Let thine call sound again [G]Glastrier[/] of the winter.
+/wait 20
+/cry GLASTRIER 125 100
+/fade black
+/windowpos middle
+/hidewindow 1
+/textpos middle
+> [G]Five Years Ago[/]
+/wait 60
+# No map transfer needed.
+
+# Ruins I
+# Glastrier and Femal are standing by the tree.
+[Z-22,40]
+/fade sepia
+/wait 20
+/speaker Femal 
+> T-thank you, you s-saved me, d-didn't you?
+> ...
+/event Femal exclaim
+/wait 20
+> Wait! You're [G]Glastrier[/] a-aren't you!?
+> D-does that mean I...I'm really inside the ruins!?
+> I'm so excited I could f-fai...
+> ...
+/event Femal exclaim
+/cry GLASTRIER
+> Ugh! S-so cold...
+> ...
+/se <Falling over related SE>
+/event Leara switch <X> true/false # Make Visible
+/eval pbFadeEvent(<Leara>,0,255,20)
+/speaker Leara
+> Oh dear, I fear there is little time before the bitter cold gets too tight a grip on him. 
+> Both body and soul is at risk. Hurry! O [G]Glastrier[/] bring him to the night garden and let thine brother grant him shade so he may yet be saved. 
+/cry GLASTRIER
+/spaker Glastrier
+> ...?
+
+/speaker Leara
+> The other one is being tended to in an appropriate manner and by one with a kind heart.
+> Do not concern yourself with him for the moment. Follow the orders of the [G]King[/] and seek your brother.
+> Make haste!
+/fade black
+# Glastrier begins to move as the screen fades.
+/wait 20
+/fade normal
+
+[Z-22,41]
+# Leara and "King" are still visible. (King is a silhouette and Leara is at 128 opacity)
+/speaker Cincero
+> Wh-what happened to him.
+> Is he here?
+> Is he alive and if he is, why has he not said anything!?
+> Please [G]Lady Leara[/], [G]Your majesty[/] I must know!
+
+/speaker Leara
+> [B]Cincero the wavering[/]
+> ...
+> [R]A picture says more than a thousand words ever could[/]
+> As I have wandered the world on behalf of [G]His Majesty[/] I have often heard this saying 
+> [G]We[/] feel it's apt for thine situation.
+> If thou wish to know, then seek thine friend [G]Shade[/]. 
+> Allow him to atone for granting you so many night terrors of the past years by revealing yet another piece of the truth.
+
+/speaker Cincero
+> ...
+> [G]Shade[/] has atoned plenty for what he did.
+> He was there for me during tough therapy sessons.
+> He didn't say anything, he didn't do anything, but he was there and that was enough.
+> Regardless of what else he did, I now know why, and taking that into acoount, I understand his actions.
+> Just like he clearly understands my plight.
+
+/speaker Leara
+> [B]Cincero the Seeing[/]...
+> You have learned to look at the past as a source to learn, not as a thing to ignore.
+> Take this strength with you and meet thine friend
+> [G]He[/] awaits thee in the [R]Jardin Nuit[/], directly opposite from here.
+> Then...
+
+/speaker Cincero
+> ...?
+/eval pbFadeEvent(<Leara>,128,0,10)
+/cry GLASTRIER 100 80
+/event Cincero turn <toward Player>
+/speaker Cincero
+> ...
+> I...
+!> ACHOO!
+> Excuse me!
+> I will meet you in the [R]Jardin Nuit[/].
+> Please, come quick.
+
+# At the Jardin Nuit. Leara and Spectrier are in front of the grand tree along with a silhoetted Calyrex sprite.
+# Player moves up to the tree.
+[Z-22,42]
+/speaker King
+/hidename 1
+> ...
+/cry SPECTRIER
+/speaker Leara
+/hidename 0
+> [B]Cincero the Seeing[/].
+> [G]We[/] shall show you that which you sought.
+> However...
+> I urge you to look deep into thine heart after you have done so.
+> Now [G]we[/] ask thee [G]Spectrier[/] Prince of Shade, willst thou aid the wavering one?
+> If so, please allow thine voice to shine, bright and clear.
+/cry SPECTRIER 125 100
+/fade black 20
+# Ruins II
+# Glastrier, Spectrier and Leara is standing in front of the tree.
+# Femal is visible, but at 128 opacity
+
+[Z-22,43]
+/fade sepia
+/wait 20
+/speaker Leara
+> O King [G]Calyrex[/] for whom I travel the world.
+> This human is kind and brave, though he has suffered greatly.
+> His own sorrow at words carelessly spoken by one who, at heart, is good and true...
+> ...and his own wish to see that which once was, to see [G]your[/] creation, in its past glory...
+> This caused a great rift in his heart. The grail once whole is split in twain.
+> He longs for his friend, though his stubborn nature hinders him from opening his own h-heart.
+> ...
+> In their duty, thine servants caused this man great harm.
+> I ask humbly of thee, on behalf of all I am, willst thou give [B]Femal of the Steel Will[/] the power to at least see one of wishes fulfilled?
+
+/speaker Calyrex
+> ...
+/cry CALYREX 125 100
+> !!!
+
+/speaker Leara
+> Then open thine throne room to him. Grant [B]Femal[/] his wish.
+> Open the door. Now and for the future.
+/wait 20
+/cry CALYREX
+/wait 20
+/fade black 
+/wait 20
+/speaker Femal
+> th-thank you.
+> .WT.WT.
+> C-c-in..cero. I... m-met t-the Ki...
+> i-if only I could sh-share th-this mom...
+
+# Screen shakes and an Earthquake related SE plays.
+[Z-22,43]
+/fade normal
+/wait 20
+/speaker Cincero
+> Wh-what does this m-mean?
+/event Cincero turn <Towards Spectrier>
+> [B]Shade[/]... no [G]Spectrier[/] you don't mean he... he...
+> ...
+> No it can't be...
+> It just can't... I REFUSE to believe it
+
+/speaker Calyrex
+> ...
+/wait 20
+/cry SPECTRIER 80 80
+/cry GLASTRIER 80 80
+/wait 20
+/cry CALYREX 80 80
+
+/speaker Leara
+> It is not a question I should have to answer, for in your heart you know.
+> The answer lies within the Throne Room, within [G]Jardin Béni[/].
+> Wander now, and fear not, for [G]we[/] shall wander with thee. 'tis the least we can do.
+ 
+/speaker Cincero
+> ...
+/event Cincero turn <Towards PLAYER>
+> Please...come too.
+> I want... I NEED you to be there.
+
+# Throne Room
+    # Cincero is a little ahead of the rest.
+    # As Player enters the room. Cincero is moving rapidly upwards
+    # Cincero stops at the top of the screen.
+[Z-22,44]
+/speaker Cincero
+> [B]Femal[/] I'm here.
+> Can you believe I finally made to the [G]Bless[/]--
+/wait 20
+/event Cincero Exclaim
+/wait 20
+# Screen scrolls upwards, revealing the throne (Can easily just be a tree or a collection of trees) and....
+# ...
+# A tombstone.
+# Above the Tombstone stands Leara, Calyrex (silhouette), Glastrier and Spectrier
+> No.
+> Please...
+> [G]Lady Leara[/]...
+> Tell me this isn't...
+
+/speaker Leara
+> ...
+
+/speaker Chevy
+/hidename 1
+> [B]Cincero[/]...
+/event Cincero turn down
+/event Cincero exclaim
+# Chevy comes walking in from the bottom of the screen.
+
+/speaker Cincero
+> Ch-[B]Chevy[/]!? What are you doing here.
+
+/speaker Chevy
+> [B]Cincero[/]
+> Please...
+> Don't try to deny it. It will make it wo--
+
+/speaker Cincero
+!> HE CAN'T BE DEAD!!!
+> We were supposed to come here together!
+> We were supposed to study the [R]Kingsroot[/].
+> We...Were supposed to make the world better together.
+> We..
+/wait 20
+!> NOOOOOOOOOOOOOO!!!
+
+/wait 20
+/cry SPECTRIER 125 80
+/cry GLASTRIER 125 80
+/wait 20
+/speaker Chevy
+> [B]Cincero[/]... please...
+> I wanted to tell you, for five years, I wanted you to stop looking for him.
+
+/speaker Cincero
+> Y-you KNEW!?
+!> WHY DIDN'T YOU TELL ME!?
+
+/speaker Chevy
+!> WHAT WAS I SUPPOSED TO SAY!?
+> Did you expect me to waltz into your office one day and go "Hey, your best friend is dead!?"
+> How can you expect ANYONE with a heart to do something like that.
+
+/speaker Cincero
+> I...
+> No...I
+> ...
+
+/speaker Chevy
+> I don't care about you raging at me. I probably deserve it, I am only asking you to be reasonable. 
+> *sob*
+
+/speaker Leara
+> The blame for this, if such a thing is to be placed, lies with me.
+> 'Twas my way of...sowing seeds so to speak. Harsh though it may have been.
+> ...
+> [G]Lady Chevalienne Delciné[/], last of the knights of old, in the presence of thine [G]king[/] and his loyal steeds. I ask thee...
+> Hast thou made thine decision?
+
+/speaker Cincero
+> W-what is all this?
+
+/speaker Chevy
+> I have...
+> I...
+> .WT.WT.
+/wait 20
+> I forsake my duty as a [B]Chevalier[/]. I will not hinder [B]Cincero[/] from taking the few [R]Kingsroot[/] seeds that remain and do with them as he wishes.
+
+/speaker Leara
+> ...
+> Then, before thine [G]king[/], state your reasons for doing so.
+
+/speaker Chevy
+> I whole-heartedly believe that by studying these seeds, [B]Cincero[/] will create ailments that will help people and Pokémon alike.
+> He will treat this blessed plant with the respect it demands, in line with the very reason the [B]Chevaliers[/] exist. 
+> If for no other reason, then...
+> ...
+> To honor [B]Femal[/]'s memory... 
+
+/speaker Cincero
+> ...
+
+/speaker Chevy
+> [B]Cincero[/] has for the past five-years fought with nightmares and seizures caused by them, all without EVER losing sight of his goal.
+> Lastly...
+> I...
+> I want him to be happy because he deserves it, the courage he has shown, even if unaware, is an inspiration to all.
+> More than worthy of being a [B]Chevalier[/] were he in king [G]Calyrex[/]'s court of old when [R]Kingsroot[/] came into being.
+> I will face whatever judgment the [G]king[/] deem fitting, however my will in this matter shall not falter.
+> Hast thou learnt sufficiently [G]Lady Leara[/], [G]Your Majesty[/]? 
+
+/speaker Leara
+> I have indeed.
+
+/event Leara turn <Towards Calyrex>
+> What say you [G]King Calyrex that was[/]?
+> What is thine judgment?
+
+/speaker Calyrex
+> ...WT ...WT ...!
+/cry CALYREX
+/wait 20
+/event Leara turn <Towards Chevy>
+/speaker Leara
+> Very well, thine punishment shall be...
+
+/speaker Chevy
+> .WT.WT.
+
+/speaker Leara
+> Nothing...
+
+/speaker Chevy
+> W-what!?
+
+/speaker Leara
+> [G]King Calyrex[/] recognizes thine bravery, the difficulty placed upon thee by [G]our[/] will, and thine undying determination.
+> We ask only one thing...
+> That, in the order of the old traditions of the [B]Chevaliers[/], you show thine strength in front of the throne.
+> [G]We[/] would ask that you engage in combat with [B]Cincero the whole[/], but as things now stand...
+> He shall be granted time to grieve his friend, so instead PLAYER shall take his stead as the [G]king[/] is but a spirit.
+
+/speaker Chevy
+> Al-alright, but why, if I may ask.
+
+/speaker Leara
+> I do not know much of, or may have forgotten, human interactions, though today has given me valuable knowledge to pass on.
+> To my great surprise I find that both the king and I, being spirits, may possess a sense of humor.
+
+/speaker Chevy
+> Uh...a-alright. I shall give it my all.
+/event Chevy turn <Towards Player>
+> Please, as a [B]Cheva[/]--
+> Former [B]Chevalier[/] I ask that you do your best.
+/wait 20
+/cry CALYREX
+/wait 20
+
+# Battle: Descendant Chevalienne (Can Lose)
+# Party: Aegislash, Sirfetch'd, Roserade
+############# POST-BATTLE #####################
+[Z-22,45]
+/cry CALYREX
+/wait 20
+/speaker Leara
+> Thou both performed admirably
+> Now [B]Cincero the whole[/], in this moment, on behalf of [G]King Calyrex[/] I have one last thing to ask of thee.
+
+/speaker Cincero
+> This moment...
+> For once...WT I get what [B]Femal[/] meant.
+> I look at the past and I relish it, I treasure it and I wish I could live in it rather than with this sorrow.
+
+/speaker Leara
+> Consider thine wish granted.
+> I ask that thou see thine friend one last time, as a memory that [G]we[/] will show thee and then, if he be willing, that you choose one of the princes to take as your partner.
+/event Cincero exclaim
+> They need, nay wish, to learn of the life of humans so that the [G]king[/], in turn can learn from them when his next adventure comes.
+> We also ask you PLAYER that you take the other one.
+?> Which Pokémon do you want to battle? (Cincero will recieve the other one)
+/choice GLASTRIER
+    /speaker Cincero
+    > [B]Shade[/]... will you continue to be my Pokémon? I really enjoyed your company before and would like it again if you want.
+    /cry SPECTRIER
+    /event Spectrier switch <X> true/false
+    /hidename 2
+    > Spectrier became [B]Cincero[/]'s Pokémon
+    /speaker Cincero
+    > th-thank you.
+    # Glastrier moves towards player.
+    /cry GLASTRIER
+    # Pokémon Battle: Glastrier
+    # If player loses, Glastrier will be battle-able until caught 
+/choice SPECTRIER
+    /speaker Cincero
+    > [B]Frost[/]... will you be my Pokémon? I really would like to get to know you like with [B]Shade[/].
+    /cry GLASTRIER
+    /event Glastrier switch <X> true/false
+    /hidename 2
+    > Glastrier became [B]Cincero[/]'s Pokémon
+    # Spectrier moves towards player.
+    /cry GLASTRIER
+    # Pokémon Battle: Glastrier
+    # If player loses, Glastrier will be battle-able until caught 
+?/>
+
+[Z-22,45]
+/speaker Leara
+> Now, I bid thee behold the memory of the Throne Room.
+/wait 20
+/fade black
+/wait 20
+/fade sepia
+# The tombstone is not visible. Glastrier, Spectrier, Leara and the King is all visible.
+# Femal is visible but very faint to indicate he is sick.
+
+[Z-22,46]
+/speaker Femal
+> ...k-king...l-le-[G]Leara[/] I...
+
+/speaker Leara
+> [B]Femal the brave[/] I bid thee, speak not until thou hast recovered.
+
+/speaker Femal
+> h-hehWT...n-no...I w-won't b-be able to...recover...too c-cold
+> *cough* *cough*
+
+
+/speaker Leara
+> ...
+> Speak then, O brave one and may your words be recorded here for the future.
+
+/speaker Femal
+> [B]C-cincero[/] I-I'm s-sorry it w-went like this.
+> I...I can f-feel it y-y'know, the [G]Kingsroot[/]...it's here.
+> Y-you were th-the best friend a guy c-could h-have.
+> *cough cough*
+> I see wh-what y-you mean.
+> The here and now, th-this moment, it i-is wonderful, I do-don't want to w-worry... if, if only you were h-here.
+> I...I'm r-rambling again, aren't I?
+> H-heh...
+> I'm glad we met...
+> Pl-please don't be t-too s-sad...
+> I-I got e-eveything I c-could ever w-want.
+> I mean I'm in the presence of the k-king.
+> I'm...in one of those o-old...
+/fade black
+> ...
+> .WT.WT.
+/wait 20
+/cry GLASTRIER
+/cry SPECTRIER
+/cry CALYREX
+/wait 20
+/fade normal
+
+# Quest End Cutscene.
+[Z-22,47]
+/speaker Cincero
+> ...
+> .WT.WT
+
+/speaker Chevy
+> [B]Cincero[/]?
+
+/speaker Cincero
+> T-thank you...
+> Thank you everyone...for showing me this.
+> I...
+> I...
+
+/event Chevy move <Towards Cincero>
+/speaker Chevy
+> [B]Cincero[/]...
+> I'm sorry I didn't tell you before. I really am.
+
+/speaker Cincero
+> I-it's...
+> .WT.WT.
+> It's OK [B]Chevy[/].
+> I understand why you didn't.
+
+/speaker Cincero
+> I just wish...
+
+/speaker Chevy
+> Yes?
+
+/speaker Cincero
+> You'd told you were one of the knights of old.
+
+/speaker Chevy
+> O-oh I...
+> To be honest I...
+> .WT.WT.
+
+/speaker Cincero
+> Yes?
+
+/speaker Chevy
+> I didn't think you would put much stock in it. You...
+> You didn't really care about the past that much.
+
+/speaker Cincero
+> .WT.WT.
+> I understand.
+
+/speaker Chevy
+> Besides, it didn't really matter to me.
+> I wanted to be me, not some "Old Knight".
+> I wanted to do my job as your secretary.
+
+/speaker Cincero
+> ...
+> Hehe...
+> I still say you deserve a payraise
+
+/speaker Chevy
+> You've been saying that since I was an un-paid intern!
+
+/speaker Cincero
+> Well, you've done a good job ever since then!
+
+/speaker Chevy
+> I-I guess...
+
+/cry CALYREX
+/wait 20
+/speaker Leara
+> [B]Chevy the complete[/]...
+> [B]Cincero the whole[/]...
+
+/event Cincero turn <Towards Leara>
+/event Chevy turn <Towards Leara>
+/wait 20
+> Words cannot express the joy I feel at seeing you aid another.
+> Thine trials overcome, though the sorrow shall remain for a time, perhaps even for the rest of thine lives.
+> 'Tis a pure sorrow, born of affection for the one who has passed, here at [B]Jardin Béni[/].
+> It will empower thee in thine future endeavors and in time, may the bitter sting be removed and only the joy remain.
+> Such is my, [G]Leara[/]'s prayer.
+/wait 20
+/cry CALYREX
+/wait 20
+> [G]King Calyrex[/] shares my wish.
+> Be thou knights or not, both you [B]Chevy[/] and you [B]Cincero[/] shall be welcome here whenever you want.
+> Furthermore the [G]King[/] decrees that you take the [R]Kingsroot[/] seeds and do with them as you feel necessary for the betterment of the world.
+> Though now that his steeds have set off on their own adventures. He wishes...
+/wait 20
+/cry CALYREX
+/wait 20
+> He wishes that you come visiting from time to time to regale them with stories of the outside world. As it would be to have a friend before the start of his next adventure.
+
+/speaker Cincero
+> I would...like that.
+> I want to visit [B]Femal[/]'s grave too.
+> I just wish I had some flowers to put on it.
+
+/speaker Chevy
+> Well...
+> I-I brought some actually.
+> I mean, I DID know what you would see and...
+> I thought it best to...
+> Just in case...
+
+/speaker Cincero
+> Always the thoughtful eh?
+> Would you like to place them on the grave with me?
+
+/speaker Chevy
+> Of course.
+/fade black
+/wait 20
+/fade normal
+/wait 20
+# Flowers are now visible on, or around, the grave (Preferrably something red)
+
+[Z-22,48]
+/speaker Cincero
+> Thank you [B]Chevy[/].
+
+/speaker Chevy
+> Your welcome.
+
+/cry CALYREX
+/event Cincero turn <Towards Calyrex>
+/event Chevy turn <Towards Calyrex>
+/speaker Leara
+> This is where we part ways for now.
+> May your lives be blessed, by me and by the [G]High King[/].
+
+/speaker Chevy
+> You have my thanks [G]Your Majesty[/], [G]Lady Leara[/].
+
+/eval pbFadeEvent(<Leara>,128,0,20)
+/eval pbFadeEvent(<Calyrex>,128,0,20)
+
+/speaker Chevy
+> I think...
+> It's time we head back to <City>.
+> [B]Femal Pharmaseutics[/] ain't going to run itself.
+> ...
+> Maybe I should raise the standard intern wages.
+
+/speaker Cincero
+> Why does that sound so familar?
+
+/speaker Chevy
+> I have NO IDEA.
+
+/speaker Cincero
+> If you say so.
+> .WT.WT.
+> Will you go on ahead for a bit? I need to give PLAYER something.
+
+/speaker Chevy
+> Alright, but don't take too long or I'll send some Pawniard to get you.
+
+/speaker Cincero
+> No thank you [B]Mademoiselle Delciné[/]. I will be quick alright. 
+
+/speaker Chevy
+> ...I'm just [B]Chevy[/]...
+# Chevy leaves the screen.
+# Cincero moves to Player.
+
+[Z-22,49]
+/speaker Cincero
+> I can't really express how grateful I am that you came along for all this.
+> I suppose these will do as thanks.
+/eval pbReceiveItem(:KINGSROOTSEED,?)
+#/eval pbReceiveItem(:FULLRESTORE,?)
+#/eval pbReceiveItem(:MAXREVIVE,?)
+/event Cincero turn <Towards tombstone>
+> I know I wasn't here with [B]Femal[/] when he found the seeds, but... I feel like .WT.WT.WT
+> ...
+> I'm happy he passed away in a place and, in a way, a time he loved so much.
+> I hope that when my time comes. I can go... similarly.
+> .WT.WT.
+> For now though... I should go back home.
+> I got some mourning to do, friends to be with... a life to live.
+> .WT.WT.
+> I-I will...
+> will...
+/wait 12
+/event Cincero exclaim
+/wait 12
+> Huh, the cold's gone...
+> I'll see you later I hope.
+# Cincero leaves the screen.
+# When Player leaves the screen.
+
+
+# POST-QUEST CUTSCENE
+[Z-22,50]
+/fade black
+/wait 20 
+# Map Transfer to Cincero's office.
+# Cincero and Chevy are visible.
+/wait 40
+/fade sepia 
+/wait 20
+/speaker Chevy
+> Congratulations...WTWTWT Director.
+
+/speaker Cincero
+> I'm just [B]Cincero[/]... It feels weird to be honest, to be a director'n'all.
+
+/speaker Chevy
+> I think you'll do a wonderful job.
+> You got in this position through a unanimous vote. That's gotta tell you something.
+
+/speaker Cincero
+> I suppose you're right.
+> .WT.WT.
+> *sigh*
+
+/speaker Chevy
+> Something on your mind?
+
+/speaker Cincero
+> I could really REALLY go for a cup of coffee right now and...
+
+/speaker Chevy
+> Yes?
+
+/speaker Cincero
+> I've decided on a name for the company.
+
+/speaker Chevy
+> AboutWT bloodyWT time. I must have asked you a BILLION times at this point.
+> What have you decided on?
+
+/speaker Cincero
+> [B]Femal Pharmaseutics[/].
+
+/speaker Chevy
+> That DOES sound like an appropriate name for a medical company.
+> What made you make your decision?
+
+/speaker Cincero
+> It's named after a friend of mine actually.
+> He...
+> ...
+
+/speaker Chevy
+> He...?
+
+/speaker Cincero
+> It's kind of a long story.
+
+/speaker Chevy
+> I've got time.
+
+/speaker Cincero
+> *sigh*
+> Alright, Here goes.
+> About five years ago we...
+/fade black
+/wait 40
+/fade sepia
+/wait 20
+/event Chevy exclaim
+/speaker Chevy
+> W-What!?
+> That's...
+> I'm...
+> I...
+
+/speaker Cincero
+> Are youWT alright?
+
+/speaker Chevy
+> Yes... it's just.
+> ...
+> I-it was a shocking story is all.
+> I'm sure he, [B]Femal[/], would be honored if he knew.
+
+/speaker Cincero
+> He is out there somewhere, I KNOW he is.
+> I'll show him all of this when I find him.
+> I hope he can show me [R]Kingsroot[/] too... I really do.
+/fade black
+/wait 40
+/speaker Chevy
+> Je suis désolé.
+
+/speaker Cincero
+> What was that?
+
+/speaker Chevy
+> O-Oh... nothing Director.
+> Let's go out for coffee shall we? I'll buy you some.
+
+/speaker Cincero
+> That's very kind of you. I ought to give you raise.
+> ...
+> Anyway Let's go!
+
+/speaker Chevy
+> Yeah... Let's go.
+
+
+################### Extra Quest - Return of the King #########################
+# Req: "Frost" cleared, "Shade" cleared, "Roots" Cleared.
+# Post Game?
+###############################################################################
+
+# In city where Femal Pharmaseuticals is located. PLAYER recieves a mail
+    # Subject: Big News!
+    # Sender: Chevy
+    # "This is Chevy from Femal Pharmaseuticals. Could you come visit the company HQ? We, that is Cincero and I, have some great news we would like to share with you!
+#    
+
+[Z-22-E,0]
+# At the Entrance to the company building Chevy and Cincero are standing facing one another. 
+# When player approaches them.
+/event Chevy exclaim
+/event Chevy turn <Towards Player>
+/event Cincero turn <Towards Player>
+
+/speaker Chevy
+> PLAYER. I'm glad to see you.
+
+/speaker Cincero
+> I am as well.
+> As you saw in the mail, we have big news to share...
+
+/speaker Chevy
+> ...and we wanted to give them to you in person... since you helped us so much and all.
+
+/speaker Cincero
+> We... Well the the truth is...
+> .WT.WT.
+> I don't really know how to say it.
+
+/speaker Chevy
+> I don't how many times I've told you this. The best thing to do is to say it straight out!
+> But alright I will say it for you.
+
+/speaker Cincero
+> If you would [R]Madame[/].
+
+/speaker Chevy
+> Will you PLEASE stop calling me that...
+> .WT.WT.
+> Though I suppose it might be appropriate th.
+> We are getting married.
+
+/event Player exclaim
+
+/speaker Cincero
+> Don't look so dumbfounded! It IS true you know.
+> ...
+> *ahem* 
+> We would like to formally invite you to come to our wedding.
+
+/speaker Player
+> ...!
+
+/speaker Cincero
+> That is very sweet of you.
+
+/speaker Chevy
+> Director, we should get going.
+
+/event Cincero turn <Towards Chevy>
+/speaker Cincero
+> What!? Oh, yes!
+/event Cincero turn <Towards Player>
+> We are heading out for coffee at <Location>
+> Would you like to join us?
+
+
+/speaker Player
+> ...!
+
+/speaker Chevy
+> I am glad to hear! We will see you at the coffee shop!
+
+[Z-22-E,1]
+# Somewhere where coffee can be bought :P
+
+# Chevy and Cincero's wedding
+# Pokémon Gift: Spectrier or Glastrier
+# Pokémon Battle: Calyrex
+
+####### NOTES'N'FACTS'N'THINGS ###########
+# Cincero is a combination of: 
+    # Cinc (prounounced like the english word "sank") meaning "Five" in french
+    # Cicero a Roman statesman, lawyer, scholar and philosopher
+# "Pas ton Temps" translates to "Not your time"
+# "Cesser!" translates to "cease" or "desist"
+# "Racine des Rois" is French literally meaning "Root of (the) Kings"
+# "Chevalier" translates literally to "knight" in french. "Chevalienne" is the female version
+# "Delciné" is a shortening of "De la Racine" meaning "Of the Root"
+# "Serment" means "Oath" or "Wov"
+# "Je suis Désolé" is a formal way of saying "I am sorry"
+# "Jardin Béni" translates to "Blessed Garden"
+# "Jardin Nuit" translates to "Night Garden"
+# "Couroige" is a mix of the french words: "Courage","Couronne","Neige","Roi" and "Rouge"
+    # Meaning: "Courage","Crown","Snow","King" and "Red" respectively.
+    # The "Red" being a referrence to roses and the word "Calyx" whose name combined with the latin word for King form the word "Calyrex"
+    # https://www.merriam-webster.com/dictionary/calyx
+
+# Leara also appears in the Xerneas and Yveltal quests. However, this could only be an ancestor.
+# Leara was a part of the royal family, and the other Leara is an ancestor, which because of various circumstances decided to run away from the throne.
+# She went to the secluded forest city that is home to the elements. There she got the role she has with Xerneas.
+# This should probably only be vaguely implied during each of these quests. Possibly with a quest available after doing both which touches on the subject

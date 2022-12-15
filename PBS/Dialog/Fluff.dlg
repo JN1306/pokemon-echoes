@@ -1,0 +1,201 @@
+# - "Lore, off the path worldbuilding"
+# Bookshelf in Player's bedroom.
+[Fluff,0]
+> There are all sorts of children's books neatly arranged on the shelves.
+/if !$game_self_switches[[$game_map.map_id,@event_id,"A"]]
+    > There is a tightly shut book called "The Beedrills and the Braviaries "
+    > "Do not read until you're older!" is hastily written along the back.
+    ?> Examine the book further?
+    /choice Yes
+        > "From PLAYER to Amy" is written on the front page.
+        /eval $game_self_switches[[$game_map.map_id,@event_id,"A"]]=true
+    /cancelchoice No
+    ?/>
+/end
+
+[Fluff,1]
+> There are all sorts of children's books neatly arranged on the shelves.
+> "Vaporeon's magical water fountain", "How Lapras and Lunala became friends","Princess Sylveon and the magical ribbon" and a few others.
+
+# Book on table in Player's Bedroom
+[Fluff,2]
+> "[B]Insilmira[/]"
+> The tragic tale of a queen and her kingdom. A story of heroes and monsters.
+
+# TV in Player's Bedroom
+[Fluff,3]
+> An orange-haired girl with a hat is sitting in front of a window with a Laptop. 
+> A missile splashed down in the sea outside!?
+
+# Bookshelf in Home's main room
+[Fluff,4]
+> "Five little Spoinks","Murder on the Gumshoos Express","The Veiled Gardevoir"
+> A collection of stories by renowned Ghost-Type Trainer and mystery writer Christine Agathon
+
+[Fluff,5]
+> "The Humble Alcremie. A chef's guide to delicious deserts any trainer can make."
+
+# Open Book in Lawrence's Room
+[Fluff,6]
+> "How to perfect your Strawberry Miltank Pie."
+> There is a little handprint on the page.
+
+# Lawrence
+[Fluff,7] # Before exiting house to meet with Amy
+/speaker Lawrence
+> I wonder what happened to the kid...
+> *mumble* *mumble*
+
+
+# Amy reading a story to Absol
+# Talking to Amy
+[Fluff,8] 
+/event set Amy 11
+/event set Absol 12
+/speaker Amy
+/expression neutral
+/event Amy turn right
+> ...to protect her kingdom, the Queen  used her power to make her kingdom one with the earth.
+> To this day, it remains hidden deep beneath the ground, waiting for someone to find it and discover the treasures hidden within.
+> ...
+> That's one of my favorite stories in the WORLD!
+> [B]Uncle Lawrence[/] used to read it to me all the time when I was littler.
+/expression happy
+> It helped me learn how to read and write and stuff.
+> What did you think Absol?
+/speaker Absol
+/expression neutral
+> ...
+> sooool...
+/speaker Amy
+> ...I wonder if it really exists...
+
+# Talking to Eevee
+[Fluff,9]
+/event set Eevee 14
+/event Eevee turn up
+/speaker Eevee
+> ...
+/hidename 2
+/expression none
+> Eevee's tail is wagging quite a bit
+
+# Talking to Absol
+[Fluff,10]
+/event Absol turn left
+/speaker Absol
+> ...
+/speaker PLAYER
+/hidename 2
+> Absol is listening keenly.
+> She seems a little happier.
+
+# Investigating the book
+[Fluff,11]
+/event set Amy 11
+/if !$game_self_switches[[$game_map.map_id,@event_id,"B"]]
+    /eval $game_self_switches[[$game_map.map_id,@event_id,"B"]]=true
+    > ...four magnificent flying Pokémon carried the queen's messages, serving faithfully by her side.
+    > Their names were--
+    > The page ends.
+    ?> Turn over the page?
+    /choice Yes
+        /speaker Amy
+        /expression neutral
+        > Hey! I'm reading that!
+    /cancelchoice Naw Amy is reading it
+        /speaker Amy
+        /expression happy
+        > Tee-hee You're always so considerate!
+    ?/>
+/else
+    > Better let [P]Amy[/] read on.
+/end
+
+[Fluff,12] # Book in Ranger's House (Fukuri Town)
+> "Pokémon Grottos and their significance"
+?> Read on?
+/choice Yes
+    > It is well known among rangers that the Pokemon that gathers in grotto are generally [G]among the rarer Pokémon of that area[/] or even [G]different species entirely[/].
+    > After thorough research it's been established that in general [G]up to nine different pokémon[/] inhabit a grotto, though in rare cases more inhabitants have been documented.
+    /if $game_switches[AURA_PKMN_DISCOVERED]
+        > Another curious phenomenon that has been observed is that if a specific [Y]element[/] is brought into a grotto if will guarantee an encounter matching the type of said [Y]element[/].
+        ?> Read on?
+        /choice Yes
+            > The frequency of grottos suggest that they may harbor some lingering energy from [Y]Aura Pokémon[/] that resides, or used to reside, nearby.
+            > It is documented that Grotto-Dwelling Pokémon usually share characteristics with such Pokémon.
+            > Further research is encouraged.
+        /cancelchoice No
+        ?/>
+    /end 
+/cancelchoice No
+?/>
+
+
+# Case File on Lawrence's desk
+[Fluff,13]
+> Case file: 380861 [R]"Whitestone Cliff Fire"[/]
+> It is dated a little over twelve years ago
+?> Read on?
+/choice Yes
+    > Chief investigator: Lawrence
+    > Man found dead after a Pokémon induced fire burned down the house of the deceased.
+    ?> Read on?
+    /choice Yes
+        > Son of the deceased was reported visiting the man shortly before the attack.
+        > Son is not a suspect due to young age and lack Pokémon.
+        > No other suspect has been found.
+    /cancelchoice I would rather not
+    ?/>
+/cancelchoice Better leave it alone 
+?/>
+
+[Fluff,14] # Talking to Lawrence after meeting Absol
+/speaker Lawrence
+> An [B]Absol[/] of all Pokémon.
+> ...oh [P]Amy[/] what you gotten us into now?
+> *Mumble Mumble*
+
+# Talking to Lawrence after starting to make the medicine, but before getting the Herb.
+[Fluff,15] 
+/speaker Lawrence
+> I don't know if I told you this before, but I always dreamed of being a detective ever since I was a little tyk.
+> The works of the Christine Agathon always kept me on the edge of my seat. 
+> I wanted to be like the heroes in those stories.
+> I'm happy I became a policeman, heck a chief of police even, but it certainly has it's challenges.
+> ...
+> *sigh* to be a kid again.
+> .WT.WT.
+> Eh being an adult ain't all bad I suppose. I got you and [P]Amy[/]. That is a very giving life to have.
+
+
+
+# Talking to Starter while Amy is reading them a book
+[Fluff,16]
+/event set Starter 15
+/if pbStarter[3]=="Inlys"
+    /event Starter turn left
+    /speaker Licit
+    > ...
+    /speaker PLAYER
+    /hidename 2
+    > Licit is listening keenly.
+    > Their tail rings are glowing softly
+/elsif pbStarter[3]=="Licit"
+    /event Starter turn left
+    /speaker Vinette
+    > ...
+    /speaker PLAYER
+    /hidename 2
+    > Vinette is listening keenly.
+    > They seem very eager
+/elsif pbStarter[3]=="Vinette"
+    /event Starter turn left
+    /speaker Inlys
+    > ...
+    /speaker PLAYER
+    /hidename 2
+    > Inlys is listening keenly.
+    > They are trembling a little.
+    > maybe the story is scary?
+/end

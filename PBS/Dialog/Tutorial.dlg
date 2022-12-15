@@ -1,0 +1,29 @@
+[Tutorials,0] # Auto-Healing & Field Damage
+/if $game_variables[DIFFICULTY_CHOICE]==0
+    > [G]Auto Healing[/]
+    > After a battle your Pokémon will be [G]fully healed[/] and their status will be cured.
+/elsif $game_variables[DIFFICULTY_CHOICE]==1
+    > [G]Auto Healing and Field damage[/]
+    > After a battle your Pokémon will be [G]Healed for 25% of their max HP[/] unless they are [R]Burned[/], [P]Poisoned[/] or [B]Frozen[/].
+    > A Pokémon that is [R]Burned[/], [P]Poisoned[/] or [B]Frozen[/] will take 1 HP of damage [G]every four steps you walk[/].
+    > Pokémon will not faint while taking damage outside of battle. Certain abilities will prevent them taking damage outside of battle.
+    > This is noted in the ability's description.
+/elsif $game_variables[DIFFICULTY_CHOICE]==2
+    > [G]Auto Healing and Field damage[/]
+    > After a battle your Pokémon will be [G]Healed for 10% of their max HP[/] unless they are [R]Burned[/], [P]Poisoned[/] or [B]Frozen[/].
+    > A Pokémon that is [R]Burned[/], [P]Poisoned[/] or [B]Frozen[/] will take 1 HP of damage [G]every four steps you walk[/].
+    > Pokémon [R]will faint[/] while taking damage outside of battle. Certain abilities will prevent them taking damage outside of battle.
+    > This is noted in the ability's description.
+/elsif $game_variables[DIFFICULTY_CHOICE]==3
+    > [G]Field Damage[/]
+    > A Pokémon that is [R]Burned[/], [P]Poisoned[/] or [B]Frozen[/] will take 1 HP of damage [G]every four steps you walk[/].
+    > Pokémon [R]will faint[/] while taking damage outside of battle. Certain abilities will prevent them taking damage outside of battle.
+    > This is noted in the ability's description.
+/end
+
+[Tutorials,1] # Bonus EXP / Landmarks
+[Tutorials,2] # Trading Posts 
+[Tutorials,3] # Item Orbs
+[Tutorials,4] # Aura Pokémon
+[Tutorials,5] # Grottos
+

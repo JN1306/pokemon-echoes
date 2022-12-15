@@ -1,0 +1,165 @@
+# Battle Practice - Fukuri Town (Manditory)
+[SQ_Battle_Practice,0] 
+/speaker Yamada
+> Hello there! Do you need help with something?
+/speaker PLAYER
+> ...WT ...WT ...
+/speaker Yamada
+> Ah, killing some time eh?
+> Well then, If you want to take me on, your gonna have to show me you're stuff, get my drift?
+> See you can defeat my two students, then we can talk about a battle between the two of us.
+
+[SQ_Battle_Practice,1]
+/speaker Yamada
+> Show me you can beat my students, then we talk yeah?
+
+[SQ_Battle_Practice,2]
+/speaker Yamada
+> You showed quite a bit of skill there. Now let's see how you fare against me.
+> As an Ace Trainer. I always give it my all.
+
+[SQ_Battle_Practice,3]
+/speaker Yamada
+> That was a good battle! My students could learn a thing or two from you.
+> Stop by my house if you wanna chat, I'd be happy to.
+
+# Pokémon Ranger in Fukuri Town ("Helpful Search")
+[SQ_Helpful_Search,0]
+/event set Pkmn_Ranger 2
+/speaker Pkmn_Ranger
+/eval pbUnloadQuestMarkers
+/if !$quests[:HELPFULSEARCH].active?
+    > Hello there! The name's [B]Vernon[/], how are you doing?
+    /speaker Vernon
+    > ...
+    > I'm actually glad you showed up. I was wondering if you could help me with something.
+    /if !$game_switches[AURA_PKMN_DISCOVERED]
+        > I have been travelling the nearby area for a while seeing to some [Y]Special Pokémon[/] and gathering data.
+    /else
+        > I have been travelling the nearby area for a while seeing to some [Y]Aura Pokémon[/] and gathering data.
+    /end
+    > I had the worst of luck though, see I was heading home right? And a [B]Pandemeon[/] shows up out of nowhere and spits acid at my hand.
+    /if !$Trainer.hasSeen?(:PANDEMEON)
+        /speaker PLAYER
+        > ...?
+        /speaker Vernon
+        > [B]Pandemeon[/] are a new one to you ey? 
+        /pokemon PANDEMEON They are the Poison evolution of Eevee. Their internal poison is powerful but helpful as a vaccine agent.
+        /eval $Trainer.setSeen(:PANDEMEON)
+        > ...anyway...
+    /end
+    > So, there I stand yeah, hand stinging from the acid and I notice that my data on [B]Poochyena[/] is gone, melted.
+    > Well I am a busy ranger with things to do, so I wanted to ask you if you could show me a Pokédex entry for [B]Poochyena[/]?
+    /if !$Trainer.hasSeen?(:POOCHYENA)
+        /speaker PLAYER
+        > ... 
+       /speaker Vernon
+        > They are often seen in the [G]Pokémon Grotto[/] right here in Fukuri Town.
+        > The grotto is hidden in the tree [G]right above the entrance to the Secluded Grove[/]
+        > It's real easy to find just look for the [G]bushes on each side of the tree[/]
+        > [G]Every Grotto is usually marked in some way[/]. How else are us rangers supposed to find them?
+        > Come back and see me when you've seen a Poochyena alright?
+        /eval $quests[:HELPFULSEARCH].start
+        /eval pbLoadQuestMarkers
+    /else
+        /speaker PLAYER
+        > ...!
+        /event Pkmn_Ranger exclaim
+        /speaker Vernon
+        > Oh! you already have!? May I see it?
+        /speaker PLAYER
+        > ...
+        /speaker Vernon
+        > Thanks pal!
+        /fade black 20
+        /wait 80
+        /fade normal 20
+        > There we go. All done! Well that was easier than expected.
+        > You can have these.
+        /eval Kernel.pbReceiveItem(:POISONELEMENT,1)
+        /eval $quests[:HELPFULSEARCH].finish
+        /eval $game_self_switches[[@map_id,@event_id,"A"]]=true 
+        /eval pbLoadQuestMarkers
+    /end
+/elsif $quests[:HELPFULSEARCH].active? && $Trainer.hasSeen?(:POOCHYENA)
+    /speaker PLAYER
+    > ...!
+    /speaker Vernon
+    > Heya! You've seen a Poochyena at last? Awesome let me get the data right away!
+    /fade black 20
+    /wait 80
+    /fade normal 20
+    > There we go. All done!
+    /eval $quests[:HELPFULSEARCH].finish
+    /eval pbLoadQuestMarkers
+/elsif $quests[:HELPFULSEARCH].active?
+    /speaker Vernon
+    > [B]Poochyena[/] are often seen in the [G]Pokémon Grotto[/] right here in Fukuri Town.
+    > The grotto is hidden in the tree [G]right above the entrance to the Secluded Grove[/]
+    > It's real easy to find just look for the [G]bushes on each side of the tree[/]
+    > [G]Every Grotto is usually marked in some way[/]. How else are us rangers supposed to find them?
+    /eval pbLoadQuestMarkers
+/end
+
+# Fisherman in Fukuri Town ("Sign of Love")
+[SQ_Sign_of_Love,0]
+/eval pbUnloadQuestMarkers
+/if !$quests[:SIGNOFLOVE].active?
+    /speaker Fisherman
+    > *sigh*
+    /speaker PLAYER
+    > ...?
+    /speaker Fisherman
+    > I just can't find it.
+    > It's the anniversary and my girl and I getting married tomorrow and wanna give her a gift y'know?
+    > I've had the WORST of luck yeah? I've been fishing in every pond from here to the end of the world and I have not been able to find a SINGLE [B]Mystic Water[/].
+    > I mean how crazy is that!? Some fisherman I turned out to be eh?
+    > So I want to humbly ask you if you can get me one?
+    /if !pbHasBagItem?(:MYSTICWATER)
+        /speaker PLAYER
+        > ... 
+        /speaker Fisherman
+        > Aww thank you, that'll really save my bacon.
+        /eval $quests[:SIGNOFLOVE].start
+        /eval pbLoadQuestMarkers
+    /else
+        /speaker PLAYER
+        > ...!
+        /speaker Fisherman
+        > You got one!? Can I have it please? I'll pay you handsomely for it.
+        /speaker PLAYER
+        > ...
+        /speaker Fisherman
+        > Aww thank you, you really saved my hiney here
+        /fade black 20
+        /wait 80
+        /fade normal 20
+        > I cannae tell ye how happy I am for this. You can take these.
+        /se ItemGet
+        /eval $Trainer.money+=1000
+        /eval pbDisplaySmall("You received $ 1,000!")
+        /eval $PokemonBag.pbDeleteItem(:MYSTICWATER,1)
+        /eval Kernel.pbReceiveItem(:WATERELEMENT,1,false)
+        /eval $quests[:SIGNOFLOVE].finish
+        /eval pbLoadQuestMarkers
+    /end
+/elsif $quests[:SIGNOFLOVE].active? && pbHasBagItem?(:MYSTICWATER)
+    /speaker Fisherman
+    > There you are, you got a Mystic Water too by the looks of it.
+    > May I have it ?
+    /speaker PLAYER
+    > ...
+    /speaker Fisherman
+    > Thank you very much pal!
+        /eval $PokemonBag.pbDeleteItem(:MYSTICWATER,1)
+        /eval $quests[:SIGNOFLOVE].finish
+/elsif $quests[:SIGNOFLOVE].active?
+    /if !$Trainer.hasSeen?(:MILOTIC)
+        /pokemon MILOTIC I would have caught her a Milotic if I found one. It is her favorite Pokémon...*sigh*
+        /eval $Trainer.setSeen(:MILOTIC) 
+    /else
+        /speaker Fisherman
+        > I would have caught her a [B]Milotic[/] if I found one. It is her favorite Pokémon...*sigh*
+    /end 
+    /eval pbLoadQuestMarkers
+/end

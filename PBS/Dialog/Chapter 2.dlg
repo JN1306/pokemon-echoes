@@ -1,0 +1,925 @@
+##################### CHAPTER 2 ########################
+# Meal with Amy and Lawrence
+[CH_2_Intro,0]
+/event set Lawrence 42
+/speaker Lawrence
+/expression neutral
+> PLAYER are you alright?
+
+/speaker PLAYER
+> ...WT ...WT ...?
+
+/speaker Lawrence
+/expression neutral
+> I figured you'd be upset after what happened with that lawless idiot.
+
+/speaker PLAYER
+> .WT.WT.
+
+/speaker Lawrence
+/expression neutral
+> I certainly am.
+> For him to attack [P]Amy[/] like that is unforgiveable.
+> It would've been even if [R]He[/]'d had a reason...
+
+/speaker PLAYER
+> ...
+
+/speaker Lawrence
+/expression neutral
+> What was that?
+
+/fade black 20
+/speaker PLAYER
+> ...WT ...WT ...
+/wait 40
+/fade normal 20
+
+/speaker Lawrence
+/expression neutral
+> [B]Arglos[/] came here!?
+
+/speaker PLAYER
+> ...?
+
+/speaker Lawrence
+/expression neutral
+> Oh I know him. Our paths have crossed a time or two before.
+> I can't really get a grasp on him though. He is quite odd.
+> We have been investigating all of those disappearances as they've happened, but all of them turn up blank.
+> I have to head to the station SOON anyway.
+> ...
+> Before I do though, would you mind if we went inside for a bit. I figured we all needed a break after what happened.
+> I'll cook you up a nice meal, what do you say?
+
+/speaker PLAYER
+> ...!
+
+/speaker Lawrence
+/expression neutral
+> Alright. I will see you inside.
+> ...
+> Hmmm.... what to make though?
+/fade black 20
+/wait 40
+/event Lawrence switch A false
+/fade normal 20
+
+########## Lawrence Cooking Scene ####################
+[CH_2_Intro,1]
+/event set Amy 3
+/event set Eevee 4
+/event set Lawrence 7
+/speaker Amy
+/expression happy
+> Have you decided what to make yet [B]Uncle Lawrence[/]?
+
+/event Lawrence turn left
+/speaker Lawrence
+> Patience dear, It's only been a minute but I think I got the general idea.
+> How about...
+> hmmm... let's see...
+> Seared beef with potato and carrot stew?
+> Might take a little while though...
+/if pbSt_pkmn="Vinette" 
+    /speaker PLAYER
+    /expression neutral
+    > ...WT ...WT ...!
+    /speaker Lawrence
+    > Ah there you are PLAYER, of course [B]Vinette[/] can help, they are fire-type after all.
+/elsif pbSt_pkmn="Inlys" 
+    > Shouldn't take long, [B]Vinette[/] will help me sear the meat nicely
+/else
+    /speaker Amy
+    /expression neutral
+    > Hey! My [B]Vinette[/] can help!
+    /speaker Lawrence
+    > Good idea [P]Amy[/]!
+/end
+/se Open Pokeball
+/cry VINETTE
+
+# Move Vinette and Lawrence to dishwasher
+# Move Player to a chair next to Amy
+[CH_2_Intro,2]
+/speaker Amy
+/expression worried
+> Are you ok brother?
+
+/speaker PLAYER
+/expression neutral
+> .WT.WT.
+> ...?
+
+/speaker Amy
+/expression worried
+> I'm...
+> I don't know what I am to be honest.
+> I guess...
+> I'm confused.
+    
+/speaker Amy
+/expression worried
+> I don't get what's going on and [B]Kanai[/] tried to attack Absol and the thing with the [G]eye[/] and...
+> and...
+
+# Move Player over to Amy
+[CH_2_Intro,3]
+/speaker PLAYER
+> .WT.WT.
+/fade black 12
+/wait 40
+/speaker Amy
+/expression worried
+> ...*sob* WT ...*sob*
+> It's just...a little too much.
+
+/speaker PLAYER
+> .WT.WT.
+
+/speaker Amy
+/expression worried
+> ...
+/wait 40
+/fade normal 12
+/speaker Amy
+/expression neutral
+> Thank you...brother, I needed that.
+
+
+# Move Lawrence to the table
+[CH_2_Intro,4]
+/speaker Lawrence
+/expression neutral
+> Oh [P]Amy[/] dear. I know how you feel. Do you want me to call your Pokémon down?
+
+/speaker Amy
+/expression neutral
+> No, they're upstairs watching TV
+/eval pbBGMFade(1)
+> listen.
+/wait 24
+/cry EEVEE 30,100
+/wait 24
+/cry ABSOL 30,100
+/bgm past
+/speaker Amy
+/expression neutral
+> Eevee's favorite show is on and I think he wants Absol to enjoy it too.
+
+/speaker Lawrence
+/expression neutral
+> Fair enough. Here is your food everyone.
+
+# Make dinner plates visible
+/speaker PLAYER
+/expression neutral
+> ...
+
+/speaker Lawrence
+/expression neutral
+> ...
+
+/speaker Amy 
+/expression neutral
+> ...
+/event Amy exclaim
+/wait 12
+> Hey it's not burnt this time! 
+
+/speaker Lawrence
+/expression neutral
+> What do you mean "not burnt this time"!?
+
+/speaker Amy 
+/expression neutral
+> Well last time you accidently had Vinette use ember on the food remember?
+
+/speaker Lawrence
+/expression neutral
+> .WT.WT.
+> I've been tryingWT to forget that ever happened.
+
+/speaker Amy 
+/expression happy
+> Good thing I remember then!
+
+/speaker Lawrence
+/expression neutral
+> ...
+
+/speaker Amy 
+/expression happy
+> It's alright, I can tell you like cooking a lot! 
+
+/speaker Lawrence
+/expression neutral
+> I do indeed!
+
+/speaker Amy 
+/expression happy
+> Besides this is really good!
+
+# Turn Amy towards player
+/speaker Amy 
+/expression happy
+> Don't you agree?
+
+/speaker PLAYER
+> ...!
+# Turn Amy towards Lawrence
+/speaker Amy 
+/expression happy
+> There you go!
+
+/speaker Lawrence
+/expression neutral
+> I'm glad you think so.
+> Do youWT feel better?
+
+/speaker Amy 
+/expression happy
+> Yeah.
+/expression neutral
+> It helps having a shoulder to cry on.
+
+/speaker Lawrence
+/expression neutral
+> How adult of you.
+
+/speaker Amy 
+/expression happy
+> hee-hee.
+
+/speaker Lawrence
+/expression neutral
+> What do you think about everything?
+
+/event Player exclaim
+/wait 12
+/speaker PLAYER
+> ...!
+
+/speaker Amy 
+/expression neutral
+> It's OK.
+> .WT.WT.
+> I'm confised... and worried about [B]Kanai[/].
+
+/speaker Lawrence
+/expression neutral
+> Why would you worry about [R]him[/]!?
+
+/speaker Amy 
+/expression neutral
+> I heardWT a heartbeat...
+
+/speaker Lawrence
+/expression neutral
+> Didn't I tell you to not worry about things you can't do anything about?
+
+/speaker Amy 
+/expression neutral
+> I know, but...
+> Somehow, It feels like I can.
+
+/speaker Lawrence
+/expression neutral
+> I know you want to help everyone [P]Amy[/], but please, be careful.
+> [R]That man[/] is lawless and dangerous. I don't want him to harm you.
+
+/speaker Amy 
+/expression neutral
+> I know, but...
+
+/speaker Lawrence
+/expression neutral
+> .WT.WT.
+> Listen [P]Amy[/] at least you have to agree that you can't do anything right now yes?
+
+/speaker Amy 
+/expression neutral
+> IWT...I guess.
+
+/speaker Lawrence
+/expression neutral
+> So at least do your old uncle a favor and don't worry about it right now OK?
+
+/speaker Amy 
+/expression neutral
+> OK...
+
+/speaker Lawrence
+/expression neutral
+> .WT.WT.
+
+/speaker Amy 
+/expression neutral
+> ...
+> I think...
+
+/speaker Lawrence
+/expression neutral
+> Yes?
+
+/speaker Amy 
+/expression neutral
+> I think I'll take a walk in a bit.
+
+/speaker Lawrence
+/expression neutral
+> Why wait a bit?
+
+/speaker Amy 
+/expression happy
+> I wanna finish my meal first and then go up and watch the end of the show with Eevee and Absol.
+
+/speaker Lawrence
+/expression neutral
+> That makes sense.
+> Don't wait too long though. It'll get dark.
+
+/speaker Amy 
+/expression happy
+> That's kind of how night works.
+/expression neutral
+> I won't. the show isn't THAT long.
+
+/speaker Lawrence
+/expression neutral
+> What kind of show is it?
+
+/speaker Amy 
+/expression neutral
+> It's about eight, or was it nine, kids getting to go to another world and meet all sorts of cool creatures and stuff.
+
+/speaker Lawrence
+/expression neutral
+> Oh, so it's like going out and catching Pokémon then?
+
+/speaker Amy 
+/expression happy
+> Nah, it's pretty different...WTI think. There is this orange thing that kinda reminds me of [B]Cranidos[/]...
+> and there is the other one that looks likes something a [B]Growlithe[/] with a horn and a tail like a [B]Helioptile[/].
+> They're very friendly things though.
+
+/speaker Lawrence
+/expression neutral
+> Sounds like fun.
+
+/speaker Amy 
+/expression happy
+> It is! [B]Eevee[/] loves it and I think she is trying to make [B]Absol[/] love it too!
+
+/speaker Lawrence
+/expression neutral
+> Don't let me stop you.
+> I will be heading to the station in a bit though, so I'll be seeing you later alright?
+
+/speaker Amy 
+/expression happy
+> OK!
+/expression neutral
+> Is brother going with you?
+
+/speaker Lawrence
+/expression neutral
+> Why do you ask?
+
+/speaker Amy 
+/expression neutral
+> Well, that [B]Arglos[/] guy said something about that brother should talk with about that man that disappeared.
+
+/speaker Lawrence
+/expression neutral
+> Did he now?
+
+/speaker Amy 
+/expression neutral
+> Yup, shouldn't he have?
+
+/speaker Lawrence
+/expression neutral
+> Who knows...
+> Well I will at least ask your brother politely.
+
+/speaker Amy 
+/expression happy
+> I'm gonna take that as he is going with you.
+
+# Move Amy to the player
+[CH_2_Intro,5]
+/speaker Amy 
+/expression neutral
+> Be careful OK?
+
+/speaker Player
+/expression neutral
+> ...!
+
+/speaker Amy 
+/expression happy
+> *giggle*
+
+# Move Amy upstairs
+# Turn Lawrence towards Player
+[CH_2_Intro,6]
+/speaker Lawrence
+/expression neutral
+> Well are you coming with me to the station?
+
+/speaker Player
+/expression neutral
+> ...
+
+/speaker Lawrence
+/expression neutral
+> [P]Amy[/]'s got a good head on her shoulders.
+> .WT.WT.
+> I will head out. I have a meeting with [B]someone[/] I need to attend.
+> You come after as fast as possible. From the forest entrance just follow the [R]Crossroads[/] til you get to [R]Fountain Road[/] and from there to [R]Iphondria City[/].
+> Once you're there it's easy to find. It is on the [R]Second floor of the largest building[/].
+> I'll see you there.
+
+# Move Lawrence out of the house
+# Advance the Quest "Out Of the Woods"
+
+
+
+# At Lawrence's Office.
+[CH_2_Office,0]
+/event set Policeman 1
+/speaker Policeman
+> Excuse me [B]Chief Lawrence[/] is in the middle of a mee--
+
+/event Policeman exclaim
+
+/speaker Policeman
+> Oh! You would be PLAYER correct?
+> The chief is waiting for you.
+> ...
+> Yeah, I don't think he'll mind, the meeting is almost done anyway
+# Move Policeman out of the way.
+
+# Ulrich introduction
+# Finish Quest: Out of the Woods.
+
+[CH_2_Office,1]
+/speaker Ulrich
+/hidename 1
+> You must understand Chief, these are serious threats. The entire [R]Power Plant[/] is on high alert.
+
+/speaker Lawrence
+> .WT.WT.
+
+/speaker Ulrich
+/hidename 1
+> I will do anything to keep [B]Manectric[/] safe, but I would be nice if it didn't come to that in the first place.
+
+/speaker Lawrence
+> ForWT clarification, could you give me the details of the threat again?
+
+/speaker Ulrich
+/hidename 1
+> Again!? Man you're dim!
+
+/speaker Lawrence
+> I beg your pardon?
+
+/cry MANECTRIC 80 80
+/speaker Manectric
+/expression neutral
+> raivorr...
+
+/speaker Ulrich
+/hidename 1
+> .WT.WT.
+> I'm sorry. Like I said, I'm very high strung. No offense.
+
+/speaker Lawrence
+> None taken. Now if you would...
+
+/speaker Ulrich
+/hidename 1
+> Recently I got a letter stating that unless I turned off the Power Supply to the entire [B]Iphondria[/] area. They would... They would...
+
+/speaker Lawrence
+> Yes?
+
+/speaker Ulrich
+/hidename 1
+> ...
+
+/cry MANECTRIC 80 80
+
+/speaker Ulrich
+/hidename 1
+> They would take [Y]Manectric[/] from me.
+
+/speaker Lawrence
+> Nautrally you will refuse to comply with this as it would result in trouble for the entire area.
+> You believe this threat to be credible?
+
+/speaker Ulrich
+/hidename 1
+> I don't really know, but I...WT think...WT it is.
+> With how vital the Power Plant is. I must assume it is.
+
+/speaker Lawrence
+> Couldn't have said it better myself, One can never be too careful.
+> As we do not know when they will come to...
+
+/speaker Ulrich
+/hidename 1
+> ...
+
+/speaker Lawrence
+> Execute their threat...
+> I will send a couple of men over to [B]Pharoday Island[/] to keep an eye on things.
+
+/speaker Ulrich
+/hidename 1
+> T-thank you sir.
+
+/speaker Lawrence
+> .WT.WT.
+> Listen [B]Ulrich[/] I get that you are nervous, but I promise we will do all we can to ensure your safety.
+
+/speaker Ulrich
+> ...and [Y]Manectric[/]'s
+
+/speaker Lawrence
+> YesWT and Manectric's safety of course.
+
+/cry MANECTRIC
+/wait 12
+
+/speaker Lawrence
+> Don't mention it.
+> I think that about settles it. If you will excuse me, there are other cases demanding my attention.
+
+/speaker Ulrich
+> The disappearances I take it?
+
+/speaker Lawrence
+> That would be it yes.
+
+/speaker Ulrich
+> Any leads?
+
+/speaker Lawrence
+> Blank as a white page...
+
+/cry MANECTRIC 80 80
+/speaker Manectric
+/expression neutral
+> rai...
+
+/speaker Lawrence
+> Your sympathy is much appreciated...
+> *sigh*
+
+/speaker Ulrich
+> ...
+
+/speaker Lawrence
+> ...
+> Don't hesitate when those lawless troublemakers show up.
+
+/speaker Ulrich
+> When?
+
+/speaker Lawrence
+> ...WT If. 
+> I've developed a habit of always expecting the worst.
+
+/speaker Ulrich
+> Shame.
+> I'll be off then.
+
+# Turn Ulrich and Manectric towards one another
+/speaker Ulrich
+> Come on Manectric, they are having a sale on Nanab Berry pie at the [B]East-West café[/] and I wouldn't miss it for the world.
+
+/cry MANECTRIC 80 100
+/speaker Manectric
+/expression neutral
+> vor?
+
+/speaker Ulrich
+> .WT.WT.
+> You REALLY want a piece of that pie don't you?
+> Alright then. I'll get you a piece. WTWTWT Like I wasn't going to give you one anwyay.
+
+/cry MANECTRIC 80 100
+/speaker Manectric
+/expression happy
+> RAI!
+
+# Play Zapping related SE
+
+/speaker Ulrich
+> Ouch! You'll numb my hand if you keep doing that!
+> ...
+> Don't worry about it, we got a pie to eat!
+
+# Move Ulrich and Manectric towards the exit
+# Move Player out of the way and Ulrich out of the room.
+# Move Manectric in front of Player, have them jump, play their cry and move them out of the door.
+# Move PLAYER to Lawrence's desk.
+
+[CH_2_Office,2]
+/speaker Lawrence
+> Ah there you are. Apologies for making you wait at the door for so long.
+> Admittedly I expected the meeting with [B]Ulrich[/] to be shorter.
+> ...
+> I get him being nervous though, if someone threatened to attack the police station, I would probably feel the same way.
+> Heh, if I had nerves to begin with that is.
+> ...
+/eval $game_variables[31]=[0,false,false,false]
+/loop
+    /hidename 2
+    ?> ...
+    /choice "What's on your mind?"
+        /speaker Lawrence
+        /hidename 0
+        > *sigh* everything... and nothing.
+        > There is [R]that man[/] attacking [P]Amy[/], there is [P]Amy[/] herself..
+        > On top of that there is all of these cases...
+        /speaker PLAYER
+        > ... ... ...
+        /speaker Lawrence
+        > ...WT thank you PLAYER ...
+        /if !$game_variables[31][1]
+            /eval $game_variables[31][0]+=1
+        /end
+        /eval $game_variables[31][1]=true
+    /choice "How do you know Arglos?"
+        /speaker Lawrence
+        /hidename 0
+        > Can anyone say they "know" him?
+        > He just waltzed in here one night and started spouting nonsense.
+        > I will admit I am quite curious about him...
+        /if !$game_variables[31][2]
+            /eval $game_variables[31][0]+=1
+        /end
+    /choice "Will Amy be OK?"
+        /speaker Lawrence
+        /hidename 0
+        > She is a strong kid, she'll do well... I hope.
+        > Her Pokémon will protect her, but still...
+        > I hope her boundless kindness doesn't get the better of her.
+        /if !$game_variables[31][3]
+            /eval $game_variables[31][0]+=1
+        /end
+    ?/>
+    /if $game_variables[31][0]==3
+        /eval $game_variables[31]=0
+        /break
+    /end
+/end
+
+/speaker Lawrence
+> Have IWT ever told you?
+
+/speaker PLAYER
+> ...?
+
+/speaker Lawrence
+> You have probably noticed, but she is...a little different.
+
+# Amy and Lawrence Moment.
+[CH_2_Moment,0]
+/speaker Lawrence
+> Here we are!
+
+/speaker Amy
+/expression happy
+> Thanks loads for coming with me.
+
+/speaker Lawrence
+> No problem dear.
+> If you don't mind--
+
+/speaker Amy
+/expression neutral
+> I mind a lot! I think about stuff all the time!
+
+/speaker Lawrence
+> That's not what I meant and you know it!
+
+/speaker Amy
+/expression happy
+> *giggle* Yeah!
+
+/speaker Lawrence
+> As I was about to say...
+> I would like to ask you a questionWT if you don't mind.
+
+/speaker Amy
+/expression happy
+> OK
+
+/speaker Lawrence
+> Why did you bring poor old me along? Is your brother sleeping in again?
+
+/speaker Amy
+/expression neutral
+> That is two questions at once.
+> I wanted to go here and brother was "Z-ing" into next Wednesday.
+/expression happy
+> I'm surprised you didn't hear him snoring.
+/expression neutral
+> And you looked stressed out so I thought you would want to relax a bit.
+
+/speaker Lawrence
+> You weren't wrong
+> That is very thoughtful of you.
+
+/speaker Amy
+/expression neutral
+> I feel...WT safe here.
+> It feels likeWT [P]something[/] here wants me to be happy.
+> It's kinda hard to explain.
+
+/speaker Lawrence
+> Do you want to try?
+
+/speaker Amy
+/expression neutral
+> Ummm....
+> Do you know the feeling you get when you think of [P]me[/] and brother?
+> It feels kinda like that, but like... windy... somehow.
+> Does that make sense?
+
+/speaker Lawrence
+> A little bit...
+
+/speaker Amy
+/expression happy
+> It doen't make sense at all does it?
+
+/speaker Lawrence
+> No, not really.
+
+/speaker Amy
+/expression happy
+> You should be more honest with yourself.
+
+/speaker Lawrence
+> Well, I get the thing with the feeling, just not the windy part.
+
+/speaker Amy
+/expression happy
+> That makes sense. I don't really get it either!
+/expression neutral
+> I want...WT everyone to feel like that
+
+/speaker Lawrence
+> LikeWT that?
+
+/speaker Amy
+/expression neutral
+> Like I feel when I'm here.
+
+/speaker Lawrence
+> You want everyone to be happy?
+
+/speaker Amy
+/expression neutral
+> Mhm.
+
+/speaker Lawrence
+> How would you make that happen?
+
+/speaker Amy
+/expression neutral
+> I don't know...
+> Help everyone solve their problems?
+
+/speaker Lawrence
+> .WT.WT.
+
+/speaker Amy
+/expression happy
+> If I am really nice to everyone, I am sure I can do it!
+
+/speaker Lawrence
+> Don't you think that's a touch naive?
+
+/speaker Amy
+/expression neutral
+> Na...ive?
+
+/speaker Lawrence
+> It means that... you see things in a kid-like way.
+
+/speaker Amy
+/expression netural
+> Hey, [B]Uncle Lawrence[/] guess what?
+
+/speaker Lawrence
+> What?
+
+/speaker Amy
+/expression happy
+!> I'M A KID!
+> Of course I'd see things like a kid!
+
+/speaker Lawrence
+> Heh...
+> Hahaha! You're right, you're absolutely right.
+
+/speaker Lawrence
+> I believe in you and so does your brother. Just promise me that you'll be careful OK?
+
+/speaker Amy
+/expression neutral
+> I promise!
+
+/speaker Lawrence
+> Sometimes I wish...I could be more joyful.
+
+/speaker Amy
+/expression neutral
+> Why can't you?
+
+/speaker Lawrence
+> See, I'm an old, crooked Policeman that has seen a lot. It makes it...WT difficult.
+
+/speaker Amy
+/expression neutral
+> I'm sure you can do it if you try.
+
+/speaker Lawrence
+> Thank you [P]Amy[/] that is really nice of you to say.
+
+/speaker Amy
+/expression happy
+> You're welcome!
+
+/speaker Lawrence
+> I suggest we head back home, see there is a slice of pie with your name on it and it DEMANDS to be eaten.
+
+/speaker Amy
+/expression neutral
+> Really!?
+
+/speaker Lawrence
+> Really. I used [P]coloring[/] and everything.
+
+/speaker Amy
+/expression neutral
+> Yay!
+> ...
+> See you can be joyful, easy-peasy.
+
+/speaker Lawrence
+> It helps having people to be happy with.
+/fade black 12
+> (Thank you Amy. That means a lot.)
+/wait 12
+
+
+# Lawrence Office II
+[CH_2_Office,3]
+/event set Lawrence 3
+/speaker Lawrence
+> I thought nothing of it at the time. I thought it was just a general feeling of happiness, and I'm sure it was, but...
+> Call me crazy, but I think there might actually be something in that forest.
+> I don't know but it seemed awfully odd that the wind stopped right before that [G]Eye[/] appeared.
+> .WT.WT.
+> It might also be a grumpy old policeman over-analyzing things...again.
+> Take your pick.
+> ...
+> The fact that [R]He[/] wants them too though, to the point of attacking [P]Amy[/] for it... 
+> .WT.WT.
+> For now though I think we should--
+
+    # Informing of the breaking into Galina's Office.
+# Galina Introduction
+# Observatory I
+# Observatory Flashback
+    # Hint at Galina's Backstory?
+# Observatory II
+# Aurelius Again 
+    # Give a small hint to his illness Move to outside the cave and make cave more explorable
+# Amy training their Pokémon.
+    # Move to Fukuri Town (Include Yamada?)
+# Galina at the institute
+# Alcar Introduction
+# Observatory Flashback II
+# Alcar Introduction II
+# Shadow Storm over Iphondria
+    # Kanai going after Ulrich (Hint at their family ties.)
+    # Extend to show a little scene of people taking refuge
+# The Power Plant
+    # Ulrich getting defeated by Alcar
+    # Properly meeting Ulrich.
+        # Ulrich Backstory (Show Aeonites entering?)
+    # Alcar in the basement. (Blaming Kanai delberately?)
+    # (Optional?) Battle with Ulrich
+# Chapter End Scene I (Giving Amy a moment with Eevee, Absol and (Starter) ending with her falling asleep.)
+# Chapter End Scene II (Dream Sequence)
+
+

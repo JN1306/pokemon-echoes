@@ -1,0 +1,273 @@
+# - Npc Dialogue
+
+############# Fukuri Outskirts NPCs ###################
+# Old Man blocking the hill
+[NPC_FUKURI_OUTSKIRTS,0] # With Amy
+/speaker Curmudgeon
+> Ah! [P]Amy[/]. How nice to see you and PLAYER out and about.
+/speaker Amy
+> Hi Oldie!
+/eval $game_self_switches[[$game_map.map_id,@event_id,"C"]]=true 
+/speaker Curmudgeon
+> O-oldie?
+/speaker Oldie
+> Now listen here young'un! Back in my day you showed respect to your elders!
+/speaker Amy
+/expression happy
+> I love it when you talk like that!
+
+[NPC_FUKURI_OUTSKIRTS,1] # Without Amy (After Picnic Cutscene)
+/if !$game_self_switches[[$game_map.map_id,@event_id,"C"]] 
+    /speaker Curmudgeon
+/else
+    /speaker Oldie
+/end
+> [P]Amy[/] ran past here just now, she was awfully worried about something. Did something happen?
+
+[NPC_FUKURI_OUTSKIRTS,2] # Chapter 2
+> There I stand in front of the hill right, and suddenly this [Y]Treecko[/] shows up and decides they want to guard the hill.
+/if !$game_self_switches[[$game_map.map_id,@event_id,"C"]] 
+    /speaker Curmudgeon
+/else
+    /speaker Oldie
+/end
+> Smacked with their tail they did.
+> *grumble* *grumble* 
+
+# Mom and Son by the pond
+[NPC_FUKURI_OUTSKIRTS,3] 
+/speaker Mom
+> My son is obseesed with Feebas and Milotic. He will spend hours fishing for one.
+
+[NPC_FUKURI_OUTSKIRTS,4] 
+/speaker Son
+> This lake is really pretty! I hope I get to meet a Feebas one day.
+
+# Old_Woman and Zephyreon
+[NPC_FUKURI_OUTSKIRTS,5] 
+/event set Old_Woman 15
+/event set Zephyreon 32
+/event Old_Woman turn right
+/speaker Old_Woman
+> [B]Zephyreon[/] dear, how is the wind today?
+
+/event Zephyreon turn left
+/speaker Zephyreon
+> .WT.WT.
+/cry ZEPHYREON
+> Zephiiir
+
+/speaker Old_Woman
+> Ah this pleases me and your melody is as beautiful as always.
+
+[NPC_FUKURI_OUTSKIRTS,6]
+/event set Old_Woman 15
+/event set Zephyreon 32 
+/speaker Old_Woman
+> Ah, excuse me young one.
+> My dearest [B]Zephyreon[/] has come down with a light sickness so I figured letting them feel the wind would do them good.
+/if !$Trainer.hasSeen?(:ZEPHYREON)
+    /speaker PLAYER
+    > ...?
+    /speaker Old_Woman
+    > Have you mayhap, never seen a [B]Zephyreon[/] before?
+    /pokemon ZEPHYREON As the name suggests, they are the Flying type evolution of Eevee. They are highly intelligent and love to sing.
+    /speaker Zephyreon
+    /cry ZEPHYREON
+    > Zephiiir
+    /speaker Old_Woman
+    > This little one and I, we have been trainer and Pokémon for uncountable years.
+    > Well I am not a trainer anymore, but my darling is still with me.
+    /speaker Zephyreon
+    /cry ZEPHYREON
+    > Zephiiir
+    /speaker Old_Woman
+    > Oh! The adventures we have been on!
+    > We've seen lost kingdoms, the vast sea and things a youngling like you wouldn't believe.
+    /eval $Trainer.setSeen(:ZEPHYREON)
+/else
+    /speaker Old_Woman
+    > My dear Zephyreon is feeling a little under the weather, so I'm letting him feel the wind
+/end
+
+[NPC_FUKURI_OUTSKIRTS,7] # Science Guy
+/speaker Science_Guy
+> Technology is amazing!
+> Now you can make games from the comfort of your own home.
+
+# Old_Woman 2
+[NPC_FUKURI_OUTSKIRTS,8] 
+/speaker Old_Woman
+/if $game_player.pbHasDependentEvents?
+    > [P]Amy[/] dear are you on your way too the forest again?
+    /speaker Amy
+    /expression happy
+    > Yup! Going on a picnic with brother since [B]Uncle Lawrence[/] had to work today.
+    /speaker Old_Woman
+    > Hohoho! Is that so? 
+    > I swear, that old coot works too much. He ought to take a break once in a while.
+    /speaker Amy
+    /expression happy
+    > That's what I keep telling him!
+    /speaker Old_Woman
+    > Well, he better learn to listen to you then young lady.
+    /speaker Amy
+    /expression happy
+    > Heehee!
+/else
+    /if pbMainQuest(:FaimilyOuting).step==1
+        /speaker Old_Woman
+        >Oh dear I have rarely seen [P]Amy[/] this distrought. I hope she is all right.
+    /else
+        /speaker Old_Woman
+        > [R](INSERT DIALOGUE)[/]
+    /end
+/end
+
+############# FUKURI TOWN NPCs ###################
+# In Yamada's House after completing "Battle Practice"
+[NPC_FUKURI_TOWN,0] # Yamada
+/event set Yamada 15
+/speaker Yamada
+/if !$game_self_switches[[$game_map.map_id,@event_id,"B"]]
+    > So that about covers the basics of the type chart.
+    > Now I suggest you take what you have learned, go home, doing something COMPLETELY different and then impress [B]Miss Tiffany[/] tomorrow.
+    /speaker Students
+    > Yes sir!
+    /speaker Yamada
+    > Great! Now toodle along you two
+/else
+    > Hey there! How are you?
+    /speaker PLAYER
+    /hidename 2
+    ?> What do you want to do?
+    /choice Chat
+        ?> What do you want to talk about?
+        /choice Tell me something about yourself!
+            /speaker Yamada
+            /hidename 0
+            > Well. I went to the trainer school east of [B]Iphondria City[/] for a few years and they did such a good job that they made me want to become a teacher too.
+            > Then, I travelled the world to learn and grow and... here I am.
+            > Meeting my [B]Dratini[/] was such a nice day. I always dreamed of flying on a [B]Dragonair[/] one day-
+        /choice Why was your Dratini a different color?
+            /speaker Yamada
+            /hidename 0
+            > You noticed did you? She is what's called a [G]Shiny Pokémon[/].
+            > I read in a book somewhere that scientists figured out roughly [G]one in every 4,000 Pokémon[/] is shiny.
+            > Every known Pokémon has a shiny form. Some trainers find it fun to "hunt" them and show them off to each other
+            > Not really my style, but I do see the appeal. No, I met [B]Dratini[/] by pure accident.
+            > It was the best day of my life. It was a tuesday I think.
+            /if !$game_self_switches[[$game_map.map_id,@event_id,"C"]]
+                > There is actually a rare item that makes Shiny Pokémon easier to find!
+                /event Yamada switch C true
+            /end
+        /cancelchoice I changed my mind
+            /speaker Yamada
+            /hidename 0
+            > I'll be here if you need me! 
+        ?/>
+    /choice Trade
+        > Sure thing!
+        /eval $game_variables[TRADE_ID]="Yamada"
+        ?> How do you want to trade?
+        /choice Items
+            /eval pbItemTrade(pbTradeList)
+        /choice Bonus EXP
+            /if $game_variables[BONUS_EXP] > 0
+                /eval pbItemTrade(pbTradeList(1))
+            /else
+                > I'm afraid you do not have any Bonus EXP to trade with
+            /end
+        /choice Money
+            /if $Trainer.money > 0
+                /eval pbItemTrade(pbTradeList(2))
+            /else
+                > I'm afraid you do not have any funds to trade with
+            /end
+        /cancelchoice Changed my mind
+            /speaker Yamada
+            /hidename 0
+            > I'll be here if you need me!
+        ?/>
+    /cancelchoice Nothing really 
+        /speaker Yamada
+        /hidename 0
+        > I'll be here if you need me! 
+    ?/>
+/end
+
+[NPC_FUKURI_TOWN,1] # Novice
+/speaker PLAYER
+/hidename 2
+?> What do you want to do?
+/choice Chat
+    /speaker Novice
+    > I accompanied [B]his excellency[/] here to see more of the world.
+    > I find this place rather quaint.
+/choice Trade
+    /speaker Novice
+    > Allow me to show you some of our finest work.
+    /eval $game_variables[TRADE_ID]="Novice_1"
+    ?> How do you want to trade?
+    /choice Items
+        /eval pbItemTrade(pbTradeList)
+    /choice Bonus EXP
+        /if $game_variables[BONUS_EXP] > 0
+            /eval pbItemTrade(pbTradeList(1))
+        /else
+            > I'm afraid you do not have any Bonus EXP to trade with
+        /end
+    /choice Money
+        /if $Trainer.money > 0
+            /eval pbItemTrade(pbTradeList(2))
+        /else
+            > I'm afraid you do not have any funds to trade with
+        /end
+    /cancelchoice Changed my mind
+    ?/>
+/cancelchoice Nothing  
+?/>
+
+[NPC_FUKURI_TOWN,2] # Pokémon Ranger Vernon post quest
+/event set Vernon 2
+/speaker Vernon
+> Hey there! How are you?
+/if !$game_self_switches[[$game_map.map_id,@event_id,"A"]]
+    /if $game_variables[CURRENT_CHAPTER]>=2
+        > I was wondering if you wanted to have a battle?
+        > See, my Pokémon and I are in need of break after heavy research.
+        ?> What do you say?
+        /choice Let's Battle!
+            >  Awright! Let's battle!
+            /event Vernon switch B true
+        /cancelchoice Not up for it
+            >  Some other time maybe?
+        ?/>
+    /else
+        > I've been roaming around town with my Pokémon doing this and that.
+        > ...
+        > Oh, heh I never told you that did I? that [B]Pandemon[/] that spat acid on my hand? Yeah, we are trainer and Pokémon now.
+        > Sometinmes I wonder who is who...
+    /end
+/else
+> I've been thinking about where to go next...
+> So many choices.
+/end
+
+
+[NPC_FUKURI_TOWN,3] 
+# Fukuri River (South) - Kode (Before defeating the other trainers on the route) 
+/event set Kode 15
+/speaker Kode
+/hidename 1
+> Hi there! Nice to meet you.
+/hidename 0
+> The name's [B]Kode[/]
+> I am an avid painter, travelling here, there and everywhere looking for Pokémon to paint
+> Sometimes I come across one of those Pokémon that I just HAVE to paint. Do you know the feeling?
+> ...
+> If you wanna battle me, Sure thing! But it'll have to wait until I'm finished with the painting I'm doing right now.
+> It's an important commission, so I wanna get it out on time.
+> Shouldn't take all that long really. I'll see you when it's done!
+
+

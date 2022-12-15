@@ -1,0 +1,56 @@
+# "Intermediate stages of Story Events"
+[Misc,0]
+> [R](INSERT DIALOGUE)[/]
+[Misc,1]
+> [R](INSERT DIALOGUE)[/]
+[Misc,2]
+> [R](INSERT DIALOGUE)[/]
+[Misc,3]
+> [R](INSERT DIALOGUE)[/]
+[Misc,4] # Doctor while preparing the medicine
+/speaker Doctor
+> My dearest monk, There is a sick Pokémon that requires aid and the remedy may only be found in the [G]Secluded Grove[/].
+/speaker Aurelius
+/hidename 1
+> Hohoho! You are a formal one aren't you, regretably there is also a [R]Young Man[/] seeking peace of mind. I ask that you do not disturb him.
+/speaker Doctor
+> ...
+/speaker Aurelius
+/hidename 1
+> Rest assured, O formal one, that I shall step aside once he is done, it shouldn't take too long.
+
+
+[Misc,5] # Speaking to Aurelius after completing Battle Practice but before entering the Secluded Grove
+/speaker Aurelius
+/hidename 1
+> I hope you find what you need child.
+
+[Misc,6] # Speaking to Aurelius after losing to Yoru and before defeating him
+/speaker Aurelius
+/hidename 1
+> Hmmm.... I heard a rather familiar song.
+> Hmmm....pay me no mind child
+
+[Misc,7] # Plays if player defeats Kanai in the first battle against him.
+/speaker Kanai
+/hidename 1
+> What tricks did you use!?
+
+# Optional Battle with Amy (Chapter 2 or 3)
+[Misc,8] 
+
+[Misc,9]
+/if !pbHasBagItem?(:TM27) == 0 
+    # Return
+    /eval Kernel.pbReceiveItem(PBItems::TM27,1) 
+    /exit
+/else
+    /eval Kernel.pbReceiveItem(PBItems::FULLRESTORE)
+/end
+
+[Misc,10] # Doctor while preparing the medicine
+/speaker Doctor
+> A drop of regenerative Reuniclus plasma...
+> Audino fur extract...
+> ..and something for the poor thing's fur...
+> hmmm....
