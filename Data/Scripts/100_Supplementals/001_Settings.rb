@@ -49,7 +49,7 @@ module Supplementals
   SWAMP_DEPTH = 10
   
   # Whether the player will attempt to move down one tile when starting to surf or up one when stopping, to simulate a height difference
-  HIGH_WATER_EDGES = true
+  HIGH_WATER_EDGES = false
 
   # Whether or not Essentials should automatically rewrite door events, which may make them incorrect in special cases
   REWRITE_DOOR_EVENTS = false
