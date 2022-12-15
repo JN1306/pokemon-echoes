@@ -41,6 +41,18 @@ module GameData
     attr_reader :unmega_form
     attr_reader :mega_message
 
+    attr_reader :echo_types
+    attr_reader :echo_base_stats
+    attr_reader :echo_evs
+    attr_reader :echo_moves
+    attr_reader :echo_tutor_moves
+    attr_reader :echo_abilities
+    attr_reader :echo_wild_item_common
+    attr_reader :echo_wild_item_uncommon
+    attr_reader :echo_wild_item_rare
+    attr_reader :echo_height
+    attr_reader :echo_weight
+
     DATA = {}
     DATA_FILENAME = "species.dat"
 

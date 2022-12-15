@@ -1,5 +1,21 @@
 DIALOG_FILES = [
-  "general"
+#### STORY ####
+  "Chapter 0",
+  "Chapter 1",
+  "Chapter 2",
+#### Trainer Dialog ####
+  "Trainers",
+  "LossHandling",
+  "MTB",
+#### Others ####
+  "SideQuests",
+  "Misc",
+  "NPC",
+  "Fluff",
+  "Tutorial",
+#### Side Stories ####
+  "SideStory - Calyrex",
+  "SideStory - Diancie"
 ]
 
 def pbDialog(name, index=0)

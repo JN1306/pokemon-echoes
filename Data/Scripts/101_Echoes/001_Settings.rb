@@ -235,25 +235,6 @@ def pbRateSharers
     ]
 end
 
-DIALOG_FILES = [
-#### STORY ####
-  "Chapter 0",
-  "Chapter 1",
-  "Chapter 2",
-#### Trainer Dialog ####
-  "Trainers",
-  "LossHandling",
-  "MTB",
-#### Others ####
-  "SideQuests",
-  "Misc",
-  "NPC",
-  "Fluff",
-  "Tutorial",
-#### Side Stories ####
-  "SideStory - Calyrex",
-  "SideStory - Diancie"
-]
 # ----------------------------------------------------------------------
 # Modules
 # ----------------------------------------------------------------------

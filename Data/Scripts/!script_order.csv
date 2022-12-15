@@ -469,7 +469,9 @@
 ---------------------------~blank
 @101_Echoes
 001_Settings
-002_EchoesSetup
+002_Setup
+003_UniquePokemon
+004_CreatePokemon
 ---------------------------~blank
 @999_Main
 999_Main
