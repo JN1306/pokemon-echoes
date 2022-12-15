@@ -257,3 +257,43 @@ module PBMessages
   UniquePokemon   = "{1} is radiating with a strong aura." 
   LevitationTrait = "{1} is levitating!"
 end
+
+# TEMPORARY FIX THAT MAKES UNKNOWN POKEMON INTO PORYGON
+# REMOVE ONCE PBS FILES ARE UPDATED
+
+module GameData
+  module ClassMethods
+    # @param other [Symbol, self, String, Integer]
+    # @return [self]
+    def get(other)
+      validate other => [Symbol, self, String, Integer]
+      return other if other.is_a?(self)
+      other = other.to_sym if other.is_a?(String)
+      return get(:PORYGON) unless self::DATA.has_key?(other)
+      return self::DATA[other]
+    end
+  end
+  
+  module ClassMethodsSymbols
+    # @param other [Symbol, self, String]
+    # @return [self]
+    def get(other)
+      validate other => [Symbol, self, String]
+      return other if other.is_a?(self)
+      other = other.to_sym if other.is_a?(String)
+      return get(:PORYGON) unless self::DATA.has_key?(other)
+      return self::DATA[other]
+    end
+  end
+end
+
+# TEMPORARY FIX SO pbSpeech DOES NOT CRASH
+# NO NAME IS DISPLAYED, THIS SHOULD BE REMOVED
+
+def pbSpeech(a, b=nil, c=nil)
+  if c
+    pbTalk(c)
+  else
+    pbTalk(a)
+  end
+end
