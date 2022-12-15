@@ -297,3 +297,14 @@ def pbSpeech(a, b=nil, c=nil)
     pbTalk(a)
   end
 end
+
+
+class TalkMessageWindows
+
+  alias tmp_display display
+
+  def display(text, idx = -1)
+    tmp_display("", idx)
+  end
+
+end

@@ -447,12 +447,20 @@ class Pokemon
     return GameData::Ability.try_get(ability_id)
   end
 
+  def echo_ability?
+    return false if !species_data.echo_abilities
+    return false if species_data.echo_abilities.length < 1
+    # The following line means that an echo Pokemon with an echo capsule will have a normal ability
+    return !@echo_capsule if self.echo?
+    return @echo_capsule
+  end
+
   # @return [Symbol, nil] the ability symbol of this Pokémon's ability
   def ability_id
     if !@ability
       sp_data = species_data
-      if hasEchoAbility && (self.echo? || @echo_capsule)
-        @ability = sp_data.echo_ability
+      if self.echo_ability?
+        @ability = sp_data.echo_abilities[0]
       else
         abil_index = ability_index
         if abil_index >= 2   # Hidden ability
