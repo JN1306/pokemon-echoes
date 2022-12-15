@@ -52,7 +52,7 @@ def pbSetup(style=1,type=1,dfc=0)
     break if pbAnswer==0
   end
   # Type Select
-  Kernel.pbMessage("Which is your favorite type?\\ch[500,0,Normal,Grass, Fire,Water,Bug,Electric,Rock,Gouund,Steel,Fighting,Flying,Poison,Ice,Fairy,Psychic,Dark,Ghost,Dragon]")
+  pbMessage("Which is your favorite type?\\ch[500,0,Normal,Grass, Fire,Water,Bug,Electric,Rock,Gouund,Steel,Fighting,Flying,Poison,Ice,Fairy,Psychic,Dark,Ghost,Dragon]")
   type += pbAnswer
   $game_variables[SETUP].push(dfc,style,type,-1)
   if  $DEBUG && Input.press?(Input::CTRL)
@@ -105,18 +105,18 @@ def pbChapterSkip(ch=pbChapter,st=pbType,lv=5,p1=false,p2=false,p3=false,p4=fals
         sp3 = [:POOCHYENA,:SPINARAK,:TAILLOW].shuffle[0]
       end
     end
-    p1=Pokemon.new(sp1,lv,$Trainer)     if sp1
-    p2=Pokemon.new(sp2,(lv-1),$Trainer) if sp2
-    p3=Pokemon.new(sp3,(lv-2),$Trainer) if sp3
-    p4=Pokemon.new(sp4,(lv-3),$Trainer) if sp4
-    p5=Pokemon.new(sp5,(lv-4),$Trainer) if sp5
-    p6=Pokemon.new(sp6,(lv-5),$Trainer) if sp6
+    p1=Pokemon.new(sp1,lv,$player)     if sp1
+    p2=Pokemon.new(sp2,(lv-1),$player) if sp2
+    p3=Pokemon.new(sp3,(lv-2),$player) if sp3
+    p4=Pokemon.new(sp4,(lv-3),$player) if sp4
+    p5=Pokemon.new(sp5,(lv-4),$player) if sp5
+    p6=Pokemon.new(sp6,(lv-5),$player) if sp6
     for p in [p1,p2,p3,p4,p5,p6]
       if p
-        $Trainer.party.push(p)
+        $player.party.push(p)
         for s in [sp1,sp2,sp3,sp4,sp5,sp6]
           if s
-            $Trainer.setSeen(s); $Trainer.setOwned(s)
+            $player.setSeen(s); $player.setOwned(s)
           end
         end
       end
@@ -141,7 +141,7 @@ def pbChapterSkip(ch=pbChapter,st=pbType,lv=5,p1=false,p2=false,p3=false,p4=fals
     $game_self_switches[[135,7,"B"]]=true
     pbLandmarks(true,true)
     # Manditory Items
-    $PokemonBag.pbStoreItem(PBItems::TM54,1)
+    $PokemonBag.pbStoreItem(:TM54,1)
     # Achievement Quests / Other (note in parantheses)
     $game_variables[AURA_PKMN_ID] = "Striding Gerid"
     pbRegisterUniquePokemonSeen("Striding Gerid")
@@ -156,189 +156,190 @@ end
 
 def pbStarterItems(dfc=pbDifficulty,money=(3 - dfc)*1000)
   pbSEPlay("ItemGet.ogg")
-  $Trainer.setSeen(:EEVEE); $Trainer.setOwned(:EEVEE)
+  $player.setSeen(:EEVEE); $player.setOwned(:EEVEE)
   if money > 0
-    $Trainer.money += money 
+    $player.money += money 
     pbDisplaySmall(_INTL("You got $ {1}",number_with_delimiter(money)))
   end
-  Kernel.pbReceiveItem(PBItems::GREATBALL,1,false) if dfc == 0
-  Kernel.pbReceiveItem(PBItems::POKEBALL,5,false)
-  Kernel.pbReceiveItem(PBItems::POTION,[(3-dfc),1].max,false)
-  Kernel.pbReceiveItem(PBItems::DATACHIP,1,false)
+  pbReceiveItem(:GREATBALL,1,false) if dfc == 0
+  pbReceiveItem(:POKEBALL,5,false)
+  pbReceiveItem(:POTION,[(3-dfc),1].max,false)
+  pbReceiveItem(:DATACHIP,1,false)
 end
 
 def pbCreateStarter(mode=1,lvl=5,dfc=pbStarter[0],st=pbStarter[1],pc=pbStarter[3])
 ######### Starter #############################
   case mode
   when 1 # Starter Eevee
-    $Trainer.setSeen(:EEVEE); $Trainer.setOwned(:EEVEE)
+    $player.pokedex.register(:EEVEE)
+    $player.pokedex.register_caught(:EEVEE)
     case st
     when 1 # Offensive Style
       case dfc
       when 0 # Easy
-        poke=Pokemon.new(:EEVEE,lvl,$Trainer)
-        poke.abilityflag = 2
-        poke.genderflag = 0
+        poke=Pokemon.new(:EEVEE,lvl,$player)
+        poke.ability_index = 2
+        poke.gender = 0
         poke.moves=[
-        PBMove.new(PBMoves::TACKLE),
-        PBMove.new(PBMoves::BITE),
-        PBMove.new(PBMoves::ROUND),
-        PBMove.new(PBMoves::TAILWHIP)]
-        poke.iv = [31,31,31,31,31,31]
-        poke.calcStats
+        Pokemon::Move.new(:TACKLE),
+        Pokemon::Move.new(:BITE),
+        Pokemon::Move.new(:ROUND),
+        Pokemon::Move.new(:TAILWHIP)]
+        poke.iv = pbStatArrayToHash([31,31,31,31,31,31])
+        poke.calc_stats
       when 1 # Normal
-        poke=Pokemon.new(:EEVEE,lvl,$Trainer)
-        poke.abilityflag = 1
-        poke.genderflag = 0
+        poke=Pokemon.new(:EEVEE,lvl,$player)
+        poke.ability_index = 1
+        poke.gender = 0
         poke.moves=[
-        PBMove.new(PBMoves::TACKLE),
-        PBMove.new(PBMoves::BITE),
-        PBMove.new(PBMoves::ROUND),
-        PBMove.new(PBMoves::TAILWHIP)]
-        poke.iv = [31,31,
+        Pokemon::Move.new(:TACKLE),
+        Pokemon::Move.new(:BITE),
+        Pokemon::Move.new(:ROUND),
+        Pokemon::Move.new(:TAILWHIP)]
+        poke.iv = pbStatArrayToHash([31,31,
                   (15..31).to_a.shuffle[0],
                   (15..31).to_a.shuffle[0],
                   (10..31).to_a.shuffle[0],
-                  (10..31).to_a.shuffle[0]].shuffle
-        poke.calcStats
+                  (10..31).to_a.shuffle[0]].shuffle)
+        poke.calc_stats
       when 2 # Hard
-        poke=Pokemon.new(:EEVEE,lvl,$Trainer)
-        poke.abilityflag = 1
-        poke.genderflag = 0
+        poke=Pokemon.new(:EEVEE,lvl,$player)
+        poke.ability_index = 1
+        poke.gender = 0
         poke.moves=[
-        PBMove.new(PBMoves::TACKLE),
-        PBMove.new(PBMoves::BITE),
-        PBMove.new(PBMoves::ROUND),
-        PBMove.new(PBMoves::TAILWHIP)]
-        poke.iv = [31,
+        Pokemon::Move.new(:TACKLE),
+        Pokemon::Move.new(:BITE),
+        Pokemon::Move.new(:ROUND),
+        Pokemon::Move.new(:TAILWHIP)]
+        poke.iv = pbStatArrayToHash([31,
                   (15..31).to_a.shuffle[0],
                   (10..31).to_a.shuffle[0],
                   (10..31).to_a.shuffle[0],
                   (5..31).to_a.shuffle[0],
-                  (0..31).to_a.shuffle[0]].shuffle
-        poke.calcStats
+                  (0..31).to_a.shuffle[0]].shuffle)
+        poke.calc_stats
       when 3 # V-Hard
-        poke=Pokemon.new(:EEVEE,lvl,$Trainer)
-        poke.abilityflag = 1
-        poke.genderflag = 0
+        poke=Pokemon.new(:EEVEE,lvl,$player)
+        poke.ability_index = 1
+        poke.gender = 0
         poke.moves=[
-        PBMove.new(PBMoves::TACKLE),
-        PBMove.new(PBMoves::BITE),
-        PBMove.new(PBMoves::ROUND),
-        PBMove.new(PBMoves::TAILWHIP)]
-        poke.calcStats
+        Pokemon::Move.new(:TACKLE),
+        Pokemon::Move.new(:BITE),
+        Pokemon::Move.new(:ROUND),
+        Pokemon::Move.new(:TAILWHIP)]
+        poke.calc_stats
       end
     #### DEFENSE STYLE ################
     when 2
       case dfc
       when 0 # Easy
-        poke=Pokemon.new(:EEVEE,lvl,$Trainer)
-        poke.abilityflag = 1
-        poke.genderflag = 0
+        poke=Pokemon.new(:EEVEE,lvl,$player)
+        poke.ability_index = 1
+        poke.gender = 0
         poke.moves=[
-        PBMove.new(PBMoves::TACKLE),
-        PBMove.new(PBMoves::BITE),
-        PBMove.new(PBMoves::BABYDOLLEYES),
-        PBMove.new(PBMoves::SANDATTACK)]
-        poke.iv = [31,31,31,31,31,31]
-        poke.calcStats
+        Pokemon::Move.new(:TACKLE),
+        Pokemon::Move.new(:BITE),
+        Pokemon::Move.new(:BABYDOLLEYES),
+        Pokemon::Move.new(:SANDATTACK)]
+        poke.iv = pbStatArrayToHash([31,31,31,31,31,31])
+        poke.calc_stats
       when 1 # Normal
-        poke=Pokemon.new(:EEVEE,lvl,$Trainer)
-        poke.abilityflag = 1
-        poke.genderflag = 0
+        poke=Pokemon.new(:EEVEE,lvl,$player)
+        poke.ability_index = 1
+        poke.gender = 0
         poke.moves=[
-        PBMove.new(PBMoves::TACKLE),
-        PBMove.new(PBMoves::BITE),
-        PBMove.new(PBMoves::BABYDOLLEYES),
-        PBMove.new(PBMoves::SANDATTACK)]
-        poke.iv = [31,31,
+        Pokemon::Move.new(:TACKLE),
+        Pokemon::Move.new(:BITE),
+        Pokemon::Move.new(:BABYDOLLEYES),
+        Pokemon::Move.new(:SANDATTACK)]
+        poke.iv = pbStatArrayToHash([31,31,
                   (15..31).to_a.shuffle[0],
                   (15..31).to_a.shuffle[0],
                   (10..31).to_a.shuffle[0],
-                  (10..31).to_a.shuffle[0]].shuffle
-        poke.calcStats
+                  (10..31).to_a.shuffle[0]].shuffle)
+        poke.calc_stats
       when 2 # Hard
-        poke=Pokemon.new(:EEVEE,lvl,$Trainer)
-        poke.abilityflag = 1
-        poke.genderflag = 0
+        poke=Pokemon.new(:EEVEE,lvl,$player)
+        poke.ability_index = 1
+        poke.gender = 0
         poke.moves=[
-        PBMove.new(PBMoves::TACKLE),
-        PBMove.new(PBMoves::BITE),
-        PBMove.new(PBMoves::BABYDOLLEYES),
-        PBMove.new(PBMoves::SANDATTACK)]
-        poke.iv = [31,
+        Pokemon::Move.new(:TACKLE),
+        Pokemon::Move.new(:BITE),
+        Pokemon::Move.new(:BABYDOLLEYES),
+        Pokemon::Move.new(:SANDATTACK)]
+        poke.iv = pbStatArrayToHash([31,
                   (15..31).to_a.shuffle[0],
                   (10..31).to_a.shuffle[0],
                   (10..31).to_a.shuffle[0],
                   (5..31).to_a.shuffle[0],
-                  (0..31).to_a.shuffle[0]].shuffle
-        poke.calcStats
+                  (0..31).to_a.shuffle[0]].shuffle)
+        poke.calc_stats
       when 3 # V-Hard
-        poke=Pokemon.new(:EEVEE,lvl,$Trainer)
-        poke.abilityflag = 1
-        poke.genderflag = 0
+        poke=Pokemon.new(:EEVEE,lvl,$player)
+        poke.ability_index = 1
+        poke.gender = 0
         poke.moves=[
-        PBMove.new(PBMoves::TACKLE),
-        PBMove.new(PBMoves::BITE),
-        PBMove.new(PBMoves::ROUND),
-        PBMove.new(PBMoves::TAILWHIP)]
-        poke.calcStats
+        Pokemon::Move.new(:TACKLE),
+        Pokemon::Move.new(:BITE),
+        Pokemon::Move.new(:ROUND),
+        Pokemon::Move.new(:TAILWHIP)]
+        poke.calc_stats
       end
     ### BALANCED STYLE ################
     when 3 # Balanced Style
       case dfc
       when 0 # Easy
-        poke=Pokemon.new(:EEVEE,lvl,$Trainer)
-        poke.abilityflag = 1
-        poke.genderflag = 0
+        poke=Pokemon.new(:EEVEE,lvl,$player)
+        poke.ability_index = 1
+        poke.gender = 0
         poke.moves=[
-        PBMove.new(PBMoves::TACKLE),
-        PBMove.new(PBMoves::BITE),
-        PBMove.new(PBMoves::TICKLE),
-        PBMove.new(PBMoves::COPYCAT)]
-        poke.iv = [31,31,31,31,31,31]
-        poke.calcStats
+        Pokemon::Move.new(:TACKLE),
+        Pokemon::Move.new(:BITE),
+        Pokemon::Move.new(:TICKLE),
+        Pokemon::Move.new(:COPYCAT)]
+        poke.iv = pbStatArrayToHash([31,31,31,31,31,31])
+        poke.calc_stats
       when 1 # Normal
-        poke=Pokemon.new(:EEVEE,5,$Trainer)
-        poke.abilityflag = 1
-        poke.genderflag = 0
+        poke=Pokemon.new(:EEVEE,5,$player)
+        poke.ability_index = 1
+        poke.gender = 0
         poke.moves=[
-        PBMove.new(PBMoves::TACKLE),
-        PBMove.new(PBMoves::BITE),
-        PBMove.new(PBMoves::TICKLE),
-        PBMove.new(PBMoves::COPYCAT)]
-        poke.iv = [31,31,
+        Pokemon::Move.new(:TACKLE),
+        Pokemon::Move.new(:BITE),
+        Pokemon::Move.new(:TICKLE),
+        Pokemon::Move.new(:COPYCAT)]
+        poke.iv = pbStatArrayToHash([31,31,
         (15..31).to_a.shuffle[0],
         (15..31).to_a.shuffle[0],
         (10..31).to_a.shuffle[0],
-        (10..31).to_a.shuffle[0]].shuffle
-        poke.calcStats
+        (10..31).to_a.shuffle[0]].shuffle)
+        poke.calc_stats
       when 2 # Hard
-        poke=Pokemon.new(:EEVEE,lvl,$Trainer)
-        poke.abilityflag = 1
-        poke.genderflag = 0
+        poke=Pokemon.new(:EEVEE,lvl,$player)
+        poke.ability_index = 1
+        poke.gender = 0
         poke.moves=[
-        PBMove.new(PBMoves::TACKLE),
-        PBMove.new(PBMoves::BITE),
-        PBMove.new(PBMoves::TICKLE),
-        PBMove.new(PBMoves::COPYCAT)]
-        poke.iv = [31,
+        Pokemon::Move.new(:TACKLE),
+        Pokemon::Move.new(:BITE),
+        Pokemon::Move.new(:TICKLE),
+        Pokemon::Move.new(:COPYCAT)]
+        poke.iv = pbStatArrayToHash([31,
                   (15..31).to_a.shuffle[0],
                   (10..31).to_a.shuffle[0],
                   (10..31).to_a.shuffle[0],
                   (5..31).to_a.shuffle[0],
-                  (0..31).to_a.shuffle[0]].shuffle
-        poke.calcStats
+                  (0..31).to_a.shuffle[0]].shuffle)
+        poke.calc_stats
       when 3 # V-Hard
-        poke=Pokemon.new(:EEVEE,lvl,$Trainer)
-        poke.abilityflag = 1
-        poke.genderflag = 0
+        poke=Pokemon.new(:EEVEE,lvl,$player)
+        poke.ability_index = 1
+        poke.gender = 0
         poke.moves=[
-        PBMove.new(PBMoves::TACKLE),
-        PBMove.new(PBMoves::BITE),
-        PBMove.new(PBMoves::TICKLE),
-        PBMove.new(PBMoves::COPYCAT)]
-        poke.calcStats
+        Pokemon::Move.new(:TACKLE),
+        Pokemon::Move.new(:BITE),
+        Pokemon::Move.new(:TICKLE),
+        Pokemon::Move.new(:COPYCAT)]
+        poke.calc_stats
       end
     end
   when 2 # Elemental Starter
@@ -346,83 +347,83 @@ def pbCreateStarter(mode=1,lvl=5,dfc=pbStarter[0],st=pbStarter[1],pc=pbStarter[3
     when "Inlys"
       case dfc
       when 0 # Easy
-        poke=Pokemon.new(:INLYS,lvl,$Trainer)
-        poke.iv = [31,31,31,31,31,31]
-        poke.calcStats
+        poke=Pokemon.new(:INLYS,lvl,$player)
+        poke.iv = pbStatArrayToHash([31,31,31,31,31,31])
+        poke.calc_stats
       when 1 # Normal
-        poke=Pokemon.new(:INLYS,lvl,$Trainer)
-        poke.iv = [31,31,
+        poke=Pokemon.new(:INLYS,lvl,$player)
+        poke.iv = pbStatArrayToHash([31,31,
         (15..31).to_a.shuffle[0],
         (15..31).to_a.shuffle[0],
         (10..31).to_a.shuffle[0],
-        (10..31).to_a.shuffle[0]].shuffle
-        poke.calcStats
+        (10..31).to_a.shuffle[0]].shuffle)
+        poke.calc_stats
       when 2 # Hard
-        poke=Pokemon.new(:INLYS,lvl,$Trainer)
-        poke.iv = [31,
+        poke=Pokemon.new(:INLYS,lvl,$player)
+        poke.iv = pbStatArrayToHash([31,
                   (15..31).to_a.shuffle[0],
                   (10..31).to_a.shuffle[0],
                   (10..31).to_a.shuffle[0],
                   (5..31).to_a.shuffle[0],
-                  (0..31).to_a.shuffle[0]].shuffle
-        poke.calcStats
+                  (0..31).to_a.shuffle[0]].shuffle)
+        poke.calc_stats
       when 3 # V-Hard
-        poke=Pokemon.new(:INLYS,lvl,$Trainer)
+        poke=Pokemon.new(:INLYS,lvl,$player)
       end
     when "Licit" # Licit
       case dfc
       when 0 # Easy
-        poke=Pokemon.new(:LICIT,lvl,$Trainer)
-        poke.iv = [31,31,31,31,31,31]
-        poke.calcStats
+        poke=Pokemon.new(:LICIT,lvl,$player)
+        poke.iv = pbStatArrayToHash([31,31,31,31,31,31])
+        poke.calc_stats
       when 1 # Normal
-        poke=Pokemon.new(:LICIT,lvl,$Trainer)
-        poke.iv = [31,31,
+        poke=Pokemon.new(:LICIT,lvl,$player)
+        poke.iv = pbStatArrayToHash([31,31,
         (15..31).to_a.shuffle[0],
         (15..31).to_a.shuffle[0],
         (10..31).to_a.shuffle[0],
-        (10..31).to_a.shuffle[0]].shuffle
-        poke.calcStats
+        (10..31).to_a.shuffle[0]].shuffle)
+        poke.calc_stats
       when 2 # Hard
-        poke=Pokemon.new(:LICIT,lvl,$Trainer)
-        poke.iv = [31,
+        poke=Pokemon.new(:LICIT,lvl,$player)
+        poke.iv = pbStatArrayToHash([31,
                   (15..31).to_a.shuffle[0],
                   (10..31).to_a.shuffle[0],
                   (10..31).to_a.shuffle[0],
                   (5..31).to_a.shuffle[0],
-                  (0..31).to_a.shuffle[0]].shuffle
-        poke.calcStats
+                  (0..31).to_a.shuffle[0]].shuffle)
+        poke.calc_stats
       when 3 # V-Hard
-        poke=Pokemon.new(:LICIT,lvl,$Trainer)
+        poke=Pokemon.new(:LICIT,lvl,$player)
       end
     when "Vinette" # Vinette
       case dfc
       when 0 # Easy
-        poke=Pokemon.new(:VINETTE,lvl,$Trainer)
-        poke.iv = [31,31,31,31,31,31]
-        poke.calcStats
+        poke=Pokemon.new(:VINETTE,lvl,$player)
+        poke.iv = pbStatArrayToHash([31,31,31,31,31,31])
+        poke.calc_stats
       when 1 # Normal
-        poke=Pokemon.new(:VINETTE,lvl,$Trainer)
-        poke.iv = [31,31,
+        poke=Pokemon.new(:VINETTE,lvl,$player)
+        poke.iv = pbStatArrayToHash([31,31,
         (15..31).to_a.shuffle[0],
         (15..31).to_a.shuffle[0],
         (10..31).to_a.shuffle[0],
-        (10..31).to_a.shuffle[0]].shuffle
-        poke.calcStats
+        (10..31).to_a.shuffle[0]].shuffle)
+        poke.calc_stats
       when 2 # Hard
-        poke=Pokemon.new(:VINETTE,lvl,$Trainer)
-        poke.iv = [31,
+        poke=Pokemon.new(:VINETTE,lvl,$player)
+        poke.iv = pbStatArrayToHash([31,
                   (15..31).to_a.shuffle[0],
                   (10..31).to_a.shuffle[0],
                   (10..31).to_a.shuffle[0],
                   (5..31).to_a.shuffle[0],
-                  (0..31).to_a.shuffle[0]].shuffle
-        poke.calcStats
-        $Trainer.party.push(poke)
+                  (0..31).to_a.shuffle[0]].shuffle)
+        poke.calc_stats
+        $player.party.push(poke)
       when 3 # V-Hard
-        poke=Pokemon.new(:VINETTE,lvl,$Trainer)
+        poke=Pokemon.new(:VINETTE,lvl,$player)
       end
     end
   end
-  $Trainer.party.push(poke)
+  $player.party.push(poke)
 end

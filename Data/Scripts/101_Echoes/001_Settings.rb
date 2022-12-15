@@ -260,7 +260,6 @@ end
 
 # TEMPORARY FIX THAT MAKES UNKNOWN POKEMON INTO PORYGON
 # REMOVE ONCE PBS FILES ARE UPDATED
-
 module GameData
   module ClassMethods
     # @param other [Symbol, self, String, Integer]
@@ -273,7 +272,6 @@ module GameData
       return self::DATA[other]
     end
   end
-  
   module ClassMethodsSymbols
     # @param other [Symbol, self, String]
     # @return [self]
@@ -289,7 +287,6 @@ end
 
 # TEMPORARY FIX SO pbSpeech DOES NOT CRASH
 # NO NAME IS DISPLAYED, THIS SHOULD BE REMOVED
-
 def pbSpeech(a, b=nil, c=nil)
   if c
     pbTalk(c)
@@ -298,13 +295,11 @@ def pbSpeech(a, b=nil, c=nil)
   end
 end
 
-
+# TEMPORARY OVERRIDE THAT MAKES ALL DIALOGUE A SINGLE DOT
+# TO GET THROUGH THE GAME FASTER
 class TalkMessageWindows
-
   alias tmp_display display
-
   def display(text, idx = -1)
-    tmp_display("", idx)
+    tmp_display(".", idx)
   end
-
 end
