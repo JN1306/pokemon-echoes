@@ -17,7 +17,7 @@ class Battle::Move::FixedDamage40 < Battle::Move::FixedDamageMove
 end
 
 #===============================================================================
-# Halves the target's current HP. (Nature's Madness, Super Fang)
+# Halves the target's current HP. (Super Fang)
 #===============================================================================
 class Battle::Move::FixedDamageHalfTargetHP < Battle::Move::FixedDamageMove
   def pbFixedDamage(user, target)
@@ -30,6 +30,16 @@ class Battle::Move::FixedDamageHalfTargetHP < Battle::Move::FixedDamageMove
       return true
     end
     return false
+  end
+end
+
+#===============================================================================
+# Halves the target's current HP. Reduces it by 2/3 during a terrain 
+# (Nature's Madness (Echoes))
+#===============================================================================
+class Battle::Move::FixedDamageHalfTerrainTwoThird < Battle::Move::FixedDamageHalfTargetHP
+  def pbFixedDamage(user, target)
+    return (target.hp * 2/3).round if @battle.field.terrain != :None
   end
 end
 
@@ -118,6 +128,74 @@ class Battle::Move::OHKO < Battle::Move::FixedDamageMove
 end
 
 #===============================================================================
+# (Horn Drill (Echoes))
+#===============================================================================
+class Battle::Move::Hp10DropDef < Battle::Move
+  def pbEffectAfterAllHits(user, target)
+    return if !target.pbCanLowerStatStage?(:DEFENSE, user, self, true)
+    target.stages[:DEFENSE] =-6
+    target.statsLoweredThisRound = true
+    @battle.pbCommonAnimation("StatDown", target)
+    @battle.pbDisplay(_INTL("{1}'s attack minimized {2}'s Defense!", user.pbThis,target.pbThis))
+    user.pbItemHPHealCheck
+  end
+end
+#===============================================================================
+# (Guillotine (Echoes))
+#===============================================================================
+class Battle::Move::Hp10DropAtk < Battle::Move
+  def pbEffectAfterAllHits(user, target)
+    return if !target.pbCanLowerStatStage?(:DEFENSE, user, self, true)
+    target.stages[:ATTACK] =-6
+    target.statsLoweredThisRound = true
+    @battle.pbCommonAnimation("StatDown", target)
+    @battle.pbDisplay(_INTL("{1}'s attack minimized {2}'s Attack!", user.pbThis,target.pbThis))
+    user.pbItemHPHealCheck
+  end
+end
+
+#===============================================================================
+# (Fissure (Echoes))
+#===============================================================================
+class Battle::Move::Hp10DropSpDef < Battle::Move
+  def pbEffectAfterAllHits(user, target)
+    return if !target.pbCanLowerStatStage?(:SPECIAL_DEFENSE, user, self, true)
+    target.stages[:SPECIAL_DEFENSE] =-6
+    target.statsLoweredThisRound = true
+    @battle.pbCommonAnimation("StatDown", target)
+    @battle.pbDisplay(_INTL("{1}'s attack minimized {2}'s Special Defense!", user.pbThis,target.pbThis))
+    user.pbItemHPHealCheck
+  end
+end
+
+#===============================================================================
+# (Sheer Cold (Echoes))
+#===============================================================================
+class Battle::Move::Hp10DropSpeed < Battle::Move
+  def pbFailsAgainstTarget?(user, target, show_message)
+    if target.pbHasType?(:ICE)
+      @battle.pbDisplay(_INTL("But it failed!")) if show_message
+      return true
+    end
+    return super
+  end
+
+  def pbAccuracyCheck(user, target)
+    acc = 20 if !user.pbHasType?(:ICE)
+    return @battle.pbRandom(100) < acc
+  end
+
+  def pbEffectAfterAllHits(user, target)
+    return if !target.pbCanLowerStatStage?(:SPPED, user, self, true)
+    target.stages[:SPEED] =-6
+    target.statsLoweredThisRound = true
+    @battle.pbCommonAnimation("StatDown", target)
+    @battle.pbDisplay(_INTL("{1}'s attack minimized {2}'s Speed!", user.pbThis,target.pbThis))
+    user.pbItemHPHealCheck
+  end
+end
+
+#===============================================================================
 # OHKO. Accuracy increases by difference between levels of user and target.
 # Lower accuracy when used by a non-Ice-type Pokémon. Doesn't affect Ice-type
 # Pokémon. (Sheer Cold (Gen 7+))
@@ -173,7 +251,7 @@ class Battle::Move::DamageTargetAlly < Battle::Move
 end
 
 #===============================================================================
-# Power increases with the user's HP. (Eruption, Water Spout)
+# Power increases with the user's HP. (Eruption, Water Spout, Arcflash Storm)
 #===============================================================================
 class Battle::Move::PowerHigherWithUserHP < Battle::Move
   def pbBaseDamage(baseDmg, user, target)
@@ -804,13 +882,13 @@ end
 
 #===============================================================================
 # For 5 rounds, lowers power of attacks against the user's side. Fails if
-# weather is not hail. (Aurora Veil)
+# weather is not hail or Aurora Terrain is not active. (Aurora Veil)
 #===============================================================================
 class Battle::Move::StartWeakenDamageAgainstUserSideIfHail < Battle::Move
   def canSnatch?; return true; end
 
   def pbMoveFailed?(user, targets)
-    if user.effectiveWeather != :Hail
+    if user.effectiveWeather != :Hail && @battle.field.terrain != :Aurora
       @battle.pbDisplay(_INTL("But it failed!"))
       return true
     end
@@ -849,12 +927,19 @@ class Battle::Move::RemoveScreens < Battle::Move
       user.pbOpposingSide.effects[PBEffects::AuroraVeil] = 0
       @battle.pbDisplay(_INTL("{1}'s Aurora Veil wore off!", user.pbOpposingTeam))
     end
+    #==============================================================================================
+    if user.pbOpposingSide.effects[PBEffects::BastionShell] > 0
+      user.pbOpposingSide.effects[PBEffects::BastionShell] = 0
+      @battle.pbDisplay(_INTL("{1}'s Bastion Shell broke!", user.pbOpposingTeam))
+    end
+    #==============================================================================================
   end
 
   def pbShowAnimation(id, user, targets, hitNum = 0, showAnimation = true)
     if user.pbOpposingSide.effects[PBEffects::LightScreen] > 0 ||
        user.pbOpposingSide.effects[PBEffects::Reflect] > 0 ||
-       user.pbOpposingSide.effects[PBEffects::AuroraVeil] > 0
+       user.pbOpposingSide.effects[PBEffects::AuroraVeil] > 0 ||
+       user.pbOpposingSide.effects[PBEffects::BastionShell] 
       hitNum = 1   # Wall-breaking anim
     end
     super
@@ -1002,6 +1087,10 @@ class Battle::Move::RemoveProtections < Battle::Move
     target.pbOwnSide.effects[PBEffects::MatBlock]     = false
     target.pbOwnSide.effects[PBEffects::QuickGuard]   = false
     target.pbOwnSide.effects[PBEffects::WideGuard]    = false
+    #=========================================================
+    target.effects[PBEffects::HeatFlash]              = false
+    target.effects[PBEffects::SporeShield]            = false
+    target.effects[PBEffects::TachyonShield]          = false
   end
 end
 
@@ -1021,6 +1110,10 @@ class Battle::Move::RemoveProtectionsBypassSubstitute < Battle::Move
     target.pbOwnSide.effects[PBEffects::MatBlock]     = false
     target.pbOwnSide.effects[PBEffects::QuickGuard]   = false
     target.pbOwnSide.effects[PBEffects::WideGuard]    = false
+    #=========================================================
+    target.effects[PBEffects::HeatFlash]              = false
+    target.effects[PBEffects::SporeShield]            = false
+    target.effects[PBEffects::TachyonShield]          = false
   end
 end
 
@@ -1057,6 +1150,10 @@ class Battle::Move::HoopaRemoveProtectionsBypassSubstituteLowerUserDef1 < Battle
     target.pbOwnSide.effects[PBEffects::MatBlock]     = false
     target.pbOwnSide.effects[PBEffects::QuickGuard]   = false
     target.pbOwnSide.effects[PBEffects::WideGuard]    = false
+    #=========================================================
+    target.effects[PBEffects::HeatFlash]              = false
+    target.effects[PBEffects::SporeShield]            = false
+    target.effects[PBEffects::TachyonShield]          = false
   end
 end
 

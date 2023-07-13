@@ -187,7 +187,7 @@ Description = The Pokémon raises the foe's PP usage.
 #-------------------------------
 [THICKFAT]
 Name = Thick Fat
-Description = Ups resistance to Fire- and Ice-type moves.
+Description = Halves damage done to the Pokémon by Fire and Ice moves.
 #-------------------------------
 [EARLYBIRD]
 Name = Early Bird
@@ -872,7 +872,7 @@ Description = Powers up ally Pokémon's special moves.
 #-------------------------------
 [FLUFFY]
 Name = Fluffy
-Description = Resists contact damage but weaker to Fire-type.
+Description = Halves damage from moves that make contact. Doubles damage done to the Pokémon from FIRE attacks.|Does NOT stack with, or trigger, a Fleece Coat held by the Pokémon.
 #-------------------------------
 [DAZZLING]
 Name = Dazzling
@@ -1070,3 +1070,260 @@ Description = Combines Unnerve and Chilling Neigh Abilities.
 [ASONEGRIMNEIGH]
 Name = As One
 Description = Combines Unnerve and Grim Neigh Abilities.
+#-------------------------------
+[ANGOLMIR]
+Name = Angolmir
+Description = Raises the Pokémon's Special Attack when consuming a held Gem
+#-------------------------------
+[AQUACLOAK]
+Name = Aqua Cloak
+Description = Raises evasion by 25% during Rainy weather.
+#-------------------------------
+[ARCSPHERE]
+Name = Arc Sphere
+Description = Affects the pokémon's stats in various ways each turn.|1st turn: Defense and Sp.Def are tripled.|2nd Turn: Attack and Sp.Atk are tripled.|3rd turn: Speed and Attack are tripled.|4th turn: Speed and Sp.Atk are tripled.|5th turn: HP is restored by 75% and status is healed at the end of the turn.|6th turn: all stats are doubled.|7th turn: The Pokémon faints and sets a 7-turn rainbow over their field.
+#-------------------------------
+[ASHURA]
+Name = Ashura
+Description = Turns punching attack into 4-hit attack, but divides their power and additional effect chance by 4
+#-------------------------------
+[AURORASURGE]
+Name = Aurora Surge
+Description = For 5 turns, the field is covered in northern lights. Halves the damage of ROCK,FIRE,FIGHTING and STEEL attacks
+#-------------------------------
+[BIOLOGIST]
+Name = Biologist
+Description = Increased the HP drained from draining moves by 30%|Does NOT stack with a Big Root.
+#-------------------------------
+[BRIGHTVEIL]
+Name = Bright Veil
+Description = Protects Ice-type Pokémon and their allies from stat reductions and status conditions.
+#-------------------------------
+[CHIVALRY]
+Name = Chivalry
+Description = When the Pokémon enters battle, their Attack will be raised if their Attack is the lowest on the field. If their attack is the highest on the field, their Special Defense will be raised.
+#-------------------------------
+[CIRCUMVOLUTION]
+Name = Circumvolution
+Description = 20% chance of removing entry hazards on the Pokémon's field every turn and free them from Trapping moves and Leech Seed.
+#-------------------------------
+[COLORLESS]
+Name = Colorless
+Description = Increases the power of all attack by 20% but ignores Same-Type attack bonus when dealing damage.
+#-------------------------------
+[CORECYCLE]
+Name = Core Cycle
+Description = (TODO)
+#-------------------------------
+[CORONAPORTAL]
+Name = Corona Portal
+Description = If the Pokémon is hit with a physcial attack it will varying effects depending on how many times it has been hit:|1 - Raises target's Speed.|2 - Burns the target.| 3 - Forces the user to switch out burns the Pokémon switched in.|After being hit for the third time, the counter resets to 0.
+#-------------------------------
+[DESERTSURGE]
+Name = Desert Surge
+Description = For 5 turns, the field is covered in a burning desert. All drained HP is halved | Sandstorms have a 20% chance of burning a non Rock or Ground Pokémon each turn.| Increases the power of Ground moves of grounded pokemon by 30%
+#-------------------------------
+[DRAMATURGE]
+Name = Dramaturge
+Description = Boosts user's Attack by 30% when poisoned. Boosts user's Special Attack by 30% when burned. Boosts user's Speed by 30% when suffering from a frostbite.
+#-------------------------------
+[ECHOLOCATION]
+Name = Echolocation
+Description = Raises Attack and Speed when hit by a sound move.
+#-------------------------------
+[ELECTROMAGNETISM]
+Name = Electromagnetism
+Description = Draws all Steel moves to the Pokémon and raises their Special Defense instead of affecting them.
+#-------------------------------
+[ENERGYBURST]
+Name = Energy Burst
+Description = Moves that requires recharge after use will not need recharging, but their damage will be divided by how many times they have been used.| The counter is reset if a recharge move Knocks out a Pokémon, but the move will then need to recharge.
+#-------------------------------
+[EVENTHORIZON]
+Name = Event Horizon
+Description = ???
+#-------------------------------
+[FOCUSSURGE]
+Name = Focus Surge
+Description = For 5 turns, the field is covered in meditative energy. Allows ground Fighting Pokémon to hit Ghost Pokémon.| Increases the critical hit of all Punching and Kicking attacks.
+#-------------------------------
+[FOSSILIZE]
+Name = Fossilize
+Description = Turns the Pokémon's Normal-attacks into Rock-type and makes them do 20% more damage.
+#-------------------------------
+[GENESIS]
+Name = Genesis
+Description = When the Pokémon is knocked out. It will remove all positive stat changes of Pokémon that knocked them out then set their HP to be same as their lowest stat.| Will not trigger if there is a Pokémon with Damp on the battlefied.
+#-------------------------------
+[GLASSSKIN]
+Name = Glass Skin
+Description = Halves damage done to the Pokémon by Water and Ice moves.
+#-------------------------------
+[GRAVITONPORTAL]
+Name = Graviton Portal
+Description = (TODO)
+#-------------------------------
+[JUNGLECLOAK]
+Name = Jungle Cloak
+Description = Increases the Pokémon's Evasion by 25% during Jungle Terrain
+#-------------------------------
+[JUNGLESURGE]
+Name = Jungle Surge
+Description = For 5 turns, the field is covered in a deep jungle. Poison attacks can hit grounded Steel Pokémon.| High critical hit moves have a 20% chance of poisoning the target.| Increases the power of Bug-type and Poison moves of grounded pokemon by 30%
+#-------------------------------
+[KARMAGEAR]
+Name = Karma Gear
+Description = When the Pokémon would be affected by a move's additional effect, it will suprress the ability of the move's user instead.|Can be used a number of times equal to the number of fained pokémon in the Pokémon's party when it entered battle.|Will negate the additional effect even if the opponent is already suppressed.
+#-------------------------------
+[LAVALANDS]
+Name = Lavalands
+Description = Causes the ground under the opposing field to burn when the Pokémon enters battle.| Ends an active Sticky Web on the opposing field.
+#-------------------------------
+[LUNARSURGE]
+Name = Lunar Surge
+Description = For 5 turns, the field is covered in a vast moonscape. Gives higher priority to Gravity and makes it last for 8 turns.| Increases the power of Dark-type moves of grounded pokemon by 30%
+#-------------------------------
+[MALICETOUCH]
+Name = Malice Touch
+Description = 30% chance of putting a curse on any non-GHOST opponennt that makes makes contact with the Pokémon
+#-------------------------------
+[MEDIUM]
+Name = Medium
+Description = Powers up the user's Ghost-type attacks by 50 %.
+#-------------------------------
+[MEMORYDRAIN]
+Name = Memory Drain
+Description = Drains the PP of a move that hits the Pokémon by 3.
+#-------------------------------
+[MERMAID]
+Name = Mermaid
+Description = 30% chance of attracting an opponent of the opposite gender that uses a status move ont rhe Pokémon| If the Pokémon is holding a Destiny Knot, the ability is guaranteed to trigger but the item will be consumed
+#-------------------------------
+[MYSTICSURGE]
+Name = Mystic Surge
+Description = For 5 turns, the field is covered in mystic energy. Allows ground Dragon Pokémon to hit Fairy Pokémon.| Halves the damage of all Fairy type attacks
+#-------------------------------
+[NATURESALLY]
+Name = Nature's Ally
+Description = Powers up "Grass Pledge", "Fire Pledge" and "Water Pledge" 30 %
+#-------------------------------
+[NEURALNETWORK]
+Name = Neutral Network
+Description = (TODO)
+#-------------------------------
+[OVERCHARGE]
+Name = Overcharge
+Description = (TODO)
+#-------------------------------
+[PALADIN]
+Name = Paladin
+Description = If the Pokémon's partner has 25% or less HP a damaging move will be redirected to the Pokémon
+#-------------------------------
+[PARASITICHOST]
+Name = Parasitic Host
+Description = Sharply raises Defense and Special Defense at the end of each turn, but also deals damage equal to 1/8 of the user's max HP.
+#-------------------------------
+[PHANTASMAGORIA]
+Name = Phantasmagoria
+Description = Lowers the Special Defense of all sleeping Pokémon at the end of each turn.
+#-------------------------------
+[PREMONITION]
+Name = Premonition
+Description = Makes moves that hit in the future hit one turn faster.|Affects Future Sight, Doom Desire, Butterfly Effect and Meteor Impact.
+#-------------------------------
+[PROWLING]
+Name = Prowling
+Description = Moves that do not normally have a flinch chance has a 10% chance of making the opponenet flinch.|Does NOT stack with a King's Rock held by the Pokémon.
+#-------------------------------
+[QUAGMIRE]
+Name = Quagmire
+Description = Summons a 3-turn Swamp around the Pokémon's opposing field when the Pokémon enters battle
+#-------------------------------
+[RELICHUNTER]
+Name = Relic Hunter
+Description = The Pokémon has a 1/3 chance of recycling a spent gem at the end of each turn.|Guaranteed to trigger during Desert Terrain.
+#-------------------------------
+[REPELLANT]
+Name = Repellant
+Description = Halves the damage from Bug and Water attacks.
+#-------------------------------
+[REQUIEM]
+Name = Requiem
+Description = All active non-GHOST Pokémon will faint 7 turns after the Pokémon enters battle.
+#-------------------------------
+[RIPPLEPORTAL]
+Name = Ripple Portal
+Description = If the Pokémon is hit with a special attack it will varying effects depending on how many times it has been hit:|1 - Recovers 25% of the Pokémon's max HP.|2 - Raises the Pokémon's Defense and Special Defense| 3 - Forces the user to switch out and halves the HP of Pokémon switched in.|After being hit for the third time, the counter resets to 0.
+#-------------------------------
+[RUTHLESS]
+Name = Ruthless
+Description = Attacks will always land a critical hit on a burned opponent.
+#-------------------------------
+[SERPENTCHARM]
+Name = Serpent Charm
+Description = (TODO)
+#-------------------------------
+[SERAPHRING]
+Name = Seraph Ring
+Description = Halves damage from Special Attacks. Doubles damage done to the Pokémon from DARK attacks.|Does NOT stack with, or trigger, an Angel Ward held by the Pokémon.
+#-------------------------------
+[SEEDEDBODY]
+Name = Seeded Body
+Description = 30% chance of putting a leech seed on a non-GRASS opponent that makes makes contact with the Pokémon.|Does not work against other Pokémon with Seeded Body.
+#-------------------------------
+[SHIRANUI]
+Name = Shiranui
+Description = Summons a 3-turn Sea of fire around the Pokémon's opposing field when the Pokémon enters battle
+#-------------------------------
+[SHROUDINGDEW]
+Name = Shrouding Dew
+Description = Doubles the Pokémon's Special Defense while not affected by a status condition.
+#-------------------------------
+[SILKSPINNER]
+Name = Silk Spinner
+Description = Causes a Sticky Web to appear on the opposing field when the Pokémon enters battle.| Ends an active Burning Ground on the opposing field.
+#-------------------------------
+[SINISTEREYES]
+Name = Sinister Eyes
+Description = Lowers the Special Attack stat of all opposing Pokémon when entering battle.
+#-------------------------------
+[SOULREAD]
+Name = Soul Read
+Description = Moves that have 100% accuracy or normally cannot miss that are used against the Pokémon have their accuracy reduced to 85.
+#-------------------------------
+[SPIRITSURGE]
+Name = Spirit Surge
+Description = For 5 turns, the field is covered in spiritual energy. Allows grounded Ghost Pokémon to hit Normal Pokémon.| Increases the power of Ghost-type moves of grounded Pokémon by 30%
+#-------------------------------
+[STORMWHEEL]
+Name = Storm Wheel
+Description = 30% chance of charging the Pokémon with electricity at the end of each turn during Rainy or Snowy weather.
+#-------------------------------
+[SUPERCHARGE]
+Name = Supercharge
+Description = If the Pokémon has 1/3 or less of their HP, Electric moves will deal 50% more damage.
+#-------------------------------
+[TESTAMENT]
+Name = Testament
+Description = Reduces the Attack and Special Attack of all opponents when the Pokémon faints from an opponent's attack.
+#-------------------------------
+[TIMELESS]
+Name = Timeless
+Description = (TODO)
+#-------------------------------
+[THAUMATURGY]
+Name = Thaumaturgy
+Description = Halves the chance of being affected by the additional effect of opponent's attacks.
+#-------------------------------
+[UNICORN]
+Name = Unicorn
+Description = Draws all Poison moves to the Pokémon and raises their Attack instead of affecting them.
+#-------------------------------
+[UNYIELDING]
+Name = Unyielding
+Description = Attacks will always land a critical hit on a paralyzed opponent
+#-------------------------------
+[WHITEOUT]
+Name = Whiteout
+Description = 30% chance of disabling a move that hits the Pokémon.|Will not trigger if the user of the move is Ice-Type
+#-------------------------------

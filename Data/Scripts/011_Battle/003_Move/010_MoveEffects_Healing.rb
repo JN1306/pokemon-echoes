@@ -164,6 +164,7 @@ class Battle::Move::HealUserByHalfOfDamageDone < Battle::Move
   def pbEffectAgainstTarget(user, target)
     return if target.damageState.hpLost <= 0
     hpGain = (target.damageState.hpLost / 2.0).round
+    hpgain /= 2 if @battle.field.terrain == :Desert
     user.pbRecoverHPFromDrain(hpGain, target)
   end
 end
@@ -493,7 +494,7 @@ end
 #===============================================================================
 class Battle::Move::UserFaintsExplosive < Battle::Move
   def worksWithNoTargets?;     return true; end
-  def pbNumHits(user, targets); return 1;    end
+  def pbNumHits(user, targets); return 1;   end
 
   def pbMoveFailed?(user, targets)
     if !@battle.moldBreaker

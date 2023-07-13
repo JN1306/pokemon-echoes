@@ -1,258 +1,240 @@
 ##################### CHAPTER 2 ########################
-# Meal with Amy and Lawrence
-[CH_2_Intro,0]
-/event set Lawrence 42
-/speaker Lawrence
-/expression neutral
-> PLAYER are you alright?
-
-/speaker PLAYER
-> ...WT ...WT ...?
-
-/speaker Lawrence
-/expression neutral
-> I figured you'd be upset after what happened with that lawless idiot.
-
-/speaker PLAYER
-> .WT.WT.
-
-/speaker Lawrence
-/expression neutral
-> I certainly am.
-> For him to attack [P]Amy[/] like that is unforgiveable.
-> It would've been even if [R]He[/]'d had a reason...
-
-/speaker PLAYER
-> ...
-
-/speaker Lawrence
-/expression neutral
-> What was that?
-
-/fade black 20
-/speaker PLAYER
-> ...WT ...WT ...
-/wait 40
-/fade normal 20
-
-/speaker Lawrence
-/expression neutral
-> [B]Arglos[/] came here!?
-
-/speaker PLAYER
-> ...?
-
-/speaker Lawrence
-/expression neutral
-> Oh I know him. Our paths have crossed a time or two before.
-> I can't really get a grasp on him though. He is quite odd.
-> We have been investigating all of those disappearances as they've happened, but all of them turn up blank.
-> I have to head to the station SOON anyway.
-> ...
-> Before I do though, would you mind if we went inside for a bit. I figured we all needed a break after what happened.
-> I'll cook you up a nice meal, what do you say?
-
-/speaker PLAYER
-> ...!
-
-/speaker Lawrence
-/expression neutral
-> Alright. I will see you inside.
-> ...
-> Hmmm.... what to make though?
-/fade black 20
-/wait 40
-/event Lawrence switch A false
-/fade normal 20
-
-########## Lawrence Cooking Scene ####################
-[CH_2_Intro,1]
+#============= Lawrence Cooking Scene =================#
+[CH_2_Cooking,0]
 /event set Amy 3
-/event set Eevee 4
 /event set Lawrence 7
+/event set Vinette 26
+/eval pbMultiSwitch(95,[11,12,13,14,19],"A",false)
+/eval pbMultiSwitch(95,[3],"A",false)
+/eval pbMultiSwitch(95,[3],"B",false)
+/eval pbMultiSwitch(161,[20,21],"A",false)
+/wait 12
 /speaker Amy
-/expression happy
+##/emote happy
 > Have you decided what to make yet [B]Uncle Lawrence[/]?
 
-/event Lawrence turn left
+/event Lawrence turn down
 /speaker Lawrence
-> Patience dear, It's only been a minute but I think I got the general idea.
+> Patience dear. Your old, grumpy uncle needs some time to think.
+/speaker Amy
+##/emote happy
+> Grumpy, schmumpy!
+#/event Lawrence popup ...
+/speaker Lawrence
 > How about...
-> hmmm... let's see...
+/wait 6
+#/event Lawrence popup idea
 > Seared beef with potato and carrot stew?
-> Might take a little while though...
+> Would make a good leftover dinner later too.
 /if pbSt_pkmn="Vinette" 
+    #/event Player popup smile
     /speaker PLAYER
-    /expression neutral
+    ##/emote neutral
     > ...WT ...WT ...!
     /speaker Lawrence
-    > Ah there you are PLAYER, of course [B]Vinette[/] can help, they are fire-type after all.
+    > Of course [B]Vinette[/] can help...as long as they're gentle about it.
+    > They usually burn...
+    > ...
+    #/event Lawrence popup sad
+    >*sigh*
 /elsif pbSt_pkmn="Inlys" 
-    > Shouldn't take long, [B]Vinette[/] will help me sear the meat nicely
+    > Shouldn't take long, [B]Vinette[/] will help me sear the meat.
+    > As long as they don't burn...
+    > ...
+    #/event Lawrence popup sad
+    >*sigh*
 /else
     /speaker Amy
-    /expression neutral
-    > Hey! My [B]Vinette[/] can help!
+    ##/emote neutral
+    > Hey! [B]Vinette[/] can help!
     /speaker Lawrence
     > Good idea [P]Amy[/]!
+    > As long as they don't burn...
+    > ...
+    #/event Lawrence popup sad
+    >*sigh*
 /end
 /se Open Pokeball
+/event Vinette switch A true
 /cry VINETTE
 
 # Move Vinette and Lawrence to dishwasher
-# Move Player to a chair next to Amy
-[CH_2_Intro,2]
+[CH_2_Cooking,1]
 /speaker Amy
-/expression worried
-> Are you ok brother?
+##/emote worried
+> Are you ok?
+
+/speaker Lawrence
+> I am dear...I just...
+/wait 6
+> It...it's nothing really
+
+/cry VINETTE 80 80
+#/event Vinette popup worry
+/speaker Vinette
+> Veen?
+/event Lawrence turn right
+/speaker Lawrence
+> Don't worry about me I'll be fine.
+#/event Vinette popup heart
 
 /speaker PLAYER
-/expression neutral
-> .WT.WT.
+#/event Player popup ...
+/event Player turn left
+##/emote neutral
 > ...?
 
+/event Amy turn right
 /speaker Amy
-/expression worried
+##/emote worried
 > I'm...
-> I don't know what I am to be honest.
+> I don't know...
 > I guess...
 > I'm confused.
     
 /speaker Amy
-/expression worried
-> I don't get what's going on and [B]Kanai[/] tried to attack Absol and the thing with the [G]eye[/] and...
+##/emote worried
+> I don't get what's going on and [B]Kanai[/] tried to attack Absol and the thne the [G]eye[/] and...
 > and...
+#/event Amy popup sad
 
 # Move Player over to Amy
-[CH_2_Intro,3]
-/speaker PLAYER
-> .WT.WT.
+[CH_2_Cooking,2]
+/event set Amy 3
+/event set Lawrence 7
+/event set Vinette 26
+#/event Player popup smile.
 /fade black 12
 /wait 40
+/event Vinette switch A false
+/event Lawrence turn down
 /speaker Amy
-/expression worried
-> ...*sob* WT ...*sob*
-> It's just...a little too much.
+##/emote worried
+> ...*sob*
 
+#/event Player popup smile.
+#/wait 6
 /speaker PLAYER
 > .WT.WT.
 
 /speaker Amy
-/expression worried
+##/emote worried
 > ...
 /wait 40
 /fade normal 12
+#/event Amy popup smile.
 /speaker Amy
-/expression neutral
-> Thank you...brother, I needed that.
-
+##/emote neutral
+> Thank you...
+#/event Player popup smile.
 
 # Move Lawrence to the table
-[CH_2_Intro,4]
+[CH_2_Cooking,3]
+/event set Amy 3
+/event set Lawrence 7
+/event set Plate1 9
+/event set Plate2 10
+
 /speaker Lawrence
-/expression neutral
+##/emote neutral
 > Oh [P]Amy[/] dear. I know how you feel. Do you want me to call your Pokémon down?
 
 /speaker Amy
-/expression neutral
-> No, they're upstairs watching TV
+##/emote neutral
+> No, they're busy watching TV.
 /eval pbBGMFade(1)
 > listen.
-/wait 24
+/wait 12
 /cry EEVEE 30,100
-/wait 24
+/wait 12
 /cry ABSOL 30,100
-/bgm past
+/bgm peace_and_quiet
 /speaker Amy
-/expression neutral
-> Eevee's favorite show is on and I think he wants Absol to enjoy it too.
+##/emote neutral
+> Eevee's favorite show is on!
 
 /speaker Lawrence
-/expression neutral
-> Fair enough. Here is your food everyone.
+##/emote neutral
+> Oh! We wouldn't want to disturb that. Here is your food everyone.
+/event Amy turn right
+/event Plate1 switch A true
+/event Plate2 switch A true
 
 # Make dinner plates visible
+#/event Player popup ...
+#/wait 12
+#/event Lawrence popup ...
+#/wait 12
+#/event Amy popup ...
+#/wait 12
 /speaker PLAYER
-/expression neutral
+##/emote neutral
 > ...
 
 /speaker Lawrence
-/expression neutral
+##/emote neutral
 > ...
 
 /speaker Amy 
-/expression neutral
+##/emote neutral
 > ...
 /event Amy exclaim
 /wait 12
-> Hey it's not burnt this time! 
+/event Amy turn up
+> Hey it's not overcooked this time! 
 
 /speaker Lawrence
-/expression neutral
-> What do you mean "not burnt this time"!?
+##/emote neutral
+> What do you mean by that!?
 
 /speaker Amy 
-/expression neutral
-> Well last time you accidently had Vinette use ember on the food remember?
+##/emote neutral
+> Well last time you fell asleep in front of the TV remember?
 
 /speaker Lawrence
-/expression neutral
-> .WT.WT.
+##/emote neutral
 > I've been tryingWT to forget that ever happened.
 
 /speaker Amy 
-/expression happy
+##/emote happy
 > Good thing I remember then!
 
+#/event Lawrence popup frown
+#/wait 6
+#/event Amy popup smile
 /speaker Lawrence
-/expression neutral
+##/emote neutral
 > ...
 
 /speaker Amy 
-/expression happy
-> It's alright, I can tell you like cooking a lot! 
+##/emote happy
+> It's alright!
 
-/speaker Lawrence
-/expression neutral
-> I do indeed!
 
+/event Amy turn right
 /speaker Amy 
-/expression happy
-> Besides this is really good!
-
-# Turn Amy towards player
-/speaker Amy 
-/expression happy
-> Don't you agree?
+##/emote happy
+> Doesn't it taste great?
 
 /speaker PLAYER
 > ...!
-# Turn Amy towards Lawrence
+/event Amy turn up
 /speaker Amy 
-/expression happy
+##/emote happy
 > There you go!
 
 /speaker Lawrence
-/expression neutral
+##/emote neutral
 > I'm glad you think so.
 > Do youWT feel better?
 
+#/event Amy popup smile.
 /speaker Amy 
-/expression happy
-> Yeah.
-/expression neutral
-> It helps having a shoulder to cry on.
+##/emote neutral
+> I do.
 
 /speaker Lawrence
-/expression neutral
-> How adult of you.
-
-/speaker Amy 
-/expression happy
-> hee-hee.
-
-/speaker Lawrence
-/expression neutral
+##/emote neutral 
 > What do you think about everything?
 
 /event Player exclaim
@@ -260,193 +242,202 @@
 /speaker PLAYER
 > ...!
 
+/event Amy turn right
 /speaker Amy 
-/expression neutral
+##/emote neutral
 > It's OK.
-> .WT.WT.
-> I'm confised... and worried about [B]Kanai[/].
+#/event Amy popup ...
+/wait 6
+/event Amy turn right
+> I'm confused... and worried about [B]Kanai[/].
 
 /speaker Lawrence
-/expression neutral
-> Why would you worry about [R]him[/]!?
+##/emote neutral
+> Why worry about [R]him[/]!?
 
 /speaker Amy 
-/expression neutral
+##/emote neutral
 > I heardWT a heartbeat...
 
+#/event Lawrence popup frown
 /speaker Lawrence
-/expression neutral
+##/emote neutral
 > Didn't I tell you to not worry about things you can't do anything about?
 
 /speaker Amy 
-/expression neutral
-> I know, but...
-> Somehow, It feels like I can.
-
-/speaker Lawrence
-/expression neutral
-> I know you want to help everyone [P]Amy[/], but please, be careful.
-> [R]That man[/] is lawless and dangerous. I don't want him to harm you.
-
-/speaker Amy 
-/expression neutral
+##/emote neutral
 > I know, but...
 
 /speaker Lawrence
-/expression neutral
-> .WT.WT.
-> Listen [P]Amy[/] at least you have to agree that you can't do anything right now yes?
+##/emote neutral
+> Listen, I know you want to help everyone, but please, be careful.
+> [R]That man[/] dangerous. I don't want him to harm you.
+
+#/event Amy popup ...
+#/wait 6
+/speaker Amy 
+##/emote worried
+> I know, but...
+
+/speaker Lawrence
+##/emote neutral
+> [P]Amy[/] at least you have to agree that you can't do anything right now yes?
 
 /speaker Amy 
-/expression neutral
+##/emote worried
 > IWT...I guess.
 
 /speaker Lawrence
-/expression neutral
+##/emote neutral
 > So at least do your old uncle a favor and don't worry about it right now OK?
 
 /speaker Amy 
-/expression neutral
+##/emote worried
 > OK...
 
-/speaker Lawrence
-/expression neutral
-> .WT.WT.
+#/event Lawrence popup ...
+#/wait 6
 
 /speaker Amy 
-/expression neutral
-> ...
+##/emote worried
 > I think...
 
 /speaker Lawrence
-/expression neutral
+##/emote neutral
 > Yes?
 
 /speaker Amy 
-/expression neutral
-> I think I'll take a walk in a bit.
+##/emote worried
+> I think I'll take a walk outside in a bit.
 
 /speaker Lawrence
-/expression neutral
-> Why wait a bit?
+##/emote neutral
+> Why wait?
 
 /speaker Amy 
-/expression happy
-> I wanna finish my meal first and then go up and watch the end of the show with Eevee and Absol.
+##/emote neutral
+> I wanna finish my meal first and then go up and watch the end of the show.
 
 /speaker Lawrence
-/expression neutral
-> That makes sense.
-> Don't wait too long though. It'll get dark.
+##/emote neutral
+> Don't wait too long OK? It'll get dark.
 
 /speaker Amy 
-/expression happy
-> That's kind of how night works.
-/expression neutral
-> I won't. the show isn't THAT long.
+##/emote neutral
+> Yeah, that's kind of how night works.
+> I won't. The show isn't THAT long.
 
 /speaker Lawrence
-/expression neutral
-> What kind of show is it?
+##/emote neutral
+> What kind of show is it anyway?
 
 /speaker Amy 
-/expression neutral
+##/emote neutral
 > It's about eight, or was it nine, kids getting to go to another world and meet all sorts of cool creatures and stuff.
 
 /speaker Lawrence
-/expression neutral
+##/emote neutral
 > Oh, so it's like going out and catching Pokémon then?
 
 /speaker Amy 
-/expression happy
+##/emote happy
 > Nah, it's pretty different...WTI think. There is this orange thing that kinda reminds me of [B]Cranidos[/]...
-> and there is the other one that looks likes something a [B]Growlithe[/] with a horn and a tail like a [B]Helioptile[/].
-> They're very friendly things though.
+> and there is the other one that looks like a [B]Growlithe[/] with a horn and a tail like a [B]Helioptile[/].
+> They're very friendly things!
 
+#/event Lawrence popup smile
+#/wait 6
 /speaker Lawrence
-/expression neutral
-> Sounds like fun.
+##/emote neutral
+> Sounds like a lot of fun for you young'uns!
 
 /speaker Amy 
-/expression happy
-> It is! [B]Eevee[/] loves it and I think she is trying to make [B]Absol[/] love it too!
+##/emote happy
+> [B]Eevee[/] loves it and I think she is trying to make [B]Absol[/] love it too!
 
 /speaker Lawrence
-/expression neutral
+##/emote neutral
 > Don't let me stop you.
-> I will be heading to the station in a bit though, so I'll be seeing you later alright?
+> I will be heading to the station in a bit, so I'll be seeing you later alright?
 
 /speaker Amy 
-/expression happy
+##/emote happy
 > OK!
-/expression neutral
+##/emote neutral
 > Is brother going with you?
 
 /speaker Lawrence
-/expression neutral
+##/emote neutral
 > Why do you ask?
 
 /speaker Amy 
-/expression neutral
+##/emote neutral
 > Well, that [B]Arglos[/] guy said something about that brother should talk with about that man that disappeared.
 
 /speaker Lawrence
-/expression neutral
+##/emote neutral
 > Did he now?
 
 /speaker Amy 
-/expression neutral
+##/emote neutral
 > Yup, shouldn't he have?
 
 /speaker Lawrence
-/expression neutral
+##/emote neutral
 > Who knows...
 > Well I will at least ask your brother politely.
 
 /speaker Amy 
-/expression happy
+##/emote happy
 > I'm gonna take that as he is going with you.
+/eval pbMultiSwitch(95,[15,16,17],"A")
+/if pbSt_Pkmn=="Inlys"
+    /eval $game_self_switches[[95,24,"B"]]=true # Starter (Stationary II) - Licit
+/elsif pbSt_Pkmn=="Licit"
+        /eval $game_self_switches[[95,24,"C"]]=true # Starter (Stationary II) - Vinette
+/elsif pbSt_Pkmn=="Vinette"
+    /eval $game_self_switches[[95,24,"A"]]=true # Starter (Stationary II) - Inlys
+/end
 
 # Move Amy to the player
-[CH_2_Intro,5]
+[CH_2_Cooking,4]
 /speaker Amy 
-/expression neutral
+##/emote neutral
 > Be careful OK?
 
 /speaker Player
-/expression neutral
+##/emote neutral
 > ...!
 
 /speaker Amy 
-/expression happy
+##/emote happy
 > *giggle*
+/eval pbBGMFade(1)
+/wait 6
+/bgm fukuri_forest.ogg
 
-# Move Amy upstairs
 # Turn Lawrence towards Player
-[CH_2_Intro,6]
+[CH_2_Cooking,5]
 /speaker Lawrence
-/expression neutral
+##/emote neutral
 > Well are you coming with me to the station?
 
 /speaker Player
-/expression neutral
+##/emote neutral
 > ...
 
 /speaker Lawrence
-/expression neutral
+##/emote neutral
 > [P]Amy[/]'s got a good head on her shoulders.
 > .WT.WT.
-> I will head out. I have a meeting with [B]someone[/] I need to attend.
+> I will head out. I have a [B]meeting[/] I need to attend.
 > You come after as fast as possible. From the forest entrance just follow the [R]Crossroads[/] til you get to [R]Fountain Road[/] and from there to [R]Iphondria City[/].
 > Once you're there it's easy to find. It is on the [R]Second floor of the largest building[/].
-> I'll see you there.
-
-# Move Lawrence out of the house
-# Advance the Quest "Out Of the Woods"
+/event Plate1 switch A false
+/event Plate2 switch A false
 
 
-
-# At Lawrence's Office.
+#=============== Ulrich introduction ==============#
 [CH_2_Office,0]
 /event set Policeman 1
 /speaker Policeman
@@ -455,14 +446,12 @@
 /event Policeman exclaim
 
 /speaker Policeman
-> Oh! You would be PLAYER correct?
+> Oh! PLAYER
 > The chief is waiting for you.
 > ...
 > Yeah, I don't think he'll mind, the meeting is almost done anyway
 # Move Policeman out of the way.
 
-# Ulrich introduction
-# Finish Quest: Out of the Woods.
 
 [CH_2_Office,1]
 /speaker Ulrich
@@ -474,7 +463,7 @@
 
 /speaker Ulrich
 /hidename 1
-> I will do anything to keep [B]Manectric[/] safe, but I would be nice if it didn't come to that in the first place.
+> I will do anything to keep [B]Manectric[/] safe, but it would be nice if it didn't come to that in the first place.
 
 /speaker Lawrence
 > ForWT clarification, could you give me the details of the threat again?
@@ -488,13 +477,13 @@
 
 /cry MANECTRIC 80 80
 /speaker Manectric
-/expression neutral
+##/emote neutral
 > raivorr...
 
 /speaker Ulrich
 /hidename 1
 > .WT.WT.
-> I'm sorry. Like I said, I'm very high strung. No offense.
+> I'm sorry. Like I said, I'm very high strung right now. No offense.
 
 /speaker Lawrence
 > None taken. Now if you would...
@@ -517,24 +506,24 @@
 > They would take [Y]Manectric[/] from me.
 
 /speaker Lawrence
-> Nautrally you will refuse to comply with this as it would result in trouble for the entire area.
+> Nautrally you will refuse to comply with this as it would result in trouble.
 > You believe this threat to be credible?
 
 /speaker Ulrich
 /hidename 1
 > I don't really know, but I...WT think...WT it is.
-> With how vital the Power Plant is. I must assume it is.
+> With how vital the Power Plant is. I must assume the worst.
 
 /speaker Lawrence
 > Couldn't have said it better myself, One can never be too careful.
-> As we do not know when they will come to...
+> As we do not know if or when they will come to...
 
 /speaker Ulrich
 /hidename 1
 > ...
 
 /speaker Lawrence
-> Execute their threat...
+> follow up on their threat...
 > I will send a couple of men over to [B]Pharoday Island[/] to keep an eye on things.
 
 /speaker Ulrich
@@ -559,10 +548,10 @@
 > I think that about settles it. If you will excuse me, there are other cases demanding my attention.
 
 /speaker Ulrich
-> The disappearances I take it?
+> The disappearances?
 
 /speaker Lawrence
-> That would be it yes.
+> That would be them yes.
 
 /speaker Ulrich
 > Any leads?
@@ -572,7 +561,7 @@
 
 /cry MANECTRIC 80 80
 /speaker Manectric
-/expression neutral
+##/emote neutral
 > rai...
 
 /speaker Lawrence
@@ -584,17 +573,16 @@
 
 /speaker Lawrence
 > ...
-> Don't hesitate when those lawless troublemakers show up.
+> Don't hesitate when those troublemakers show up.
 
 /speaker Ulrich
 > When?
 
 /speaker Lawrence
 > ...WT If. 
-> I've developed a habit of always expecting the worst.
+
 
 /speaker Ulrich
-> Shame.
 > I'll be off then.
 
 # Turn Ulrich and Manectric towards one another
@@ -603,7 +591,7 @@
 
 /cry MANECTRIC 80 100
 /speaker Manectric
-/expression neutral
+##/emote neutral
 > vor?
 
 /speaker Ulrich
@@ -613,7 +601,7 @@
 
 /cry MANECTRIC 80 100
 /speaker Manectric
-/expression happy
+##/emote happy
 > RAI!
 
 # Play Zapping related SE
@@ -624,60 +612,52 @@
 > Don't worry about it, we got a pie to eat!
 
 # Move Ulrich and Manectric towards the exit
-# Move Player out of the way and Ulrich out of the room.
-# Move Manectric in front of Player, have them jump, play their cry and move them out of the door.
 # Move PLAYER to Lawrence's desk.
 
 [CH_2_Office,2]
+/event set Ulrich 4
+/event set Manectric 5
+#/event Ulrich popup ...
+#/event Manectric popup ...
+#/rest 6
+#/event Manectric popup smile
+#/rest 6
+#/event Player popup smile
+/speaker PLAYER
+> ...
+
+[CH_2_Office,3]
 /speaker Lawrence
 > Ah there you are. Apologies for making you wait at the door for so long.
 > Admittedly I expected the meeting with [B]Ulrich[/] to be shorter.
 > ...
 > I get him being nervous though, if someone threatened to attack the police station, I would probably feel the same way.
 > Heh, if I had nerves to begin with that is.
-> ...
-/eval $game_variables[31]=[0,false,false,false]
-/loop
-    /hidename 2
-    ?> ...
-    /choice "What's on your mind?"
-        /speaker Lawrence
-        /hidename 0
-        > *sigh* everything... and nothing.
-        > There is [R]that man[/] attacking [P]Amy[/], there is [P]Amy[/] herself..
-        > On top of that there is all of these cases...
-        /speaker PLAYER
-        > ... ... ...
-        /speaker Lawrence
-        > ...WT thank you PLAYER ...
-        /if !$game_variables[31][1]
-            /eval $game_variables[31][0]+=1
-        /end
-        /eval $game_variables[31][1]=true
-    /choice "How do you know Arglos?"
-        /speaker Lawrence
-        /hidename 0
-        > Can anyone say they "know" him?
-        > He just waltzed in here one night and started spouting nonsense.
-        > I will admit I am quite curious about him...
-        /if !$game_variables[31][2]
-            /eval $game_variables[31][0]+=1
-        /end
-    /choice "Will Amy be OK?"
-        /speaker Lawrence
-        /hidename 0
-        > She is a strong kid, she'll do well... I hope.
-        > Her Pokémon will protect her, but still...
-        > I hope her boundless kindness doesn't get the better of her.
-        /if !$game_variables[31][3]
-            /eval $game_variables[31][0]+=1
-        /end
-    ?/>
-    /if $game_variables[31][0]==3
-        /eval $game_variables[31]=0
-        /break
-    /end
-/end
+/hidename 2
+?> ...
+/choice "What's on your mind?"
+    /speaker Lawrence
+    /hidename 0
+    > *sigh* everything... and nothing.
+    > There is [R]that man[/] attacking [P]Amy[/], there is [P]Amy[/] herself..
+    > On top of that there is all of these cases...
+    /speaker PLAYER
+    > ... ... ...
+    /speaker Lawrence
+    > ...WT thank you PLAYER ...
+/choice "How do you know Arglos?"
+    /speaker Lawrence
+    /hidename 0
+    > Can anyone say they "know" him?
+    > He just waltzed in here one night and started spouting nonsense.
+    > I will admit I am quite curious about him...
+/choice "Will Amy be OK?"
+    /speaker Lawrence
+    /hidename 0
+    > She is a strong kid, she'll do well... I hope.
+    > Her Pokémon will protect her, but still...
+    > I hope her boundless kindness doesn't get the better of her.
+?/>
 
 /speaker Lawrence
 > Have IWT ever told you?
@@ -686,15 +666,16 @@
 > ...?
 
 /speaker Lawrence
-> You have probably noticed, but she is...a little different.
+> You have probably noticed, but [P]Amy[/], she is...a little different.
 
 # Amy and Lawrence Moment.
 [CH_2_Moment,0]
+/event set Constable 7
 /speaker Lawrence
 > Here we are!
 
 /speaker Amy
-/expression happy
+##/emote happy
 > Thanks loads for coming with me.
 
 /speaker Lawrence
@@ -702,98 +683,103 @@
 > If you don't mind--
 
 /speaker Amy
-/expression neutral
+##/emote neutral
 > I mind a lot! I think about stuff all the time!
 
 /speaker Lawrence
 > That's not what I meant and you know it!
 
 /speaker Amy
-/expression happy
+##/emote happy
 > *giggle* Yeah!
 
 /speaker Lawrence
-> As I was about to say...
+> As I was saying...
 > I would like to ask you a questionWT if you don't mind.
 
 /speaker Amy
-/expression happy
-> OK
+##/emote happy
+> OK!
 
 /speaker Lawrence
-> Why did you bring poor old me along? Is your brother sleeping in again?
+> Why did you bring poor old me along?
 
 /speaker Amy
-/expression neutral
-> That is two questions at once.
-> I wanted to go here and brother was "Z-ing" into next Wednesday.
-/expression happy
+##/emote neutral
+> Cuz I wanted to go here and brother was "Z-ing" into next Wednesday.
+##/emote happy
 > I'm surprised you didn't hear him snoring.
-/expression neutral
+##/emote neutral
 > And you looked stressed out so I thought you would want to relax a bit.
 
 /speaker Lawrence
-> You weren't wrong
+> You weren't wrong...
 > That is very thoughtful of you.
 
 /speaker Amy
-/expression neutral
+##/emote happy
+> Thank you!
+#/rest 6
+#/event Amy popup ...
+##/emote neutral
 > I feel...WT safe here.
 > It feels likeWT [P]something[/] here wants me to be happy.
 > It's kinda hard to explain.
 
+#/event Amy popup ...
 /speaker Lawrence
 > Do you want to try?
 
 /speaker Amy
-/expression neutral
-> Ummm....
+##/emote neutral
 > Do you know the feeling you get when you think of [P]me[/] and brother?
 > It feels kinda like that, but like... windy... somehow.
 > Does that make sense?
 
+#/event Lawrence popup ...
+#/rest 6
 /speaker Lawrence
-> A little bit...
+> A little bit.
 
 /speaker Amy
-/expression happy
+##/emote happy
 > It doen't make sense at all does it?
 
 /speaker Lawrence
 > No, not really.
 
-/speaker Amy
-/expression happy
-> You should be more honest with yourself.
-
 /speaker Lawrence
-> Well, I get the thing with the feeling, just not the windy part.
+> Well, I get the feeling, just not the "windy" bit.
 
 /speaker Amy
-/expression happy
-> That makes sense. I don't really get it either!
-/expression neutral
+##/emote happy
+> Me neither!
+#/event Amy popup ...
+#/rest 6
+#/event Amy popup smile
+#/rest 6
+##/emote neutral
 > I want...WT everyone to feel like that
 
 /speaker Lawrence
 > LikeWT that?
 
 /speaker Amy
-/expression neutral
+##/emote neutral
 > Like I feel when I'm here.
 
 /speaker Lawrence
 > You want everyone to be happy?
 
 /speaker Amy
-/expression neutral
-> Mhm.
+##/emote neutral
+> I suppose that's it yeah.
 
 /speaker Lawrence
 > How would you make that happen?
 
 /speaker Amy
-/expression neutral
+##/emote neutral
 > I don't know...
 > Help everyone solve their problems?
 
@@ -801,30 +787,35 @@
 > .WT.WT.
 
 /speaker Amy
-/expression happy
+##/emote happy
 > If I am really nice to everyone, I am sure I can do it!
 
 /speaker Lawrence
-> Don't you think that's a touch naive?
+> [P]Amy[/] Don't you think that's a touch naive?
 
 /speaker Amy
-/expression neutral
+##/emote neutral
 > Na...ive?
 
 /speaker Lawrence
-> It means that... you see things in a kid-like way.
+> It means that... you see things in a kid-like, blue-eyed sort of way.
 
 /speaker Amy
-/expression netural
+##/emote netural
 > Hey, [B]Uncle Lawrence[/] guess what?
 
 /speaker Lawrence
 > What?
 
 /speaker Amy
-/expression happy
+##/emote happy
 !> I'M A KID!
-> Of course I'd see things like a kid!
+> Let me be blue-eyed while I still can!
+#/event Amy popup ...
+#/rest 6
+##/emote neutral
+> My eyes are purple though.
+
 
 /speaker Lawrence
 > Heh...
@@ -834,42 +825,42 @@
 > I believe in you and so does your brother. Just promise me that you'll be careful OK?
 
 /speaker Amy
-/expression neutral
+##/emote neutral
 > I promise!
 
 /speaker Lawrence
-> Sometimes I wish...I could be more joyful.
+> Sometimes I wishWT...I could be more joyful.
 
 /speaker Amy
-/expression neutral
+##/emote neutral
 > Why can't you?
 
 /speaker Lawrence
 > See, I'm an old, crooked Policeman that has seen a lot. It makes it...WT difficult.
 
 /speaker Amy
-/expression neutral
+##/emote neutral
 > I'm sure you can do it if you try.
 
 /speaker Lawrence
 > Thank you [P]Amy[/] that is really nice of you to say.
 
 /speaker Amy
-/expression happy
+##/emote happy
 > You're welcome!
 
 /speaker Lawrence
-> I suggest we head back home, see there is a slice of pie with your name on it and it DEMANDS to be eaten.
+> I suggest we head back home, see there is a slice of cake with your name on it. It DEMANDS to be eaten.
 
 /speaker Amy
-/expression neutral
+##/emote neutral
 > Really!?
 
 /speaker Lawrence
 > Really. I used [P]coloring[/] and everything.
 
 /speaker Amy
-/expression neutral
+##/emote neutral
 > Yay!
 > ...
 > See you can be joyful, easy-peasy.
@@ -877,15 +868,16 @@
 /speaker Lawrence
 > It helps having people to be happy with.
 /fade black 12
-> (Thank you Amy. That means a lot.)
+> (Thank you Amy.)
 /wait 12
 
 
 # Lawrence Office II
-[CH_2_Office,3]
+[CH_2_Office,4]
 /event set Lawrence 3
+/event set Constable 7
 /speaker Lawrence
-> I thought nothing of it at the time. I thought it was just a general feeling of happiness, and I'm sure it was, but...
+> I thought nothing of it at the time other than it was just a general feeling of happiness, and I'm sure it was, but...
 > Call me crazy, but I think there might actually be something in that forest.
 > I don't know but it seemed awfully odd that the wind stopped right before that [G]Eye[/] appeared.
 > .WT.WT.
@@ -896,30 +888,2301 @@
 > .WT.WT.
 > For now though I think we should--
 
-    # Informing of the breaking into Galina's Office.
-# Galina Introduction
-# Observatory I
-# Observatory Flashback
-    # Hint at Galina's Backstory?
-# Observatory II
-# Aurelius Again 
-    # Give a small hint to his illness Move to outside the cave and make cave more explorable
-# Amy training their Pokémon.
-    # Move to Fukuri Town (Include Yamada?)
-# Galina at the institute
-# Alcar Introduction
-# Observatory Flashback II
-# Alcar Introduction II
-# Shadow Storm over Iphondria
-    # Kanai going after Ulrich (Hint at their family ties.)
-    # Extend to show a little scene of people taking refuge
-# The Power Plant
-    # Ulrich getting defeated by Alcar
-    # Properly meeting Ulrich.
-        # Ulrich Backstory (Show Aeonites entering?)
-    # Alcar in the basement. (Blaming Kanai delberately?)
-    # (Optional?) Battle with Ulrich
-# Chapter End Scene I (Giving Amy a moment with Eevee, Absol and (Starter) ending with her falling asleep.)
-# Chapter End Scene II (Dream Sequence)
+/se "Entering Door"
+/event Constable switch A true
+/speaker Dean
+/hidename 1
+> Chief [B]Lawrence[/]!!!
 
+/event Lawrence exclaim
+/speaker Lawrence
+> Constable [B]Dean[/].
+
+# Move constable to Lawrence's desk.
+
+[CH_2_Office,5]
+/event set Lawrence 3
+/event set Dean 7
+
+/speaker Dean
+> *pant* it's... *pant* it's urg... *pant*
+
+/speaker Lawrence
+> By the high ones, calm yourself man!
+
+/speaker Dean
+> *pant* *pant*
+> ...
+> It's urgent!
+
+/speaker Lawrence
+> That much I gathered. Please, get it out.
+
+/speaker Dean
+> There has been a break-in into [B]Miss Galina[/]'s office!
+> The culprit can't have gone far, if you send out someone we could still--
+
+/speaker Lawrence
+> Easy!
+> It seems like an awfully reckless thing to do in the middle of the day.
+> unless...
+> .WT.WT.
+> Did she report a wounded Pokémon?
+
+/speaker Dean
+> N-not that I know of, I rushed as soon as I heard.
+
+/speaker Lawrence
+> Where is [B]she[/] now?
+
+/speaker Dean
+> At the [R]harbor[/] sir, talking to Constable [B]Chambers[/].
+
+/speaker Lawrence
+> Hmmm...
+> Constable [B]Dean[/].
+
+/speaker Dean
+> Yes sir.
+
+/speaker Lawrence
+> Get on gathering information about the culprit!
+
+/speaker Dean
+> Right away sir.
+
+
+# Move Dean out of the room.
+[CH_2_Office,6]
+/event set Lawrence 1
+/event set Story 3
+/speaker Lawrence
+> That complicates things...
+> ...
+> Listen PLAYER, I would like you go to the harbor and talk to [B]Galina[/] for me.
+> ...provided Constable [B]Chambers[/] has let her of the hook.
+
+/speaker PLAYER
+> ...?
+
+/speaker Lawrence
+> I thinkWT... she will need someone to talk to and the police, well...
+> Let's just say the woman has a temper.
+/if $game_self_switches[[@map_id,@event_id,"B"]]=true 
+    > Those scribbles on the sign outside aren't for show.
+    > Yeah... that was a WT rough day.
+    /event Story switch B false
+/end
+
+/speaker PLAYER
+> .WT.WT.
+> ...!
+
+/speaker Lawrence
+> Thank you. I will do what I can on my end.
+> Provided Constable [B]Dean[/] doesn't lose his way here...again.
+> I'm sure [B]Galina[/] will be grateful...before being cross with me.
+
+    
+# Galina Introduction
+[CH_2_Galina,0]
+/speaker Galina
+> I'm sorry constable [B]Chambria[/], but that's all I know.
+
+/speaker Chambers
+> ...it's [B]Chambers[/]
+
+/speaker Galina
+> Well excuse me for being on edge, my bloody office was broken into and I would very much like to go there ASAP and see to my Pokémon.
+> IfWT youWT don'tWT mind.
+
+/speaker Chambers
+> .WT.WT.
+> There is no reason to flare up at me Miss.
+
+/speaker Galina
+> .WT.WT.
+> Yeah...I apologize, but I really do not know of any..."enemies" that I may or may not have.
+> None that would go this far at least.
+
+/speaker Chambers
+> You must understand we need all the information we--
+
+/speaker Galina
+> I know [B]Chamboyant[/]! I get you are new at the corps, please, save me the schpiel and get on investigating the break-in!
+
+/speaker Chambers
+> Now the lady does it on purpose *sigh*.
+> Please contact me if something comes up.
+
+/speaker Galina
+> I will.
+> .WT.WT.
+> Don'tWT let [B]Lawrence[/] be too harsh on you OK [B]Chambers[/]?
+
+/speaker Chambers
+> I-I won't.
+> ... Thank you.
+
+# Move Chambers off the screen
+
+[CH_2_Galina,1]
+/event set Galina 4
+# Turn Galina towards player
+/wait 6
+/event Galina exclaim
+/speaker Galina
+> Oh!
+> Who are you now?
+
+/speaker PLAYER
+> ...WT ...?
+
+/speaker Galina
+> Yeah I'm [B]Galina[/]. Can I help you with anything?
+> Is it about the noises from the R&D floor again?
+> There are many electric types there. ELECTRICWT TYPES!
+> They tend to create lightning flashes and thunder noises!
+> ByWT The three high ones is that so hard to understand!
+
+/speaker PLAYER
+> .WT.WT.
+
+/speaker Galina
+> Oh.. uh... I guess you got nothing to do with that.
+> ...sorry.
+
+/speaker PLAYER
+> ...
+> ... ...?
+
+/event Galina exclaim
+/speaker Galina
+> H-how did you know that!?
+> Who are you anyway?
+
+/speaker PLAYER
+> ...
+
+/speaker Galina
+> You're the chief's nephew!?
+> What does the old coot want now, and why send you?
+> No offense, but I don't know you.
+
+/speaker PLAYER
+> ...WT ...WT ...
+
+/speaker Galina
+> Well, I suppose having someone to talk to would be nice.
+> Heaven knows a lot has being going on lately.
+> First the thing with [B]Elcyra[/] and now this.
+> ...
+> Alright, come to the "observatory", that is the [R]lighthouse-esque building on top of the institute[/], and we can talk there.
+> Oh and uh... nice to meet you PLAYER.
+
+# Move Galina almost out of the screen.
+[CH_2_Galina,2]
+/event set Galina 4
+/speaker Galina
+> [Y]Ninetales[/]... please is alright... please!
+
+# Observatory I
+[CH_2_Observatory,0]
+/cry NINETALES 80 100
+/speaker Ninetales
+> Kooon!
+
+[CH_2_Observatory,1]
+/event set Galina 3
+/event set Ninetales 4
+/speaker Galina
+> There you are!
+> I am glad you showed up.
+> ...
+> As you can see, the thief didn't reallyWT take anything.
+
+/speaker Ninetales
+> koon!
+
+/event Galina turn left
+/event Ninetales turn right
+/speaker Galina
+> You drove them away didn't you?
+
+/cry NINETALES 80 100
+/speaker Ninetales
+> koon!
+
+/speaker Galina
+> I knew you could do it!
+
+#/event Ninetales popup ...
+#/rest 6
+
+/speaker Ninetales
+> ...
+
+
+/speaker Galina
+> Are youWT OK?
+> Did something happen to you?
+> Should I get you some Never-Melt--
+
+#/event Ninetales popup smiles
+#/rest 6
+/speaker Ninetales
+> Kyuu!
+
+/speaker Galina
+> ...
+> I know, I'll try to calm down.
+> Thank you.
+
+/event Galina turn down
+/event Ninetales turn down
+/wait 12
+
+/speaker Galina
+> This would be [Y]Ninetales[/], one of my best friends.
+> We go way WAY back.
+> ...
+> Listen, I really appreciate you coming along when you did.
+> I'm a little nervous after the break-in as you can imagine.
+
+#/event Ninetales popup ...
+#/rest 6
+/cry NINETALES 80 100
+
+/speaker Galina
+> OK, it makes me nervous as heck!
+> .WT.WT.
+> There is...WT more to it though.
+
+/speaker PLAYER
+> ...?
+
+/speaker Galina
+> See, a while ago I had an run-in with an old...WT acquaintance
+
+# Observatory Flashback
+    # Set Elcyra and Galina by the table in the back and make Ninetales invisible.
+[CH_2_Observatory_FB,0]
+/event set Galina 3
+/event set Elcyra 11
+/wait 12
+/fade sepia 12
+/speaker Galina
+> [B]Elcyra[/], I really think you are going about this wrong.
+> I truly believe [Y]Aura Pokémon[/] exist to make the world a better way.
+
+/speaker Elcyra
+> So you are saying...that [Y]they[/] are, in essence, creatures with no will.
+> That they are hard-wired to do what is good for the world and cannot change their mind?
+
+/event Galina exclaim
+/speaker Galina
+> What!? No, that's not what I mean at all!
+> How can you say that!
+> They can feel just like any other Pokémon... or human for that matter.
+> It's just...
+
+/speaker Elcyra
+> Just what [B]Galina[/]!?
+
+/speaker Galina
+> I think they have a... drive. A will to help others around them.
+
+/speaker Elcyra
+> So...you mean an instinct?
+
+/speaker Galina
+> No, no no no!
+> ...
+> Do you...
+> .WT.WT.WT
+> Do you have a goal in life?
+
+/speaker Elcyra
+> Yes?
+
+/speaker Galina
+> ...how do you feel when thinking of that goal?
+
+/speaker Elcyra
+> I want to succeed of course!
+
+/speaker Galina
+> That will to succeed isn't instinctual is it?
+
+/speaker Elcyra
+> ...IWT suppose not.
+
+/speaker Galina
+> What I am trying to say is that [Y]Aura Pokémon[/] just have a little bit more of a similar drive than other Pokémon to choose to stay by our side.
+
+/speaker Elcyra
+> That may be, but I think you are looking at this in a very biased way.
+> I get that, with [Y]Ninetales[/] saving you from a blizzard and all--
+
+/speaker Galina
+> .WT.WT.
+
+/speaker Elcyra
+> --but that's not all there is to it. Nothing is that simple.
+> Suppose that an [Y]Aura Pokémon[/]'s, for the sake of argument, "drive" was turned into something negative.
+> What then?
+
+/speaker Galina
+> Well...
+
+/speaker Elcyra
+> You don't know because, with your biased view, have never thought of it.
+> It would be hell, simple as that, with how much stronger they are compared to every other Pokémon.
+
+/speaker Galina
+> "Simple as that" huh?
+
+/speaker Elcyra
+> Excuse me !?
+
+/speaker Galina
+> I thought you just said that nothing is that simple.
+
+/speaker Elcyra
+> ...
+> Either way, I aim to find out the ACTUAL truth about [Y]them[/], be it good or bad.
+
+/speaker Galina
+> That's what I want too! I just have a different standpoint than you, is that so hard to accept!?
+
+/speaker Elcyra
+> ...
+> You are clearly unwilling to see things the way I do.
+
+/speaker Galina
+> Why should I have to!? Can't we find a middle-ground and work from there?
+> .WT.WT.
+> Why are you so angry about this. What have [Y]Aura Pokémon[/] done to you?
+
+/speaker Elcyra
+> It's not about that, I want to figure out the objective truth!
+> I was hoping you'd work together with me on this, but It won't work, it justWT won't.
+> I'll be off.
+
+/speaker Galina
+> ...what happened to you?
+
+# Move Elcyra out of the screen.
+
+/eval pbBGMFade(2)
+/fade black 12
+
+# Observatory II
+[CH_2_Observatory,2]
+/event set Galina 3
+/event set Ninetales 4
+#/event Galina popup sad
+#/rest 6
+/speaker Galina
+> I've been pretty down ever since then. [B]Elcyra[/] and I used to be friends.
+> ...I don't know, maybe we just grew apart.
+
+# Turn Ninetales toward Galina
+#/event Ninetales popup heart
+#/rest 6
+/speaker Ninetales
+/cry NINETALES 60 100
+> kyuuu...
+
+/speaker Galina
+> Thank you [Y]Ninetales[/].
+> I will prove it to her! I'll prove that you will make the world better!
+
+# Turn Galina and Ninetales towards player.
+/speaker Galina
+> Thank you for listening PLAYER, that helped.
+> ...
+> To be honest, I'm kinda worried about [B]Elcyra[/].
+> I get the thing with wanting to know the truth, but all this talk about negativity is unlike the person I knew.
+> I wish there was something I can do, I really do.
+
+#/event Ninetales popup worry
+
+/speaker Galina
+> For now though I should probably get back to--
+# Flash the screen in shadow colors
+
+[CH_2_Observatory,3]
+/event set Galina 3
+/event set Ninetales 4
+/cry NINETALES 100 125
+/speaker Ninetales
+> !!!
+
+/event Galina exclaim
+# Turn Galina towards Ninetales.
+
+/speaker Galina
+> Ninetales!
+> What's wrong!?
+
+/speaker Ninetales
+> k-kyuu....
+
+/speaker Galina
+> This is bad, this is bad, this is bad!
+# Flash the screen in shadow colors
+
+[CH_2_Observatory,4]
+/cry NINETALES 100 125
+
+# Turn Galina towards Player.
+/speaker Galina
+> Listen, there is someone that needs to know this right away.
+> His name is [B]Aurelius[/] he's--
+
+/event Player exclaim
+/speaker PLAYER
+> ...!
+
+/speaker Galina
+> Thank the high ones that saves me the introductions.
+> He is usually by [B]Caeli Cave[/] it's on the [R]southern part of Fountain Road[/].
+> Please go there, quickly.
+> I would go but I have to see to [Y]Ninetales[/]
+
+# Aurelius Again 
+[CH_2_Aurelius,0]
+/event set Aurelius 1 
+/event set Talonflame 2 
+# Change event numbers
+/speaker Aurelius
+> Ah! If it isn't PLAYER!
+> I trust you are doing well?
+> ...
+> Then again, your eyes tell a different story.
+> Please do tell me what has happened.
+
+/speaker PLAYER
+> ...WT ...WT ...!
+
+/event Aurelius exclaim
+/speaker Aurelius
+> Oh dear, the poor woman!
+> I shall inform the others at once.
+
+/event Aurelius turn down
+> [Y]Vulcan[/] dear. Would you fly swiftly and see if any nearby brothers or sisters are able to help?
+/cry TALONFLAME
+/speaker Vulcan
+> Aroooo!
+
+
+[CH_2_Aurelius,1]
+/event set Aurelius 1
+/event Aurelius turn left
+/speaker Aurelius
+> [B]Galina[/] is a kind womanWT if a litte brash at times. She does not deserve this misfortune brought upon her.
+> I'm a well-traveled wrinkly old man that have met many people, including [B]Galina[/] on several fortuitous occasions.
+> To hear of her [Y]Aura Pokémon[/]'s suffering... It makes one sad indeed.
+> Please, will you tell me precisely how you saw things happen?
+
+/speaker PLAYER
+> ...
+/eval pbBGMFade(2)
+
+# Amy training her Pokémon.
+[CH_2_AmyTraining,0]
+/event set Yamada 1
+/event set Amy 7
+/event set Absol 8
+/event set Eevee 34
+/event set AmyStarter 35
+/event set Farfetch'd 14
+/event set Dratini 14
+# Activate optional battle sprites at Secluded Grove.
+/eval pbMultiSwitch(95,[15,16,17],"A",false) # Amy & Pokemon in front of TV
+/if pbSt_Pkmn=="Inlys"
+    /eval $game_self_switches[[95,24,"B"]]=false # Licit
+/elsif pbSt_Pkmn=="Licit"
+        /eval $game_self_switches[[95,24,"C"]]=false # Vinette
+/elsif pbSt_Pkmn=="Vinette"
+    /eval $game_self_switches[[95,24,"A"]]=false # Inlys
+/end
+
+/speaker Yamada
+> Farfetch'd use Peck!
+/event Farfetch'd move right
+/wait 12
+/cry FARFETCHD
+/wait 6
+/se PRSFX- Peck 100 100
+/wait 6
+/cry EEVEE
+/event Eevee move right
+/event Eevee turn left
+/wait 6
+##/emote neutral
+/speaker Eevee
+> Vui!
+
+/speaker Yamada
+> Nice dodge there.
+> hmmm... I think that is enough for now.
+
+# Move Eevee towards Amy
+[CH_2_AmyTraining,1]
+/event set Yamada 1
+/event set Amy 7
+/event set Absol 8
+/event set Eevee 34
+/event set AmyStarter 35
+/event set Farfetch'd 14
+/event set Dratini 15
+
+/speaker Eevee
+##/emote neutral
+> Eeevu?
+
+/speaker Amy
+##/emote happy
+> You did great!
+
+#/Event Eevee popup heart
+/cry EEVEE
+/speaker Eevee
+##/emote happy
+> Vui!
+
+/speaker Yamada
+> Return you two. You deserve a nice, long rest.
+/event Farfetch'd turn left 
+/event Dratini turn left
+/wait 12
+#/event Farfetch'd popup smile
+#/rest 6
+/cry FARFETCHD
+/event Farfetch'd switch A false
+/wait 6
+#/event Dratini popup heart
+#/rest 6
+/cry DRATINI
+/event Dratini switch A false
+
+# Move Absol to Eevee
+[CH_2_AmyTraining,2]
+/event set Yamada 1
+/event set Amy 7
+/event set Absol 8
+/event set Eevee 34
+/event set AmyStarter 35
+#/event Absol popup worry
+#/rest 6
+/cry ABSOL
+/speaker Absol
+> sol?
+#/event Eevee popup smile
+#/rest 6
+/speaker Eevee
+##/emote neutral
+> Vui!
+#/event Absol popup smile
+#/rest 6
+/speaker Absol
+> ...sol.
+/event Absol turn left
+/event Eevee turn left
+/event AmyStarter turn left
+
+
+# Move Yamada towards Amy.
+# Turn Absol, Eevee and the Starte towards Amy and Yamada and align them behind Amy
+[CH_2_AmyTraining,3]
+/speaker Yamada
+> I can tell your Pokémon are doing their absolute best.
+> Though, your Absol seems a little...hesitant.
+
+/speaker Amy
+##/emote neutral
+> I think she's just shy.
+
+/speaker Yamada
+> Just give her time and love and she will come around when she is ready.
+
+/speaker Amy
+##/emote happy
+> I will!
+
+#/event Yamada popup ...
+#/rest 6
+/speaker Yamada
+> If you don't mind me asking. Why did you want to train with me today.
+> You've never accepted my offer before.
+
+/speaker Amy
+##/emote neutral
+> I had a first real battle not too long ago and I wanted to learn more.
+
+/speaker Yamada
+> Ah! With PLAYER I take it?
+
+/speaker Amy
+##/emote happy
+> Yup!
+/if pbSt_Pkmn=="Inlys"
+    > [B]Uncle Lawrence[/] even let me have Licit!
+/elsif pbSt_Pkmn=="Licit"
+    > [B]Uncle Lawrence[/] even let me have Vinette!
+/elsif pbSt_Pkmn=="Vinette"
+    > [B]Uncle Lawrence[/] even let me have Inlys!
+/end
+
+/speaker Yamada
+> Hmmm....
+
+/speaker Amy
+##/emote neutral
+> hmmm what?
+
+/speaker Yamada
+> That would explain their grumpyness.
+#/event AmyStarter popup frown
+> The must have taken after Ol' Lavy.
+
+/speaker Amy
+##/emote neutral
+> You call him "Lavy"!?
+##/emote happy
+!> THAT'S HILLARIOUS!!!
+
+/speaker Yamada
+/if pbSt_Pkmn=="Inlys"
+    > Don't tell him that, [R]Vinette[/] will burn me.
+/elsif pbSt_Pkmn=="Licit"
+    > Don't tell him that, his [B]Inlys[/] will freeze me.
+/elsif pbSt_Pkmn=="Vinette"
+    > Don't tell him that, his [Y]Licit[/] will shock me.
+/end
+
+/speaker Amy
+##/emote neutral
+> I won't, I promise!
+> ...
+> So what will you do now Mr.Yamada-san?
+
+/speaker Yamada
+> Heh, I told you to call me Yamada. Just Yamada.
+
+/speaker Amy
+##/emote neutral
+> Alright!
+#/event Amy popup ...
+#/rest 6
+> WT.WT.WT.
+##/emote happy
+> Yammy!
+
+#/event Yamada popup smile
+/speaker Yamada
+> Shoulda seen that one coming.
+> I will hang around here for a few days. Follow up on my students y'know and then I think I will take a little vacation.
+> There is a lake I really, really want to see and now, I have saved up enough money to go so I'll take the chance.
+
+/speaker Amy
+##/emote happy
+> I hope you have a really nice time when you go there!
+
+/speaker Yamada
+> Oh I am sure I will.
+> What about you?
+
+/speaker Amy
+##/emote neutral
+> Well I...
+#/event Amy popup ...
+#/rest 6
+# Move Absol,Eevee and the starter to Amy
+
+[CH_2_AmyTraining,4]
+/event set Yamada 1
+/event set Amy 7
+/event set Absol 8
+/event set Eevee 34
+/event set AmyStarter 35
+
+#/event Amy popup worry
+#/rest 6
+/speaker Amy
+##/emote neutral
+> I need to...WT think.
+##/emote worried
+> Things happened.
+
+/event Eevee turn up
+#/event Eevee popup heart
+#/rest 6
+/speaker Eevee
+> Vui!
+
+/event Absol turn up
+#/event Absol popup worry
+#/rest 6
+/speaker Absol
+> Sooool?
+
+/event AmyStarter turn down
+#/event AmyStarter popup worry
+#/rest 6
+/if pbSt_Pkmn=="Inlys"
+    /cry LICIT
+    /speaker Licit
+    > Rooowr...
+/elsif pbSt_Pkmn=="Licit"
+    /cry VINETTE
+    /speaker Vinette
+    > Nett...
+/elsif pbSt_Pkmn=="Vinette"
+    /cry INLYS
+    /speaker Inlys
+    > Eeeen...
+/end
+
+/event Amy turn down
+/speaker Amy
+##/emote worried
+> Everyone...
+/event Amy turn up
+#/event Amy popup smile
+##/emote smile
+> Thank you.
+/event Amy turn left
+
+/speaker Yamada
+> I get you. [B]Lawrence[/] was fuming about what happened to you when he followed [B]Doc[/] home the other night.
+> Is there anything I can do to help?
+
+/speaker Amy
+> Could you tell me somewhere quiet I can go?
+
+/speaker Yamada
+> Well, there is always [G]Secluded Grove[/].
+> That's where I go when I need to clear my head. Something about the air in there.
+
+/speaker Amy
+> Thank you.
+
+/speaker Yamada
+> Don't mention it.
+> Do you want me to tell one of [B]Aurelius[/]' followers to make sure you are not disturbed?
+
+/speaker Amy
+##/emote neutral
+> No, it's fine, but thanks for the offer though.
+
+/speaker Yamada
+> No problem. Take care OK?
+> The high ones knows what Ol'Lavy would do to me if I let anything happen to you.
+
+/speaker Amy
+##/emote neutral
+> I'll be fine... 
+
+/speaker Yamada
+> I'll be at home if you need me.
+
+/speaker Amy
+##/emote neutral
+> Thank you. I'll be off now... 
+> Yammy.
+
+/speaker Yamada
+> Haha! Take care!
+# Move Amy out of the screen
+
+
+# Aurelius II
+[CH_2_Aurelius,2]
+/event set Aurelius 1
+/speaker Aurelius
+> Hmmm... that is worrying indeed.
+> Undoubtedly whosoever broke in to her office did something to [Y]Ninetales[/].
+> I find it hard to believe someone would do such a thing, but there are all sorts of people in the world.
+> *cough* *cough*
+
+/speaker PLAYER
+> ...?
+
+/speaker Aurelius
+> Hoho! do not worry yourself about my health child.
+> Living in a desert tends to make one's throat sensitive to non-desert air.
+> As soon as [Y]Vulcan[/] returns, I shall send any nearby brothers and sisters to aid Galina in her efforts.
+
+/speaker PLAYER
+> ...WT ...WT ...?
+
+/speaker Aurelius
+> Ah yes, traditional medicine will certainly help, but in the case of [Y]Aura Pokémon[/] there is something else required.
+
+/speaker PLAYER
+> ...?
+
+/speaker Aurelius
+> To put it simply, love and care. Now, of course that is helpful in any circumstance, but even more so here.
+> It is believed by the [B]Ignis Caeli[/], that is, the order that is under my leadership, that those having [Y]aura[/] are more in-tune with the raw emotions of those in the world.
+> It follows then, that warm, tender care can help heal those wounded.
+> Think of it as an using an emotional Super Potion hohoho!
+
+# Turn Aurelius towards the entrance of the cave.
+/speaker Aurelius
+> Beyond this cave lies the [B]Caeli Desert[/] where we of the [B]Ignis Caeli[/] make our home.
+
+# Turn Aurelius towards Player
+/speaker Aurelius
+> While I would highly suggest that you [R]return to Galina's office[/] to support her, once you have some free time on your hands, you are more than welcome to explore the cave to your heart's content.
+> If you excuse me, I have an appointment with [B]Moonsinger[/] and I will not have him wait.
+> Should time allow though, I shall come visit [B]Galina[/] myself.
+> I will be seeing you PLAYER. May [Y]Father Ayin[/] grant you wisdom.
+> *cough* *cough*
+
+# Alcar Introduction
+[CH_2_Alcar,0]
+/event set Galina 12
+/speaker Galina 
+> Phew, I was hoping you'd be here
+> Did you get to talk to [B]Aurelius[/] yet!?
+
+/speaker PLAYER
+> ...
+
+/speaker Galina 
+> ...and?
+
+/speaker PLAYER
+> ...WT ...WT
+
+/speaker Galina 
+> Ooow...
+> I hope they get here fast!
+
+/speaker PLAYER
+> .[Y].[/].?
+
+/speaker Galina 
+> [Y]Ninetales[/] She...
+#/event Galina popup ...
+#/rest 6
+> She isn't really getting better.
+> I...I'm really worried about her.
+
+/bgm visitor.ogg
+
+/speaker Alcar
+/hidename 1
+> That is precisely the problem.
+
+/event Galina exclaim
+/event Galina turn right
+/event Player turn right
+
+
+[CH_2_Alcar,1]
+/event set Galina 12
+/event set Alcar 13
+/event set Lucas 22
+
+/speaker Galina 
+> Who are you !?
+
+/speaker Alcar
+/hidename 1
+> [B]Galina[/] I presume? What pleasure it is to finally make your acquiantance.
+
+/speaker Galina 
+> Excuse me if I don't share your emotion.
+
+/speaker Alcar
+/hidename 1
+> Why would that be, if I may ask?
+
+/speaker Galina 
+#/event Galina popup frown
+#/rest 6
+> Hmmm... let's see.
+> Your sleezy demeanor...WTNP
+> Your smug voice...WTNP
+> ...and aura of untrustworthyness.
+> Is that enough for you
+
+/speaker Alcar
+/hidename 1
+> Aura eh? 
+#/event Alcar popup ...
+#/rest 6
+> It is natural to be skeptical when meeting new people, but downright hostility right of the bat..
+> I admit it is beyond what I imagined.
+> Did I mayhap catch you at a bad moment?
+
+#/event Galina popup angry
+#/rest 6
+/speaker Galina 
+> Why don't you drop the smug act and tell me what you want!
+
+/speaker Alcar
+/hidename 1
+> Saying that I wish to meet you would be enough, but to satisfy your skeptisicm I will add this:
+> I wish to meet you...WT ...WT in your current emotional state.
+
+#/event Galina popup ...
+#/rest 6
+/speaker Galina 
+> .WT.WT.
+
+/speaker Alcar
+/hidename 1
+> My, aren't you on strings. Suffice it to say, I am getting everything I came here for and without battling you to boot.
+> Though I suppose it was to be expected given what recently happened to you.
+
+/speaker Galina 
+> How would you kn--
+/event Galina exclaim
+/wait 6
+#/event Galina popup angry
+#/rest 6
+> You...
+> You did it didn't you?
+> You broke into my office!
+
+/speaker Alcar
+/hidename 1
+> Quick up on the uptake aren't we?
+
+# Observatory Flashback II
+[CH_2_Observatory_FB_II,0]
+/event set Ninetales 4 
+/event set Alcar 7
+#/event Alcar popup ...
+#/rest 6
+/speaker Alcar
+> Dear Ninetales I bid you listen to me.
+> What do you stand to gain in fighitng me? I assure you, you cannot win.
+> [Y]Aura Pokémon[/] though you may be.
+
+#/event Ninetales popup angry
+#/rest 6
+/cry NINETALES 80 80
+/speaker Alcar
+> Growl at me all you want, it does not change the inevitable.
+> Your instincts are screaming aren't they?
+> They want you to bite me, claw at me and freeze my marrow solid.
+> Though, I have to wonder...
+#/event Alcar popup ...
+#/rest 6
+> Is that, to protect yourself, or that woman who, so naively calls herself your friend
+/event Ninetales move down
+/wait 12
+#/event Ninetales popup angry
+#/rest 6
+/speaker Alcar
+> So you mean to fight me then...
+> Why would a wild, free creature like you give your loyalty to a human.
+> Suppose your instincts screamed at you to attack her...
+> What then?
+#/event Ninetales popup ...
+#/rest 6
+/cry NINETALES 80 80
+/speaker Ninetales
+> Ky-kyuu...
+
+/speaker Alcar
+> Ah, but my words on their own will do little to sway your opinion.
+> Given time though, maybe the seed they plant will poison your mind.
+> I am, however, slightly more impatient so allow me to impart my words moreWT...WTthroughly.
+
+[CH_2_Observatory_FB_II,1]
+/speaker Alcar
+> Do not take me for a fool
+!> METAL CLAW
+
+[CH_2_Observatory_FB_II,2]
+/speaker Alcar
+> Enough!
+> You have done admirably Druddigon.
+
+[CH_2_Observatory_FB_II,3]
+/event set Ninetales 4 
+/event set Alcar 7
+/speaker Alcar
+> Do you feel it, my little "gift"?
+> Sooner or later it will force the worry I have planted in you to bloom.
+> By all means, stay by your "trainer"'s side, maybe I will get the satisfication of seeing you struggle and fail to protect her.
+> Whether you actually attack her, or tear yourself apart from worry of doing that exact thing makes little difference.
+> We, the [B]Aeonites[/] will be satisfied either way.
+> For this I, [B]Alcar[/] thank you.
+> Please, do remember that.
+
+#/event Ninetales popup ...
+#/rest 6
+/cry NINETALES 60 60
+/speaker Ninetales
+> .WT.WT.
+#/event Ninetales popup sad
+#/rest 6
+/fade black 12
+> kon...WTNP
+
+# Alcar Introduction II
+[CH_2_Alcar,2]
+/bgm "Visitor.ogg" 100 100
+/speaker Galina 
+> What did you do to [Y]Ninetales[/]!!!
+
+/speaker Alcar
+/hidename 1
+> I did what any trainer would do, I defeated your Pokémon in battle.
+#/event Alcar popup ...
+#/rest 6
+#/event Galina popup angry
+#/rest 6
+/speaker Galina 
+> Why!?
+> What's she ever done to you?
+
+/speaker Alcar
+> Hmmm....
+> Her very existence is a burden on the world.
+
+/speaker Galina 
+> Cut the grandiose crap!
+> WhyWT didWT youWT doWT this!?
+
+/speaker Alcar
+> Simply put, to provoke you.
+> Judging by your harsh words. I daresay I suceeded.
+
+/speaker Galina 
+> Why me? 
+
+/speaker Alcar
+> My dear, it is nothing personal I assure you, not on my end anyways.
+> You are simply one of our more susceptible targets.
+#/event Alcar popup smile
+#/rest 6
+> You and your Pokémon are both vital to our plans.
+
+#/event Galina popup angry
+#/rest 6
+/speaker Galina
+> Why you...
+
+/speaker Alcar
+> Now if you will excuse--WTWTNP
+
+/speaker Ephraim
+/hidename 1
+!> MISS GALINA!
+
+/event Alcar exclaim
+
+[CH_2_Alcar,3]
+/event set Galina 12 
+/event set Alcar 13 
+/event set Lucas 22
+/event set Ghuilon 28
+/event set Zamarand 44 
+/event set Tacita 45
+/event set Ephraim 61
+/event set Trapinch 62
+/event set Riddling 63
+/event set Mirbit 64
+/speaker Ephraim
+/hidename 1
+> We heard from [B]Father Aurelius[/] and we came as fast as we--
+/event Ephraim exclaim
+
+/speaker Alcar
+> [B]Brother Ephraim[/], [B]Sister Tacita[/].
+> To what do I owe the pleasure of the [Y]Ignis Caeli[/]'s presence?
+
+/speaker Ephraim
+> I could ask you the same [B]Alcar[/]. What are you up to now?
+
+/speaker Alcar
+> As I am sure you understand, we would prefer for that [Y]Ninetales[/] to stay wounded.
+
+#/event Tacita popup angry
+#/rest 6
+/speaker Tacita
+> ...!
+
+/speaker Ephraim
+> How dare you blaspheme the world's gift in such a manor!
+
+/speaker Alcar
+> Sanctimonious as ever...
+> If you want to help, then get past us!
+
+#/event Alcar popup ...
+#/rest 6
+/speaker Alcar
+> You!
+/event Zamarand exclaim
+/event Zamarand turn left
+/speaker Alcar
+> Take care of these goons!
+/speaker Acolyte
+> I have a name you know.
+/event Alcar exclaim
+/speaker Alcar
+> Do you mean to disrespect me!?
+#/event Alcar popup ...
+#/rest 6
+> Alright...[B]Zamarand[/] deal with this threat!
+/speaker Zamarand
+> Yes WT"Master" [B]Alcar[/]
+/event Zamarand turn right
+#/rest 6
+#/event Alcar popup frown
+#/rest 6
+/speaker Zamarand
+> [B]Ghuilon[/], [B]Trapinch[/] I'm counting on you!
+/bgs "Open Pokeball.ogg" 
+/event Ghuilon switch A true
+/event Trapinch switch A true
+
+/speaker Ephraim
+> Please, [B]Riddling[/]!
+/speaker Tacita
+> ...!
+/bgs "Open Pokeball.ogg" 
+/event Riddling switch A true
+/event Mirbit switch A true
+/event Alcar turn down
+/event Lucas turn up
+/wait 6
+/speaker Alcar
+> [B]Lucas[/] take care of PLAYER.
+#/event Lucas popup ...
+#/rest 6
+/speaker Lucas
+> Y-yes [B]Master Alcar[/]
+/event Alcar turn left
+/event Lucas turn left
+/speaker Lucas
+> Nothing personal, but I gotta follow orders.
+
+[CH_2_Alcar,4]
+/event set Galina 12 
+/event set Alcar 13 
+/event set Lucas 22
+/event set Ghuilon 28
+/event set Zamarand 44 
+/event set Tacita 45
+/event set Ephraim 61
+/event set Trapinch 62
+/event set Riddling 63
+/event set Mirbit 64
+
+/bgm "Visitor.ogg" 100 100
+#/event Tacita popup worry
+#/rest 6
+/speaker Tacita
+> !!!
+/event Mirbit turn right
+/cry MIRBIT 80 80
+/speaker Mirbit
+> Mir...bit.
+#/event Mirbit popup smile
+#/rest 6
+#/event Tacita popup smile
+#/rest 6
+/bgs "Open Pokeball.ogg" 
+/event Mirbit switch A false
+/wait 6
+/speaker Zamarand
+> [B]Trapinch[/] you did well.
+/event Trapinch turn right
+/cry TRAPINCH 80 80
+/speaker Trapinch
+> Traaa.
+/event Trapinch switch A false
+/wait 12
+/speaker Ephraim
+> [B]Riddling[/] use Poison Sti--WTNP
+/speaker Zamarand
+> Protect!
+/cry RIDDLING
+/cry GHUILON
+#/event Ephraim popup worry
+#/rest 6
+/speaker Ephraim
+> Ugh!
+/speaker Zamarand
+> [B]Ghuilon[/] return!
+/event Ghuilon turn left
+#/event Ghuilon popup worry
+#/rest 6
+/speaker Ghuilon 
+> Ghui?
+/speaker Zamarand
+> We've gotten the point across.
+#/event Ghuilon popup smile
+#/rest 6
+/bgs "Open Pokeball.ogg" 
+/event Ghuilon switch A false
+/wait 6
+/speaker Ephraim
+> I...
+/speaker Zamarand
+> Let's call it a draw.
+/event Alcar turn right
+/wait 6
+/speaker Alcar
+> .WT.WT.
+#/event Alcar popup frown
+#/rest 6
+/bgs "Open Pokeball.ogg" 
+/event Riddling switch A false
+/event Alcar turn left
+/wait 6
+/speaker Alcar
+> How does it feel?
+
+/speaker Galina 
+> What?
+
+/speaker Alcar
+> How does it feel having someone fight for you cause and not join in yourself?
+
+#/event Galina popup angry
+#/rest 6
+/speaker Galina 
+> Excuse me!?
+> Are you calling me a coward?
+
+/speaker Alcar
+> That I am.
+
+/speaker Galina 
+> You didn't exactly join the fight yourself you...
+> You...
+> Argh! What's the point!
+
+/event Alcar turn right
+/wait 6
+/speaker Alcar
+> [B]Lucas[/],[B]Zamarand[/] we're done here--WTNP
+
+/cry UNOWN
+/event Player exclaim
+/event Galina exclaim
+/event Alcar exclaim
+/event Lucas exclaim
+/event Ephraim exclaim
+/event Tacita exclaim
+#/event Zamarand popup ...
+#/rest 6
+/speaker Zamarand
+> .WT.WT.
+
+
+# Move the Unown to the appropriate location.
+[CH_2_Alcar,5]
+/event set Galina 12 
+/event set Alcar 13 
+/event set Lucas 22
+/event set Zamarand 44 
+/event set Tacita 45
+/event set Ephraim 61
+/event set Unown 65
+/wait 12
+/bgm "Kanai_II.ogg" 100 100
+/eval $game_variables[BGM_OVERRIDE]="Kanai_II.ogg"
+/event Player turn left
+/event Galina turn left
+/event Alcar turn left
+/event Lucas turn left
+/event Zamarand turn left
+/eval pbFadeEvent(65,255,0,1)
+/event Unown switch A true
+/wait 6
+/eval pbFadeEvent(65,0,255,6)
+/wait 6
+/speaker Galina
+> W-what is that?
+/event Unown move right
+/event Unown move right 
+/event Unown move right
+U> CONFUSED
+#/event Alcar popup ...
+#/rest 6
+/speaker Alcar
+> ...
+
+U> WRONG
+U> CONFUSED
+U> SCARED!
+/cry UNOWN
+/speaker Alcar
+/eval pbFadeEvent(65,255,0,20)
+> What's that fool gone and done now!?
+
+/speaker Alcar
+> We're going to [R]Pharoday Island[/]. NOW!
+
+/speaker Lucas
+> Yes, Master [B]Alcar[/]!
+#/event Zamarand popup ...
+#/rest 6
+/speaker Zamarand
+> .WT.WT.
+
+#============ STORM-STATE IPHONDRIA ==============#
+[CH_2_Storm,0]
+/event set Li'l_Girl 18
+/event set Growlithe 25
+/cry GROWLITHE 100 80
+/speaker Growlithe
+> Groo-oowl
+/speaker Li'l_Girl
+> Growly, what's wrong?
+> Are you scared?
+#/event Growlithe worry
+
+[CH_2_Storm,1]
+/event set Li'l_Girl 18
+/event set Growlithe 25
+#/event Growlithe sad
+/speaker Growlithe
+> Grow-ooooo!
+#/event Growlithe angry
+/cry GROWLITHE 100 50
+/speaker Growlithe?
+> Grrrr....!
+/event Li'l_Girl exclaim
+
+[CH_2_Storm,2]
+/event set Li'l_Girl 18
+/event set Rng_Guy 19
+/event set Growlithe 25
+/speaker Li'l_Girl
+> Mr. RnG person!
+/event Rng_Guy exclaim
+/speaker Li'l_Girl
+> My Growly is all weird and hurt?
+> Can you get them right again.
+> Pleeease?
+#/event Growlithe sad
+/speaker Growlithe
+> Gro-ooow...
+
+/speaker Rng_Guy
+> What happened?
+
+/speaker Li'l_Girl
+> Growly got hit by this weird rain and...
+
+[CH_2_Storm,3]
+/event set Li'l_Girl 18
+/event set Growlithe 25
+/speaker Growlithe?
+> Grrrr....!
+/event Li'l_Girl exclaim
+/event Li'l_Girl turn down
+#/event Growlithe sad
+/cry GROWLITHE 100 50
+#/event Growlithe angry
+/speaker Growlithe?
+> Grr-OOOOOOW!!!
+
+/speaker Li'l_Girl
+> Waah!
+
+/event Rng_Guy exclaim
+/speaker Rng_Guy
+> Listen, I have a key to the old Pokémon Center. I'll get you in there alright?
+
+[CH_2_Storm,4]
+/event set Li'l_Girl 18
+/event set Growlithe 25
+/speaker Rng_Guy
+> Hurry!
+
+[CH_2_Storm,5]
+/event set Galina 12 
+/event set Tacita 45
+/event set Ephraim 61
+#/event Tacita popup worry
+/speaker Tacita
+> ...!?
+
+/speaker Ephraim
+> Are you alright [B]Miss Galina[/]!?
+
+#/event Galina popup worry
+/speaker Galina
+> Y-yeah... I think.
+> What is this rain? It feels really...off somehow.
+
+/event Tacita turn up
+/event Ephraim turn down
+#/event Tacita popup ...
+#/rest 6
+/speaker Tacita
+> ...
+#/event Ephraim popup ...
+#/rest 6
+/event Tacita turn left
+/event Ephraim turn left
+/speaker Ephraim
+> We will talk more once we are inside.
+> It is connected to your [Y]Ninetales[/] in a way.
+
+#/event Galina popup worry
+#/rest 6
+#/event Tacita popup smile
+#/rest 6
+/speaker Tacita
+> .WT.WT.
+
+/speaker Ephraim
+> I understand your worry, but please we must hurry.
+
+#/event Galina popup ...
+#/rest 6
+/event Galina turn down
+/event Player turn up
+
+/speaker Galina
+> Listen PLAYER, you got to get to [R]Pharoday Island[/] quickly!
+> Though the old sailor probably won't sail in this weather...
+#/event Galina popup ...
+#/rest 6
+> .WT.WT.
+/event Galina exclaim
+/speaker Galina
+> He's probably fled to the [R]Old Pokémon Center[/].
+> Please go there and try to persuade him.
+
+/speaker PLAYER
+> ...
+
+/speaker Galina
+!> DON'T ARGUE WITH ME!
+> ...
+> O-oh you agreed...
+> Sorry, please justWT hurry OK?
+> Here! Have these as thanks for helping me.
+
+################################### POWER PLANT #########################
+[CH_2_PowerPlant,0]
+/event set Hammond 3
+/speaker Hammond
+> That was some ride...
+> Listen. I've seen these [G]eyes[/] before. I don't know what caused this rain or what's upsetting them but...
+#/event Hammond popup ...
+#/rest 6
+> Just...WT be careful alright. I mean, you saw what happened to that little girl's Growlithe.
+
+#========================== Ulrich Introduction ==============#
+[CH_2_Ulrich,0]
+# In the Power Plant Control Room
+/event set Manectric 6
+/event set Ulrich 7
+
+#/event Ulrich popup worry
+/speaker Ulrich
+> How...are you feeling?
+
+#/event Manectric popup frown
+/cry MANECTRIC 80 80
+> V...vorr
+
+/speaker Ulrich
+> I will do everything in my power to help you
+
+#/event Manectric popup heart
+#/rest 6
+
+/event Ulrich turn down
+
+/speaker Ulrich
+> Oh! uh...hello.
+> I met you at [B]Lawrence[/]'s office right?
+> I didn't quite get your name.
+
+/speaker PLAYER
+> ...
+
+/speaker Ulrich
+> Nice to meet you PLAYER.
+> ...or it should have been at least.
+
+/speaker Ulrich
+> As your may or may not have guessed. I'm [B]Ulrich[/] the head of the Power plant and [Y]Manectric[/] here is my...
+> Actually he was my second Pokémon.
+> Anyway he is best friend and...
+> and...
+#/event Ulrich popup frown
+#/rest 6
+
+#/event Player popup worry
+#/rest 6
+/speaker Player
+> .WT.WT.
+
+/speaker Ulrich
+> Yeah I'm alright it's just...
+> I...
+> You know that weird storm that's going on outside?
+> It's kinda my fault.
+/event Manectric exclaim
+/wait 6
+/event Manectric turn down
+/wait 6
+#/event Manectric popup ...
+#/rest 6
+#/event Manectric popup sad
+#/rest 6
+> See right before you got here, a...WT strange Pokémon attacked us and...
+
+#========== Ulrich & Kanai =============================#
+[CH_2_Kanai_FB,0]
+/event set Ulrich 13
+/event set Manectric 14
+
+/speaker Manectric
+##/emote neutral
+> R..rai.
+
+/speaker Ulrich
+> I know...
+> I'm this close to crying here.
+/event Manectric turn up
+#/event Manectric popup heart
+#/rest 6
+/speaker Manectric
+##/emote neutral
+> vorrrr.
+
+/speaker Ulrich
+> Thanks. I needed that.
+/wait 6
+/cry TYPENULL
+/event Ulrich exclaim
+/event Manectric exclaim
+/event Ulrich turn down
+/event Manectric turn down
+
+
+[CH_2_Kanai_FB,1]
+/event set Ulrich 13
+/event set Manectric 14
+/event set Kanai 15
+/event set TypeNull 16
+/speaker Ulrich
+> Wh-who are you?
+> Are you the one who threatened the Power Plant.
+ 
+/speaker Kanai
+##/emote hood
+> ...
+
+/speaker Ulrich
+> Well, Are you!?
+
+/speaker Kanai
+##/emote hood
+> No.
+
+/speaker Ulrich
+> Then what do you--
+/cry TYPENULL 120 100
+
+/event Ulrich exclaim
+/event Manectric exclaim
+
+/speaker Manectric
+##/emote neutral
+> Raivo!
+
+/speaker Kanai
+> I need your Pokémon's...energy.
+
+/speaker Ulrich
+> Manectric's...
+> You mean his [Y]aura[/]?
+
+/speaker Kanai
+> Will you let me have it?
+
+/speaker Ulrich
+!> OF COURSE NOT!
+> Why would I even consider such a thing!?
+> And, even if I was willing to, that is [Y]their[/] choice, not mine.
+
+/speaker Kanai
+##/emote hood
+> Then, my Pokémon will take it by force.
+/eval pbBGMFade(2)
+/wait 4s
+/fade black 40
+/bgs heartbeat 200 100
+> It will be...WTa breeze!WTWTWTNP
+/event TypeNull move up
+/event TypeNull move left
+/event TypeNull turn up
+/eval pbBGSFade(3)
+/wait 2s
+/fade normal 40
+/wait 3s
+/bgm Kanai_II 70 100
+/wait 12
+/event Ulrich exclaim
+/event Manectric exclaim
+
+/speaker Ulrich
+> WhatWT did you just say!?
+
+/cry TYPENULL 120 100
+/speaker Kanai
+!> SHADOW STORM!!!
+
+# Same Shadow Storm sequence as the end of Chapter 1
+
+[CH_2_Kanai_FB,2]
+/event set Ulrich 12
+/event set Manectric 13
+/event set Kanai 14
+/event set TypeNull 15
+
+/speaker Ulrich
+!> MANECTRIC!
+
+/cry MANECTRIC 60 60
+/speaker Manectric
+> Raaaiiii!!!!
+
+/speaker Ulrich
+> What did you do !?
+
+#/event Kanai ...
+#/rest 6
+/speaker Kanai
+> ...
+
+/speaker Ulrich
+> Damn you...
+> ...
+> Gah! 
+> Manectric I...
+> I'll...
+
+#/event Manectric sad
+#/rest 6
+/cry MANECTRIC 60 60
+/speaker Manectric
+> R...rai...
+
+/event TypeNull move up
+/speaker Kanai
+> S-stop!
+
+/event Ulrich exclaim
+/event TypeNull exclaim
+
+#/event Ulrich popup ...
+#/rest 6
+/speaker Ulrich
+> .WT.WT.
+
+/event TypeNull move down
+#/event TypeNull popup frown
+#/rest 6
+
+/speaker Kanai
+> That is enough.
+
+/cry TYPENULL
+/speaker Ulrich
+> You...
+> ...
+> Come on [Y]Manectric[/]!
+
+#/event TypeNull popup sad
+#/rest 6
+/speaker Manectric
+> vorr...
+
+[CH_2_Kanai_FB,3]
+/windowpos middle
+/hidewindow 1
+> TypeNull? used [P]Shadow Sky[/]WTWTWTNP
+
+
+[CH_2_Ulrich,1]
+/event set Manectric 6
+/event set Ulrich 7
+
+#/event Manectric popup sad
+#/rest 6
+/speaker Manectric
+##/emote neutral
+> r-rai.
+
+/event Ulrich turn left
+/speaker Ulrich
+> Stay close to the generator OK? There is lots of electricity for you.
+
+/event Manectric turn right
+#/event Manectric popup ...
+#/rest 6
+
+/event Ulrich turn down
+/event Manectric turn down
+/speaker Ulrich
+> I will say one thing though.
+> Manectric's wounds are...WTweird.
+> I'm just...soWT worried.
+> Then there is this [B]Alcar[/] guy and his croonies, essentially holding me and my employess hostage.
+> To top it all off, [Y]Manectric[/] is draining the power from one of the main generators, taking away power from [B]Iphondria City[/].
+> I want to scream, but I can't even manage that.
+> ...
+!> DAMN IT ALL!
+
+#/event Manectric popup smile
+/speaker Manectric
+##/emote neutral
+> r-rai-vorr.
+
+/speaker Ulrich
+> I suppose it helped a little bit getting all of this off my chest.
+> ...
+> Listen, could you help take all this off my mind for a few minutes?
+> I was wondering if...WT we could have a battle?
+
+/speaker PLAYER
+> ...!?
+
+/speaker Ulrich
+> Oh no, I won't use [Y]Manectric[/], my other Pokémon will have to do.
+
+/speaker PLAYER
+> ...!
+
+/speaker Ulrich
+> Thank you.
+
+[CH_2_Ulrich,2]
+/event set Manectric 6
+/event set Ulrich 7
+
+/speaker Ulrich
+> Thank you. That was a really fun battle.
+> I would actually be really excited if I wasn'tWT y'know held prisoner here.
+
+/speaker PLAYER
+> ...?
+
+/speaker Ulrich
+> They're in the basement. I think they would want to disable the second main generator.
+> We hava an [Y]Aura Pokémon[/] guarding it but I assume they came prepared.
+> I need to look after [Y]Manectric[/] and you uh...kinda knocked out all of my other Pokémon so could you go to the Basement?
+
+/speaker PLAYER
+> .WT.WT.
+
+/speaker Ulrich
+> Yeah, shoulda thought of that before I challenged you.
+
+/speaker PLAYER
+> ...WT ...WT ...
+
+
+/speaker Ulrich
+> Here is a little thank you in advance.
+/wait 6
+/eval Kernel.pbReceiveItem(:TM57,1)
+
+[CH_2_Ulrich,3]
+/event set Manectric 6
+/event set Ulrich 7
+/event Ulrich exclaim
+
+/speaker Ulrich
+> [Y]Jiment[/] must be doing their best to stop [B]Alcar[/]!
+> Please hurry and help them.
+> Oh... uh I should probably unlock the way to the basement.
+#/event Ulrich popup smile
+> Heh, those Aeonites guys were in a real rush to keep me in here.
+> They didn't even check to see if I had a way to send someone after them.
+/se computeropen
+> *click*
+/se shiny
+> there you go!
+> Make sure to give them a good thumping from me.
+
+
+# Alcar in the basement. 
+
+[CH_2_Basement,0]
+/event set Alcar 2
+/bgm visitor.ogg
+/speaker Alcar
+> You fought well [Y]Magnemite[/]. I dislike your kind on principle, but I will grant you that much.
+> Do youWT feel it, chipping away at your core?
+/cry MAGNEMITE 60 60
+> Judging by your reaction. You clearly do.
+> .WT.WT.
+
+/event Alcar turn down
+/event Alcar exclaim
+
+/speaker Alcar
+> Ah! You.
+> I expected [B]Ulrich[/] to the deal with this himself. I suppose he is busy tending to his [Y]Pokémon[/].
+> I had intended to defeat him the same way I did  [B]Galina[/]'s oh so valuable partner.
+> Seeing the state he was in however, altered my plans slightly.
+> While I am quite tired of a certain [R]fool[/] getting in my way. His actions in this case have proved a great help.
+> Irreparably damaging the power supply to [B]Iphondria City[/] is a nice bonus, but to me...
+> .WT.WT.
+> Seeing the distress those two [Y]Aura Pokémon[/] were in was more than worth the trouble getting here.
+> I take it you aim to stop my efforts?
+> I'm sure you understand that I cannot allow that to happen. 
+
+[CH_2_Basement,1]
+/event set Alcar 2
+/bgm visitor.ogg
+/speaker Alcar
+> Hmmm....
+> You got some skill, defeating my dear Druddigon, but that is about as much as I am willing to give you.
+> ...
+> Tell me. Why do you think you act as I do?
+
+/speaker PLAYER
+> .WT.WT.
+
+/speaker Alcar
+> I do so firstly because it gives me a sense of belonging and self-worth.
+> Secondly...
+> I aim to "even out" people's view of Aura Pokémon.
+> It has been said since the dawn of time that they are a gift from on high, from the great [R]Father Ayin[/] and as such they can do no wrong.
+> This belief is wrong, they are just as likely to abandon and betray as anyone else.
+> Perhaps even more so on account of their unusual strength.
+
+/speaker PLAYER
+> ...WT ...WT ...!?
+
+/speaker Alcar
+> Certainly, framing them in such a manner would be beyond foolish...
+> If I were to be caught red-handed that is.
+> Right now, it would be yours and Ulrich's word against mine.
+> I will see to it that your words are silenced should either of you go against me.
+> For now, I shall leave you.
+> I got a road to walk and this setback will not stop me.
+
+# Move Alcar out of the screen.
+# Move Ulrich and Manectric into the screen.
+[CH_2_Basement,2]
+/event set Ulrich 21
+/event set Manectric 22
+/speaker Ulrich
+> *pant pant* I came here as fast as I could.
+> Is... [Y]Jiment[/] alright?
+
+/speaker PLAYER
+> ...?
+
+/speaker Manectric
+> Rai?
+#/cry MANECTRIC
+#/event Manectric popup worry
+/cry MAGNEMITE 80 80
+/wait 12
+#/event Magnemite popup smile
+#/event Manectric popup smile 
+/cry MAGNEMITE 
+/wait 12
+#/event Manectric turn <Towards Ulrich>
+/speaker Manectric
+> Vorr!
+
+/speaker Ulrich
+> Heh, I suppose you didn't know.
+> [Y]Jiment[/] over there is the Power Plant's most trusted employee.
+> They supply power to our main generator
+> Though, it's been barely enough with [Y]Manectric[/] having to heal himself.
+> .WT.WT.WT
+> I mean SERIOUSLY! Threatening me and invading my Power Plant because of some stupid grudge against [Y]Aura Pokémon[/].
+> Who does that!?
+
+[CH_2_Basement,3]
+/event Manectric turn right
+/speaker Manectric
+> rai.
+
+/event Ulrich turn left
+/speaker Ulrich
+> Don't look at me like that! 
+> aaanyway...
+/event Ulrich turn up
+/event Manectric turn up
+> Thank you for getting rid of [B]Alcar[/] for me.
+> Now [Y]Manectric[/] can heal in peace.
+> We will manage our resources somehow.
+> Still...
+/eval pbBGMFade(2)
+/wait 4s
+/fade black 40
+/bgs heartbeat 200 100
+/speaker Kanai
+> It will be...WT[R]a breeze[/]!WTWTWTWTNP
+/eval pbBGSFade(3)
+/wait 2s
+/fade normal 40
+/wait 3s
+/speaker Player
+> ...?
+
+/speaker Ulrich
+> O-oh it's...
+> .WT.WT.
+> I...
+> .WT.WT.
+> No, I don't wanna talk about it. Sorry
+
+# /event Manectric popup worry
+/cry MANECTRIC 80 100
+
+/speaker Ulrich
+> Anyway, You deserve something for helping me out.
+/eval Kernel.pbReceiveItem(:ELETRICELEMENT,1) 
+/eval Kernel.pbReceiveItem(:STEELELEMENT,1) 
+> A little present from [Y]Jiment[/]
+
+/speaker Player
+> ...?
+
+/speaker Ulrich
+> Nah! [Y]they[/]'ll be fine I'm sure they've produced new ones by now. They gave these to me ages ago!
+> [Y]Aura Pokémon[/] do that y'know. Over time their aura forms into new elements.
+> Some old guy [B]Aurelius[/] told me.
+
+# /event Manectric popup smile
+/cry MANECTRIC
+
+> Now if you will excuse me, I have music to listen to, friends to contact and a pie with--
+/cry MANECTRIC
+> --our names on it.
+
+#/event Manectric popup ...
+#/event Ulrich popup smile
+/speaker Ulrich
+> Huh? Alright alright, the pie can come first, you glutton you.
+#/event Manectric popup heart
+/cry MANECTRIC
+> Rai!
+
+/speaker Ulrich
+> I hope we meet again soon. It's been fun!
+> .WT.WT.
+> Well, not really, but I hope we meet again soon anyway!
+> Bye!
+
+################################## Chapter End Scene ##################################################### 
+# Part I (Giving Amy a moment with Eevee, Absol and (Starter) ending with her falling asleep.)
+    # Secluded Grove
+    # Amy, Absol, Eevee and <Starter> are on Surskit's little island in a circle (Surskit)
+[CH_2_Amy,0]
+/bgm peace_and_quiet.ogg
+
+/speaker Amy
+##/emote happy
+> That was really well done both of you!
+#/event Eevee popup smile
+#/event Starter popup smile
+#/event Amy turn <Towards Absol>
+> I'm sure your training helped a lot.
+/speaker Absol
+> ...
+/speaker Amy
+##/emote neutral
+> Aww don't be so shy.
+/event Amy move down
+/event Amy turn right
+##/emote worried
+/if pbSt_Pkmn=="Inlys"
+    > Is the [Y]paralysis[/] still bothering you?
+/elsif pbSt_Pkmn=="Licit"
+    > Are you still hurt from the [R]burn[/]?
+/elsif pbSt_Pkmn=="Vinette"
+    > Are you still bitten by the [B]frostbite[/]?
+/end
+/speaker Absol
+> .WT.WT.
+#/event Absol popup ...
+#/rest 6
+#/event Absol popup smile #*
+/cry ABSOL #*
+
+/speaker Amy
+##/emote happy
+> I'm glad!
+/event Amy move up
+/event Amy turn right
+/if pbSt_Pkmn=="Inlys"
+    > You are getting really good at aiming your Nuzzle attack
+    > My face is still tingling.
+    #/event Starter popup heart
+    /cry LICIT
+    /speaker Licit
+    > Cirrrow!
+/elsif pbSt_Pkmn=="Licit"
+    > You are getting really good at aiming your Ember
+    > My cheeks are still warm.
+    #/event Starter popup heart
+    /speaker Vinette
+    /cry VINETTE
+    > Veenet!
+/elsif pbSt_Pkmn=="Vinette"
+    > You are getting really good at aiming your Powder Snow!
+    > I'm still...
+    > still...
+    !> ACHOO!
+    #/event Starter popup heart
+    /speaker Inlys
+    /cry INLYS
+    > Leees!
+/end
+/wait 12
+/speaker Amy
+##/emote neutral
+> See? Everyone really appreciate you training them.
+#/event Absol popup smile #*
+/cry ABSOL #*
+#/if 
+    # Optional dialogue if Player had the optional battle with Amy
+    #/speaker Amy
+    #> You all fought really well against Brother too.
+#/end
+
+[CH_2_Amy,1]
+/event set Amy 18
+/speaker Amy
+> I think it's time we got something to eat, I'm starving!
+/fade black 12
+/wait 12
+/hidename 2
+/windowpos middle
+/hidewindow 1
+> Lots of eating later.WTNP
+/windowpos bottom
+/hidewindow 0
+/fade normal 12
+/speaker Amy
+##/emote neutral
+> That's better!
+#/event Absol popup ...
+#/event Eevee popup ...
+#/event Starter popup ... 
+/speaker Absol 
+> sool.
+/speaker Eevee
+##/emote gentle
+> vuuui.
+/wait 12
+/if pbSt_Pkmn=="Inlys"
+    /speaker Licit
+    > Leeceet.
+/elsif pbSt_Pkmn=="Licit"
+    /speaker Vinette
+    > Nette.
+/elsif pbSt_Pkmn=="Vinette"
+    /speaker Inlys
+    > Eeeen.
+/end
+/event Amy move down
+/event Amy turn right
+/speaker Amy
+##/emote neutral
+> Hey Absol. Can I...WT ask you something?
+/speaker Absol
+/cry ABSOL
+> Sol?
+/eval pbBGMFade(2)
+/wait 20
+/speaker Amy
+##/emote neutral
+> Were the [G]Eyes[/] kind to you, those that sent you here?
+/bgm Absol
+
+#/event Absol popup ... 
+/speaker Absol
+/cry ABSOL 80 80 
+> .WT.WT. sool 
+
+/speaker Amy
+##/emote neutral
+> Where did you come from?
+
+#/event Absol popup ... 
+#/event Absol popup ... 
+#/event Absol popup ... 
+/speaker Absol 
+> .WT.WT. 
+
+/speaker Amy
+##/emote neutral
+> It's OK, you don't have to tell me if you don't want to.
+> But you know you're safe with us right?
+> We all trust you.
+
+#/event Starter popup ...
+/wait 12
+/if pbSt_Pkmn=="Inlys"
+    /cry LICIT
+/elsif pbSt_Pkmn=="Licit"
+    /cry VINETTE
+/elsif pbSt_Pkmn=="Vinette"
+    /cry INLYS
+/end
+#/event Amy popup sigh
+/speaker Amy
+##/emote happy
+> Well I do anyway!
+
+#/event Absol popup worry 
+/speaker Absol 
+> .WT.WT. 
+
+/speaker Amy
+##/emote neutral
+> Hey! Don't look at me like that..
+> I don't wanna become old and grumpy like [B]Uncle Lawrence[/].
+
+#/event Absol popup ...
+/wait 6
+#/event Absol popup smile
+/cry ABSOL
+/wait 6
+#/event Amy popup smile
+
+# Move Amy closer to Absol(?)
+
+[CH_2_Amy,2]
+/event set Amy 18
+/speaker Amy
+> It's true that we don't know you well yet and you don't know us.
+> But we can tell that you're sad deep down.
+> If there is something we can do to help with that, We will.
+
+/cry ABSOL
+/speaker Amy
+##/emote happy
+> Sure, I'm not bad or anything, but [B]Uncle Lawrence[/] always says: 
+> *ahem*
+> "There is always room for improvement."
+
+#/event Absol popup ...
+/speaker Amy
+> Yeah, It's hard getting [B]Uncle[/]'s grumpy-man voice right, I know.
+
+#/event Absol popup ...
+/wait 12
+#/event Absol popup heart
+
+/speaker Amy
+> We will listen if and when you wanna tell us what's making you sad.
+> I thinkWT ... that's part of being a trainer too.
+
+/cry EEVEE
+/speaker Eevee
+##/emote gentle
+> Vui!
+/if pbSt_Pkmn=="Inlys"
+    /cry LICIT
+/elsif pbSt_Pkmn=="Licit"
+    /cry VINETTE
+/elsif pbSt_Pkmn=="Vinette"
+    /cry INLYS
+/end
+
+/speaker Amy
+> ...
+> *YAAAWN*
+> Sorry. I am just really tired after all that training and talking to Mr.Yamada and everything
+> It's getting late too, maybe we should go home.
+> I'll just...
+> rest for a... few minutes...first
+/wait 12
+#/event Absol popup worry
+/fade black 12
+/wait 12
+/hidename 2
+##/emote none
+> *zzz*WTNP
+> *zzz*WTNP
+> *zzz*WTNP
+/wait 12
+
+# Part II (Dream Sequence)
+[CH_2_Dream,0]
+/hidewindow 1
+/windowpos middle
+/speaker voice
+/hidename 2
+> The calm surface...WTNP
+/wait 20
+/eval pbFadeEvent(2,0,255,20)
+/wait 20
+> ...is but an illusionWTNP
+> Beneath the waves, a presence lurks.WTNP
+/wait 20
+/eval pbFadeEvent(3,0,255,20)
+/wait 20
+> A twisted mirror...WTNP
+> Seeking to destroy its reflection.WTNP
+> Across the ocean, a cry echoes...WTNP
+> Eternally unheard, guiding the mirror ever closer.WTNP
+
+[CH_2_Dream,1]
+/hidewindow 1
+/windowpos middle
+/speaker voice
+/hidename 2
+> Do youWT have the strength to follow?WTNP
+
+[CH_2_Dream,2]
+/hidewindow 1
+/windowpos middle
+/speaker voice
+/hidename 2
+> From the deepest depths a desperate plea rises.WTNP
+> As the twisted mirror moves ever closer.WTNP
+
+[CH_2_Dream,3]
+/hidewindow 1
+/windowpos middle
+/speaker voice
+/hidename 2
+> Crushing waves renders the voice mute.WTNP
+
+[CH_2_Dream,4]
+/hidewindow 1
+/windowpos middle
+/speaker voice
+/hidename 2
+> Can you listen to the voice of the deep?WTNP
+/fade black 20
+
+[CH_2_Dream,5]
+/hidewindow 1
+/windowpos middle
+/speaker voice
+/hidename 2
+> Can you answer? WTNP
+> Can you feelWT its burden?WTNP
+/wait 20
+> Do you you knowWT your real self?WTNP
+/eval pbBGMFade(3)
+/fade black 20
 

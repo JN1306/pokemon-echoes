@@ -304,6 +304,10 @@ class Battle::Battler
     ret = @types.uniq
     # Burn Up erases the Fire-type.
     ret.delete(:FIRE) if @effects[PBEffects::BurnUp]
+    # Overload erases the Electric-type.
+    ret.delete(:ELECTRIC) if @effects[PBEffects::Overload]
+    # Absolute Zero erases the Ice-type.
+    ret.delete(:ICE) if @effects[PBEffects::AbsoluteZero]
     # Roost erases the Flying-type. If there are no types left, adds the Normal-
     # type.
     if @effects[PBEffects::Roost]
@@ -528,7 +532,7 @@ class Battle::Battler
 
   def takesSandstormDamage?
     return false if !takesIndirectDamage?
-    return false if pbHasType?(:GROUND) || pbHasType?(:ROCK) || pbHasType?(:STEEL)
+    return false if pbHasType?(:GROUND) || pbHasType?(:ROCK)
     return false if inTwoTurnAttack?("TwoTurnAttackInvulnerableUnderground",
                                      "TwoTurnAttackInvulnerableUnderwater")
     return false if hasActiveAbility?([:OVERCOAT, :SANDFORCE, :SANDRUSH, :SANDVEIL])

@@ -56,3 +56,57 @@ GameData::BattleTerrain.register({
   :name      => _INTL("Psychic"),
   :animation => "PsychicTerrain"
 })
+
+GameData::BattleTerrain.register({
+  :id        => :Mystic,
+  :name      => _INTL("Mystic"),
+  :animation => "MysticTerrain"
+})
+
+GameData::BattleTerrain.register({
+  :id        => :Focus,
+  :name      => _INTL("Focus"),
+  :animation => "FocusTerrain"
+})
+
+GameData::BattleTerrain.register({
+  :id        => :Spirit,
+  :name      => _INTL("Spirit"),
+  :animation => "SpiritTerrain"
+})
+
+GameData::BattleTerrain.register({
+  :id        => :Aurora,
+  :name      => _INTL("Aurora"),
+  :animation => "AuroraTerrain"
+})
+
+GameData::BattleTerrain.register({
+  :id        => :Lunar,
+  :name      => _INTL("Lunar"),
+  :animation => "LunarTerrain"
+})
+
+GameData::BattleTerrain.register({
+  :id        => :Jungle,
+  :name      => _INTL("Jungle"),
+  :animation => "JungleTerrain"
+})
+
+GameData::BattleTerrain.register({
+  :id        => :Desert,
+  :name      => _INTL("Desert"),
+  :animation => "DesertTerrain"
+})
+
+GameData::BattleTerrain.register({
+  :id        => :Shadow,
+  :name      => _INTL("Shadow"),
+  :animation => "ShadowTerrain"
+})
+
+GameData::BattleTerrain.register({
+  :id        => :Time,
+  :name      => _INTL("Time"),
+  :animation => "TimeTerrain"
+})

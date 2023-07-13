@@ -261,6 +261,8 @@ class Battle::Move::BurnFlinchTarget < Battle::Move
   end
 end
 
+
+
 #===============================================================================
 # Freezes the target.
 #===============================================================================
@@ -451,7 +453,7 @@ class Battle::Move::CureUserPartyStatus < Battle::Move
     when :SLEEP
       @battle.pbDisplay(_INTL("{1} was woken from sleep.", curedName))
     when :POISON
-      @battle.pbDisplay(_INTL("{1} was cured of its poisoning.", curedName))
+      @battle.pbDisplay(_INTL("{1} was cured of their poisoning.", curedName))
     when :BURN
       @battle.pbDisplay(_INTL("{1}'s burn was healed.", curedName))
     when :PARALYSIS
@@ -967,7 +969,8 @@ class Battle::Move::SetTargetAbilityToSimple < Battle::Move
   end
 
   def pbFailsAgainstTarget?(user, target, show_message)
-    if target.unstoppableAbility? || [:TRUANT, :SIMPLE].include?(target.ability)
+    if target.unstoppableAbility? || target.unstoppableAbilityEchoes? || 
+      [:TRUANT, :SIMPLE].include?(target.ability)
       @battle.pbDisplay(_INTL("But it failed!")) if show_message
       return true
     end
@@ -1001,7 +1004,8 @@ class Battle::Move::SetTargetAbilityToInsomnia < Battle::Move
   end
 
   def pbFailsAgainstTarget?(user, target, show_message)
-    if target.unstoppableAbility? || [:TRUANT, :INSOMNIA].include?(target.ability_id)
+    if target.unstoppableAbility? || target.unstoppableAbilityEchoes? || 
+      [:TRUANT, :INSOMNIA].include?(target.ability_id)
       @battle.pbDisplay(_INTL("But it failed!")) if show_message
       return true
     end
@@ -1027,7 +1031,7 @@ class Battle::Move::SetUserAbilityToTargetAbility < Battle::Move
   def ignoresSubstitute?(user); return true; end
 
   def pbMoveFailed?(user, targets)
-    if user.unstoppableAbility?
+    if user.unstoppableAbility? || user.unstoppableAbilityEchoes?
       @battle.pbDisplay(_INTL("But it failed!"))
       return true
     end
@@ -1080,7 +1084,7 @@ class Battle::Move::SetTargetAbilityToUserAbility < Battle::Move
   end
 
   def pbFailsAgainstTarget?(user, target, show_message)
-    if target.unstoppableAbility? || target.ability == :TRUANT
+    if target.unstoppableAbility? || target.unstoppableAbilityEchoes? || target.ability == :TRUANT
       @battle.pbDisplay(_INTL("But it failed!")) if show_message
       return true
     end
@@ -1110,7 +1114,7 @@ class Battle::Move::UserTargetSwapAbilities < Battle::Move
       @battle.pbDisplay(_INTL("But it failed!"))
       return true
     end
-    if user.unstoppableAbility?
+    if user.unstoppableAbility? || user.unstoppableAbilityEchoes?
       @battle.pbDisplay(_INTL("But it failed!"))
       return true
     end
@@ -1127,7 +1131,7 @@ class Battle::Move::UserTargetSwapAbilities < Battle::Move
       @battle.pbDisplay(_INTL("But it failed!")) if show_message
       return true
     end
-    if target.unstoppableAbility?
+    if target.unstoppableAbility? || target.unstoppableAbilityEchoes?
       @battle.pbDisplay(_INTL("But it failed!")) if show_message
       return true
     end
@@ -1175,7 +1179,7 @@ class Battle::Move::NegateTargetAbility < Battle::Move
   def canMagicCoat?; return true; end
 
   def pbFailsAgainstTarget?(user, target, show_message)
-    if target.unstoppableAbility?
+    if target.unstoppableAbility? || target.unstoppableAbilityEchoes?
       @battle.pbDisplay(_INTL("But it failed!")) if show_message
       return true
     end
@@ -1197,7 +1201,7 @@ end
 class Battle::Move::NegateTargetAbilityIfTargetActed < Battle::Move
   def pbEffectAgainstTarget(user, target)
     return if target.damageState.substitute || target.effects[PBEffects::GastroAcid]
-    return if target.unstoppableAbility?
+    return if target.unstoppableAbility? || target.unstoppableAbilityEchoes?
     return if @battle.choices[target.index][0] != :UseItem &&
               !((@battle.choices[target.index][0] == :UseMove ||
               @battle.choices[target.index][0] == :Shift) && target.movedThisRound?)
@@ -1324,8 +1328,18 @@ class Battle::Move::StartGravity < Battle::Move
     return false
   end
 
+  def pbPriority(user)
+    ret = super
+    ret += 1 if @battle.field.terrain == :Lunar
+    return ret
+  end
+
   def pbEffectGeneral(user)
-    @battle.field.effects[PBEffects::Gravity] = 5
+    if @battle.field.terrain == :Lunar
+      @battle.field.effects[PBEffects::Gravity] = 8
+    else
+      @battle.field.effects[PBEffects::Gravity] = 5
+    end
     @battle.pbDisplay(_INTL("Gravity intensified!"))
     @battle.allBattlers.each do |b|
       showMessage = false

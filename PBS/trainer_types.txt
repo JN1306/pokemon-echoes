@@ -30,6 +30,31 @@ Name = Rival
 Gender = Male
 BaseMoney = 36
 #-------------------------------
+[ACETRAINER_M]
+Name = Ace Trainer
+Gender = Male
+BaseMoney = 100
+#-------------------------------
+[ACETRAINER_F]
+Name = Ace Trainer
+Gender = Female
+BaseMoney = 100
+#-------------------------------
+[AREALEADER_FLEMMING]
+Name = Aread Leader
+Gender = Male
+BaseMoney = 0
+#-------------------------------
+[AREALEADER_SARAH]
+Name = Aread Leader
+Gender = Female
+BaseMoney = 0
+#-------------------------------
+[AREALEADER_TIFFANY]
+Name = Aread Leader
+Gender = Female
+BaseMoney = 0
+#-------------------------------
 [AROMALADY]
 Name = Aroma Lady
 Gender = Female
@@ -399,3 +424,40 @@ Gender = Male
 BaseMoney = 100
 BattleBGM = Battle Champion
 VictoryBGM = Battle victory leader
+#-------------------------------
+[MTB_MASTER]
+Name = Mt.Battle Master
+Gender = Male
+BaseMoney = 0
+#-------------------------------
+[ACOLYTE_M]
+Name = Aeonite Acolyte
+Gender = Male
+BaseMoney = 48
+#BattleBGM = Battle Champion
+#VictoryBGM = Battle victory leader
+#-------------------------------
+[ACOLYTE_F]
+Name = Aeonite Acolyte
+Gender = Female
+BaseMoney = 48
+#-------------------------------
+[ACOLYTE_X]
+Name = Aeonite Acolyte?
+Gender = Male
+BaseMoney = 48
+#-------------------------------
+[ACOLYTE_Y]
+Name = Aeonite Acolyte?
+Gender = Female
+BaseMoney = 48
+#-------------------------------
+[PKMNTRAINER_Yoru]
+Name = Pokémon Trainer
+Gender = Male
+BaseMoney = 60
+#-------------------------------
+[PV_RUINMANIAC]
+Name = Ruin Maniac?
+Gender = Female
+BaseMoney = 48

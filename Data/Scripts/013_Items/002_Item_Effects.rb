@@ -526,6 +526,19 @@ ItemHandlers::UseOnPokemon.add(:FULLRESTORE, proc { |item, qty, pkmn, scene|
   next true
 })
 
+ItemHandlers::UseOnPokemon.add(:REVIVESHARD, proc { |item, qty, pkmn, scene|
+  if !pkmn.fainted?
+    scene.pbDisplay(_INTL("It won't have any effect."))
+    next false
+  end
+  pkmn.hp = (pkmn.totalhp / 4).floor
+  pkmn.hp = 1 if pkmn.hp <= 0
+  pkmn.heal_status
+  scene.pbRefresh
+  scene.pbDisplay(_INTL("{1}'s HP was restored.", pkmn.name))
+  next true
+})
+
 ItemHandlers::UseOnPokemon.add(:REVIVE, proc { |item, qty, pkmn, scene|
   if !pkmn.fainted?
     scene.pbDisplay(_INTL("It won't have any effect."))
@@ -594,7 +607,18 @@ ItemHandlers::UseOnPokemon.add(:REVIVALHERB, proc { |item, qty, pkmn, scene|
   next true
 })
 
-ItemHandlers::UseOnPokemon.add(:ETHER, proc { |item, qty, pkmn, scene|
+ItemHandlers::UseOnPokemon.add(:AETHERFRAGMENT, proc { |item, qty, pkmn, scene|
+  move = scene.pbChooseMove(pkmn, _INTL("Restore which move?"))
+  next false if move < 0
+  if pbRestorePP(pkmn, move, 5) == 0
+    scene.pbDisplay(_INTL("It won't have any effect."))
+    next false
+  end
+  scene.pbDisplay(_INTL("PP was restored."))
+  next true
+})
+
+ItemHandlers::UseOnPokemon.add(:AETHER, proc { |item, qty, pkmn, scene|
   move = scene.pbChooseMove(pkmn, _INTL("Restore which move?"))
   next false if move < 0
   if pbRestorePP(pkmn, move, 10) == 0
@@ -605,12 +629,26 @@ ItemHandlers::UseOnPokemon.add(:ETHER, proc { |item, qty, pkmn, scene|
   next true
 })
 
-ItemHandlers::UseOnPokemon.copy(:ETHER, :LEPPABERRY)
+ItemHandlers::UseOnPokemon.copy(:AETHER, :LEPPABERRY)
 
-ItemHandlers::UseOnPokemon.add(:MAXETHER, proc { |item, qty, pkmn, scene|
+ItemHandlers::UseOnPokemon.add(:MAXAETHER, proc { |item, qty, pkmn, scene|
   move = scene.pbChooseMove(pkmn, _INTL("Restore which move?"))
   next false if move < 0
   if pbRestorePP(pkmn, move, pkmn.moves[move].total_pp - pkmn.moves[move].pp) == 0
+    scene.pbDisplay(_INTL("It won't have any effect."))
+    next false
+  end
+  scene.pbDisplay(_INTL("PP was restored."))
+  next true
+})
+
+
+ItemHandlers::UseOnPokemon.add(:ELIXIRDROP, proc { |item, qty, pkmn, scene|
+  pprestored = 0
+  pkmn.moves.length.times do |i|
+    pprestored += pbRestorePP(pkmn, i, 5)
+  end
+  if pprestored == 0
     scene.pbDisplay(_INTL("It won't have any effect."))
     next false
   end

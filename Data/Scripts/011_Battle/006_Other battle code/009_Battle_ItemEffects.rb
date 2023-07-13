@@ -10,6 +10,7 @@ module Battle::ItemEffects
   # Battler's status problem
   StatusCure                      = ItemHandlerHash.new
   # Priority and turn order
+  PriorityChange                  = ItemHandlerHash.new
   PriorityBracketChange           = ItemHandlerHash.new
   PriorityBracketUse              = ItemHandlerHash.new
   # Move usage failures
@@ -82,6 +83,9 @@ module Battle::ItemEffects
   end
 
   #=============================================================================
+  def self.triggerPriorityChange(item, battler, battle, move)
+    return trigger(PriorityChange, item, battler, battle, move, ret: 0)
+  end
 
   def self.triggerPriorityBracketChange(item, battler, battle)
     return trigger(PriorityBracketChange, item, battler, battle, ret: 0)
@@ -238,6 +242,12 @@ Battle::ItemEffects::SpeedCalc.add(:QUICKPOWDER,
   proc { |item, battler, mult|
     next mult * 2 if battler.isSpecies?(:DITTO) &&
                    !battler.effects[PBEffects::Transform]
+  }
+)
+
+Battle::ItemEffects::SpeedCalc.add(:REAPERCLOTH,
+  proc { |item, battler, mult|
+    next mult * 2 if battler.isSpecies?(:DUSKULL) || battler.isSpecies?(:DUSCLOPS) || battler.isSpecies?(:DUSKNOIR)
   }
 )
 
@@ -649,6 +659,13 @@ Battle::ItemEffects::PriorityBracketChange.copy(:LAGGINGTAIL, :FULLINCENSE)
 Battle::ItemEffects::PriorityBracketChange.add(:QUICKCLAW,
   proc { |item, battler, battle|
     next 1 if battle.pbRandom(100) < 20
+  }
+)
+
+Battle::ItemEffects::PriorityChange.add(:FORESTMEDALLION,
+  proc { |item, battler, battle, move|
+    next 1 if battle.field.terrain == :Grass && battler.affectedByTerrain? &&
+              move.type == :GRASS && move.statusMove?
   }
 )
 
@@ -1079,6 +1096,22 @@ Battle::ItemEffects::DamageCalcFromUser.add(:WISEGLASSES,
   }
 )
 
+Battle::ItemEffects::DamageCalcFromUser.add(:REDNECTAR,
+  proc { |item, user, target, move, mults, baseDmg, type|
+    if user.isSpecies?(:ORICORIO) && user.from == 0 && move.physicalMove?
+      mults[:attack_multiplier] *= 1.2
+    end
+  }
+)
+
+Battle::ItemEffects::DamageCalcFromUser.add(:PURPLENECTAR,
+  proc { |item, user, target, move, mults, baseDmg, type|
+    if user.isSpecies?(:ORICORIO) && user.from == 3 && move.specialMove?
+      mults[:attack_multiplier] *= 1.2
+    end
+  }
+)
+
 #===============================================================================
 # DamageCalcFromTarget handlers
 # NOTE: Species-specific held items consider the original species, not the
@@ -1132,6 +1165,49 @@ Battle::ItemEffects::DamageCalcFromTarget.add(:DEEPSEASCALE,
   proc { |item, user, target, move, mults, baseDmg, type|
     if target.isSpecies?(:CLAMPERL) && move.specialMove?
       mults[:defense_multiplier] *= 2
+    elsif target.isSpecies?(:GOREBYSS) && move.specialMove?
+      mults[:defense_multiplier] *= 1.3
+    end
+  }
+)
+Battle::ItemEffects::DamageCalcFromTarget.add(:DEEPSEATOOTH,
+  proc { |item, user, target, move, mults, baseDmg, type|
+    if target.isSpecies?(:CLAMPERL) && move.specialMove?
+      mults[:defense_multiplier] *= 2
+    elsif target.isSpecies?(:HUNTAIL) && move.specialMove?
+      mults[:defense_multiplier] *= 1.3
+    end
+  }
+)
+
+Battle::ItemEffects::DamageCalcFromTarget.add(:ELECTRIZER,
+  proc { |item, user, target, move, mults, baseDmg, type|
+    if target.isSpecies?(:ELEKID) || target.isSpecies?(:ELECTABUZZ) || target.isSpecies?(:ELECTIVIRE)
+      mults[:defense_multiplier] *= 1.5
+    end
+  }
+)
+
+Battle::ItemEffects::DamageCalcFromTarget.add(:MAGMARIZER,
+  proc { |item, user, target, move, mults, baseDmg, type|
+    if target.isSpecies?(:MAGBY) || target.isSpecies?(:MAGMAR) || target.isSpecies?(:MAGMORTAR)
+      mults[:defense_multiplier] *= 1.5
+    end
+  }
+)
+
+Battle::ItemEffects::DamageCalcFromTarget.add(:YELLOWNECTAR,
+  proc { |item, user, target, move, mults, baseDmg, type|
+    if target.isSpecies?(:ORICORIO) && target.form == 1 && move.physicalMove?
+      mults[:defense_multiplier] *= 1.2
+    end
+  }
+)
+
+Battle::ItemEffects::DamageCalcFromTarget.add(:PINKNECTAR,
+  proc { |item, user, target, move, mults, baseDmg, type|
+    if target.isSpecies?(:ORICORIO) && target.form == 2 && move.specialMove?
+      mults[:defense_multiplier] *= 1.2
     end
   }
 )
@@ -1169,7 +1245,7 @@ Battle::ItemEffects::DamageCalcFromTarget.add(:KEBIABERRY,
 Battle::ItemEffects::DamageCalcFromTarget.add(:METALPOWDER,
   proc { |item, user, target, move, mults, baseDmg, type|
     if target.isSpecies?(:DITTO) && !target.effects[PBEffects::Transform]
-      mults[:defense_multiplier] *= 1.5
+      mults[:defense_multiplier] *= 2
     end
   }
 )
@@ -1237,6 +1313,50 @@ Battle::ItemEffects::DamageCalcFromTarget.add(:YACHEBERRY,
     target.pbMoveTypeWeakeningBerry(:ICE, type, mults)
   }
 )
+
+Battle::ItemEffects::DamageCalcFromTarget.add(:NUTPEABERRY,
+  proc { |item, user, target, move, mults, baseDmg, type|
+    target.pbMoveTypeStrengtheningBerry(:NORMAL, type, mults)
+  }
+)
+
+Battle::ItemEffects::DamageCalcFromTarget.add(:WEPEARBERRY,
+  proc { |item, user, target, move, mults, baseDmg, type|
+    target.pbMoveTypeStrengtheningBerry(:GRASS, type, mults)
+  }
+)
+
+Battle::ItemEffects::DamageCalcFromTarget.add(:NANBBERRY,
+  proc { |item, user, target, move, mults, baseDmg, type|
+    target.pbMoveTypeStrengtheningBerry(:ELECTRIC, type, mults)
+  }
+)
+
+Battle::ItemEffects::DamageCalcFromTarget.add(:PINAPBERRY,
+  proc { |item, user, target, move, mults, baseDmg, type|
+    target.pbMoveTypeStrengtheningBerry(:STEEL, type, mults)
+  }
+)
+
+Battle::ItemEffects::DamageCalcFromTarget.add(:RAZZBERRY,
+  proc { |item, user, target, move, mults, baseDmg, type|
+    target.pbMoveTypeStrengtheningBerry(:FIGHTING, type, mults)
+  }
+)
+
+Battle::ItemEffects::DamageCalcFromTarget.add(:BELUEBERRY,
+  proc { |item, user, target, move, mults, baseDmg, type|
+    target.pbMoveTypeStrengtheningBerry(:POISON, type, mults)
+  }
+)
+
+Battle::ItemEffects::DamageCalcFromTarget.add(:BLUKBERRY,
+  proc { |item, user, target, move, mults, baseDmg, type|
+    target.pbMoveTypeStrengtheningBerry(:DARK, type, mults)
+  }
+)
+
+
 
 #===============================================================================
 # CriticalCalcFromUser handlers
@@ -1451,6 +1571,8 @@ Battle::ItemEffects::OnBeingHit.add(:WEAKNESSPOLICY,
     target.pbHeldItemTriggered(item)
   }
 )
+
+
 
 #===============================================================================
 # OnBeingHitPositiveBerry handlers
@@ -1831,7 +1953,6 @@ Battle::ItemEffects::TerrainStatBoost.add(:PSYCHICSEED,
     next battler.pbRaiseStatStageByCause(:SPECIAL_DEFENSE, 1, battler, itemName)
   }
 )
-
 #===============================================================================
 # EndOfRoundHealing handlers
 #===============================================================================
@@ -1922,12 +2043,14 @@ Battle::ItemEffects::OnSwitchIn.add(:AIRBALLOON,
 Battle::ItemEffects::OnSwitchIn.add(:ROOMSERVICE,
   proc { |item, battler, battle|
     next if battle.field.effects[PBEffects::TrickRoom] == 0
-    next if !battler.pbCanLowerStatStage?(:SPEED)
+    next if !battler.pbCanlStatStage?(:SPEED)
     battle.pbCommonAnimation("UseItem", battler)
     battler.pbLowerStatStage(:SPEED, 1, nil)
     battler.pbConsumeItem
   }
 )
+
+
 
 #===============================================================================
 # OnIntimidated handlers

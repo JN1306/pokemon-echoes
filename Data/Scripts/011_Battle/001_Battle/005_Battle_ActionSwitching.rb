@@ -335,6 +335,7 @@ class Battle
       # Position/field effects triggered by the battler appearing
       pbEffectsOnBattlerEnteringPosition(b)   # Healing Wish/Lunar Dance
       pbEntryHazards(b)
+      pbEntryHazardsEchoes(b)
       # Battler faints if it is knocked out because of an entry hazard above
       if b.fainted?
         b.pbFaint
@@ -348,7 +349,7 @@ class Battle
       # Ending primordial weather, checking Trace
       b.pbContinualAbilityChecks(true)
       # Abilities that trigger upon switching in
-      if (!b.fainted? && b.unstoppableAbility?) || b.abilityActive?
+      if (!b.fainted? && (b.unstoppableAbility? || unstoppableAbilityEchoes?)) || b.abilityActive?
         Battle::AbilityEffects.triggerOnSwitchIn(b.ability, b, self, true)
       end
       pbEndPrimordialWeather   # Checking this again just in case

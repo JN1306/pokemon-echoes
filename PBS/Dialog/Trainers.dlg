@@ -4,9 +4,11 @@
 [Trainer_Adam,0] # Pre-Battle
 /speaker Adam
 > Mommy finally let me go here and train. I will train by battling you.
+
 [Trainer_Adam,1] # Post-Battle
 /speaker Adam
 > Dad always told me I would be number 1!
+
 [Trainer_Adam,2] # Fluff
 /speaker Adam
 > I will train hard to be the best like no one ever was.
@@ -18,9 +20,11 @@
 [Trainer_Eve,0] # Pre-Battle
 /speaker Eve
 > I like listening to the sounds of the river. I like battling more though.
+
 [Trainer_Eve,1] # Post-Battle
 /speaker Eve
 > I saw a very old man come into Fukuri Town a while ago. He was taking to a strange man.
+
 [Trainer_Eve,2] # Fluff
 /speaker Eve
 > Fukuri Town is really close. That's why mom let's me go here alone.
@@ -51,10 +55,12 @@
 /speaker Zacharias
 > This is such a quiet river, I'm sure water Pokémon thrive here.
 > Let me show you my newest catches!
+
 [Trainer_Zacharias,1] # Post-Battle
 /speaker Zacharias
 > My poor [B]Wingull[/]... it can't have been easy for them getting a fishing hook through their wing.
 > Thankfully I managed to heal them and they stayed with me.
+
 [Trainer_Zacharias,2] # Fluff
 /speaker Zacharias
 > I saw a [B]Kingdra[/] once. It made love Water Pokémon even more
@@ -103,11 +109,307 @@
 
 [Trainer_Kode,2] # Fluff
 /speaker Kode
-> I think I'll travel the world and try to paint all the Ghost-Type Pokémon. Yeah, that sounds like a worthwhile thing to do.
+> I think I'll travel the world and try to paint all the Ghost-Type Pokémon. Yeah, that sounds worthwhile.
 > Gotta do something in between those commissions after all.
 > ...
 > Or maybe I should become a teacher.
 > Hmmm... decisions decisions.
+
+# Painter Rembrandt (Crossroads)
+[Trainer_Rembrandt,0] # Pre-Battle
+/speaker Rembrandt
+> See that bridge over there? I am considering painting it.
+> Before that thogh, I think we should have a battle while I think about how to compse the picture.
+
+[Trainer_Rembrandt,1] # Post-Battle
+/speaker Rembrandt
+> Your composure really is something else! Up for a portrait?
+
+[Trainer_Rembrandt,2] # Fluff
+/event set Rembrandt turn right
+/speaker Rembrandt
+> Hmmm.... how to best portray the subtleties of the bridge's woodwork?
+> What..us artists have to think about that kinda stuff.
+
+# Painter Rembrandt (Crossroads)
+[Trainer_Quinn,0] # Pre-Battle
+/speaker Quinn
+> I found this really neat flying Pokémon in the jungle south of here.
+> Would you please battle me so I can see how they fight?
+
+[Trainer_Quinn,1] # Post-Battle
+/speaker Quinn
+> Hmmm....I think Taillow and Trogrette got along really well!
+> Sure, we lost, but uh... I'm kind of a newbie trainer anyways.
+
+[Trainer_Quinn,2] # Fluff
+/speaker Quinn
+> I wonder what other kinds of flying types are out there in the world.
+> Speaking of, I can NEVER remember the names of those four pokémon in that story.
+
+# Pokémon Ranger (F) Alma (Crossroads)
+[Trainer_Alma,0] # Pre-Battle
+/speaker Alma
+> I hear the river by those houses over there was man-made to give water Pokémon a larger habitat.
+> I'm kind of a novice ranger myself but that's the kind of thing I want to accomplish one day.
+
+[Trainer_Alma,1] # Post-Battle
+/speaker Alma
+> I hope my Pokémon had fun battling you.
+
+[Trainer_Alma,2] # Fluff
+/speaker Alma
+> Maybe I should head to the city and see if Galina is home. 
+> She always give such good advice.
+
+
+# Super Nerd Edwin (Crossroads)
+[Trainer_Edwin,0] # Pre-Battle
+/speaker Edwin
+> Wasn't the way to [B]Fountain Road[/] s'posed t'be here ?
+> I coulda sworn...
+> Eh whatever. Lookie here you. I'm frustrated and I need to battle it out now!
+
+[Trainer_Edwin,1] # Post-Battle
+/speaker Edwin
+> Man, now I have to look around this entire route to find the exit...
+
+[Trainer_Edwin,2] # Fluff
+/speaker Edwin
+> Hey, I'm sorry for be cross with ya.
+> I just really need to find my way to the [B]M.G.I.M[/] on [B]Fountain Road[/].
+> Oh well just gotta keep lookin' I s'pose.
+
+# Ace Trainer (F) Harumi (Crossroads)
+[Trainer_Harumi,0] # Pre-Battle
+/speaker Harumi
+> Hey there! How are you doing?
+> Me? I'm doing a little research for the [B]East Iphondria[/] trainer school.
+> Gotta have something interesting to show the kids after all.
+> I'm taking a short break now though, so how about a battle?
+
+[Trainer_Harumi,1] # Post-Battle
+/event set Harumi 21
+/speaker Harumi
+> Hmmm...not bad at all. 
+> I think you'd do fine as an Ace Trainer one day.
+> Oh well, back to feel trippin' for me.
+#/event Harumi popup smile
+> I hope we meet again.
+
+
+# Amy (optional - Chapter 2 and 3)
+[Trainer_Amy,0]
+/event set Amy 18
+/speaker Amy
+#/emote happy
+!> BROTHER!
+> I am so happy to see you!
+> I thought you were out doing super dangerous stuff with [B]Uncle Lawrence[/].
+
+#/if pbChapter == 3
+#/end
+> I've been training with Yammy...I mean [B]Yamada[/]. He taught us loads of things.
+> Only a third of which I actually remember.
+
+/speaker Player
+> .WT.WT.
+
+/speaker Amy
+#/emote happy
+> *giggle* You're silly! There is NO WAY you could've seen that.
+#/emote neutral
+> Then again, I see weird stuff all the time so who knows.
+#/event Amy popup ...
+#/rest 6
+> Truth is, I have a lot of stuff to think about, but I figured some training would help.
+> ...
+> Will you have another battle with me please. I would really appreciate it.
+
+#/event Player popup smile
+#/rest 6
+/speaker Player
+> ...!
+
+#/event Amy popup smile
+#/rest 6
+/speaker Amy
+> Thank you.
+
+[Trainer_Amy,1]
+/event set Amy 18
+/speaker Amy
+###############################################################################################################
+# POWER PLANT TRAINERS
+###############################################################################################################¨
+# Acolyte F - Amalia
+[Trainer_Amalia,0] # Pre-Battle
+/event set Amalia 21
+/speaker Amalia
+> ARGH! I'm SO mad!!!
+> I mean I was supposed to follow [B]Master Alcar[/] to Iphondria but noooo. He had to go and choose [B]Lucas[/] instead.
+> ...
+/event Amalia exclaim
+> Hey, if I beat you, maybe he'll choose me for the next mission!
+
+[Trainer_Amalia,1] # Post-Battle
+/speaker Amalia
+> DAMNIT!!!
+> ...
+> Since I'm still angry at [B]Alcar[/] I'll give you a hint.
+> If you go into the [R]Cabinet[/] over there, there is lots of healing items that can help your Pokémon out.
+> ...
+> Don't tell anyone I said that, I'm supposed to be a bad guyWT I think?
+
+[Trainer_Amalia,2] # Fluff
+/speaker Amalia
+> What the hell did I do wrong to piss off [B]Alcar[/] anyway?
+> I mean, all I did was to make a joke about his [B]Druddigon[/].
+
+# Acolyte M - Thomas (Paired with Acolyte F - Ava)
+[Trainer_Thomas,0] # Pre-Battle
+/speaker Thomas
+> Hey [B]Ava[/] why did we join the Aeonites again?
+
+
+[Trainer_Thomas,1] # Post-Battle
+/speaker Thomas
+> (Unseen)
+
+[Trainer_Thomas,2] # Fluff
+/speaker Thomas
+> I just want to feel important y'know?
+
+# Acolyte F - Ava (Paired with Acolyte M - Thomas)
+[Trainer_Ava,0] # Pre-Battle
+/speaker Ava
+> I dunno [B]Thomas[/] maybe you begged me because it sounded cool?
+
+/speaker Thomas
+> Oh...Yeah that happened.
+
+/speaker Ava
+> Anyway, let's try and focus on the mission yeah?
+
+/speaker Thomas
+> Alright.
+> Uh...nothing personal dude.
+
+[Trainer_Ava,1] # Post-Battle
+/speaker Ava
+> OK, so next time you have a brainvawe [B]Thomas[/], please make sure you actually know what we are signing up for.
+
+/speaker Thomas
+> We?
+
+/speaker Ava
+> Yes WE.
+> *sigh*
+> Listen I told you didn't I? I don't like invading a Power Plant and holding a man hostage.
+
+/speaker Thomas
+> Yeah...that is kinda suss.
+
+/speaker Ava
+!> YA THINK!?
+> ...
+> Listen guy, yeah you who just beat us.
+> We have nothing against you, but it probably would be best if you didn't mess with us.
+
+[Trainer_Ava,2] # Fluff
+/speaker Ava
+> What [B]Thomas[/] doesn't realize is that he doesn't have to make himself look important to be cool.
+> He is still my cousin...
+
+# Acolyte M - Elmer 
+[Trainer_Elmer,0] # Pre-Battle
+/speaker Elmer
+> Ey! no going past here y'hear?
+> That [B]Ul[/]whatchamacallit guy is locked up up there while we take care of the hard work see?
+> Part of that is taking care of any intruder yeah, so we are gonna duke it out now.
+> Kapisch!?
+
+[Trainer_Elmer,1] # Post-Battle
+/speaker Elmer
+> Me? I'm just a mook. 
+> I got nothing on [B]Alcar[/]. If you hafta face him. He'll Skull Bash you into next Thursday see?
+
+[Trainer_Elmer,2] # Fluff
+/speaker Elmer
+> Man I could REALLY go for some soda right now.
+> Hey! listening in on people is rude see?
+
+#============================ BASEMENT ===========================#
+# Acolyte M - Gonzales 
+[Trainer_Gonzales,0] # Pre-Battle
+/speaker Gonzales
+> Us three grunts in the basement are [B]Master Alcar[/]'s handpicked.
+> I'll show you how an Aeonite elite deals with threats!
+
+[Trainer_Gonzales,1] # Post-Battle
+/speaker Gonzales
+> Yeah, truth is we're all still relatively new.
+> I think [B]Alcar[/] started this operation on a whim really.
+
+[Trainer_Gonzales,2] # Fluff
+/speaker Gonzales
+/if pbSt_Pkmn=="Inlys"
+    > I wonder why it's a requirement for most of us to have a [R]fire-type[/] on our team.
+    > Not that I really mind though, I got myself Litwick after all. 
+/elsif pbSt_Pkmn=="Licit"
+    > I wonder why it's a requirement for most of us to have an [B]ice-type[/] on our team.
+    > Not that I really mind though, I got myself Snorunt after all. 
+/elsif pbSt_Pkmn=="Vinette"
+    > I wonder why it's a requirement for most of us to have an [Y]Electric-type[/] on our team.
+    > Not that I really mind though, I got myself Helioptile after all. 
+/end
+
+
+# Acolyte F - Gladys (Paired with Acolyte F - Maddie)
+[Trainer_Gladys,0] # Pre-Battle
+/speaker Gladys
+> See [B]Maddie[/]? I told you the intruder would come here eventually. No need to get so worked up about it.
+
+[Trainer_Gladys,1] # Post-Battle
+> (Unseen)
+
+[Trainer_Gladys,2] # Fluff
+/speaker Gladys
+> What it is [B]Alcar[/] wants anyway?
+
+# Acolyte F - Maddie (Paired with Acolyte F - Gladys)
+[Trainer_Maddie,0] # Pre-Battle
+/speaker Maddie
+> Hey! It's not my fault I got anger management problems alright!?
+> Gah, I'm so steamed [B]Gladys[/] was right!
+> Imma take it out on you, right here, right now.
+
+/speaker Gladys
+> Never Change [B]Maddie[/] never change.
+
+[Trainer_Maddie,1] # Post-Battle
+/event set Maddie 4
+> Damnit!
+/speaker Gladys
+> Hey, don't take it so hard, it's not like [B]Alcar[/] will kick us out on our first mission.
+/event Maddie exclaim
+
+/speaker Maddie
+> That's [B]MASTER Alcar[/]!
+
+/speaker Gladys
+> No need to go all Primeape on me, I'm just saying it's not the end of the world. 
+
+/speaker Maddie
+> ...and your all Blissey and nonchalant about it.
+> ...
+> uh... good job beating us and all, but [B]Master Alcar[/] will stomp you!
+
+[Trainer_Maddie,2] # Fluff
+/speaker Maddie
+> I haven't really met many [Y]Aura Pokémon[/] in my life, but that can't really be as bad as [B]Master Alcar[/] makes them out to be can they?
+> Eh, I guess I'll know if I see more of the world.
+
 
 # Zamarand first encounter (optional - Chapter 2)
 [Trainer_Zamarand,0]
@@ -117,26 +419,30 @@
 /speaker Zamarand
 /hidename 1
 > Hey! no talking!
-> Unless you comply I'll have to use force!
 
 /event Zamarand exclaim
 /event Zamarand turn down
 
 /speaker Zamarand
-/hidename 1
-> Who are you!?
+> You.
+#/event Zamarand popup ...
+#/rest 6
 > ...
-> You're the kid [B]Alcar[/] mentioned.
-> Why are you here, to "rescue" these people?
-> If you really want to, You'll have to get through me.
+> You're that trainer from [B]Iphondria City[/]
+> Listen, I'm just what I was ordered to. [B]Alcar[/] asked me to lock them up here and so I did.
+> Can't have them running ot the police and blab about the oh so grand plan.
+> Some plan though, it's getting us nowhere.
 
 /speaker PLAYER
 > ... ... ...?
 
+#/event Zamarand popup ...
+#/rest 6
 /speaker Zamarand
-/hidename 1
-> A mask? What on earth are you talking about!?
+> A mask? I have no idea what you're talking about.
 
+#/event Player popup frown
+#/rest 6
 /event Tyco exclaim
 /speaker Tyco
 > But you did wear--
@@ -145,8 +451,7 @@
 /event Zamarand turn up
 
 /speaker Zamarand
-/hidename 1
-> I told you to stay quiet!!!
+>  Quiet back there!
 
 /speaker Tyco
 > ...
@@ -155,10 +460,8 @@
 /event Zamarand move down
 
 /speaker Zamarand
-/hidename 1
-> Listen, it's none of your business if I wore a mask or not.
-/hidename 0
-> I am [B]Zamarand[/] and if you want to "Rescue" those people. I'll stop you in your tracks.
+> Listen, it's none of your business either way
+> You are interfering in our plans. I'll stop you in your tracks.
 > Such are the ordersWTWT "Master" [B]Alcar[/] gave me.
 
 [Trainer_Zamarand,1]
@@ -170,23 +473,20 @@
     # Lose
     > ...I don't really see why [B]Alcar[/] would be interested in you. 
 /end
-> I never asked to be prison guard for these men. I have my own goals to reach
-> I thought joining the Aeonites would lead me closer to them, but I am having serious doubts.
-
-/speaker PLAYER
-> ..--
-
-/speaker Zamarand
-> Don't ask about the mask!
-> Whether I stay or leave. These men will be kept here as long as [B]Alcar[/] needs them to regardless.
-> I am not much for following orders anyway.
+> I thought joining the Aeonites would lead me closer to to my goals, but I am having serious doubts.
+> This is just some fancy [B]Alcar[/]'s gotten into his head!
+> These men will be kept here as long as [B]Alcar[/] needs them to regardless of what I do.
+#/event Zamarand popup ...
+#/rest 6
+> Listen, it's best if you forgot you saw me here.
+> [B]Alcar[/]'s not gonna like it if he finds out I let you go.
 
 [Trainer_Zamarand,2]
 /speaker Zamarand
 > Beneath the frozen surface...
 > Under the ice of the lake that cannot be seen on top of the mountain that cannot be found...
 > Beyond the [R]Nine Gates[/] where all repeats and repeats again.
-> There lies my goal. The road to [B]LaGlace[/], the road...WT to paradise.
+> There lies my goal. The road to my [B]LaGlace[/], the road...WT to paradise.
 
 /speaker PLAYER
 > .WT.WT.

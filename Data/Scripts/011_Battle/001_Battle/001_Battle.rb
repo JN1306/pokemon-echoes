@@ -810,6 +810,20 @@ class Battle
       pbDisplay(_INTL("Mist swirled about the battlefield!"))
     when :Psychic
       pbDisplay(_INTL("The battlefield got weird!"))
+    when :Mystic
+      pbDisplay(_INTL("Mystic energies cover the battlefiedl!"))
+    when :Focus
+      pbDisplay(_INTL("Meditative energy cover the battlefield!"))
+    when :Spirit
+      pbDisplay(_INTL("Spiritual energy cover the battlefield!"))
+    when :Aurora
+      pbDisplay(_INTL("Northern lights span across the battlefield!"))
+    when :Lunar
+      pbDisplay(_INTL("A vast moonscape covers the battlefield!"))
+    when :Jungle
+      pbDisplay(_INTL("A deep jungle covers the battlefield!"))
+    when :Desert
+      pbDisplay(_INTL("A scorching desert covers the battlefield!"))
     end
     # Check for abilities/items that trigger upon the terrain changing
     allBattlers.each { |b| b.pbAbilityOnTerrainChange }

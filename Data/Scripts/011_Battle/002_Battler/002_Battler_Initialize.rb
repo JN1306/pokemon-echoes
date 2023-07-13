@@ -99,10 +99,13 @@ class Battle::Battler
       if @effects[PBEffects::PowerTrick]
         @attack, @defense = @defense, @attack
       end
+      if @effects[PBEffects::MindTrick]
+        @special_attack, @special_defense = @special_defense, @special_attack
+      end
       # These effects are passed on if Baton Pass is used, but they need to be
       # cancelled in certain circumstances anyway
       @effects[PBEffects::Telekinesis] = 0 if isSpecies?(:GENGAR) && mega?
-      @effects[PBEffects::GastroAcid]  = false if unstoppableAbility?
+      @effects[PBEffects::GastroAcid]  = false if unstoppableAbility? || unstoppableAbilityEchoes?
     else
       # These effects are passed on if Baton Pass is used
       GameData::Stat.each_battle { |stat| @stages[stat.id] = 0 }
@@ -124,6 +127,12 @@ class Battle::Battler
       @effects[PBEffects::PowerTrick]        = false
       @effects[PBEffects::Substitute]        = 0
       @effects[PBEffects::Telekinesis]       = 0
+      #===============================================
+      @effects[PBEffects::FrostElegy]        = 0
+      @effects[PBEffects::FrostElegyUser]    = -1
+      @effects[PBEffects::MindTrick]         = false
+      @effects[PBEffects::RevivalHymn]       = 0
+      @effects[PBEffects::RevivalHymnUser]   = -1
     end
     @fainted               = (@hp == 0)
     @lastAttacker          = []
@@ -276,6 +285,16 @@ class Battle::Battler
     @effects[PBEffects::WaterSport]          = false
     @effects[PBEffects::WeightChange]        = 0
     @effects[PBEffects::Yawn]                = 0
+    #==========================================================================
+    @effects[PBEffects::AbsoluteZero]        = false
+    @effects[PBEffects::ArcSphere]           = 0
+    @effects[PBEffects::EnergyBurst]         = 0
+    @effects[PBEffects::HeatFlash]           = false 
+    @effects[PBEffects::HitNumber]           = 0
+    @effects[PBEffects::Overload]            = false
+    @effects[PBEffects::PassageOfFate]       = false
+    @effects[PBEffects::SporeShield]         = false
+    @effects[PBEffects::TachyonShield]       = false
   end
 
   #=============================================================================

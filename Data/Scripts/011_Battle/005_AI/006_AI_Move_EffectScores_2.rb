@@ -425,7 +425,8 @@ class Battle::AI
       if target.effects[PBEffects::Substitute] > 0
         score -= 90
       elsif skill >= PBTrainerAI.mediumSkill
-        if target.unstoppableAbility? || [:TRUANT, :SIMPLE].include?(target.ability)
+        if target.unstoppableAbility? || target.unstoppableAbilityEchoes?
+          [:TRUANT, :SIMPLE].include?(target.ability)
           score -= 90
         end
       end
@@ -434,7 +435,8 @@ class Battle::AI
       if target.effects[PBEffects::Substitute] > 0
         score -= 90
       elsif skill >= PBTrainerAI.mediumSkill
-        if target.unstoppableAbility? || [:TRUANT, :INSOMNIA].include?(target.ability_id)
+        if target.unstoppableAbility? || target.unstoppableAbilityEchoes?
+          [:TRUANT, :INSOMNIA].include?(target.ability_id)
           score -= 90
         end
       end

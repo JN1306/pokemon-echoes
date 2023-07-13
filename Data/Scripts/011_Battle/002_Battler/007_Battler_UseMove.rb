@@ -381,6 +381,7 @@ class Battle::Battler
       targets.each do |b|
         b.damageState.reset
         next if pbSuccessCheckAgainstTarget(move, user, b, targets)
+        next if pbSuccessCheckAgainstTargetEchoes(move, user, b, targets)
         b.damageState.unaffected = true
       end
       # Magic Coat/Magic Bounce checks (for moves which don't target Pokémon)
@@ -466,7 +467,8 @@ class Battle::Battler
         success = false
         if !move.pbMoveFailed?(b, newTargets)
           newTargets.each_with_index do |newTarget, idx|
-            if pbSuccessCheckAgainstTarget(move, b, newTarget, newTargets)
+            if pbSuccessCheckAgainstTarget(move, b, newTarget, newTargets) ||
+               pbSuccessCheckAgainstTargetEchoes(move, b, newTarget, newTargets)
               success = true
               next
             end
@@ -656,6 +658,8 @@ class Battle::Battler
       @battle.pbDisplay(_INTL("The {1} strengthened {2}'s power!",
                               GameData::Item.get(user.effects[PBEffects::GemConsumed]).name, move.name))
     end
+    # Triggering a user's "Angolmir" ability
+    pbEchoAbilityAngolmir
     # Messages about missed target(s) (relevant for multi-target moves only)
     if !move.pbRepeatHit?
       targets.each do |b|
@@ -724,7 +728,38 @@ class Battle::Battler
         chance = move.pbAdditionalEffectChance(user, b)
         next if chance <= 0
         if @battle.pbRandom(100) < chance
-          move.pbAdditionalEffect(user, b)
+          if b.hasActiveAbility?(:KARMAGEAR) && b.pbOwnSide.effects[PBEffects::KarmaGear] > 0
+            pbShowAbilitySplash(b)
+            if Battle::Scene::USE_ABILITY_SPLASH
+              pbDisplay(_INTL("{1} changed the fate of {2}'s move",b.pbThis))
+            else
+              pbDisplay(_INTL("{1}'s {2} changed the fate of {3}'s move",
+              b.pbThis, b.abilityName,user.pbThis))
+            end
+            if !user.unstoppableAbility? && !user.unstoppableAbilityEchoes &&
+               !user.effects[PBEffects::GastroAcid]
+              user.effects[PBEffects::GastroAcid] = true
+              user.effects[PBEffects::Truant]     = false
+              @battle.pbDisplay(_INTL("{1}'s Ability was suppressed!", user.pbThis))
+            end
+            if b.effects[PBEffects::PassageOfFate]
+              showAnim = true
+              for s in [:ATTACK, :SPECIAL_ATTACK]
+                if b.pbCanRaiseStatStage?(s, b, self)
+                  b.pbRaiseStatStage(s, 1, b, showAnim)
+                end
+              end
+              showAnim = false
+            end
+            b.pbOwnSide.effects[PBEffects::KarmaGear] -= 1
+            if b.pbOwnSide.effects[PBEffects::KarmaGear] == 0
+              @battle.pbDisplay(_INTL("{1}'s power over fate was exhausted", user.pbThis))
+              b.effects[PBEffects::PassageOfFate] = false
+            end
+            pbHideAbilitySplash(b)
+          else
+            move.pbAdditionalEffect(user, b)
+          end
         end
       end
     end

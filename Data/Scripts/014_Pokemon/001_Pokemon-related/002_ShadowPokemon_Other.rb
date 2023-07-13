@@ -401,10 +401,11 @@ end
 class Battle::Move::RemoveAllScreens < Battle::Move
   def pbEffectGeneral(user)
     @battle.sides.each do |i|
-      i.effects[PBEffects::AuroraVeil]  = 0
-      i.effects[PBEffects::Reflect]     = 0
-      i.effects[PBEffects::LightScreen] = 0
-      i.effects[PBEffects::Safeguard]   = 0
+      i.effects[PBEffects::AuroraVeil]    = 0
+      i.effects[PBEffects::Reflect]       = 0
+      i.effects[PBEffects::LightScreen]   = 0
+      i.effects[PBEffects::Safeguard]     = 0
+      i.effects[PBEffects::BastionShell]  = 0
     end
     @battle.pbDisplay(_INTL("It broke all barriers!"))
   end

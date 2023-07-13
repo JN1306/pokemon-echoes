@@ -119,7 +119,22 @@ module Battle::DebugVariables
     PBEffects::Uproar         => { name: "Uproar number of rounds remaining",               default: 0 },
     PBEffects::WaterSport     => { name: "Used Water Sport (Gen 5 and older)",              default: false },
     PBEffects::WeightChange   => { name: "Weight change +0.1*x kg",                         default: 0, min: -99_999, max: 99_999 },
-    PBEffects::Yawn           => { name: "Yawn rounds remaining until falling asleep",      default: 0 }
+    PBEffects::Yawn           => { name: "Yawn rounds remaining until falling asleep",      default: 0 },
+#====================================================================================================================================
+    PBEffects::AbsoluteZero    => { name: "Overload has removed self's Ice type",           default: false },
+    PBEffects::AbsoluteZero    => { name: "Arc Sphere is Active",                           default: 0 },
+    PBEffects::EnergyBurst     => { name: "Energy Burst Count",                             default: 0 },
+    PBEffects::FrostElegy      => { name: "Frost Elegy number of rounds remaining",         default: 0 },
+    PBEffects::FrostElegy      => { name: "Battler that used Frost Elegy on self",          default: -1 }, 
+    PBEffects::SporeShield     => { name: "Heat Flash applies this round",                  default: false },
+    PBEffects::HitNumber       => { name: "Hit Number",                                     default: 0 },
+    PBEffects::Overload        => { name: "Overload has removed self's Electric type",      default: false },
+    PBEffects::PassageOfFate   => { name: "Passage of Fate",                                default: false }, 
+    PBEffects::PortalDrive     => { name: "Portal Drive",                                   default: -1 }, 
+    PBEffects::RevivalHymn     => { name: "Revial Hymn number of rounds remaining",         default: 0 },
+    PBEffects::RevivalHymnUser => { name: "Battler that used Revival Hymn on self",         default: -1 }, 
+    PBEffects::SporeShield     => { name: "Spore Shield applies this round",                default: false },
+    PBEffects::TachyonShield   => { name: "Tachyon Shield applies this round",              default: false }
   }
 
   SIDE_EFFECTS = {
@@ -144,7 +159,16 @@ module Battle::DebugVariables
     PBEffects::Swamp              => { name: "Swamp duration",                         default: 0 },
     PBEffects::Tailwind           => { name: "Tailwind duration",                      default: 0 },
     PBEffects::ToxicSpikes        => { name: "Toxic Spikes layers (0-2)",              default: 0, max: 2 },
-    PBEffects::WideGuard          => { name: "Wide Guard applies this round",          default: false }
+    PBEffects::WideGuard          => { name: "Wide Guard applies this round",          default: false },
+#====================================================================================================================================
+    PBEffects::BastionShell       => { name: "Bastion Shell duration",                 default: 0 },    
+    PBEffects::BurningGround      => { name: "Burning Ground exists",                  default: false },
+    PBEffects::CoronaPortal       => { name: "Corona Portal exists",                   default: false },
+    PBEffects::HollowPassage      => { name: "Hollow Passage exists",                  default: false },
+    PBEffects::IcicleRain         => { name: "Icicle Rain exists",                     default: false },
+    PBEffects::KarmaGear          => { name: "Karma Gear exist",                       default: 0 },
+    PBEffects::KarmaGearUsed      => { name: "Karma Gear has activated this battle",   default: false },
+    PBEffects::RipplePortal       => { name: "Ripple Portal exists",                   default: false }
   }
 
   FIELD_EFFECTS = {
@@ -160,7 +184,10 @@ module Battle::DebugVariables
     PBEffects::PayDay          => { name: "Pay Day additional prize money",   default: 0, max: Settings::MAX_MONEY },
     PBEffects::TrickRoom       => { name: "Trick Room duration",              default: 0 },
     PBEffects::WaterSportField => { name: "Water Sport duration (Gen 6+)",    default: 0 },
-    PBEffects::WonderRoom      => { name: "Wonder Room duration",             default: 0 }
+    PBEffects::WonderRoom      => { name: "Wonder Room duration",             default: 0 },
+  #============================================================================================================
+    PBEffects::DivideByZero    => { name: "Divide by Zero duration",          default: 0 },
+    PBEffects::ParadoxRoom     => { name: "Paradox Room duration",            default: 0 }
   }
 
   POSITION_EFFECTS = {

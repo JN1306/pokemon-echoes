@@ -56,6 +56,10 @@ class Battle
       return if !battler.takesSandstormDamage?
       pbDisplay(_INTL("{1} is buffeted by the sandstorm!", battler.pbThis))
       amt = battler.totalhp / 16
+      if field.terrain == :Desert && battler.pbCanBurn? && @battle.pbRandom(5)==0
+        battler.pbBurn
+        pbDisplay(_INTL("{1} was burned by the scorching desert!", battler.pbThis))
+      end
     when :Hail
       return if !battler.takesHailDamage?
       pbDisplay(_INTL("{1} is buffeted by the hail!", battler.pbThis))
@@ -172,7 +176,7 @@ class Battle
       next if !battler.effects[PBEffects::AquaRing]
       next if !battler.canHeal?
       hpGain = battler.totalhp / 16
-      hpGain = (hpGain * 1.3).floor if battler.hasActiveItem?(:BIGROOT)
+      hpGain = (hpGain * 1.3).floor if battler.hasActiveItem?(:BIGROOT) || battler.hasActiveAbility?(:BIOLOGIST)
       battler.pbRecoverHP(hpGain)
       pbDisplay(_INTL("Aqua Ring restored {1}'s HP!", battler.pbThis(true)))
     end
@@ -181,7 +185,7 @@ class Battle
       next if !battler.effects[PBEffects::Ingrain]
       next if !battler.canHeal?
       hpGain = battler.totalhp / 16
-      hpGain = (hpGain * 1.3).floor if battler.hasActiveItem?(:BIGROOT)
+      hpGain = (hpGain * 1.3).floor if battler.hasActiveItem?(:BIGROOT) || battler.hasActiveAbility?(:BIOLOGIST)
       battler.pbRecoverHP(hpGain)
       pbDisplay(_INTL("{1} absorbed nutrients with its roots!", battler.pbThis))
     end
@@ -670,6 +674,7 @@ class Battle
     end
     # Effects that apply to a battler that wear off after a number of rounds
     pbEOREndBattlerEffects(priority)
+  
     # Check for end of battle (i.e. because of Perish Song)
     if @decision > 0
       pbGainExp
@@ -780,6 +785,7 @@ class Battle
     @field.effects[PBEffects::FairyLock]   -= 1 if @field.effects[PBEffects::FairyLock] > 0
     @field.effects[PBEffects::FusionBolt]  = false
     @field.effects[PBEffects::FusionFlare] = false
+    pbEndOfRoundPhaseEchoes
     @endOfRound = false
   end
 end

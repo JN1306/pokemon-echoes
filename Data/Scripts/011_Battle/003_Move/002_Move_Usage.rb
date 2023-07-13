@@ -49,6 +49,10 @@ class Battle::Move
       user.effects[PBEffects::ParentalBond] = 3
       return 2
     end
+    if user.hasActiveAbility?(:ASHURA) && move.punchingMove?&&
+      !chargingTurnMove? && targets.length == 1
+     return 4
+   end
     return 1
   end
 

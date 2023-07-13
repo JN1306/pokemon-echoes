@@ -52,12 +52,6 @@ Battle::PokeBallEffects::ModifyCatchRate.add(:SAFARIBALL, proc { |ball, catchRat
   next catchRate * 1.5
 })
 
-Battle::PokeBallEffects::ModifyCatchRate.add(:NETBALL, proc { |ball, catchRate, battle, battler|
-  multiplier = (Settings::NEW_POKE_BALL_CATCH_RATES) ? 3.5 : 3
-  catchRate *= multiplier if battler.pbHasType?(:BUG) || battler.pbHasType?(:WATER)
-  next catchRate
-})
-
 Battle::PokeBallEffects::ModifyCatchRate.add(:DIVEBALL, proc { |ball, catchRate, battle, battler|
   catchRate *= 3.5 if battle.environment == :Underwater
   next catchRate
@@ -177,6 +171,15 @@ Battle::PokeBallEffects::ModifyCatchRate.add(:DREAMBALL, proc { |ball, catchRate
 
 Battle::PokeBallEffects::ModifyCatchRate.add(:BEASTBALL, proc { |ball, catchRate, battle, battler|
   if battler.pokemon.species_data.has_flag?("UltraBeast")
+    catchRate *= 5
+  else
+    catchRate /= 10
+  end
+  next catchRate
+})
+
+Battle::PokeBallEffects::ModifyCatchRate.add(:CHERISHBALL, proc { |ball, catchRate, battle, battler|
+  if battler.pokemon.species_data.has_flag?("Legendary") || battler.pokemon.species_data.has_flag?("Mythical")
     catchRate *= 5
   else
     catchRate /= 10

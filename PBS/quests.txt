@@ -1,10 +1,212 @@
-[SICKZAGOON]
-Name = Sickzagoon
+[FAMILYOUTING]
+Name = Family Outing
+Type = Main
+Location = Fukuri Outskirts
+FullLocation = at Fukuri Outskrits
+Exp = 20
+Step1 = "Head to Amy's favorite spot in Fukuri Forest."
+Step2 = "Head back home and see to Amy and Absol"
+Description = "A Family Outing on a fine day."
+Done="That didn't go as planned."
+Items = FULLHEAL,1
+HideItems = true
+
+[REMEDY]
+Name = Remedy
+Type = Main
+Location = Player's Home
+FullLocation = in Player's Home
+Exp = 25
+Step1 = "Find someone in Fukuri Town that can get the medicine for Absol."
+Step2 = "Complete the quest *Battle Practice*"
+Step3 = "Head to Secluded Grove and get the special herb."
+Step4 = "Battle the strange Pokémon and get the Special Herb"
+Step5 = "Deliver the Special Herb to the Doctor in Fukuri Town."
+Step6 = "Head home and see how Amy and Absol are doing."
+Step7 = "Head outside Quickly!"
+Description = "Helping a friend(?) in need."
+Done="Absol seems to be perking up, but the business with Kanai clearly worried them."
+Items = SUPERPOTION,1
+Money = 500
+HideItems = true
+
+[OUTOFTHEWOODS]
+Name = Out of the Woods
+Type = Main
+Location = Fukuri Outskirts
+FullLocation = in Fukuri Outskirts
+Exp = 30
+Step1 = "Head to the police station in Iphondria City and speak with Lawrence."
+Description = "Going out into the world"
+Done="That didn't go as planned."
+HideItems = true
+Items = GREATBALL,1
+
+[CONFIDANT]
+Name = Confidant
+Type = Main
+Location = Lawrence's Office
+FullLocation = at Lawrence's Office
+Exp = 35
+Step1 = "Meet Galina at Iphondria Harbor."
+Step2 = "Head to Galina's office and have a talk with her."
+Step3 = "Go to Caeli Cave on Fountain Road and see Aurelius."
+Step4 = "Head back to Galina's office in Iphondria City."
+Description = "Being an aid to Galina."
+Done= "Stirring up a storm."
+HideItems = true
+Items = SILKSCARF,1,ICEGEM,1,FAIRYGEM,1
+Money = 2000
+
+
+[STORMYSKIES]
+Name = Stormy Skies
+Type = Main
+Location = Iphondria City
+FullLocation = Outside the Observatory in Iphondria City.
+Exp = 40
+Step1 = "Complete the quest *Eye of the Storm*"
+Step2 = "Investigate the Pharoday City Power Plant."
+Step3 = "Get to the Power Plant Basement and stop Alcar."
+Description = "Being an aid to Galina."
+Done= "Stirring up a storm."
+HideItems = true
+Money = 2000
+Items = ULTRABALL,2
+
+[CH3_1]
+Name = ch3_1
+Type = Main
+Location = Galina's house
+FullLocation = Outside the Observatory in Iphondria City.
+Exp = 40
+Step1 = "Complete the quest *Eye of the Storm*"
+Done= "Stirring up a storm."
+HideItems = true
+Money = 2000
+Items = ULTRABALL,2
+
+[CH3_2]
+Name = ch3_2
+Type = Main
+Location = Iphondria City
+FullLocation = Outside the Observatory in Iphondria City.
+Exp = 40
+Step1 = "Complete the quest *Eye of the Storm*"
+Done= "Stirring up a storm."
+HideItems = true
+Money = 2000
+Items = ULTRABALL,2
+
+[SPLASHOFFORTUNE]
+Name = Splash of Fortune
+InternalName = SPLASHOFFORTUNE
 Type = Basic
-Exp = 100
-Description = A sick Zigzagoon is blocking the path ahead. Find a doctor to help cure it.
-Location = Crosswoods
-FullLocation = near the Crosswoods
-Step1 = Tell the doctor in the Crosswoods about the sick Zigzagoon.
-Done = The doctor fixed up the sick Zigzagoon. Hooray!
-ShowAvailable = true
+Location = Home
+FullLocation = Start of the Game.
+Exp = 50
+Step1 = "Trigger the secret effect of Splash in battle."
+Description = "Wait, Splash can actually do something!?"
+Done="Huh, who knew."
+Items = FORTUNEFIN,1,NUGGET,5
+
+[BATTLEPRACTICE]
+Name = Battle Practice
+Type = Challenge
+Location = Fukuri Town
+FullLocation = in Fukuri Town
+Exp = 12
+Step1 = "Defeat both of Yamada's Students."
+Step2 = "Have a heated battle with Yamada."
+Description = "Practicing? sounds like a good way to kill time!"
+Done="Yamada quite enjoyed the battle with you."
+Items = DATACHIP,1,GREATBALL,1
+
+[SIGNOFLOVE]
+Name = Sign of Love
+Type = Basic
+Location = Fukuri Town
+FullLocation = in Fukuri Town
+Exp = 10
+Step1 = "Find a Mystic Water and give it to the fisherman in Fukuri Town."
+Step2 = "Deliver the Mystic Water to the fisherman in Fukuri Town."
+Description = "A Fisherman looking for a trinket to give to his beloved."
+Done="Hopefully the Fisherman's beloved appreciated the trinket."
+Items = WATERGEM,1
+Money = 1000
+
+[HELPFULSEARCH]
+Name = Helpful Search
+Type = Feature
+Location = Fukuri Town
+FullLocation = in Fukuri Town
+Exp = 10
+Step1 = "Register a Poochyena as seen in the Pokédex."
+Step2 = "See Vernon in Fukuri Town and give him the data on Poochyena."
+Description = "A ranger's way is to see every Pokémon. EVERY single one."
+Done="You restored Vernon's notes about Poochyena. Hopefully they remain un-eaten."
+Items = POISONGEM,1,PECHABERRY,3
+
+[QUALIFICATIONTEST]
+Name = Qualification Test
+Type = Challenge
+Location = East Iphondria
+FullLocation = Outside the East Iphondria trainer school.
+Exp = 13
+Step1 = "Defeat the Aura Pokémon *Operator Chulon* in Iphondria Park."
+Step2 = "Meet Zeathus at the Mt.Battle entrance building."
+Description = "Zeathus and Flemming are training their students to be part of the Mt.Battle challenge."
+Done="..."
+
+[EYEOFTHESTORM]
+Name = Eye of the Storm
+Type = Basic
+Location = Iphondria City
+FullLocation = Outside Galina's office.
+Exp = 10
+Step1 = "Seek out the strange eye in Iphondria City."
+Step2 = "Speak to the sailor in the Pokémon Center."
+Step3 = "Meet Cap'n Hammond at Iphondria City Harbor."
+Description = ""
+Done="..."
+
+[SIXTIMESTEN]
+Name = Six Times Ten
+Type = Challenge
+Location = Power Plant
+FullLocation = At the Pharoday Power Plant.
+Exp = 14
+Step1 = "Defeat the six scientists at the Power Plant."
+Step2 = "Defeat the...rather eccentric trainer Sixten."
+Description = "Scientists of every color wants to test their strength against you."
+Done="The Hexagon brothers have been defeated and... Wait... wrong game, sorry."
+Money = 610
+#Items = TM30,1
+
+[CASESTUDIES]
+Name = Case Studies
+Type = Basic
+Location = Lawrence's Office
+FullLocation = in Lawrence's office
+Exp = 1
+Step1 = "?"
+Description = "?"
+Done= "?"
+Items = MIRACLEORB,1
+
+[LOST]
+Name = Lost
+Type = Basic
+Location = Fountain Road
+FullLocation = at Fountain Road
+Exp = 1
+Step1 = "Find more of the Unown scattered across the world."
+Description = "Unown?"
+Done= "Stirring up a storm."
+HideItems = true
+#Items = TM0,1
+
+
+
+
+

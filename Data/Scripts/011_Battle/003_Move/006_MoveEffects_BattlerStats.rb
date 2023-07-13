@@ -844,6 +844,8 @@ end
 # Increases one random stat of the target by 2 stages (except HP). (Acupressure)
 #===============================================================================
 class Battle::Move::RaiseTargetRandomStat2 < Battle::Move
+  def canSnatch?; return true; end
+  
   def pbFailsAgainstTarget?(user, target, show_message)
     @statArray = []
     GameData::Stat.each_battle do |s|
@@ -1203,16 +1205,22 @@ class Battle::Move::LowerTargetEvasion1RemoveSideEffects < Battle::Move::TargetS
                     targetSide.effects[PBEffects::LightScreen] > 0 ||
                     targetSide.effects[PBEffects::Reflect] > 0 ||
                     targetSide.effects[PBEffects::Mist] > 0 ||
-                    targetSide.effects[PBEffects::Safeguard] > 0
+                    targetSide.effects[PBEffects::Safeguard] > 0 ||
+                    targetSide.effects[PBEffects::BastionShell] > 0 ||
+                    targetSide.effects[PBEffects::DivideByZero] > 0
     return false if targetSide.effects[PBEffects::StealthRock] ||
+                    targetSide.effects[PBEffects::IcicleRain] ||
                     targetSide.effects[PBEffects::Spikes] > 0 ||
                     targetSide.effects[PBEffects::ToxicSpikes] > 0 ||
-                    targetSide.effects[PBEffects::StickyWeb]
+                    targetSide.effects[PBEffects::StickyWeb] ||
+                    targetSide.effects[PBEffects::BurningGround]
     return false if Settings::MECHANICS_GENERATION >= 6 &&
                     (targetOpposingSide.effects[PBEffects::StealthRock] ||
+                    targetOpposingSide.effects[PBEffects::IcicleRain] ||
                     targetOpposingSide.effects[PBEffects::Spikes] > 0 ||
                     targetOpposingSide.effects[PBEffects::ToxicSpikes] > 0 ||
-                    targetOpposingSide.effects[PBEffects::StickyWeb])
+                    targetOpposingSide.effects[PBEffects::StickyWeb] || 
+                    targetOpposingSide.effects[PBEffects::IcicleRain])
     return false if Settings::MECHANICS_GENERATION >= 8 && @battle.field.terrain != :None
     return super
   end
@@ -1241,6 +1249,12 @@ class Battle::Move::LowerTargetEvasion1RemoveSideEffects < Battle::Move::TargetS
       target.pbOwnSide.effects[PBEffects::Safeguard] = 0
       @battle.pbDisplay(_INTL("{1} is no longer protected by Safeguard!!", target.pbTeam))
     end
+    #=================================================================================================
+    if target.pbOwnSide.effects[PBEffects::BastionShell] > 0
+      target.pbOwnSide.effects[PBEffects::BastionShell] = 0
+      @battle.pbDisplay(_INTL("{1} is no longer protected by the Bastion Shell!!", target.pbTeam))
+    end
+    #==================================================================================================
     if target.pbOwnSide.effects[PBEffects::StealthRock] ||
        (Settings::MECHANICS_GENERATION >= 6 &&
        target.pbOpposingSide.effects[PBEffects::StealthRock])
@@ -1248,6 +1262,13 @@ class Battle::Move::LowerTargetEvasion1RemoveSideEffects < Battle::Move::TargetS
       target.pbOpposingSide.effects[PBEffects::StealthRock] = false if Settings::MECHANICS_GENERATION >= 6
       @battle.pbDisplay(_INTL("{1} blew away stealth rocks!", user.pbThis))
     end
+    if target.pbOwnSide.effects[PBEffects::IcicleRain] ||
+      (Settings::MECHANICS_GENERATION >= 6 &&
+      target.pbOpposingSide.effects[PBEffects::IcicleRain])
+     target.pbOwnSide.effects[PBEffects::IcicleRain]      = false
+     target.pbOpposingSide.effects[PBEffects::IcicleRain] = false if Settings::MECHANICS_GENERATION >= 6
+     @battle.pbDisplay(_INTL("{1} blew away stealth rocks!", user.pbThis))
+   end
     if target.pbOwnSide.effects[PBEffects::Spikes] > 0 ||
        (Settings::MECHANICS_GENERATION >= 6 &&
        target.pbOpposingSide.effects[PBEffects::Spikes] > 0)
@@ -1269,6 +1290,20 @@ class Battle::Move::LowerTargetEvasion1RemoveSideEffects < Battle::Move::TargetS
       target.pbOpposingSide.effects[PBEffects::StickyWeb] = false if Settings::MECHANICS_GENERATION >= 6
       @battle.pbDisplay(_INTL("{1} blew away sticky webs!", user.pbThis))
     end
+    if target.pbOwnSide.effects[PBEffects::StickyWeb] ||
+       (Settings::MECHANICS_GENERATION >= 6 &&
+       target.pbOpposingSide.effects[PBEffects::StickyWeb])
+      target.pbOwnSide.effects[PBEffects::StickyWeb]      = false
+      target.pbOpposingSide.effects[PBEffects::StickyWeb] = false if Settings::MECHANICS_GENERATION >= 6
+      @battle.pbDisplay(_INTL("{1} blew away sticky webs!", user.pbThis))
+    end
+    if target.pbOwnSide.effects[PBEffects::BurningGround] ||
+       (Settings::MECHANICS_GENERATION >= 6 &&
+       target.pbOpposingSide.effects[PBEffects::BurningGround])
+      target.pbOwnSide.effects[PBEffects::BurningGround]      = false
+      target.pbOpposingSide.effects[PBEffects::BurningGround] = false if Settings::MECHANICS_GENERATION >= 6
+      @battle.pbDisplay(_INTL("{1} cooled the Burning Ground!", user.pbThis))
+    end
     if Settings::MECHANICS_GENERATION >= 8 && @battle.field.terrain != :None
       case @battle.field.terrain
       when :Electric
@@ -1279,6 +1314,24 @@ class Battle::Move::LowerTargetEvasion1RemoveSideEffects < Battle::Move::TargetS
         @battle.pbDisplay(_INTL("The mist disappeared from the battlefield."))
       when :Psychic
         @battle.pbDisplay(_INTL("The weirdness disappeared from the battlefield."))
+      when :Mystic
+        @battle.pbDisplay(_INTL("The mystic energy disappeared from the battlefield."))
+      when :Focus
+        @battle.pbDisplay(_INTL("The meditative energy disappeared from the battlefield."))
+      when :Spirit
+        @battle.pbDisplay(_INTL("The spiritual energy disappeared from the battlefield."))
+      when :Aurora
+        @battle.pbDisplay(_INTL("The northern lights disappeared from the battlefield."))
+      when :Lunar
+        @battle.pbDisplay(_INTL("The vast moonscape disappeared"))
+      when :Jungle
+        @battle.pbDisplay(_INTL("The deep jungle disappeard from the battlefield."))
+      when :Desert
+        @battle.pbDisplay(_INTL("The scorching desert disappeared"))
+      when :Shadow
+        @battle.pbDisplay(_INTL("The sinister energy disappeared from the battlefield."))
+      when :Time
+        @battle.pbDisplay(_INTL("The temporal distortions disappeared from the battlefield."))
       end
       @battle.field.terrain = :None
     end

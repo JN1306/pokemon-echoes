@@ -703,6 +703,9 @@ class Battle::Move::UseLastMoveUsed < Battle::Move
       "ProtectUserFromDamagingMovesKingsShield",           # King's Shield
       "ProtectUserFromTargetingMovesSpikyShield",          # Spiky Shield
       "ProtectUserBanefulBunker",                          # Baneful Bunker
+      "ProtectUserFromDamagingMovesHeatFlash",             # Heat Flash
+      "ProtectUserFromDamagingMovesSpreShield",            # Spore Shield
+      "ProtectUserFromMovesTachyonShield",                 # Tachyon Shield
       # Moves that call other moves
       "UseLastMoveUsedByTarget",                           # Mirror Move
       "UseLastMoveUsed",                                   # Copycat (this move)
@@ -931,6 +934,9 @@ class Battle::Move::UseRandomMove < Battle::Move
       "ProtectUserFromDamagingMovesObstruct",              # Obstruct
       "ProtectUserFromTargetingMovesSpikyShield",          # Spiky Shield
       "ProtectUserBanefulBunker",                          # Baneful Bunker
+      "ProtectUserFromDamagingMovesSpreShield",            # Spore Shield
+      "ProtectUserFromDamagingMovesHeatFlash",             # Heat Flash
+      "ProtectUserFromMovesTachyonShield",                 # Tachyon Shield
       # Moves that call other moves
       "UseLastMoveUsedByTarget",                           # Mirror Move
       "UseLastMoveUsed",                                   # Copycat
@@ -1020,6 +1026,9 @@ class Battle::Move::UseRandomMoveFromUserParty < Battle::Move
       "ProtectUserFromDamagingMovesKingsShield",           # King's Shield
       "ProtectUserFromTargetingMovesSpikyShield",          # Spiky Shield
       "ProtectUserBanefulBunker",                          # Baneful Bunker
+      "ProtectUserFromDamagingMovesSpreShield",            # Spore Shield
+      "ProtectUserFromDamagingMovesHeatFlash",             # Heat Flash
+      "ProtectUserFromMovesTachyonShield",                 # Tachyon Shield
       # Moves that call other moves
       "UseLastMoveUsedByTarget",                           # Mirror Move
       "UseLastMoveUsed",                                   # Copycat

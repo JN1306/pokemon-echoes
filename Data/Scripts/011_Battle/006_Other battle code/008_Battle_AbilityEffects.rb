@@ -772,10 +772,11 @@ Battle::AbilityEffects::StatLossImmunityFromAlly.add(:FLOWERVEIL,
     if showMessages
       battle.pbShowAbilitySplash(bearer)
       if Battle::Scene::USE_ABILITY_SPLASH
-        battle.pbDisplay(_INTL("{1}'s stats cannot be lowered!", battler.pbThis))
+        battle.pbDisplay(_INTL("{1}'s stats cannot be lowered due to {2}'s {3}!", 
+        bearer.pbThis, bearer.abilityName, battler.pbThis(true)))
       else
         battle.pbDisplay(_INTL("{1}'s {2} prevents {3}'s stat loss!",
-           bearer.pbThis, bearer.abilityName, battler.pbThis(true)))
+        bearer.pbThis, bearer.abilityName, battler.pbThis(true)))
       end
       battle.pbHideAbilitySplash(bearer)
     end
@@ -1186,6 +1187,8 @@ Battle::AbilityEffects::AccuracyCalcFromTarget.add(:WONDERSKIN,
   }
 )
 
+
+
 #===============================================================================
 # DamageCalcFromUser handlers
 #===============================================================================
@@ -1230,7 +1233,7 @@ Battle::AbilityEffects::DamageCalcFromUser.add(:DEFEATIST,
 
 Battle::AbilityEffects::DamageCalcFromUser.add(:DRAGONSMAW,
   proc { |ability, user, target, move, mults, baseDmg, type|
-    mults[:attack_multiplier] *= 1.5 if type == :DRAGON
+    mults[:attack_multiplier] *= 1.3 if type == :DRAGON
   }
 )
 
@@ -1288,7 +1291,7 @@ Battle::AbilityEffects::DamageCalcFromUser.add(:HUSTLE,
 
 Battle::AbilityEffects::DamageCalcFromUser.add(:IRONFIST,
   proc { |ability, user, target, move, mults, baseDmg, type|
-    mults[:base_damage_multiplier] *= 1.2 if move.punchingMove?
+    mults[:base_damage_multiplier] *= 1.3 if move.punchingMove?
   }
 )
 
@@ -1640,6 +1643,18 @@ Battle::AbilityEffects::CriticalCalcFromUser.add(:MERCILESS,
   }
 )
 
+Battle::AbilityEffects::CriticalCalcFromUser.add(:RUTHLESS,
+  proc { |ability, user, target, c|
+    next 99 if target.burned?
+  }
+)
+
+Battle::AbilityEffects::CriticalCalcFromUser.add(:UNYIELDING,
+  proc { |ability, user, target, c|
+    next 99 if target.paralyzed?
+  }
+)
+
 Battle::AbilityEffects::CriticalCalcFromUser.add(:SUPERLUCK,
   proc { |ability, user, target, c|
     next c + 1
@@ -1661,7 +1676,6 @@ Battle::AbilityEffects::CriticalCalcFromTarget.copy(:BATTLEARMOR, :SHELLARMOR)
 #===============================================================================
 # OnBeingHit handlers
 #===============================================================================
-
 Battle::AbilityEffects::OnBeingHit.add(:AFTERMATH,
   proc { |ability, user, target, move, battle|
     next if !target.fainted?
@@ -1904,7 +1918,7 @@ Battle::AbilityEffects::OnBeingHit.add(:MUMMY,
   proc { |ability, user, target, move, battle|
     next if !move.pbContactMove?(user)
     next if user.fainted?
-    next if user.unstoppableAbility? || user.ability == ability
+    next if user.unstoppableAbility? || user.unstoppableAbilityEchoes? || user.ability == ability
     oldAbil = nil
     battle.pbShowAbilitySplash(target) if user.opposes?(target)
     if user.affectedByContactEffect?(Battle::Scene::USE_ABILITY_SPLASH)
@@ -2061,7 +2075,6 @@ Battle::AbilityEffects::OnBeingHit.add(:WEAKARMOR,
 #===============================================================================
 # OnDealingHit handlers
 #===============================================================================
-
 Battle::AbilityEffects::OnDealingHit.add(:POISONTOUCH,
   proc { |ability, user, target, move, battle|
     next if !move.contactMove?
@@ -2984,7 +2997,8 @@ Battle::AbilityEffects::OnSwitchIn.add(:SCREENCLEANER,
             battler.pbOwnSide.effects[PBEffects::Reflect] == 0 &&
             battler.pbOpposingSide.effects[PBEffects::AuroraVeil] == 0 &&
             battler.pbOpposingSide.effects[PBEffects::LightScreen] == 0 &&
-            battler.pbOpposingSide.effects[PBEffects::Reflect] == 0
+            battler.pbOpposingSide.effects[PBEffects::Reflect] == 0 &&
+            battler.pbOpposingSide.effects[PBEffects::BastionShell] == 0
     battle.pbShowAbilitySplash(battler)
     if battler.pbOpposingSide.effects[PBEffects::AuroraVeil] > 0
       battler.pbOpposingSide.effects[PBEffects::AuroraVeil] = 0
@@ -2998,6 +3012,10 @@ Battle::AbilityEffects::OnSwitchIn.add(:SCREENCLEANER,
       battler.pbOpposingSide.effects[PBEffects::Reflect] = 0
       battle.pbDisplay(_INTL("{1}'s Reflect wore off!", battler.pbOpposingTeam))
     end
+    if battler.pbOpposingSide.effects[PBEffects::BastionShell] > 0
+      battler.pbOpposingSide.effects[PBEffects::BastionShell] = 0
+      battle.pbDisplay(_INTL("{1}'s Bastion Shell broke!", battler.pbOpposingTeam))
+    end
     if battler.pbOwnSide.effects[PBEffects::AuroraVeil] > 0
       battler.pbOwnSide.effects[PBEffects::AuroraVeil] = 0
       battle.pbDisplay(_INTL("{1}'s Aurora Veil wore off!", battler.pbTeam))
@@ -3009,6 +3027,10 @@ Battle::AbilityEffects::OnSwitchIn.add(:SCREENCLEANER,
     if battler.pbOwnSide.effects[PBEffects::Reflect] > 0
       battler.pbOwnSide.effects[PBEffects::Reflect] = 0
       battle.pbDisplay(_INTL("{1}'s Reflect wore off!", battler.pbTeam))
+    end
+    if battler.pbOwnSide.effects[PBEffects::BastionShell] > 0
+      battler.pbOwnSide.effects[PBEffects::BastionShell] = 0
+      battle.pbDisplay(_INTL("{1}'s Bastion Shell broke!", battler.pbTeam))
     end
     battle.pbHideAbilitySplash(battler)
   }

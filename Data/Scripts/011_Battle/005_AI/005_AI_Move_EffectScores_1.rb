@@ -140,7 +140,7 @@ class Battle::AI
     when "SwapSideEffects"
       if skill >= PBTrainerAI.mediumSkill
         good_effects = [:Reflect, :LightScreen, :AuroraVeil, :SeaOfFire,
-                        :Swamp, :Rainbow, :Mist, :Safeguard,
+                        :Swamp, :Rainbow, :Mist, :Safeguard,:BastionShell,
                         :Tailwind].map! { |e| PBEffects.const_get(e) }
         bad_effects = [:Spikes, :StickyWeb, :ToxicSpikes, :StealthRock].map! { |e| PBEffects.const_get(e) }
         bad_effects.each do |e|

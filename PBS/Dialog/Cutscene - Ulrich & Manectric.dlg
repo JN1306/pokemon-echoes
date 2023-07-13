@@ -1,0 +1,144 @@
+##############################################################################################################
+
+
+# Ulrich Backstory 
+[CH_2_PP_Flashback,0]
+/bgs "Ambience - Forest Wind"
+/speaker Ulrich
+/hidename 2 
+> We were trekking through [B]Fukuri Forest[/] one afternoon, when we got a little off track.
+
+/cry MANECTRIC 80 80
+/speaker Manectric
+/emote neutral
+/hidename 2
+> Raivo!
+
+/speaker Ulrich 
+/hidename 2
+> Alright, I got us a little off-track.
+> Eventually, we ended up in a place called [B]Purity Wood[/].
+> It was quite far off. We needed to surf to get there.
+> Anyway. I can't explain why, but something about that place felt...WT special.
+> There was something about the [P]wind[/] I think, you couldn't help get the feeling it was aWT good place.
+> So there we were...
+
+/speaker Ulrich 
+> What's gotten you all excited?
+
+/cry MANECTRIC 75 100
+/speaker Manectric
+/emote neutral
+> Rai!
+
+# Excited Manectric Movement
+
+[CH_2_PP_Flashback,1]
+/event set Ulrich 1
+/event set Manectric 2
+/speaker Ulrich 
+> .WT.WT.
+> If I didn't have a Power Plant to run, I could sit here for days on end and enjoy the silence.
+> ...
+
+/speaker Manectric
+/emote neutral
+> Vorruto.
+> ...
+
+/speaker Ulrich 
+> There is something I want to tell you.
+
+/cry MANECTRIC
+/speaker Manectric 75 100
+/emote neutral
+> Rai?
+
+/speaker Ulrich 
+> I'm glad I met you.
+
+/cry MANECTRIC
+/speaker Manectric 75 100
+/emote neutral
+> Vor!
+
+/speaker Ulrich 
+> Hey! It's not my fault it had a conductive buckle.
+> I get that it was a shock of friendship, but still.
+> ...
+> Hehe. I justWT wanted to let you know.
+
+/cry MANECTRIC
+/speaker Manectric 75 100
+/emote neutral
+> Raivo.
+
+/speaker Ulrich 
+/hidename 2
+> Then, just as we were about to leave.
+
+[CH_2_PP_Flashback,2]
+/event set Ulrich 1
+/event set Manectric 2
+/event set Unown 3
+
+/speaker Manectric 75 100
+/speaker Manectric
+/emote neutral
+> VORR!!
+
+/event Ulrich turn up
+
+/speaker Ulrich 
+> Manectric!
+
+/speaker Manectric
+/emote neutral
+> R-R-aai
+
+/speaker Ulrich 
+/hidename 2
+> The way, [Y]he[/] looked at me.
+> I saw him struggling, but I got a strong feeling there was nothing I could do.
+> I tried to resist it, but I just couldn't...
+
+/cry UNOWN
+/eval pbFadeEvent(4,255,0,1)
+/event Unown switch A true
+/eval pbFadeEvent(4,0,255,10)
+
+U> LOVE?
+U> RESIST
+/eval pbFadeEvent(4,255,0,10)
+/wait 12
+/event Unown switch A false
+/event Unown switch B true
+/eval pbFadeEvent(4,0,255,10)
+/cry MANECTRIC 70 60
+/speaker Manectric?
+> Grrr!
+
+/event Ulrich turn right
+/speaker Ulrich
+> Who are you?
+
+[CH_2_PP_Flashback,3]
+/event set Ulrich 1
+/event set Manectric 2
+/event set Unown 3
+
+/cry MANECTRIC 80 75
+/speaker Manectric
+/emote neutral
+> Raivo?
+
+/speaker Ulrich
+> I'm alright, but we need to get you healed ASAP.
+> I'll make sure it happens. I'll be there for you, just like you were for me.
+
+/speaker Manectric
+/emote neutral
+> v-vor...
+/fade black 12
+/speaker Ulrich
+> and just recently...

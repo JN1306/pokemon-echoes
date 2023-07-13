@@ -138,6 +138,13 @@ class Battle::Battler
         user.pbChangeForm((user.hp > user.totalhp / 2) ? 1 : 2, nil)
       end
     end
+    # Jungle Terrain (Post-hit Poison Effect)
+    if @battle.field.terrain == :Jungle && battle.pbRandom(100) < 20 && !target.damageState.substitute &&
+      target.pbCanPoison?(user, false, self)
+      @battle.pbDisplay(_INTL("{1} was badly poisoned by {2}'s attack due to the humid jungle air!", 
+      user.pbThis, target.pbThis))
+      target.pbPoison(user,false,true) 
+    end
     # Room Service
     if move.function == "StartSlowerBattlersActFirst" && @battle.field.effects[PBEffects::TrickRoom] > 0
       @battle.allBattlers.each do |b|

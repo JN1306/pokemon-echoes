@@ -128,7 +128,8 @@ module GameData
     def is_evolution_stone?; return has_flag?("EvolutionStone"); end
     def is_fossil?;          return has_flag?("Fossil"); end
     def is_apricorn?;        return has_flag?("Apricorn"); end
-    def is_gem?;             return has_flag?("TypeGem"); end
+    def is_type_gem?;        return has_flag?("TypeGem"); end
+    def is_gem?;             return has_flag?("Gem"); end
     def is_mulch?;           return has_flag?("Mulch"); end
     def is_mega_stone?;      return has_flag?("MegaStone"); end   # Does NOT include Red Orb/Blue Orb
     def is_scent?;           return has_flag?("Scent"); end
@@ -148,6 +149,7 @@ module GameData
       return false if species == :ARCEUS && ability != :MULTITYPE
       return false if species == :SILVALLY && ability != :RKSSYSTEM
       combos = {
+        :SANDSLASH => [:PANGOLINPLATE],
         :ARCEUS    => [:FISTPLATE,   :FIGHTINIUMZ,
                        :SKYPLATE,    :FLYINIUMZ,
                        :TOXICPLATE,  :POISONIUMZ,

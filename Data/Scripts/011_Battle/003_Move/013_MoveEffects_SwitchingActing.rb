@@ -240,6 +240,12 @@ class Battle::Move::SwitchOutTargetDamagingMove < Battle::Move
       next if b.hasActiveAbility?(:SUCTIONCUPS) && !@battle.moldBreaker
       newPkmn = @battle.pbGetReplacementPokemonIndex(b.index, true)   # Random
       next if newPkmn < 0
+      if b.hasActiveItem?(:GREENCARD)
+        @battle.pbCommonAnimation("UseItem", b)
+        @battle.pbDisplay(_INTL("{1}'s {2} prevents them from being switched out!", b.pbThis,"Green Card"))
+        b.pbConsumeItem
+        next
+      end
       @battle.pbRecallAndReplace(b.index, newPkmn, true)
       @battle.pbDisplay(_INTL("{1} was dragged out!", b.pbThis))
       @battle.pbClearChoice(b.index)   # Replacement Pokémon does nothing this round
@@ -547,9 +553,12 @@ class Battle::Move::TargetUsesItsLastUsedMoveAgain < Battle::Move
   def initialize(battle, move)
     super
     @moveBlacklist = [
-      "MultiTurnAttackBideThenReturnDoubleDamage",   # Bide
+      "MultiTurnAttackBideThenReturnDoubleDamage", # Bide
       "ProtectUserFromDamagingMovesKingsShield",   # King's Shield
-      "TargetUsesItsLastUsedMoveAgain",   # Instruct (this move)
+      "ProtectUserFromDamagingMovesHeatFlash",     # Heat Flash
+      "ProtectUserFromDamagingMovesSpreShield",    # Spore Shield
+      "ProtectUserFromMovesTachyonShield",         # Tachyon Shield
+      "TargetUsesItsLastUsedMoveAgain",            # Instruct (this move)
       # Struggle
       "Struggle",   # Struggle
       # Moves that affect the moveset

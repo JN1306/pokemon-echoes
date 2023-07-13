@@ -119,7 +119,23 @@ module PBEffects
   WaterSport          = 114
   WeightChange        = 115
   Yawn                = 116
-
+  #===============================================================================
+  AbsoluteZero        = 200
+  ArcSphere           = 201
+  EnergyBurst         = 202
+  FrostElegy          = 203
+  FrostElegyUser      = 204
+  HeatFlash           = 205
+  HitNumber           = 206
+  MindTrick           = 207
+  Overload            = 208
+  PassageOfFate       = 209
+  PortalDrive         = 210
+  RevivalHymn         = 211
+  RevivalHymnUser     = 212
+  SporeShield         = 213
+  TachyonShield       = 214
+  
   #=============================================================================
   # These effects apply to a battler position
   #=============================================================================
@@ -158,6 +174,15 @@ module PBEffects
   Tailwind           = 19
   ToxicSpikes        = 20
   WideGuard          = 21
+  #===============================================================================
+  BastionShell       = 22
+  BurningGround      = 23
+  CoronaPortal       = 24
+  HollowPassage      = 25
+  IcicleRain         = 26
+  KarmaGear          = 27
+  KarmaGearUsed      = 28
+  RipplePortal       = 29
 
   #=============================================================================
   # These effects apply to the battle (i.e. both sides)
@@ -175,4 +200,7 @@ module PBEffects
   TrickRoom       = 10
   WaterSportField = 11
   WonderRoom      = 12
+#======================
+  DivideByZero    = 13
+  ParadoxRoom     = 14
 end

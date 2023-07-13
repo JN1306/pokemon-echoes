@@ -163,3 +163,549 @@
     /end 
     /eval pbLoadQuestMarkers
 /end
+
+# Teacher and Student - (Optional) Chapter 2
+[SQ_Qualification_Test,0]
+# Flemming and Zeathus are standing in front of the Trainer's School
+/event set Zeathus 5
+/event set Flemming 6
+
+/speaker Flemming
+/hidename 1
+> So [B]Professor Zeathus[/] have you had time to assess how capable our students are?
+
+#/event Zeathus popup ...
+#/rest 6
+
+/speaker Zeathus
+> I think so.
+> It is quite obvious that you [B]Flemming[/] will become the third Area Leader.
+
+/speaker Flemming
+> It would be rather embarrasing if the headmaster got beaten by their own students.
+
+/speaker Zeathus
+> Eh...wouldn't say that, it just means that you taught them well.
+
+#/event Flemming popup smile
+#/rest 6
+
+/speaker Flemming
+> True enough, [B]Tiffany[/] and [B]Sarah[/] were over the moon about it. 
+> Have you filled the remaining spots yet?
+
+/speaker Zeathus
+> Not quite, WAY too many choices to make, though I've gotten a good grasp on it.
+> Well if you will excuse me. I got code to write and and an operating system to operate so if you will excuse me.
+> I'll be at [B]Iphondria Park[/] if you need me.
+
+/speaker Flemming
+> I'll come by if time permits. Got some type-chart test answers to go through...
+> and don't even get me STARTED on the damage calculus class curriculum.
+
+#/event Zeathus popup smile
+#/rest 6
+
+/speaker Zeathus
+> Yeah, I don't envy you that one.
+> I'll see you around!
+
+/speaker Flemming
+> See ya!
+/event Flemming move left
+/wait 6
+/event Flemming turn up
+/wait 6
+#/event Flemming popup ...
+#/rest 6
+/speaker Flemming
+> .WT.WT.
+
+[SQ_Qualification_Test,1]
+/event set Zeathus 5
+/event set Flemming 6
+/speaker Zeathus
+> Yes?
+
+/event Flemming turn left
+/wait 6
+
+/speaker Flemming
+> Do you happen to have a Fire Stone on you?
+> I've been looking for one for ages.
+
+/speaker Zeathus
+> Hmmm...
+#/event Zeathus popup ...
+#/rest 6
+> Not sure, let me check my bag.
+#/event Zeathus popup ...
+#/rest 6
+#/event Zeathus popup ...
+#/rest 6
+#/event Zeathus popup ...
+#/rest 6
+/speaker Zeathus
+> ...WTNP
+> ...WTNP
+> ...WTNP
+
+/speaker Zeathus
+> Hmmm... the Shell-OS could use some optimization. It's still kinda laggy.
+> Ah! Here is the list.
+> Let's see.
+> Breccia Slab...
+> Feldspar Crystal...
+> Lapis Lazuli Stone...
+> No, sorry don't have one at the moment.
+
+/speaker Flemming
+> Eh, doesn't really matter. It was a shot in dark anyways. I will find one somewhere.
+#/event Flemming popup smile
+#/rest 6
+> See you later [B]Zeathus[/].
+
+#/event Zeathus popup smile
+#/rest 6
+/speaker Zeathus
+> See ya!
+
+[SQ_Qualification_Test,2]
+/event set Zeathus 5
+/event Zeathus exclaim
+/speaker Zeathus
+> Oh! Hi there.
+> Can I help you with something.
+
+/speaker Player
+> ...WT ...?
+
+/speaker Zeathus
+> Ah! You heard.
+> Basically, I am a bit of a battle-maniac.
+> In addition to being a professor...WTNP
+> hobby-archaeologist...WTNP
+> programmer...WTNP
+> vagabond...
+
+#/event Player popup ...
+#/rest 6
+
+/speaker Player
+> .WT.WT.
+
+/speaker Zeathus
+> *ahem* As you can hear, I had a lot of choices and kinda went with all of them...
+#/event Player popup ...
+#/rest 6
+> aaanyway...
+> I'm opening a 100 trainer gauntlet available to anyone who wants to try.
+> I figured it would be a good idea to involve the trainer school, y'know give the youngsters some training.
+> Did you want to join?
+
+/speaker Player
+> ...
+
+/speaker Zeathus
+> Hmmm... 
+> We're not quite ready yet.
+> .WT.WT.
+/event Zeathus exclaim
+> Tell you what, how about I give you a little qualification test?
+> First, go to [B]Iphondria Park[/] there you will find a [Y]pal[/] of mine.
+> It's a [B]blue Shellos[/] you can't really miss them.
+> Defeat them and then come and talk to me.
+> Well then, I will see you at the entrance building [R]In the back of Iphondria Park[/]
+> Have fun! 
+
+[SQ_Qualification_Test,3]
+/event set Zeathus 7
+/speaker Zeathus
+> Hello there! Glad to see ya.
+> Beating ol' squishy [Y]Chulon[/] is quite the achievement.
+> So, about this mt.battle challenge.
+> I will let you be the first challenger IF...
+#/event Zeathus popup ...
+#/rest 6
+> .WT.WT.
+> You can beat me in a battle.
+> Don't worry though, I'll heal your Pokémon so we are on equal footing.
+
+[SQ_Qualification_Test,4]
+/event set Zeathus 
+/speaker Zeathus
+> Well there you go, you beat me!
+#/event Zeathus popup smile
+#/rest 6
+> As promised you'll be the first trainer to take on my mammoth challenge.
+> I hope you enjoy it.
+#/event Zeathus popup ...
+#/rest 6
+> Y'know I was working on my Shell-OS operating system the other day and I noticed a very lively bug in the code-
+> It kept duplicating and before I knew it there was a whole Pokémon in there!
+> I managed to extract the code within a Poké Ball and lo and behold it was alive, though I am sure the code could be smoothed over a bit.
+> Anyway, I figured out how to replicate it so as a little gift, I want you to have one of the copies.
+
+[SQ_Qualification_Test_Porygon,0]
+/event set Aide1 5
+/speaker Zeathus
+> Ah, you have a full party.
+> Eh, I'll leave it with one of the aides.
+/event Aide1 switch A true
+
+[SQ_Qualification_Test,5]
+/speaker Zeathus
+> I hope you enjoy using Porygon.
+> Well as fun as this has been, I got some wandering to do and projects to work on.
+> Though if you get far enough up the mountain, I'm sure we will meet again. I oughta know I made this thing!
+> Good luck!
+
+# Eye of the storm - (Manditory) Chapter 2
+[SQ_Eye_of_the_Storm,0]
+/event set Unown 26
+/cry UNOWN 80 100
+U> learn
+/wait 12
+/event Unown move up
+/eval pbFadeEvent(26,255,0,12)
+/wait 12
+
+[SQ_Eye_of_the_Storm,1]
+/event set Li'l_Girl 9
+/event set Growlithe 11
+/event set Lexia 12
+/speaker Lexia
+> There you go, keep talking to Growlithe. They don't want to hurt you.
+
+/event Li'l_Girl turn down
+#/event Li'l_Girl popup worried
+/speaker Li'l_Girl
+> Growly, it's ok.
+/speaker Elise
+> It's me [B]Elise[/].
+#/event Growlithe popup sad
+/cry GROWLITHE 100 50
+/speaker Growlithe?
+> Grrr...ow...oooow.
+> Grr....
+#/event Growlithe popup angry
+#/rest 6
+#/event Growlithe popup sad
+/event Growlithe move up
+/wait 12
+/speaker Elise
+> It's ok...I'm here and this kind lady is gonna make you not hurt...
+#/event Lexia popup worry
+#/rest 6
+/speaker Elise
+> I promise.
+
+[SQ_Eye_of_the_Storm,2]
+/event set Elise 9
+/event set Growlithe 11
+/event set Lexia 12
+
+/event Elise exclaim
+/speaker Growlithe?
+> Grrr!!!!
+/event Player exclaim
+/event Growlithe turn down
+
+[SQ_Eye_of_the_Storm,3]
+/event set Elise 9
+/event set Growlithe 11
+/event set Lexia 12
+/cry GROWLITHE 100 50
+/event Growlithe switch A false
+/speaker Elise
+> Growly...
+
+#/event Lexia popup worry
+/speaker Lexia
+> Little one... 
+
+/event Elise turn left
+/speaker Elise
+> Will Growly be OK?
+
+/speaker Lexia
+> Yes, I believe so.
+
+/speaker Elise
+> Really?
+> But there is this scary rain and Growly got all mad and sad and---
+#/event Lexia popup smile
+#/rest 6
+/speaker Lexia
+> Why don't you come and sit with me for a bit?
+> I think it will help you worry a little bit less. 
+
+/speaker Elise
+> Mhm...
+/event Elise turn down
+/speaker Elise
+> Thank you... I think.
+
+[SQ_Eye_of_the_Storm,4]
+/speaker Sailor
+> Oh, the poor girl... I feel for her.
+> hmmm, did you want anything?
+
+/speaker Player
+> ... ... ...
+
+/speaker Sailor
+> What!? You want me to sail to [R]Pharoday Island[/] in this weather!?
+> Granted it's not a long trip, but still...
+> I did see those strange guys storm off though and if they have good intentions, you can call me a Slugma.
+> ...
+> Tell you what. Since you helped that young lady with her Growlithe, I'll do it for you.
+> Sorry, I won't do it for free though, given the weather and uh...eerieness of it all.
+> I'll do it for $ 1,000 what do you say
+/if $Trainer.money >= 1000
+    /speaker Player
+    > ...
+    /speaker Hammond
+    > Great! Good ol' [B]Cap'n Hammond[/] will get you there safe and sound.
+    /eval $Trainer.money -= 1000
+    /eval $game_self_switches[[$game_map.map_id,@event_id,"C"]]=true
+/else
+    /speaker Player
+    > .WT.WT.
+    /speaker Sailor
+    > Hmm.... usually that's a no-go, but then again...
+    #/event Sailor popup ...
+    #/rest 6
+    /speaker Hammond
+    > Damnit! Whoever heard of Good ol' [B]Cap'n Hammond[/] turning down helping someone in need!
+    > You can pay me later.
+/end
+/speaker Hammond
+> I'll meet you at the harbor on the [R]Pier with no crates on it[/]
+> Please be quick about it. I don't wanna stand out there for too long. 
+
+[SQ_Eye_of_the_Storm,5]
+/event set Hammond 7
+/event set Unown 41
+
+/speaker Hammond
+> Glad you came here so fast. I just finished getting everything ready.
+> We should depart as fast as possible, honestly I don't want to stay here much--
+/cry UNOWN 80 80
+/event Hammond exclaim
+/speaker Hammond
+> What the--!?
+/eval pbFadeEvent(41,255,0,1)
+/event Unown switch A true
+/eval pbFadeEvent(41,0,255,6)
+/event Player exclaim
+/speaker PLAYER
+> !!!
+/event Hammond turn left
+/speaker Hammond
+> What are you?
+U> WRONG
+U> WRONG!
+U> WRONG!!!
+
+[SQ_Eye_of_the_Storm,6]
+/event set Hammond 7
+/event set Unown 41
+/event Hammond exclaim
+/speaker Hammond
+> Aargh! Why did you...
+/event Player exclaim
+
+[SQ_Eye_of_the_Storm,7]
+U> CONFUSED!
+
+[SQ_Eye_of_the_Storm,8]
+/event set Hammond 7
+/event set Unown 41
+/cry UNOWN 60 60
+/eval pbFadeEvent(41,255,0,12)
+/event Unown switch A false
+/wait 12
+/event Hammond move left
+/wait 6
+/event Hammond turn down
+/wait 6
+/speaker Hammmond
+> Phew... that was... 
+#/event Hammond popup ...
+#/rest 6
+> Actually, I don't know. I guess I'll settle for... unnerving, yes that sounds right.
+> Either way I'm glad you helped me out.
+# Hammond event (Pokémon Center)
+/if $game_self_switches[[149,7,"C"]] # Money was paid
+    > As thanks you can have your money back and I'll even add a little on top of it.
+    /eval $Trainer.money += 3000
+    /hidename 2
+    > You received $ 3,000WTNP
+/else
+    > I'll get you over to [R]Pharoday Island[/] for free. I'll even give you a little out of my own pocket.
+    /eval $Trainer.money += 2000
+    /hidename 2
+    > You received $ 2,000WTNP
+/end
+> Well the sooner we get of here the better. This weather is just...WT wrong.
+
+
+# Six Times Ten (Power Plant Main Room)
+# Hexagon Club Elon
+[SQ_6x10_Elon,0] # Pre-Battle
+/speaker Elon
+> Phew, being out of the dingy storage room sure is good.
+/if $game_self_switches[[9,12,"C"]]
+    /if !$game_self_switches[[9,12,"B"]]
+        > Thank you lots for trying to help us.
+    /else
+        > Thank you lots for helping us out!
+    /end
+/else
+    > That was a terrible experience let me tell ya!
+/end
+> Would you like to have a battle with me? I'm sure you can use the experience.
+
+[SQ_6x10_Elon,1] # Post-Battle
+> See the scientists here have our own little battle club the [RBOW]Hexagon Club[/RBOW]
+> Our leader came up with it. He seems to think it is a clever reference to something.
+> Yeah, he's a bit of an eccentric.
+
+[SQ_6x10_Elon,2] # Post-Battle
+> I always wanted to make a super-car...
+
+# Hexagon Club Thomas
+[SQ_6x10_Thomas,0] # Pre-Battle
+/speaker Thomas
+> Boy am I glad to be back in the good ol' Power Plant
+> Have you heard of the [RBOW]Hexagon Club[/RBOW]? 
+> I'm not surprised if you haven't. 
+> Let me show what its members can do!
+
+[SQ_6x10_Thomas,1] # Post-Battle
+/speaker Thomas
+> You know, our leader DEMAND that we have a level 10 Pokémon and a Level 14 Pokémon that is not part of an evolutionary chain.
+> Our rules are kinda odd.
+
+[SQ_6x10_Thomas,2] # Post-Battle
+/event set Thomas 26
+/speaker Thomas
+> Hmmm.... How would I optimize the lamps in the Power Plant to make it easier for [B]Ulrich[/]
+#/event Thomas popup idea
+#/speaker Thomas
+# > Aha! I got it!
+
+# Hexagon Club Alexey
+[SQ_6x10_Alexey,0] # Pre-Battle
+/speaker Alexey
+> Dahaha! [B]Alexey[/] is back and better than ever!
+> I need to vent off a little and I will do it by having a battle with you.
+
+[SQ_6x10_Alexey,1] # Post-Battle
+/speaker Alexey
+> You may have beaten me, but our boss is better than all of us.
+> Dahaha!
+
+[SQ_6x10_Alexey,2] # Post-Battle
+/speaker Alexey
+> Is our boss really better than us? I mean he only has Level 10 Pokémon.
+
+# Hexagon Club Stephen
+[SQ_6x10_Stephen,0] # Pre-Battle
+/speaker Stephen
+> Listen, I am filing a complaint to the police about that acolyte that barred us up in that storage room.
+/if $game_self_switches[[9,12,"C"]]
+    /if !$game_self_switches[[9,12,"B"]]
+        > I'm glad to tried to help us though.
+    /else
+       > I'm glad you helped us out.
+    /end
+/end
+> Anyway, since we are here, how about we have a battle?
+
+[SQ_6x10_Stephen,1] # Post-Battle
+/speaker Stephen
+> Have you ever heard the phrase "The world is your Cloyster". I always found that one super-odd.
+> I mean imaging putting the entire world in a Cloyster shell.
+
+[SQ_6x10_Stephen,2] # Post-Battle
+/speaker Stephen
+> I wish I could travel through time.
+> *sigh*
+
+# Hexagon Club Isac
+[SQ_6x10_Isac,0] # Pre-Battle
+/speaker Isac
+> Hmmm...I am glad you chased that brute out of here....
+> I should formulate a better defense of the Power Plant.
+> Before that though. I want to battle you.
+
+[SQ_6x10_Isac,1] # Post-Battle
+/speaker Isac
+> My favorite Pokémon is [B]Applin[/]. One fell on my head one day and I learned how gravity works from it.
+> I could never get one for myself though.
+
+[SQ_6x10_Isac,2] # Post-Battle
+/speaker Isac
+> I wonder where I would catch an [B]Applin[/].
+> Can they learn the move Gravity?
+> Hmmm....
+
+# Hexagon Club Tyco
+[SQ_6x10_Tyco,0] # Pre-Battle
+/speaker Tyco
+> [B]Alcar[/] told me that my little daughter's Pokémon somehow got hurt by the strange.
+> I hope Growly is OK...
+> ...
+> I need to think of something else. Please would you battle me?
+
+[SQ_6x10_Tyco,1] # Post-Battle
+/speaker Player
+> ...WT ...WT
+
+/speaker Tyco
+> Really!? The [Y]Ignis Caeli[/] are helping Growly. That is great news.
+> I must thank [B]Father Aurelius[/] the next time he is in town.
+
+[SQ_6x10_Tyco,2] # Post-Battle
+/speaker Tyco
+> [B]Elise[/]...
+> Please be alright.
+> Please
+
+# Hexagon Club Sixten
+[SQ_6x10_Sixten,0] # Pre-Battle
+/speaker Sixten
+/hidename 1
+> Ah! You have braved and bested the entire [RBOW]Hexagon Club[/RBOW].
+> As a final test I have appeared. The elusive... 
+> the secretive...
+> the six-times powerful (and somewhat eccentric)...
+/hidename 0
+!> SIXTEN
+> ...
+> Why are you looking at me like that? I was in the cave out back when the [B]Aeonites[/] came.
+> I didn't to get back in here and get caught like a Magikarp no no no.
+> *ahem* anyway.
+> I am Sixten and you sir...will be my opponent.
+
+
+[SQ_6x10_Sixten,1] # Post-Battle
+/event set Sixten 3
+/speaker Sixten
+> Ah! Such a refreshing battle.
+> As a reward, I, the six times humble Sixten shall open the door out back for you.
+/event Sixten move right
+/event Sixten turn up
+> Now to enter the password.
+> XD-001
+/se computeropen
+> ah perfect!
+> Now you too can enjoy the cave out back! 
+
+[SQ_6x10_Sixten,2] # Post-Battle
+/speaker Sixten
+> I, the fallable (and somewhat humble), Sixten made a GRAVE mis-counting when picking members for the [RBOW]Hexagon Club[/RBOW].
+> There are seven of us in total.
+> I should have done better in math class at schoo.

@@ -33,18 +33,44 @@ class Battle::Battler
     return amt
   end
 
-  def pbRecoverHPFromDrain(amt, target, msg = nil)
+  def pbRecoverHPFromDrain(amt, target, desertprotect = false, block = false, msg = nil)
     if target.hasActiveAbility?(:LIQUIDOOZE)
       @battle.pbShowAbilitySplash(target)
-      pbReduceHP(amt)
-      @battle.pbDisplay(_INTL("{1} sucked up the liquid ooze!", pbThis))
+      amt /= 2 if @battle.field.terrain == :Desert && !desertprotect
+      if Battle::Scene::USE_ABILITY_SPLASH
+        @battle.pbDisplay(_INTL("{1}'s draining was reversed!", target.pbThis))
+      else
+        @battle.pbDisplay(_INTL("{1} drained {2}'s liquid ooze!", pbThis,target.pbThis))
+      end
       @battle.pbHideAbilitySplash(target)
+      pbReduceHP(amt)
       pbItemHPHealCheck
     else
-      msg = _INTL("{1} had its energy drained!", target.pbThis) if nil_or_empty?(msg)
-      @battle.pbDisplay(msg)
       if canHeal?
-        amt = (amt * 1.3).floor if hasActiveItem?(:BIGROOT)
+        if (hasActiveItem?(:BIGROOT) || hasActiveAbility?(:BIOLOGIST)) && !block
+          if hasActiveAbility?(:BIOLOGIST)
+            @battle.pbShowAbilitySplash
+            if Battle::Scene::USE_ABILITY_SPLASH
+              @battle.pbDisplay(_INTL("{1}'s draining power increased!", target.pbThis))
+            else
+              @battle.pbDisplay(_INTL("{1}'s {2} increased {3}'s draining power!",pbThis, abilityName,@id))
+            end
+            @battle.pbHideAbilitySplash(target)
+          end
+          amt = (amt*1.3).floor 
+        end
+        amt /= 2 if @battle.field.terrain == :Desert && !desertprotect
+        case @id
+        when :BRAINDRAIN
+          msg = _INTL("{1} had their Special Attack drained!", target.pbThis) if nil_or_empty?(msg)
+        when :SPEEDSTEAL
+          msg = _INTL("{1} had their Speed drained!", target.pbThis) if nil_or_empty?(msg)
+        when :STRENGTHSAP
+          msg = _INTL("{1} had their Attack drained!", target.pbThis) if nil_or_empty?(msg)
+        else
+          msg = _INTL("{1} had its energy drained!", target.pbThis) if nil_or_empty?(msg)
+        end
+        @battle.pbDisplay(msg)
         pbRecoverHP(amt)
       end
     end
@@ -139,14 +165,18 @@ class Battle::Battler
       @types = [newType]
       @effects[PBEffects::Type3] = nil
     end
-    @effects[PBEffects::BurnUp] = false
-    @effects[PBEffects::Roost]  = false
+    @effects[PBEffects::AbsoluteZero] = false
+    @effects[PBEffects::BurnUp]       = false
+    @effects[PBEffects::Overload]     = false
+    @effects[PBEffects::Roost]        = false
   end
 
   def pbResetTypes
     @types = @pokemon.types
+    @effects[PBEffects::AbsoluteZero] = false
     @effects[PBEffects::Type3]  = nil
     @effects[PBEffects::BurnUp] = false
+    @effects[PBEffects::Overload] = false
     @effects[PBEffects::Roost]  = false
   end
 

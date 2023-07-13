@@ -101,6 +101,10 @@ end
 class Battle::Move::HitTwoToFiveTimes < Battle::Move
   def multiHitMove?; return true; end
 
+  def pbEffectGeneral(user)
+    user.effects[PBEffects::HitNumber] += 1
+  end
+
   def pbNumHits(user, targets)
     hitChances = [
       2, 2, 2, 2, 2, 2, 2,
@@ -484,6 +488,10 @@ class Battle::Move::TwoTurnAttackInvulnerableRemoveProtections < Battle::Move::T
     target.pbOwnSide.effects[PBEffects::MatBlock]     = false
     target.pbOwnSide.effects[PBEffects::QuickGuard]   = false
     target.pbOwnSide.effects[PBEffects::WideGuard]    = false
+    #=========================================================
+    target.effects[PBEffects::SporeShield]            = false
+    target.effects[PBEffects::HeatFlash]              = false
+    target.effects[PBEffects::TachyonShield]          = false
   end
 end
 

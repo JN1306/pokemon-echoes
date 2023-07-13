@@ -12,10 +12,8 @@ DIALOG_FILES = [
   "Misc",
   "NPC",
   "Fluff",
-  "Tutorial",
+  "Tutorial"
 #### Side Stories ####
-  "SideStory - Calyrex",
-  "SideStory - Diancie"
 ]
 
 def pbDialog(name, index=0)

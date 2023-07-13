@@ -25,6 +25,9 @@ class Battle::ActiveField
     @effects[PBEffects::TrickRoom]       = 0
     @effects[PBEffects::WaterSportField] = 0
     @effects[PBEffects::WonderRoom]      = 0
+    #=======================================
+    @effects[PBEffects::DivideByZero]    = 0
+    @effects[PBEffects::ParadoxRoom]     = 0
     @defaultWeather  = :None
     @weather         = :None
     @weatherDuration = 0
@@ -64,6 +67,15 @@ class Battle::ActiveSide
     @effects[PBEffects::Tailwind]           = 0
     @effects[PBEffects::ToxicSpikes]        = 0
     @effects[PBEffects::WideGuard]          = false
+    #===============================================
+    @effects[PBEffects::BastionShell]       = 0
+    @effects[PBEffects::BurningGround]      = false
+    @effects[PBEffects::CoronaPortal]       = false
+    @effects[PBEffects::HollowPassage]      = false
+    @effects[PBEffects::IcicleRain]         = false
+    @effects[PBEffects::KarmaGear]          = false
+    @effects[PBEffects::KarmaGearUsed]      = false
+    @effects[PBEffects::RipplePortal]       = false
   end
 end
 

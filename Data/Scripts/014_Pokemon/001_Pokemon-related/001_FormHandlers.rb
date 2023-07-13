@@ -607,26 +607,28 @@ MultipleForms.register(:SINISTEA, {
 
 MultipleForms.copy(:SINISTEA, :POLTEAGEIST)
 
+# Milcery is handled in the FormHandlers_Echoes section
 # A Milcery will always have the same flavor, but it is randomly chosen.
-MultipleForms.register(:MILCERY, {
-  "getForm" => proc { |pkmn|
-    num_flavors = 9
-    sweets = [:STRAWBERRYSWEET, :BERRYSWEET, :LOVESWEET, :STARSWEET,
-              :CLOVERSWEET, :FLOWERSWEET, :RIBBONSWEET]
-    if sweets.include?(pkmn.item_id)
-      next sweets.index(pkmn.item_id) + ((pkmn.personalID % num_flavors) * sweets.length)
-    end
-    next 0
-  }
-})
+#MultipleForms.register(:MILCERY, {
+#  "getForm" => proc { |pkmn|
+#    num_flavors = 9
+#    sweets = [:STRAWBERRYSWEET, :BERRYSWEET, :LOVESWEET, :STARSWEET,
+#              :CLOVERSWEET, :FLOWERSWEET, :RIBBONSWEET]
+#    if sweets.include?(pkmn.item_id)
+#      next sweets.index(pkmn.item_id) + ((pkmn.personalID % num_flavors) * sweets.length)
+#    end
+#    next 0
+#  }
+#})
 
-MultipleForms.register(:ALCREMIE, {
-  "getFormOnCreation" => proc { |pkmn|
-    num_flavors = 9
-    num_sweets = 7
-    next rand(num_flavors * num_sweets)
-  }
-})
+# Alcremie is handled in the FormHandlers_Echoes section
+#MultipleForms.register(:ALCREMIE, {
+#  "getFormOnCreation" => proc { |pkmn|
+#    num_flavors = 9
+#    num_sweets = 7
+#    next rand(num_flavors * num_sweets)
+#  }
+#})
 
 MultipleForms.register(:EISCUE, {
   "getFormOnLeavingBattle" => proc { |pkmn, battle, usedInBattle, endBattle|
@@ -758,32 +760,34 @@ MultipleForms.copy(:RATTATA, :SANDSHREW, :VULPIX, :DIGLETT, :MEOWTH, :GEODUDE,
 # Regional forms
 # These species don't have visually different regional forms, but they need to
 # evolve into different forms depending on the location where they evolve.
+
+# Handled in "Form_handlers_Echoes"
 #===============================================================================
 
 # Alolan forms
-MultipleForms.register(:PIKACHU, {
-  "getForm" => proc { |pkmn|
-    next if pkmn.form_simple >= 2
-    if $game_map
-      map_pos = $game_map.metadata&.town_map_position
-      next 1 if map_pos && map_pos[0] == 1   # Tiall region
-    end
-    next 0
-  }
-})
+#MultipleForms.register(:PIKACHU, {
+#  "getForm" => proc { |pkmn|
+#    next if pkmn.form_simple >= 2
+#    if $game_map
+#      map_pos = $game_map.metadata&.town_map_position
+#      next 1 if map_pos && map_pos[0] == 1   # Tiall region
+#    end
+#    next 0
+#  }
+#})
 
-MultipleForms.copy(:PIKACHU, :EXEGGCUTE, :CUBONE)
+#MultipleForms.copy(:PIKACHU, :EXEGGCUTE, :CUBONE)
 
 # Galarian forms
-MultipleForms.register(:KOFFING, {
-  "getForm" => proc { |pkmn|
-    next if pkmn.form_simple >= 2
-    if $game_map
-      map_pos = $game_map.metadata&.town_map_position
-      next 1 if map_pos && map_pos[0] == 2   # Galar region
-    end
-    next 0
-  }
-})
+#MultipleForms.register(:KOFFING, {
+#  "getForm" => proc { |pkmn|
+#    next if pkmn.form_simple >= 2
+#    if $game_map
+#      map_pos = $game_map.metadata&.town_map_position
+#      next 1 if map_pos && map_pos[0] == 2   # Galar region
+#    end
+#    next 0
+#  }
+#})
 
-MultipleForms.copy(:KOFFING, :MIMEJR)
+#MultipleForms.copy(:KOFFING, :MIMEJR)

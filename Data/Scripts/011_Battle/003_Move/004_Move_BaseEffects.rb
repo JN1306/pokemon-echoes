@@ -401,7 +401,13 @@ end
 #===============================================================================
 class Battle::Move::RecoilMove < Battle::Move
   def recoilMove?;                 return true; end
-  def pbRecoilDamage(user, target); return 1;    end
+  def pbRecoilDamage(user, target); return 1;   end
+
+  def pbBaseDamage(baseDmg, user, target)
+    baseDmg *= 0.7 if user.hasActiveItem?(:SHIMMERMANE) && 
+                      !user.hasActiveAbility?(:ROCKHEAD)
+    return baseDmg
+  end
 
   def pbEffectAfterAllHits(user, target)
     return if target.damageState.unaffected
@@ -409,9 +415,17 @@ class Battle::Move::RecoilMove < Battle::Move
     return if user.hasActiveAbility?(:ROCKHEAD)
     amt = pbRecoilDamage(user, target)
     amt = 1 if amt < 1
-    user.pbReduceHP(amt, false)
-    @battle.pbDisplay(_INTL("{1} is damaged by recoil!", user.pbThis))
-    user.pbItemHPHealCheck
+    if user.hasActiveItem?(:SHIMMERMANE) && user.hp < user.totalhp
+      @battle.pbCommonAnimation("UseItem", user)
+      @battle.pbDisplay(_INTL("{1}'s {2} turned the recoil damage into healing!", 
+                        user.pbThis, user.itemName))
+      user.pbRecoverHP(amt, false)
+      user.pbConsumeItem 
+    else
+      user.pbReduceHP(amt, false)
+      @battle.pbDisplay(_INTL("{1} is damaged by recoil!", user.pbThis))
+      user.pbItemHPHealCheck
+    end
   end
 end
 

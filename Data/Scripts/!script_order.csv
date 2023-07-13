@@ -468,10 +468,26 @@
 004_CompressMap
 ---------------------------~blank
 @101_Echoes
+@@001_General
 001_Settings
 002_Setup
 003_UniquePokemon
 004_CreatePokemon
+005_BossEffects
+006_Utilities
+007_FormHandlers_Echoes
+999_Cut
+@@002_Moves
+001_New Moves
+002_Exclusive Moves
+003_Updated Old Moves
+@@003_Items
+001_Poké Balls
+002_Exclusive Items
+003_Other Items
+@@004_Abilities&Effects
+001_General Abilities
+002_Effects
 ---------------------------~blank
 @999_Main
 999_Main

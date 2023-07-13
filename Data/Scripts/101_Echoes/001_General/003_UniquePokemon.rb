@@ -108,9 +108,6 @@ def pbInitUniquePokemon
   pbAddUniquePokemon("Ceslestial Dreamia", :RAPIDASH, "Cedarwyn Forest",[
   "A guardian of the ancient Cedarwyn Forest"])
   
-  pbAddUniquePokemon("Accidental Mika", :VULPIX, "Cedarwyn Forest",[
-  "A Pokémon reverred by the Ignis Caeli."])
-
   pbAddUniquePokemon("Valorous Remystrum", :VIRIZION, "Aravalor Altar",[
   "One of three sacred paladins sworn to prorect the Cedaria Kingdom."])
   

@@ -56,7 +56,7 @@ class Battle::Battler
     @battle.pbEndPrimordialWeather
     @battle.pbPriority(true).each do |b|
       next if b.fainted?
-      next if !b.unstoppableAbility? && !b.abilityActive?
+      next if !(b.unstoppableAbility? || unstoppableAbilityEchoes?) && !b.abilityActive?
       Battle::AbilityEffects.triggerOnSwitchIn(b.ability, b, @battle)
     end
   end
@@ -82,7 +82,7 @@ class Battle::Battler
         self.ability = choice.ability
         @battle.pbDisplay(_INTL("{1} traced {2}'s {3}!", pbThis, choice.pbThis(true), choice.abilityName))
         @battle.pbHideAbilitySplash(self)
-        if !onSwitchIn && (unstoppableAbility? || abilityActive?)
+        if !onSwitchIn && (unstoppableAbility? || unstoppableAbilityEchoes? || abilityActive?)
           Battle::AbilityEffects.triggerOnSwitchIn(self.ability, self, @battle)
         end
       end
@@ -174,7 +174,7 @@ class Battle::Battler
         @battle.pbSetSeen(self)
       end
     end
-    @effects[PBEffects::GastroAcid] = false if unstoppableAbility?
+    @effects[PBEffects::GastroAcid] = false if unstoppableAbility? || unstoppableAbilityEchoes?
     @effects[PBEffects::SlowStart]  = 0 if self.ability != :SLOWSTART
     @effects[PBEffects::Truant]     = false if self.ability != :TRUANT
     # Check for end of primordial weather
@@ -189,7 +189,7 @@ class Battle::Battler
     # Ending primordial weather, checking Trace
     pbContinualAbilityChecks(true)   # Don't trigger Traced ability as it's triggered below
     # Abilities that trigger upon switching in
-    if (!fainted? && unstoppableAbility?) || abilityActive?
+    if (!fainted? && (unstoppableAbility? || unstoppableAbilityEchoes?)) || abilityActive?
       Battle::AbilityEffects.triggerOnSwitchIn(self.ability, self, @battle)
     end
     # Status-curing ability check
@@ -451,6 +451,22 @@ class Battle::Battler
     if hasActiveAbility?(:RIPEN)
       @battle.pbShowAbilitySplash(self)
       mults[:final_damage_multiplier] /= 2
+      ripening = true
+    end
+    return if @battle.predictingDamage
+    @battle.pbCommonAnimation("EatBerry", self)
+    @battle.pbHideAbilitySplash(self) if ripening
+  end
+
+  def pbMoveTypeStrengtheningBerry(berry_type, move_type, mults)
+    return if move_type != berry_type
+    return if !Effectiveness.resistant?(@damageState.typeMod)
+    mults[:final_damage_multiplier] *= 2
+    @damageState.berryWeakened = true
+    ripening = false
+    if hasActiveAbility?(:RIPEN)
+      @battle.pbShowAbilitySplash(self)
+      mults[:final_damage_multiplier] *= 2
       ripening = true
     end
     return if @battle.predictingDamage

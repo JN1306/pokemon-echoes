@@ -215,6 +215,22 @@ module Battle::CatchAndStoreMixin
     else
       catch_rate /= 10
     end
+    if !pkmn.species_data.has_flag?("Fossil") || ball == :RELICBALL
+      catch_rate = Battle::PokeBallEffects.modifyCatchRate(ball, catch_rate, self, battler)
+    else
+      catch_rate /= 10
+    end
+    if !pkmn.species_data.has_flag?("Legendary") || !pkmn.species_data.has_flag?("Legendary") ||
+        ball == :CHERISHBALL
+      catch_rate = Battle::PokeBallEffects.modifyCatchRate(ball, catch_rate, self, battler)
+    else
+      catch_rate /= 10
+    end
+    if pkmn.species != :UNOWN  || ball == :GLYPHBALL
+      catch_rate = Battle::PokeBallEffects.modifyCatchRate(ball, catch_rate, self, battler)
+    else
+      catch_rate /= 10
+    end
     # First half of the shakes calculation
     a = battler.totalhp
     b = battler.hp

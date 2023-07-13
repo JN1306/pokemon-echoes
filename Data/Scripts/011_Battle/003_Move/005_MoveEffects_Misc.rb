@@ -364,6 +364,24 @@ class Battle::Move::RemoveTerrain < Battle::Move
       @battle.pbDisplay(_INTL("The mist disappeared from the battlefield."))
     when :Psychic
       @battle.pbDisplay(_INTL("The weirdness disappeared from the battlefield."))
+    when :Mystic
+      @battle.pbDisplay(_INTL("The mystic energy disappeared from the battlefield"))
+    when :Focus
+      @battle.pbDisplay(_INTL("The meditative energy disappeared from the battlefield"))
+    when :Spirit
+      @battle.pbDisplay(_INTL("The spiritual energy disappeared from the battlefield"))
+    when :Aurora
+      @battle.pbDisplay(_INTL("The field of northern lights disappeared"))
+    when :Lunar
+      @battle.pbDisplay(_INTL("The moonscape disappeared"))
+    when :Jungle
+      @battle.pbDisplay(_INTL("The vast jungle disappeared"))
+    when :Desert
+      @battle.pbDisplay(_INTL("The scorching desert disappeared"))
+    when :Shadow
+      @battle.pbDisplay(_INTL("The sinister energy disappeared from the battlefield"))
+    when :Time
+      @battle.pbDisplay(_INTL("The field of temporal distortions disappeared"))
     end
     @battle.field.terrain = :None
   end
@@ -427,6 +445,11 @@ class Battle::Move::AddStealthRocksToFoeSide < Battle::Move
   end
 
   def pbEffectGeneral(user)
+    if user.pbOpposingSide.effects[PBEffects::IcicleRain] 
+      user.pbOpposingSide.effects[PBEffects::IcicleRain] = false
+     @battle.pbDisplay(_INTL("The sharp icicles surrounding {1} disappeared!",
+     user.pbOpposingTeam(true)))
+   end
     user.pbOpposingSide.effects[PBEffects::StealthRock] = true
     @battle.pbDisplay(_INTL("Pointed stones float in the air around {1}!",
                             user.pbOpposingTeam(true)))
@@ -448,6 +471,11 @@ class Battle::Move::AddStickyWebToFoeSide < Battle::Move
   end
 
   def pbEffectGeneral(user)
+    if user.pbOpposingSide.effects[PBEffects::BurningGround] 
+      user.pbOpposingSide.effects[PBEffects::BurningGround] = false
+     @battle.pbDisplay(_INTL("The Burning Ground surrounding {1} turned cold!",
+     user.pbOpposingTeam(true)))
+   end
     user.pbOpposingSide.effects[PBEffects::StickyWeb] = true
     @battle.pbDisplay(_INTL("A sticky web has been laid out beneath {1}'s feet!",
                             user.pbOpposingTeam(true)))
@@ -472,11 +500,16 @@ class Battle::Move::SwapSideEffects < Battle::Move
       PBEffects::Spikes,
       PBEffects::Swamp,
       PBEffects::Tailwind,
-      PBEffects::ToxicSpikes
+      PBEffects::ToxicSpikes,
+      #=============================
+      PBEffects::BastionShell,
+      PBEffects::BurningGround
+      
     ]
     @boolean_effects = [
       PBEffects::StealthRock,
-      PBEffects::StickyWeb
+      PBEffects::StickyWeb,
+      PBEffects::IcicleRain
     ]
   end
 
@@ -518,38 +551,6 @@ class Battle::Move::SwapSideEffects < Battle::Move
 end
 
 #===============================================================================
-# User turns 1/4 of max HP into a substitute. (Substitute)
-#===============================================================================
-class Battle::Move::UserMakeSubstitute < Battle::Move
-  def canSnatch?; return true; end
-
-  def pbMoveFailed?(user, targets)
-    if user.effects[PBEffects::Substitute] > 0
-      @battle.pbDisplay(_INTL("{1} already has a substitute!", user.pbThis))
-      return true
-    end
-    @subLife = [user.totalhp / 4, 1].max
-    if user.hp <= @subLife
-      @battle.pbDisplay(_INTL("But it does not have enough HP left to make a substitute!"))
-      return true
-    end
-    return false
-  end
-
-  def pbOnStartUse(user, targets)
-    user.pbReduceHP(@subLife, false, false)
-    user.pbItemHPHealCheck
-  end
-
-  def pbEffectGeneral(user)
-    user.effects[PBEffects::Trapping]     = 0
-    user.effects[PBEffects::TrappingMove] = nil
-    user.effects[PBEffects::Substitute]   = @subLife
-    @battle.pbDisplay(_INTL("{1} put in a substitute!", user.pbThis))
-  end
-end
-
-#===============================================================================
 # Removes trapping moves, entry hazards and Leech Seed on user/user's side.
 # Raises user's Speed by 1 stage (Gen 8+). (Rapid Spin)
 #===============================================================================
@@ -575,7 +576,11 @@ class Battle::Move::RemoveUserBindingAndEntryHazards < Battle::Move::StatUpMove
     end
     if user.pbOwnSide.effects[PBEffects::StealthRock]
       user.pbOwnSide.effects[PBEffects::StealthRock] = false
-      @battle.pbDisplay(_INTL("{1} blew away stealth rocks!", user.pbThis))
+      @battle.pbDisplay(_INTL("{1} blew away the stealth rocks!", user.pbThis))
+    end
+    if user.pbOwnSide.effects[PBEffects::IcicleRain]
+      user.pbOwnSide.effects[PBEffects::IcicleRain] = false
+      @battle.pbDisplay(_INTL("{1} blew away the ring of icicles!", user.pbThis))
     end
     if user.pbOwnSide.effects[PBEffects::Spikes] > 0
       user.pbOwnSide.effects[PBEffects::Spikes] = 0
@@ -588,6 +593,10 @@ class Battle::Move::RemoveUserBindingAndEntryHazards < Battle::Move::StatUpMove
     if user.pbOwnSide.effects[PBEffects::StickyWeb]
       user.pbOwnSide.effects[PBEffects::StickyWeb] = false
       @battle.pbDisplay(_INTL("{1} blew away sticky webs!", user.pbThis))
+    end
+    if user.pbOwnSide.effects[PBEffects::BurningGround]
+      user.pbOwnSide.effects[PBEffects::BurningGround] = false
+      @battle.pbDisplay(_INTL("{1} cooled the burning ground!", user.pbThis))
     end
   end
 
@@ -634,8 +643,21 @@ class Battle::Move::AttackTwoTurnsLater < Battle::Move
     effects[PBEffects::FutureSightUserPartyIndex] = user.pokemonIndex
     if @id == :DOOMDESIRE
       @battle.pbDisplay(_INTL("{1} chose Doom Desire as its destiny!", user.pbThis))
+    elsif @id == :BUTTERFLYEFFECT
+      @battle.pbDisplay(_INTL("{1} foresaw a massive ripple effect!", user.pbThis))
     else
       @battle.pbDisplay(_INTL("{1} foresaw an attack!", user.pbThis))
+    end
+    if user.hasActiveAbility?(:PREMONITION) 
+      @battle.pbShowAbilitySplash(self)
+      if Battle::Scene::USE_ABILITY_SPLASH
+        @battle.pbDisplay(_INTL("{1} reduced the time to the attack hits", upbThis))
+      else
+        @battle.pbDisplay(_INTL("{1}'s {2} reduced the time to the attack hits.", 
+        user.pbThis, user.abilityName))
+      end
+      effects[PBEffects::FutureSightCounter] -= 1
+      @battle.pbHideAbilitySplash(self)
     end
   end
 

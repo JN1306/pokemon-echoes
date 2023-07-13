@@ -1,5 +1,5 @@
 # File containing Loss-Handling for important Stroy Battle
 [LH,0] # Yoru - Chapter 1
 /speaker Yoru
-/expression neutral
+#/emote neutral
 > I wonderWT how our battle will go this time?

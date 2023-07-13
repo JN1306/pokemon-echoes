@@ -23,6 +23,97 @@ class Battle::Move
         @powerBoost = false
       end
     end
+    if damagingMove? && !user.effects[PBEffects::Electrify] && 
+       !@battle.field.effects[PBEffects::IonDeluge] 
+      msg = false; t_msg = 0 
+      if ret == :NORMAL
+        if user.hasActiveItem?(:VIRIDIANCRYSTAL)
+          ret == :GRASS
+          msg = "Viridian Crystal"
+          t_msg = "Grass"
+        elsif user.hasActiveItem?(:CINNABARCRYSTAL)
+          ret == :FIRE
+          msg = "Cinnabar Crystal"
+          t_msg = "Fire"
+        elsif user.hasActiveItem?(:CERULEANCRYSTAL)
+          ret == :WATER
+          msg = "Cerulean Crystal"
+          t_msg = "Water"
+        elsif user.hasActiveItem?(:GOLDENRODCRYSTAL)
+          ret == :ELECTRIC
+          msg = "Goldenrod Crystal"
+          t_msg = "Electric"
+        elsif user.hasActiveItem?(:CELADONCRYSTAL)
+          ret == :BUG
+          msg = "Celadon Crystal"
+          t_msg = "Bug"
+        elsif user.hasActiveItem?(:HICKORYCRYSTAL)
+          ret == :GROUND
+          msg = "Hickory Crystal"
+          t_msg = "Ground"
+        elsif user.hasActiveItem?(:PEWTERCRYSTAL)
+          ret == :ROCK
+          msg = "Pewter Crystal"
+          t_msg = "Rock"
+        elsif user.hasActiveItem?(:SAFFRONCRYSTAL)
+          ret == :STEEL
+          msg = "Saffron Crystal"
+          t_msg = "Steel"
+        elsif user.hasActiveItem?(:MAHOGANYCRYSTAL)
+          ret == :FIGHTING
+          msg = "Mahogany Crystal"
+          t_msg = "Fighting"
+        elsif user.hasActiveItem?(:CELESTECRYSTAL)
+          ret == :FLYING
+          msg = "Celeste Crystal"
+          t_msg = "Flying"
+        elsif user.hasActiveItem?(:FUSCHIACRYSTAL)
+          ret == :POISON
+          msg = "Fuschia Crystal"
+          t_msg = "Poison"
+        elsif user.hasActiveItem?(:TURQOUISECRYSTAL)
+          ret == :ICE
+          msg = "Turquoise Crystal"
+          t_msg = "Ice"
+        elsif user.hasActiveItem?(:MAGENTACRYSTAL)
+          ret == :FAIRY
+          msg = "Magenta Crystal"
+          t_msg = "Fairy"
+        elsif user.hasActiveItem?(:VIOLETCRYSTAL)
+          ret == :PSYCHIC
+          msg = "Violet Crystal"
+          t_msg = "Psychic"
+        elsif user.hasActiveItem?(:LAVENDERCRYSTAL)
+          ret == :GHOST
+          msg = "Lavender Crystal"
+          t_msg = "Ghost"
+        elsif user.hasActiveItem?(:BLACKTHORNCRYSTAL)
+          ret == :DARK
+          msg = "Blackthorn Crystal"
+          t_msg = "Dark"
+        elsif user.hasActiveItem?(:INDIGOCRYSTAL)
+          ret == :DRAGON
+          msg = "Indigo Crystal"
+          t_msg = "Dragon"
+        elsif user.hasActiveItem?(:TIMECRYSTAL)
+          ret == :QMARKS
+          msg = "Time Crystal"
+          t_msg = "???"
+        end
+      else
+        if user.hasActiveItem?(:CLEARCRYSTAL) 
+          ret == :NORMAL
+          msg = "Clear Crystal"
+          t_msg = "Normal"
+        end
+      end
+      if ret && msg
+        @battle.pbCommonAnimation("UseItem", user)
+        @battle.pbDisplay(_INTL("{1}'s {2} changed {3}'s type to a {4}" , 
+        user.pbThis,msg,move.name,t_msg))
+        user.pbConsumeItem
+      end
+    end
     return ret
   end
 
@@ -96,7 +187,7 @@ class Battle::Move
     return true if target.effects[PBEffects::Telekinesis] > 0
     return true if target.effects[PBEffects::Minimize] && tramplesMinimize? && Settings::MECHANICS_GENERATION >= 6
     baseAcc = pbBaseAccuracy(user, target)
-    return true if baseAcc == 0
+    return true if baseAcc == 0 && !target.hasActiveAbility(:SOULREAD)
     # Calculate all multiplier effects
     modifiers = {}
     modifiers[:base_accuracy]  = baseAcc
@@ -235,15 +326,19 @@ class Battle::Move
 
   def pbGetAttackStats(user, target)
     if specialMove?
+      return user.attack, user.stages[:ATTACK] + 6 if @battle.field.effects[PBEffects::ParadoxRoom] > 0
       return user.spatk, user.stages[:SPECIAL_ATTACK] + 6
     end
+    return user.spatk, user.stages[:SPECIAL_ATTACK] + 6 if @battle.field.effects[PBEffects::ParadoxRoom] > 0
     return user.attack, user.stages[:ATTACK] + 6
   end
 
   def pbGetDefenseStats(user, target)
     if specialMove?
+      return target.defense, target.stages[:DEFENSE] + 6 if @battle.field.effects[PBEffects::ParadoxRoom] > 0
       return target.spdef, target.stages[:SPECIAL_DEFENSE] + 6
     end
+    return target.spdef, target.stages[:SPECIAL_DEFENSE] + 6 if @battle.field.effects[PBEffects::ParadoxRoom] > 0
     return target.defense, target.stages[:DEFENSE] + 6
   end
 
@@ -385,6 +480,21 @@ class Battle::Move
       multipliers[:base_damage_multiplier] *= terrain_multiplier if type == :PSYCHIC && user.affectedByTerrain?
     when :Misty
       multipliers[:base_damage_multiplier] /= 2 if type == :DRAGON && target.affectedByTerrain?
+    when :Mystic
+      multipliers[:base_damage_multiplier] /= 2 if type == :FAIRY && target.affectedByTerrain?
+    when :Aurora
+      multipliers[:base_damage_multiplier] /= 2 if (type == :ROCK || type == :STEEL || type == :FIGHTTING || 
+      type == :FIRE) && target.affectedByTerrain?
+    when :Spirit
+      multipliers[:base_damage_multiplier] *= terrain_multiplier if type == :GHOST && user.affectedByTerrain?
+    when :Lunar
+      multipliers[:base_damage_multiplier] *= terrain_multiplier if (type == :DARK || type == :FAIRY) && 
+      user.affectedByTerrain?
+    when :Jungle
+      multipliers[:base_damage_multiplier] *= terrain_multiplier if (type == :BUG || type == :POISON) && 
+      user.affectedByTerrain?
+    when :Desert
+      multipliers[:base_damage_multiplier] *= terrain_multiplier if type == :GROUND && user.affectedByTerrain?
     end
     # Badge multipliers
     if @battle.internalBattle
@@ -447,8 +557,10 @@ class Battle::Move
       if user.hasActiveAbility?(:ADAPTABILITY)
         multipliers[:final_damage_multiplier] *= 2
       else
-        multipliers[:final_damage_multiplier] *= 1.5
+        multipliers[:final_damage_multiplier] *= 1.5 if !user.hasActiveAbility?(:COLORLESS)
       end
+    elsif user.hasActiveAbility?(:COLORLESS)
+        multipliers[:final_damage_multiplier] *= 1.2
     end
     # Type effectiveness
     multipliers[:final_damage_multiplier] *= target.damageState.typeMod.to_f / Effectiveness::NORMAL_EFFECTIVE
@@ -457,7 +569,7 @@ class Battle::Move
        !user.hasActiveAbility?(:GUTS)
       multipliers[:final_damage_multiplier] /= 2
     end
-    # Aurora Veil, Reflect, Light Screen
+    # Aurora Veil, Reflect, Light Screen, Bastion Shell
     if !ignoresReflect? && !target.damageState.critical &&
        !user.hasActiveAbility?(:INFILTRATOR)
       if target.pbOwnSide.effects[PBEffects::AuroraVeil] > 0
@@ -473,6 +585,13 @@ class Battle::Move
           multipliers[:final_damage_multiplier] /= 2
         end
       elsif target.pbOwnSide.effects[PBEffects::LightScreen] > 0 && specialMove?
+        if @battle.pbSideBattlerCount(target) > 1
+          multipliers[:final_damage_multiplier] *= 2 / 3.0
+        else
+          multipliers[:final_damage_multiplier] /= 2
+        end
+      elsif target.pbOwnSide.effects[PBEffects::BastionShell] > 0 && 
+            (move.bombMove? || move.pulseMove? || move.beamMove?)
         if @battle.pbSideBattlerCount(target) > 1
           multipliers[:final_damage_multiplier] *= 2 / 3.0
         else
@@ -497,9 +616,21 @@ class Battle::Move
     return 0 if target.hasActiveAbility?(:SHIELDDUST) && !@battle.moldBreaker
     ret = (effectChance > 0) ? effectChance : @addlEffect
     if (Settings::MECHANICS_GENERATION >= 6 || @function != "EffectDependsOnEnvironment") &&
-       (user.hasActiveAbility?(:SERENEGRACE) || user.pbOwnSide.effects[PBEffects::Rainbow] > 0)
-      ret *= 2
+       (user.hasActiveAbility?(:SERENEGRACE) || user.pbOwnSide.effects[PBEffects::Rainbow] > 0) ||
+       (user.hasActiveItem?(:SERENITYGEM))
+      ret *= 1.5
     end
+    ret *= 1.3 if user.hasActiveItem?(:MIRACLEORB) && !user.hasActiveAbility?(:SERENEGRACE)
+    if user.hasActiveItem?(:SERENITYGEM) 
+      if !user.hasActiveAbility?(:SERENEGRACE) && user.pbOwnSide.effects[PBEffects::Rainbow] == 0
+        @battle.pbCommonAnimation("UseItem", user)
+        @battle.pbDisplay(_INTL("{1}'s {2} increased the effect chance!", user.pbThis, user.itemName))
+        user.pbConsumeItem 
+      end
+    end
+    ret *= 1.3 if user.hasActiveItem?(:MIRACLEORB) && !user.hasActiveAbility?(:SERENEGRACE)
+    ret /= 2 if target.hasActiveAbility?(:THAUMATURGY)
+    ret /= 4 if user.hasActiveAbility?(:ASHURA) && punchingMove?
     ret = 100 if $DEBUG && Input.press?(Input::CTRL)
     return ret
   end
@@ -510,12 +641,15 @@ class Battle::Move
     return 0 if flinchingMove?
     return 0 if target.hasActiveAbility?(:SHIELDDUST) && !@battle.moldBreaker
     ret = 0
-    if user.hasActiveAbility?(:STENCH, true) ||
+    if user.hasActiveAbility?(:STENCH, true) || user.hasActiveAbility?(:PROWLING, true) ||
        user.hasActiveItem?([:KINGSROCK, :RAZORFANG], true)
       ret = 10
     end
-    ret *= 2 if user.hasActiveAbility?(:SERENEGRACE) ||
-                user.pbOwnSide.effects[PBEffects::Rainbow] > 0
+    ret *= 1.5 if user.hasActiveAbility?(:SERENEGRACE) ||
+                user.pbOwnSide.effects[PBEffects::Rainbow] > 0 ||
+                user.hasActiveItem?(:SERENITYGEM)
+    ret *= 1.3 if user.hasActiveItem?(:MIRACLEORB) && !user.hasActiveAbility?(:SERENEGRACE)
+    ret /= 2 if target.hasActiveAbility?(:THAUMATURGY)
     return ret
   end
 end

@@ -13,7 +13,7 @@
 /speaker Oldie
 > Now listen here young'un! Back in my day you showed respect to your elders!
 /speaker Amy
-/expression happy
+#/emote happy
 > I love it when you talk like that!
 
 [NPC_FUKURI_OUTSKIRTS,1] # Without Amy (After Picnic Cutscene)
@@ -101,18 +101,18 @@
 /if $game_player.pbHasDependentEvents?
     > [P]Amy[/] dear are you on your way too the forest again?
     /speaker Amy
-    /expression happy
+    #/emote happy
     > Yup! Going on a picnic with brother since [B]Uncle Lawrence[/] had to work today.
     /speaker Old_Woman
     > Hohoho! Is that so? 
     > I swear, that old coot works too much. He ought to take a break once in a while.
     /speaker Amy
-    /expression happy
+    #/emote happy
     > That's what I keep telling him!
     /speaker Old_Woman
     > Well, he better learn to listen to you then young lady.
     /speaker Amy
-    /expression happy
+    #/emote happy
     > Heehee!
 /else
     /if pbMainQuest(:FaimilyOuting).step==1
@@ -270,4 +270,24 @@
 > It's an important commission, so I wanna get it out on time.
 > Shouldn't take all that long really. I'll see you when it's done!
 
-
+############# Fukuri Outskirts NPCs ###################
+[NPC_MtB_Aid,0]
+/event set Aid 10
+/speaker Aid
+> Hello there! This is the entrance to the up and coming Mt.Battle challenge put together by [B]Professor Zeathus[/]
+/if $game_variables[CURRENT_CHAPTER]==2
+    /if $quests[:QUALIFICATIONTEST].at_step?(0)
+        /if pbUniquePokemonDefeated("Operator Chulon")
+            > Ah! You must be PLAYER. you can go right in, the prof is waiting for you!
+            /event Aid switch B true
+        /else
+            > Ah! You must be PLAYER. The prof told to let you in once you have beaten [Y]Chulon[/]
+            > I'll give you a hint, you better have an antidote on hand.
+        /end
+    /else
+        > I'm sorry but we are not ready to open yet. It will take a little bit to get everything ready.
+    /end
+/else
+    > Come right in a lot of exciting battles await you!
+    /event Aid switch B true
+/end 

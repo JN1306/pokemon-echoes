@@ -116,3 +116,904 @@ Pokemon = CHARIZARD,63
     Item = SITRUSBERRY
 Pokemon = BLASTOISE,63
     Item = SITRUSBERRY
+#-------------------------------
+[TAMER,Joeri]
+LoseText = ...
+Pokemon = CARNIVINE,25
+Pokemon = VILEPLUME,25
+Pokemon = DRAPION,26
+Pokemon = VICTREEBEL,26
+#-------------------------------
+[YOUNGSTER,Adam]
+Pokemon = RATTATA,3
+Pokemon = GRUBBIN,3
+#-------------------------------
+[LASS,Eve]
+Pokemon = SENTRET,3
+Pokemon = PIDGEY,3
+#-------------------------------
+[YOUNGSTER,Eduardo]
+Pokemon = TAILLOW,4
+Pokemon = ZIGZAGOON,3
+#-------------------------------
+[LASS,Eduardo]
+Pokemon = SUNKERN,4
+Pokemon = AZURILL,3
+#-------------------------------
+[PKMNTRAINER_Yoru,Yoru] # Battle 1 - Secluded Grove - Starter: Inlys - EASY
+LoseText = ...
+Pokemon = REVAGLO,5
+    Moves = SMOG,SMOKESCREEN,GROWL,HOWL
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 0,0,0,0,0,0
+Pokemon = NOCTAPHEM,7
+    Gender = female
+    Moves = FAIRYWIND,MIST,SING
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 0,0,0,0,0,0
+    Ball = MOONBALL
+#-------------------------------
+[PKMNTRAINER_Yoru,Yoru,1] # Battle 1 - Secluded Grove - Starter: Inlys - NORMAL
+LoseText = ...
+Pokemon = REVAGLO,5
+    Moves = SMOG,CHIPAWAY,HOWL,SMOKESCREEN
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 0,0,0,0,1,0
+Pokemon = NOCTAPHEM,7
+    Gender = female
+    Moves = FAIRYWIND,SPARK,MIST,SING
+    Nature = SERIOUS
+    Item = SITRUSBERRY
+    AbilityIndex = 0
+    EV = 1,0,1,0,1,0
+    Ball = MOONBALL
+#-------------------------------
+[PKMNTRAINER_Yoru,Yoru,2] # Battle 1 - Secluded Grove - Starter: Inlys - HARD
+LoseText = ...
+Pokemon = REVAGLO,5
+    Moves = SMOG,GRASSKNOT,CHIPAWAY,SMOKESCREEN
+    Nature = QUIET
+    Item = BELUEBERRY
+    AbilityIndex = 0
+    EV = 0,0,0,0,2,0
+Pokemon = NOCTAPHEM,7
+    Gender = female
+    Moves = FAIRYWIND,DRAGONBREATH,MIST,SING
+    Nature = CALM
+    Item = ORANBERRY
+    AbilityIndex = 0
+    EV = 2,0,2,0,2,0
+    Ball = MOONBALL
+#-------------------------------
+[PKMNTRAINER_Yoru,Yoru,3] # Battle 1 - Secluded Grove - Starter: Inlys - V-HARD
+LoseText = ...
+Pokemon = REVAGLO,5
+    Moves = INCINERATE,GRASSKNOT,SMOG,SMOKESCREEN
+    Nature = MODEST
+    Item = ORANBERRY
+    AbilityIndex = 0
+    EV = 3,3,3,3,3,3
+Pokemon = NOCTAPHEM,7
+    Gender = female
+    Moves = FAIRYWIND,DRAGONBREATH,MIST,SING
+    Nature = CALM
+    Item = DRAGONFANG
+    AbilityIndex = 0
+    EV = 3,3,3,3,3,3
+    Ball = MOONBALL
+#-------------------------------
+[PKMNTRAINER_Yoru,Yoru,4] # Battle 1 - Secluded Grove - Starter: Licit - EASY
+LoseText = ...
+Pokemon = KONFICE,5
+    Moves = POWDERSNOW,IMPRISON,CHARM,DISABLE
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 0,0,0,0,0,0
+Pokemon = NOCTAPHEM,7
+    Gender = female
+    Moves = FAIRYWIND,MIST,SING
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 0,0,0,0,0,0
+    Ball = MOONBALL
+#-------------------------------
+[PKMNTRAINER_Yoru,Yoru,5] # Battle 1 - Secluded Grove - Starter: Licit - NORMAL
+LoseText = ...
+Pokemon = KONFICE,5
+    Moves = POWDERSNOW,SHADOWSNEAK,IMPRISON,CHARM
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 1,0,0,0,0,0
+Pokemon = NOCTAPHEM,7
+    Gender = female
+    Moves = FAIRYWIND,SPARK,MIST,SING
+    Nature = SERIOUS
+    Item = SITRUSBERRY
+    AbilityIndex = 0
+    EV = 1,0,1,0,1,0
+    Ball = MOONBALL
+#-------------------------------
+[PKMNTRAINER_Yoru,Yoru,6] # Battle 1 - Secluded Grove - Starter: Licit - HARD
+LoseText = ...
+Pokemon = KONFICE,5
+    Moves = AURORABEAM,SHADOWSNEAK,IMPRISON,CHARM
+    Nature = RELAXED
+    Item = BRECANBERRY
+    AbilityIndex = 1
+    EV = 1,1,0,0,0,0
+Pokemon = NOCTAPHEM,7
+    Gender = female
+    Moves = FAIRYWIND,DRAGONBREATH,MIST,SING
+    Nature = CALM
+    Item = ORANBERRY
+    AbilityIndex = 0
+    EV = 2,0,2,0,2,0
+    Ball = MOONBALL
+#-------------------------------
+PKMNTRAINER_Yoru,Yoru,7] # Battle 1 - Secluded Grove - Starter: Licit - V-HARD
+LoseText = ...
+Pokemon = KONFICE,5
+    Moves = AURORABEAM,GYROBALL,AQUATAIL,PSYBEAM
+    Nature = RELAXED
+    Item = ORANBERRY
+    AbilityIndex = 2
+    EV = 3,3,3,3,3,3
+Pokemon = NOCTAPHEM,7
+    Gender = female
+    Moves = FAIRYWIND,DRAGONBREATH,MIST,SING
+    Nature = CALM
+    Item = DRAGONFANG
+    AbilityIndex = 0
+    EV = 3,3,3,3,3,3
+    Ball = MOONBALL
+#-------------------------------
+[PKMNTRAINER_Yoru,Yoru,8] # Battle 1 - Secluded Grove - Starter: Vinette - EASY
+LoseText = ...
+Pokemon = KAMALYN,5
+    Moves = SPARK,QUICKATTACK,DOUBLETEAM,AGILITY
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 0,0,0,0,0,0
+Pokemon = NOCTAPHEM,7
+    Gender = female
+    Moves = FAIRYWIND,MIST,SING
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 0,0,0,0,0,0
+    Ball = MOONBALL
+#-------------------------------
+[PKMNTRAINER_Yoru,Yoru,9] # Battle 1 - Secluded Grove - Starter: Vinette - NORMAL
+LoseText = ...
+Pokemon = KAMALYN,5
+    Moves = SPARK,QUICKATTACK,RAINDANCE,AGILITY
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 0,0,0,1,0,0
+Pokemon = NOCTAPHEM,7
+    Gender = female
+    Moves = FAIRYWIND,SPARK,MIST,SING
+    Nature = SERIOUS
+    Item = SITRUSBERRY
+    AbilityIndex = 0
+    EV = 1,0,1,0,1,0
+    Ball = MOONBALL
+#-------------------------------
+[PKMNTRAINER_Yoru,Yoru,10] # Battle 1 - Secluded Grove - Starter: Vinette - HARD
+LoseText = ...
+Pokemon = KAMALYN,5
+    Moves = SPARK,LEAFTORNADO,RAINDANCE,AGILITY
+    Nature = HASTY
+    Item = SHUCABERRY
+    AbilityIndex = 0
+    EV = 0,0,0,2,0,0
+Pokemon = NOCTAPHEM,7
+    Gender = female
+    Moves = FAIRYWIND,DRAGONBREATH,MIST,SING
+    Nature = CALM
+    Item = ORANBERRY
+    AbilityIndex = 0
+    EV = 2,0,2,0,2,0
+    Ball = MOONBALL
+#-------------------------------
+PKMNTRAINER_Yoru,Yoru,11] # Battle 1 - Secluded Grove - Starter: Vinette - V-HARD
+LoseText = ...
+Pokemon = KAMALYN,5
+    Moves = SPARK,LEAFTORNADO,ICESHARD,RAINDANCE
+    Nature = TIMID
+    Item = ORANBERRY
+    AbilityIndex = 0
+    EV = 3,3,3,3,3,3
+Pokemon = NOCTAPHEM,7
+    Gender = female
+    Moves = FAIRYWIND,DRAGONBREATH,MIST,SING
+    Nature = CALM
+    Item = DRAGONFANG
+    AbilityIndex = 0
+    EV = 3,3,3,3,3,3
+    Ball = MOONBALL
+#-------------------------------
+[YOUNGSTER,Endre] #Mt.Battle - Trainer # 1
+LoseText = ...
+Pokemon = PIDGEY,3
+    Moves = TACKLE,QUICKATTACK,TAILWHIP,FOCUSENERGY
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 0,0,0,0,0,0
+Pokemon = RATTATA,3
+    Moves = TACKLE
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 0,0,0,0,0,0
+#-------------------------------
+[LASS,Tora] #Mt.Battle - Trainer # 2
+LoseText = ...
+Pokemon = SENTRET,3
+    Moves = SCRATCH,FORESIGHT
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 0,0,0,0,0,0
+Pokemon = ELECTRIKE,4
+    Moves = TACKLE,LEER,THUNDERWAVE
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 0,0,0,0,0,0
+#-------------------------------
+[BUGCATCHER,Trevor] #Mt.Battle - Trainer # 3
+LoseText = ...
+Pokemon = BURMY,4
+    Moves = BUGBITE,PROTECT
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 0,0,0,0,0,0
+    Ball = NETBALL
+Pokemon = KRICKETOT,5
+    Moves = BIDE,GROWL
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 0,0,0,0,0,0
+    Ball = NETBALL
+#-------------------------------
+[BEAUTY,Firenze] #Mt.Battle - Trainer # 4
+LoseText = ...
+Pokemon = TAILLOW,5
+    Moves = PECK,GROWL,FOCUSENERGY
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 0,0,0,0,0,0
+    Ball = GREATBALL
+Pokemon = CUTIEFLY,5
+    Gender = female
+    Moves = FAIRYWIND,COVET,SWEETKISS,POWDER
+    Nature = SERIOUS
+    AbilityIndex = 1
+    EV = 0,0,0,0,0,0
+    Ball = NETBALL
+#-------------------------------
+[ACETRAINER_F,Femme] #Mt.Battle - Trainer # 5
+LoseText = ...
+Pokemon = ROOKIDEE,6
+    Moves = PECK,POWERTRIP,WORKUP,GROWL
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 0,3,0,0,0,0
+Pokemon = KOMALA,8
+    Gender = male
+    Moves = ROLLOUT,STOCKPILE,SPITUP,SWALLOW
+    Nature = SERIOUS
+    Item = ORANBERRY
+    AbilityIndex = 0
+    EV = 3,2,0,0,1,1
+    Ball = GREATBALL
+#-------------------------------
+[SUPERNERD,Seistre] #Mt.Battle - Trainer # 6
+LoseText = ...
+Pokemon = TOXEL,7
+    Moves = NUZZLE,FLAIL,GROWL,TEARFULLOOK
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 0,0,0,0,2,0
+Pokemon = GRIMER,7
+    Moves = POUND,MUDSLAP,HARDEN,POISONGAS
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 0,0,0,0,2,0
+#-------------------------------
+[YOUNGSTER,Sjur] #Mt.Battle - Trainer # 7
+LoseText = ...
+Pokemon = NIDORANfE,7
+    Moves = POISONSTING,FURYSWIPES,TAILWHIP,LOVELYKISS
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 2,0,1,0,0,0
+Pokemon = SLUGMA,8
+    Moves = EMBER,ROCKTHROW,SMOG,YAWN
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 0,3,0,0,0,0
+#-------------------------------
+[ENGINEER,Otto] #Mt.Battle - Trainer # 8
+LoseText = ...
+Pokemon = BLIPBUG,8
+    Moves = STRUGGLEBUG
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 1,0,0,0,3,0
+    Ball = NETBALL
+Pokemon = MAREEP,8
+    Moves = TACKLE,THUNDERSHOCK,GROWL,THUNDERWAVE
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 0,0,1,1,1,1
+    Ball = STORMBALL
+#-------------------------------
+[CRUSHGIRL,Nicole] #Mt.Battle - Trainer # 9
+LoseText = ...
+Pokemon = MANKEY,8
+    Moves = KARATECHOP,SCRATCH,TAUNT,FOCUSENERGY
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 0,3,0,2,0,0
+Pokemon = MACHOP,9
+    Moves = KARATECHOP,LOWSWEEP,FORESIGHT,FOCUSENERGY
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 0,2,0,3,0,0
+    Ball = GREATBALL
+#-------------------------------
+[AREALEADER_TIFFANY,Tiffany] #Mt.Battle - Area Leader 1
+LoseText = ...
+Pokemon = BIDOOF,9
+    Gender = female
+    Moves = HEADBUTT,QUICKATTACK,SUPERFANG,SWORDSDANCE
+    Nature = ADAMANT
+    Item = SITRUSBERRY
+    AbilityIndex = 0
+    EV = 5,5,5,4,4,3
+    Ball = PREMIERBALL
+Pokemon = PIKIPEK,9
+    Gender = male
+    Moves = PECK,UPROAR,ROCKSMASH,BULLETSEED
+    Nature = JOLLY
+    Item = SHARPBEAK
+    AbilityIndex = 1
+    EV = 3,7,8,3,3,3
+    Ball = PREMIERBALL
+Pokemon = SKITTY,9
+    Gender = female
+    Moves = UPROAR,MUDBOMB,CHARGEBEAM,WATERPULSE
+    Nature = MODEST
+    Item = SILKSCARF
+    AbilityIndex = 1
+    EV = 6,4,4,4,6,4
+    Ball = PREMIERBALL
+Pokemon = GOPHIEL,10
+     Moves = FACADE,PSYWAVE,SHADOWPUNCH,REVENGE
+    Item = ORANBERRY
+    AbilityIndex = 0
+    EV = 7,10,3,3,3,3
+    Ball = VISIONBALL
+Pokemon = TRANSLUCEON,10
+    Gender = female
+    Moves = AQUAFANG,THUNDERFANG,ICEFANG,FIREFANG
+    Nature = ADAMANT
+    Item = MUSCLEBAND
+    AbilityIndex = 2
+    EV = 7,7,3,6,3,3
+    Ball = VISIONBALL
+#-------------------------------
+[YOUNGSTER,Freddie] #Mt.Battle - Trainer # 11
+LoseText = ...
+Pokemon = LILLIPUP,10
+    Moves = TACKLE,BITE,ODORSLEUTH,BABYDOLLEYES
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 0,0,0,0,0,0
+Pokemon = FLABEBE,10
+    Moves = TACKLE,VINEWHIP,FAIRYWIND,LUCKYCHANT
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 0,0,0,0,0,0
+Pokemon = YAMPER,10
+    Moves = NUZZLE,BITE,TACKLE,TAILWHIP
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 0,0,0,0,0,0
+    Ball = QUICKBALL
+#-------------------------------
+[HIKER,Isaac] #Mt.Battle - Trainer # 12
+LoseText = ...
+Pokemon = MAKUHITA,10
+    Moves = ARMTHRUST,FAKEOUT,TACKLE,SANDATTACK
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 0,0,0,0,0,0
+    Ball = GREATBALL
+Pokemon = WOOLOO,10
+    Moves = COVET,DEFENSECURL,PLAYNICE,COPYCAT
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 0,0,0,0,0,0
+    Ball = LUXURYBALL
+Pokemon = GEODUDE,11
+    Moves = ROCKTHROW,ROLLOUT,MAGNITUDE,ROCKPOLISH
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 0,0,0,0,0,0
+    Ball = GREATBALL
+#-------------------------------
+[PSYCHIC_M,Nemu] #Mt.Battle - Trainer # 13
+LoseText = ...
+Pokemon = MUNNA,11
+    Moves = PSYBEAM,PSYWAVE,YAWN,LUCKYCHANT
+    Nature = SERIOUS
+    AbilityIndex = 1
+    EV = 0,0,0,0,1,0
+    Ball = DREAMBALL
+Pokemon = RALTS,11
+    Moves = DISARMINGVOICE,CONFUSION
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 0,0,0,0,1,0
+    Ball = DREAMBALL
+Pokemon = SLOWPOKE,12
+    Moves = TACKLE,WATERGUN,YAWN,GROWL
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 0,0,0,0,0,1
+    Ball = DREAMBALL
+#-------------------------------
+[POKEMONBREEDER,Gemma] #Mt.Battle - Trainer # 14
+LoseText = ...
+Pokemon = PANSAGE,12
+    Moves = VINEWHIP,LICK,LEER,PLAYNICE
+    Gender = female
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 2,0,0,0,0,0
+Pokemon = PANSEAR,12
+    Moves = INCINERATE,LICK,LEER,PLAYNICE
+    Gender = female
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 2,0,0,0,0,0
+Pokemon = PANPOUR,12
+    Moves = WATERGUN,LICK,LEER,PLAYNICE
+    Gender = female
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 2,0,0,0,0,0
+#-------------------------------
+[ACETRAINER_M,Hjalmar] #Mt.Battle - Trainer # 15
+LoseText = ...
+Pokemon = BULBASAUR,12
+    Moves = VINEWHIP,POISONPOWDER,STUNSPORE,SLEEPPOWDER
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 2,0,0,0,0,2
+    Ball = GREATBALL
+Pokemon = PIPLUP,12
+    Moves = BUBBLE,POUND,GROWL,WATERSPORT
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 3,0,0,0,2,0
+    Ball = GREATBALL
+Pokemon = STANTLER,15
+    Moves = STOMP,ASTONISH,HYPNOSIS,LEER
+    Gender = female
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 3,3,0,0,0,1
+    Ball = ULTRABALL
+#-------------------------------
+[FISHERMAN,George] #Mt.Battle - Trainer # 16
+LoseText = ...
+Pokemon = TENTACOOL,13
+    Moves = WATERPULSE,WRAP,ACID,SUPERSONIC
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 0,0,0,0,0,3
+Pokemon = POLIWAG,14
+    Moves = BUBBLE,DOUBLESLAP,SOAK,RAINDANCE
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 1,0,1,0,0,1
+Pokemon = SHELLDER,14
+    Moves = ICICLESPEAR,SCREECH,LEER,PROTECT
+    Nature = SERIOUS
+    AbilityIndex = 1
+    EV = 0,0,3,0,0,0
+#-------------------------------
+[BURGLAR,Stanley] #Mt.Battle - Trainer # 17
+LoseText = ...
+Pokemon = PURRLOIN,14
+    Moves = FURYSWIPES,ASSIST,GROWL,SANDATTACK
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 2,0,0,2,0,0
+    Ball = GAMBLEBALL
+Pokemon = SNEASEL,14
+    Moves = FEINTATTACK,ICYWIND,QUICKATTACK,TAUNT
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 0,2,0,2,0,0
+    Ball = GAMBLEBALL
+Pokemon = NICKIT,14
+    Moves = BEATUP,SNARL,TAUNT,HONECLAWS
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 1,0,0,3,0,0
+    Ball = GAMBLEBALL
+#-------------------------------
+[CAMPER,Carl] #Mt.Battle - Trainer # 18
+LoseText = ...
+Pokemon = PONYTA,14
+    Moves = FLAMEWHEEL,STOMP,TAILWHIP,EMBER
+    Nature = SERIOUS
+    AbilityIndex = 1
+    EV = 2,2,0,0,0,0
+Pokemon = SKWOVET,15
+    Moves = DIG,SPITUP,SWALLOW,STOCKPILE
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 3,0,1,0,0,0
+Pokemon = GRUBBIN,15
+    Moves = BUGBITE,BITE,HARDEN,STRINGSHOT
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 1,1,1,1,0,0
+#-------------------------------
+[PV_RUINMANIAC,Velaph] #Mt.Battle - Trainer # 19?
+LoseText = ...
+Pokemon = ONIX,15
+    Moves = SMACKDOWN,BIND,CURSE,HARDEN
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 0,2,3,0,0,0
+Pokemon = ALCHENT,15
+    Moves = METALFANGS,POISONFANG,COIL,IRONDEFENSE
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 0,3,0,2,0,0
+    Name = "???"
+    #Ball = SOLARBALL
+#Add Albeem
+#-------------------------------
+[FISHERMAN,Andrew] #Mt.Battle - Trainer # 19
+LoseText = ...
+Pokemon = WOOPER,15
+    Moves = MUDSHOT,WATERGUN,MUDSPORT,TAILWHIP
+    Nature = SERIOUS
+    AbilityIndex = 1
+    EV = 3,0,0,0,0,2
+    Ball = DIVEBALL
+Pokemon = LOTAD,15
+    Moves = MEGADRAIN,BUBBLEBEAM,ASTONISH,GROWL
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 1,0,2,0,0,2
+    Ball = NETBALL
+Pokemon = CHINCHOU,15
+    Moves = ELECTROBALL,BUBBLEBEAM,CONFUSERAY,THUNDERWAVE
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 3,0,0,0,2,0
+    Ball = NETBALL
+#-------------------------------
+[AREALEADER_SARAH,Sarah] #Mt.Battle - Area Leader 2
+LoseText = ...
+Pokemon = HIPPOPOTAS,15
+    Gender = male
+    Moves = DIG,BITE,STEALTHROCK,ROAR
+    Nature = ADAMANT
+    Item = SMOOTHROCK
+    AbilityIndex = 0
+    EV = 8,4,4,3,3,4
+    Ball = INDUSTRYBALL
+Pokemon = SANDSHREW,16
+    Gender = female
+    Moves = MAGNITUDE,ROLLOUT,FURYCUTTER,DEFENSECURL
+    Nature = ADAMANT
+    Item = METRONOME
+    AbilityIndex = 2
+    EV = 3,5,10,3,3,3
+    Ball = INDUSTRYBALL
+Pokemon = GLIGAR,15
+    Gender = female
+    Moves = BULLDOZE,AERIALACE,POISONTAIL,SWORDSDANCE
+    Nature = IMPISH
+    Item = FLYINGGEM
+    AbilityIndex = 0
+    EV = 3,3,7,7,3,5
+    Ball = INDUSTRYBALL
+Pokemon = RIDDLING,16
+    Gender = female
+    Moves = SANDTOMB,VENOSHOCK,NATURALGIFT,TOXIC
+    Nature = BOLD
+    Item = WEPEARBERRY
+    AbilityIndex = 0
+    EV = 7,3,5,3,7,4
+    Ball = HAZARDBALL
+Pokemon = ANTIQUEON,17
+    Gender = male
+    Moves = BONERUSH,BITE,INCINERATE,SANDATTACK
+    Nature = NAUGHTY
+    Item = PASSHOBERRY
+    AbilityIndex = 0
+    EV = 3,5,3,10,5,3
+    Ball = INDUSTRYBALL
+#-------------------------------
+[PICNICKER,Alma] #Mt.Battle - Trainer # 21
+LoseText = ...
+Pokemon = LITTEN,16
+    Moves = FIREFANG,LICK,LEER,GROWL
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 0,1,0,0,0,0
+Pokemon = ROWLET,16
+    Moves = ASTONISH,RAZORLEAF,PLUCK,GROWL
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 0,0,0,0,0,1
+Pokemon = POPPLIO,16
+    Moves = WATERGUN,DISARMINGVOICE,POUND,GROWL
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 0,0,0,0,1,0
+#-------------------------------
+[YOUNGSTER,Fred] #Mt.Battle - Trainer # 22
+LoseText = ...
+Pokemon = VULLABY,16
+    Moves = GUST,FURYATTACK,LEER,NASTYPLOT
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 0,0,0,0,0,2
+Pokemon = CHESPIN,16
+    Moves = VINEWHIP,BITE,ROLLOUT,GROWL
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 0,2,0,0,0,0
+Pokemon = TEPIG,16
+    Moves = FLAMECHARGE,ODORSLEUTH,DEFENSECURL,TAILWHIP
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 1,0,1,0,0,0
+#-------------------------------
+[YOUNGSTER,Frank] #Mt.Battle - Trainer # 23
+LoseText = ...
+Pokemon = RUFFLET,17
+    Moves = FURYATTACK,WINGATTACK,HONECLAWS,LEER
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 1,2,0,0,0,0
+Pokemon = FENNEKIN,17
+    Moves = FLAMECHARGE,PSYBEAM,HOWL,TAILWHIP
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 0,0,0,1,2,0
+Pokemon = SNIVY,17
+    Moves = VINEWHIP,WRAP,LEER,GROWTH
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 0,0,0,3,0,0
+#-------------------------------
+[BUGCATCHER,Mathew] #Mt.Battle - Trainer # 24
+LoseText = ...
+Pokemon = VENONAT,17
+    Moves = PSYBEAM,STUNSPORE,DISABLE,SUPERSONIC
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 1,0,2,0,0,1
+Pokemon = LARVESTA,17
+    Moves = EMBER,ABSORB,TAKEDOWN,STRINGSHOT
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 0,1,0,0,3,0
+Pokemon = VIVILLON,18
+    Moves = PSYBEAM,GUST,HARDEN,ROOST
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 1,0,0,0,3,0
+#-------------------------------
+[ACETRAINER_F,Akane] #Mt.Battle - Trainer # 25
+LoseText = ...
+Pokemon = CLEFAIRY,18
+    Moves = DRAININGKISS,DOUBLESLAP,DEFENSECURL,SING
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 2,2,4,2,2,4
+    Ball = GREATBALL
+Pokemon = MILTANK,20
+    Moves = ROLLOUT,STOMP,DEFENSECURL,MILKDRINK
+    Nature = SERIOUS
+    Item = METRONOME
+    AbilityIndex = 0
+    EV = 2,8,2,5,2,2
+    Ball = ULTRABALL
+#-------------------------------
+[YOUNGSTER,Lee] #Mt.Battle - Trainer # 26
+LoseText = ...
+Pokemon = WHISMUR,18
+    Moves = ECHOEDVOICE,EXTRASENSORY,SUPERSONIC,SCREECH
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 1,1,1,1,1,1
+Pokemon = ZORUA,18
+    Moves = FEINTATTACK,FURYSWIPES,HOWL,SWAGGER
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 1,1,1,1,1,1
+Pokemon = MORELULL,18
+    Moves = MEGADRAIN,STUNSPORE,GROWTH,MOONLIGHT
+    Nature = SERIOUS
+    Item = KEBIABERRY
+    AbilityIndex = 1
+    EV = 1,1,1,1,1,1
+Pokemon = SCORBUNNY,19
+    Moves = FLAMECHARGE,DOUBLEKICK,QUICKATTACK,AGILITY
+    Nature = SERIOUS
+    Item = METRONOME
+    AbilityIndex = 0
+    EV = 1,1,1,1,1,1
+#-------------------------------
+[JUGGLER,Robert] #Mt.Battle - Trainer # 27
+LoseText = ...
+Pokemon = SPINARAK,19
+    Moves = INFESTATION,SCARYFACE,NIGHTSHADE,SHADOWSNEAK,
+    Nature = SERIOUS
+    Item = GHOSTGEM
+    AbilityIndex = 1
+    EV = 1,2,1,2,1,2
+Pokemon = ESPURR,19
+    Moves = FEINTATTACK,FURYSWIPES,HOWL,SWAGGER
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 1,1,1,1,3,2
+Pokemon = VOLTORB,20
+    Moves = MEGADRAIN,STUNSPORE,GROWTH,MOONLIGHT
+    Nature = SERIOUS
+    AbilityIndex = 1
+    EV = 2,1,1,2,2,1
+#-------------------------------
+[BIRDKEEPER,Drinian] #Mt.Battle - Trainer # 28
+LoseText = ...
+Pokemon = PIDGEOTTO,19
+    Moves = GUST,MUDSLAP,WHIRLWIND,SANDATTACK
+    Nature = SERIOUS
+    AbilityIndex = 1
+    EV = 1,3,1,3,1,1
+Pokemon = WINGULL,20
+    Moves = WINGATTACK,WATERPULSE,QUICKATTACK,MIST
+    Nature = SERIOUS
+    Item = WACANBERRY
+    AbilityIndex = 0
+    EV = 1,1,1,3,2,2
+Pokemon = VOLTORB,21
+    Moves = STOREDPOWER,OMINOUSWIND,NIGHTSHADE,CALMMIND
+    Nature = SERIOUS
+    AbilityIndex = 1
+    EV = 1,1,1,1,3,3
+    Ball = STORMBALL
+#-------------------------------
+[POKEMONRANGER_M,Melvin] #Mt.Battle - Trainer # 29
+LoseText = ...
+Pokemon = SOBBLE,21
+    Moves = WATERPULSE,BIND,TEARFULLOOK,CAMOUFLAGE
+    Nature = SERIOUS
+    AbilityIndex = 0
+    EV = 2,2,2,2,2,2
+    Ball = DIVEBALL
+Pokemon = HELIOPTILE,21
+    Moves = ELECTROWEB,MUDSLAP,QUICKATTACK,CHARGE
+    Nature = SERIOUS
+    Item = WACANBERRY
+    AbilityIndex = 0
+    EV = 2,2,2,2,2,2
+    Ball = STORMBALL
+Pokemon = TRAPINCH,21
+    Moves = DIG,CRUNCH,ROCKSLIDE,BUGBITE
+    Nature = SERIOUS
+    AbilityIndex = 1
+    EV = 2,2,2,2,2,2
+    Ball = HUNTINGBALL
+#-------------------------------
+[AREALEADER_FLEMMING,Flemming] #Mt.Battle - Area Leader 3
+LoseText = ...
+Pokemon = DIGLETT,22
+    Gender = female
+    Moves = MUDSHOT,BEATUP,REVERSAL,SCREECH
+    Nature = JOLLY
+    Item = PASSHOBERRY
+    AbilityIndex = 0
+    EV = 3,4,3,10,3,3
+    Ball = GREATBALL
+Pokemon = GROWLITHE,23
+    Gender = female
+    Moves = FIREFANG,THUNDERFANG,BITE,TAKEDOWN
+    Nature = JOLLY
+    Item = MUSCLEBAND
+    AbilityIndex = 2
+    EV = 3,10,5,3,3,3
+    Ball = SOLARBALL
+Pokemon = ROLYCOLY,23
+    Gender = male
+    Moves = FLAMECHARGE,METEORBEAM,RAPIDSPIN,ROCKPOLISH
+    Nature = CAREFUL
+    Item = EVIOLITE
+    AbilityIndex = 0
+    EV = 5,5,5,4,4,5
+    Ball = INDUSTRYBALL
+Pokemon = CYILARD,24
+    Gender = male
+    Moves = ANCIENTPOWER,SHININGBREATH,CHARGEBEAM,ROCKPOLISH
+    Nature = QUIET
+    #Item = SERENITYGEM
+    AbilityIndex = 0
+    EV = 3,3,6,3,7,7
+    Ball = CRYSTALBALL
+Pokemon = ADAMANTEON,24
+    Gender = male
+    Moves = ROCKBLAST,HEAVYSLAM,THUNDERFANG,WORKUP
+    Nature = ADAMANT
+    Item = ROCKGEM
+    AbilityIndex = 1
+    EV = 3,8,6,3,3,6
+    Ball = ULTRABALL
+#-------------------------------
+[MTB_MASTER,Zeathus] #Mt.Battle - Trainer # 100
+LoseText = ...
+Pokemon = RIBOMBEE,75
+    Gender = female
+    Moves = POLLENPUFF,STICKYWEB,LIGHTSCREEN,REFLECT
+    Nature = TIMID
+    Item = LIGHTCLAY
+    AbilityIndex = 1
+    IV = 31,31,31,31,31,31
+    EV = 252,0,4,252,0,0
+Pokemon = VOLCARONA,75
+    Gender = male
+    Moves = BUGBUZZ,HEATWAVE,GIGADRAIN,QUIVERDANCE
+    Nature = TIMID
+    Item = CHARTIBERRY
+    AbilityIndex = 0
+    IV = 31,31,31,31,31,31
+    EV = 4,0,0,252,252,0
+Pokemon = LUXRAY,75
+    Gender = female
+    Moves = WILDCHARGE,SUPERPOWER,VOLTSWITCH,THUNDERWAVE
+    Item = SITRUSBERRY
+    Nature = ADAMANT
+    AbilityIndex = 1
+    IV = 31,31,31,31,31,31
+    EV = 252,252,4,0,0,0
+    Ball = PREMIERBALL
+Pokemon = ALAKAZAM,75
+    Gender = male
+    Moves = PSYSHOCK,SHADOWBALL,FOCUSBLAST,PROTECT
+    Item = LIFEORB
+    Nature = ADAMANT
+    AbilityIndex = 2
+    IV = 31,31,31,31,31,31
+    EV = 4,0,0,252,252,0
+    Ball = PREMIERBALL
+Pokemon = WEAVILE,75
+    Gender = female
+    Moves = ICICLECRASH,THROATCHOP,LOWKICK,ICESHARD
+    Item = FOCUSSASH
+    Nature = ADAMANT
+    AbilityIndex = 0
+    IV = 31,31,31,31,31,31
+    EV = 4,252,0,252,0,0
+Pokemon = BRONZONG,75
+    Moves = PSYCHIC,BODYPRESS,REFLECT,LIGHTSCREEN
+    Item = LEFTOVERS
+    Nature = BOLD
+    AbilityIndex = 2
+    IV = 31,31,31,31,31,31
+    EV = 252,0,4,0,0,252
+#-------------------------------
+
+
+

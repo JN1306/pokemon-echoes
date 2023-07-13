@@ -27,6 +27,9 @@ class Battle
     if user.abilityActive?
       pri = Battle::AbilityEffects.triggerPriorityChange(user.ability, user, move, pri)
     end
+    if user.itemActive?
+      pri = Battle::ItemEffects.triggerPriorityChange(user.item, user, self, move, pri)
+    end
     return pri
   end
 
@@ -169,6 +172,8 @@ class Battle
       :MagicRoom,
       :WonderRoom,
       :TrickRoom,
+      :ParadoxRoom,
+      :DivideByZero,
       :WaterSportField,
       :MudSportField
     ]

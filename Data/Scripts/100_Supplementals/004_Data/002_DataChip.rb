@@ -1,55 +1,48 @@
 def pbAllDataChipMoves
   moves = [
-    [:WORKUP,1],
-    [:AERIALACE,1],
-    [:SHOCKWAVE,1],
-    [:MAGICALLEAF,1],
-    [:FORESIGHT,1],
-    [:ANCIENTPOWER,2],
-    [:HELPINGHAND,2],
-    [:ROUND,2],
-    [:THIEF,2],
-    [:CURSE,2],
-    [:PSYCHUP,2],
-    [:FLY,3],
-    [:STRENGTH,3],
-    [:THERMODYNAMICS,3],
-    [:STEALTHROCK,3],
-    [:SEISMICTOSS,3],
-    [:SUBSTITUTE,4]
+    [:HELPINGHAND,1],
   ]
-
-  if $bag.quantity(:DATARECOVERYDEVICE)>0
+  if $game_variables[CURRENT_CHAPTER] > 1
+    # General Moves
     moves += [
-      [:ROOST,3],
-      [:TERRAINPULSE,3],
-      [:WEATHERBALL,3],
-      [:FUTURESIGHT,3],
-      [:BOUNCE,3],
-      [:FREEZEDRY,4],
-      [:LIQUIDATION,4],
-      [:PLAYROUGH,4],
-      [:GIGADRAIN,4],
-      [:DYNAMICPUNCH,5],
-      [:PERMAFROST,5],
-      [:INFERNO,5],
-      [:ZAPCANNON,5]
+      [PBMoves::HAZE,1],
+      [PBMoves::MUDSLAP,1],
+      [PBMoves::MEGADRAIN,1],
+      [PBMoves::SELFDESTRUCT,1],
+      [PBMoves::SNATCH,1],
+      [PBMoves::STRINGSHOT,1]
     ]
+    # Esper Disc
+    if $bag.quantity(:ESPERDISC)>0
+      moves += [
+        [PBMoves::MEDITATE,1],
+        [PBMoves::TELEKINESIS,1]
+      ]
+    end
   end
-
-  if $bag.quantity(:DATARECOVERYDEVICEV2)>0
+  if $game_variables[CURRENT_CHAPTER] > 2
+  # General Moves
     moves += [
-      [:BODYPRESS,4],
-      [:EXPLOSION,4],
-      [:FLAREBLITZ,5],
-      [:HURRICANE,5],
-      [:MEGAHORN,5],
-      [:DRACOMETEOR,5],
-      [:SKYATTACK,5],
-      [:METRONOME,8]  
+    [PBMoves::ACUPRESSURE,2],
+    [PBMoves::ENDEAVOR,2],
+    [PBMoves::ENDURE,2],
+    [PBMoves::ICYWIND,2],
+    [PBMoves::NATURALGIFT,2],
+    [PBMoves::PAYDAY,2],
+    [PBMoves::SANDATTACK,2],
+    [PBMoves::TAKEDOWN,2],
     ]
+    # Psychic Disc
+    if $bag.quantity(:ESPERDISC)>0
+      moves += [
+      [PBMoves::DISABLE,2],
+      [PBMoves::GUARDSPLIT,2],
+      [PBMoves::GUARDSWAP,2],
+      [PBMoves::POWERSPLIT,2],
+      [PBMoves::SPEEDSWAP,2],
+      ]
+    end
   end
-
   return moves
 end
 

@@ -212,6 +212,7 @@ GameData::Evolution.register({
   }
 })
 
+
 GameData::Evolution.register({
   :id            => :AttackGreater,   # Hitmonlee
   :parameter     => Integer,
@@ -349,6 +350,14 @@ GameData::Evolution.register({
 })
 
 GameData::Evolution.register({
+  :id            => :HappinessRegional,
+  :minimum_level => 1,   # Needs any level up
+  :level_up_proc => proc { |pkmn, parameter|
+    next pkmn.form == 1 && pkmn.happiness >= (Settings::APPLY_HAPPINESS_SOFT_CAP ? 160 : 220)
+  }
+})
+
+GameData::Evolution.register({
   :id            => :MaxHappiness,
   :minimum_level => 1,   # Needs any level up
   :level_up_proc => proc { |pkmn, parameter|
@@ -448,6 +457,8 @@ GameData::Evolution.register({
     next true
   }
 })
+
+
 
 GameData::Evolution.register({
   :id            => :HasMove,
@@ -622,6 +633,17 @@ GameData::Evolution.register({
   :parameter         => Integer,
   :after_battle_proc => proc { |pkmn, party_index, parameter|
     next $game_temp.party_critical_hits_dealt &&
+         $game_temp.party_critical_hits_dealt[party_index] &&
+         $game_temp.party_critical_hits_dealt[party_index] >= parameter
+  }
+})
+
+GameData::Evolution.register({
+  :id                => :BattleDealCriticalHitRegional,
+  :parameter         => Integer,
+  :after_battle_proc => proc { |pkmn, party_index, parameter|
+    next pokemon.form == 1 &&
+         $game_temp.party_critical_hits_dealt &&
          $game_temp.party_critical_hits_dealt[party_index] &&
          $game_temp.party_critical_hits_dealt[party_index] >= parameter
   }

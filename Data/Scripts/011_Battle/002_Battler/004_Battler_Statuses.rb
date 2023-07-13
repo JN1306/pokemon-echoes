@@ -89,6 +89,9 @@ class Battle::Battler
         hasImmuneType |= pbHasType?(:POISON)
         hasImmuneType |= pbHasType?(:STEEL)
       end
+      if @battle.field.terrain != :Jungle
+        hasImmuneType |= pbHasType?(:STEEL)
+      end
     when :BURN
       hasImmuneType |= pbHasType?(:FIRE)
     when :PARALYSIS
@@ -184,6 +187,9 @@ class Battle::Battler
       # NOTE: target will have Synchronize, so it can't have Corrosion.
       if !(target && target.hasActiveAbility?(:CORROSION))
         hasImmuneType |= pbHasType?(:POISON)
+        hasImmuneType |= pbHasType?(:STEEL)
+      end
+      if @battle.field.terrain != :Jungle
         hasImmuneType |= pbHasType?(:STEEL)
       end
     when :BURN
