@@ -458,7 +458,7 @@ Battle::AbilityEffects::StatusImmunity.add(:LIMBER,
 
 Battle::AbilityEffects::StatusImmunity.add(:MAGMAARMOR,
   proc { |ability, battler, status|
-    next true if status == :FROZEN
+    next true if status == :FROZEN || status == :FROSTBITE
   }
 )
 
@@ -517,7 +517,7 @@ Battle::AbilityEffects::OnStatusInflicted.add(:SYNCHRONIZE,
         if !Battle::Scene::USE_ABILITY_SPLASH
           msg = _INTL("{1}'s {2} poisoned {3}!", battler.pbThis, battler.abilityName, user.pbThis(true))
         end
-        user.pbPoison(nil, msg, (battler.statusCount > 0))
+        user.pbPoison(nil, msg, (battler.statusCount < 0))
         battler.battle.pbHideAbilitySplash(battler)
       end
     when :BURN
@@ -539,6 +539,16 @@ Battle::AbilityEffects::OnStatusInflicted.add(:SYNCHRONIZE,
              battler.pbThis, battler.abilityName, user.pbThis(true))
         end
         user.pbParalyze(nil, msg)
+        battler.battle.pbHideAbilitySplash(battler)
+      end
+    when :FROSTBITE
+      if user.pbCanFrostbiteSynchronize?(battler)
+        battler.battle.pbShowAbilitySplash(battler)
+        msg = nil
+        if !Battle::Scene::USE_ABILITY_SPLASH
+          msg = _INTL("{1}'s {2} inflicted {3} with frostbite!", battler.pbThis, battler.abilityName, user.pbThis(true))
+        end
+        user.pbFrostbite(nil, msg)
         battler.battle.pbHideAbilitySplash(battler)
       end
     end
@@ -589,7 +599,7 @@ Battle::AbilityEffects::StatusCure.add(:LIMBER,
 
 Battle::AbilityEffects::StatusCure.add(:MAGMAARMOR,
   proc { |ability, battler|
-    next if battler.status != :FROZEN
+    next if battler.status != :FROZEN && battler.status != :FROSTBITE
     battler.battle.pbShowAbilitySplash(battler)
     battler.pbCureStatus(Battle::Scene::USE_ABILITY_SPLASH)
     if !Battle::Scene::USE_ABILITY_SPLASH
@@ -916,7 +926,7 @@ Battle::AbilityEffects::MoveImmunity.add(:FLASHFIRE,
   proc { |ability, user, target, move, type, battle, show_message|
     next false if user.index == target.index
     next false if type != :FIRE
-    return true if battle.predictingDamage
+    next true if battle.predictingDamage
     if show_message
       battle.pbShowAbilitySplash(target)
       if !target.effects[PBEffects::FlashFire]
@@ -2367,6 +2377,8 @@ Battle::AbilityEffects::EndOfRoundHealing.add(:HEALER,
           battle.pbDisplay(_INTL("{1}'s {2} cured its partner's paralysis!", battler.pbThis, battler.abilityName))
         when :FROZEN
           battle.pbDisplay(_INTL("{1}'s {2} defrosted its partner!", battler.pbThis, battler.abilityName))
+        when :FROSTBITE
+          battle.pbDisplay(_INTL("{1}'s {2} healed its partner's frostbite!", battler.pbThis, battler.abilityName))
         end
       end
       battle.pbHideAbilitySplash(battler)
@@ -2393,6 +2405,8 @@ Battle::AbilityEffects::EndOfRoundHealing.add(:HYDRATION,
         battle.pbDisplay(_INTL("{1}'s {2} cured its paralysis!", battler.pbThis, battler.abilityName))
       when :FROZEN
         battle.pbDisplay(_INTL("{1}'s {2} defrosted it!", battler.pbThis, battler.abilityName))
+      when :FROSTBITe
+        battle.pbDisplay(_INTL("{1}'s {2} healed its frostbite!", battler.pbThis, battler.abilityName))
       end
     end
     battle.pbHideAbilitySplash(battler)
@@ -2418,6 +2432,8 @@ Battle::AbilityEffects::EndOfRoundHealing.add(:SHEDSKIN,
         battle.pbDisplay(_INTL("{1}'s {2} cured its paralysis!", battler.pbThis, battler.abilityName))
       when :FROZEN
         battle.pbDisplay(_INTL("{1}'s {2} defrosted it!", battler.pbThis, battler.abilityName))
+      when :FROSTBITE
+        battle.pbDisplay(_INTL("{1}'s {2} healed its frostbite!", battler.pbThis, battler.abilityName))
       end
     end
     battle.pbHideAbilitySplash(battler)
@@ -3112,7 +3128,7 @@ Battle::AbilityEffects::OnSwitchOut.add(:LIMBER,
 
 Battle::AbilityEffects::OnSwitchOut.add(:MAGMAARMOR,
   proc { |ability, battler, endOfBattle|
-    next if battler.status != :FROZEN
+    next if battler.status != :FROZEN && battler.status != :FROSTBITE
     PBDebug.log("[Ability triggered] #{battler.pbThis}'s #{battler.abilityName}")
     battler.status = :NONE
   }

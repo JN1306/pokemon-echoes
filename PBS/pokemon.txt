@@ -3074,7 +3074,7 @@ Color = Pink
 Shape = MultiBody
 Habitat = Forest
 Category = Egg Cluster
-Pokedex = No one really knows how the six individual Exeggcute form one complete Pokémon. Some believe it to be telepathy. After the discovery of Falinks, debate has become fierce.
+Pokedex = No one really knows how the six individual Exeggcute form one complete Pokï¿½mon. Some believe it to be telepathy. After the discovery of Falinks, debate has become fierce.
 Generation = 1
 WildItemUncommon = PSYCHICSEED
 WildItemRare = LUCKYEGG
@@ -4522,7 +4522,7 @@ Color = Pink
 Shape = BipedalTail
 Habitat = Rare
 Category = New Species
-Pokedex = A Mew is said to possess the genes of all Pokémon. It is capable of making itself invisible at will, so it entirely avoids notice even if it approaches people.
+Pokedex = A Mew is said to possess the genes of all Pokï¿½mon. It is capable of making itself invisible at will, so it entirely avoids notice even if it approaches people.
 Generation = 1
 Flags = Mythical
 WildItemCommon = LUMBERRY
@@ -4642,7 +4642,7 @@ Color = Yellow
 Shape = Bipedal
 Habitat = Grassland
 Category = Fire Mouse
-Pokedex = It flares flames from its back to protect itself. The fire burns vigorously if the Pokémon is angry. When it is tired, it sputters with incomplete combustion.
+Pokedex = It flares flames from its back to protect itself. The fire burns vigorously if the Pokï¿½mon is angry. When it is tired, it sputters with incomplete combustion.
 Generation = 2
 Evolutions = QUILAVA,Level,14
 #-------------------------------
@@ -5078,7 +5078,7 @@ Color = Blue
 Shape = Finned
 Habitat = Sea
 Category = Light
-Pokedex = The light-emitting orbs on its back are very bright. They are formed from a part of its dorsal fin. This Pokémon illuminates the inky darkness of deep seas.
+Pokedex = The light-emitting orbs on its back are very bright. They are formed from a part of its dorsal fin. This Pokï¿½mon illuminates the inky darkness of deep seas.
 Generation = 2
 WildItemUncommon = DEEPSEASCALE
 #-------------------------------
@@ -5196,7 +5196,7 @@ Color = White
 Shape = Bipedal
 Habitat = Forest
 Category = Spike Ball
-Pokedex = As its energy, it uses the feelings of compassion and pleasure exuded by people and Pokémon. It stores up happy feelings in its shell, then shares them out.
+Pokedex = As its energy, it uses the feelings of compassion and pleasure exuded by people and Pokï¿½mon. It stores up happy feelings in its shell, then shares them out.
 Generation = 2
 Evolutions = TOGETIC,Happiness,
 #-------------------------------
@@ -5224,7 +5224,7 @@ Color = White
 Shape = Bipedal
 Habitat = Forest
 Category = Happiness
-Pokedex = It is said to be a Pokémon that brings good fortune. When it spots someone who is pure of heart, a Togetic appears and shares its happiness with that person.
+Pokedex = It is said to be a Pokï¿½mon that brings good fortune. When it spots someone who is pure of heart, a Togetic appears and shares its happiness with that person.
 Generation = 2
 Evolutions = TOGEKISS,Item,SHINYSTONE
 #-------------------------------
@@ -5530,7 +5530,7 @@ Color = Pink
 Shape = BipedalTail
 Habitat = Grassland
 Category = Cottonweed
-Pokedex = This Pokémon drifts and floats with the wind. If it senses the approach of strong winds, a Hoppip links leaves with others to prepare against being blown away.
+Pokedex = This Pokï¿½mon drifts and floats with the wind. If it senses the approach of strong winds, a Hoppip links leaves with others to prepare against being blown away.
 Generation = 2
 Evolutions = SKIPLOOM,Level,18
 #-------------------------------
@@ -5582,7 +5582,7 @@ Color = Blue
 Shape = BipedalTail
 Habitat = Grassland
 Category = Cottonweed
-Pokedex = Jumpluff ride warm southern winds to cross the sea and fly to foreign lands. This Pokémon lands when it encounters cold air while it is floating.
+Pokedex = Jumpluff ride warm southern winds to cross the sea and fly to foreign lands. This Pokï¿½mon lands when it encounters cold air while it is floating.
 Generation = 2
 #-------------------------------
 [AIPOM]
@@ -5913,7 +5913,7 @@ Color = Black
 Shape = Head
 Habitat = Rare
 Category = Symbol
-Pokedex = This Pokémon is shaped like ancient text characters. Although research is ongoing, it is a mystery as to which came first, the ancient writings or the various Unown.
+Pokedex = This Pokï¿½mon is shaped like ancient text characters. Although research is ongoing, it is a mystery as to which came first, the ancient writings or the various Unown.
 Generation = 2
 #-------------------------------
 [WOBBUFFET]
@@ -6049,7 +6049,7 @@ Color = Yellow
 Shape = Serpentine
 Habitat = Cave
 Category = Land Snake
-Pokedex = Its drill-tipped tail is used to burrow into the ground backwards. This Pokémon is known to make its nest in complex shapes deep under the ground.
+Pokedex = Its drill-tipped tail is used to burrow into the ground backwards. This Pokï¿½mon is known to make its nest in complex shapes deep under the ground.
 Generation = 2
 #-------------------------------
 [GLIGAR]
@@ -6104,7 +6104,7 @@ Color = Gray
 Shape = Serpentine
 Habitat = Cave
 Category = Iron Snake
-Pokedex = Steelix live even further underground than Onix. This Pokémon is known to dig toward the earth's core, reaching a depth of over six-tenths of a mile underground.
+Pokedex = Steelix live even further underground than Onix. This Pokï¿½mon is known to dig toward the earth's core, reaching a depth of over six-tenths of a mile underground.
 Generation = 2
 WildItemUncommon = METALCOAT
 #-------------------------------
@@ -6132,7 +6132,7 @@ Color = Pink
 Shape = Bipedal
 Habitat = Urban
 Category = Fairy
-Pokedex = By baring its fangs and making a scary face, it sends smaller Pokémon scurrying in terror. The Snubbull does seem a little sad at making its foes flee.
+Pokedex = By baring its fangs and making a scary face, it sends smaller Pokï¿½mon scurrying in terror. The Snubbull does seem a little sad at making its foes flee.
 Generation = 2
 Evolutions = GRANBULL,Level,23
 #-------------------------------
@@ -6380,7 +6380,7 @@ Color = Red
 Shape = Serpentine
 Habitat = Mountain
 Category = Lava
-Pokedex = It is a species of Pokémon that lives in volcanic areas. If its body cools, its skin hardens and immobilizes it. To avoid that, it sleeps near magma.
+Pokedex = It is a species of Pokï¿½mon that lives in volcanic areas. If its body cools, its skin hardens and immobilizes it. To avoid that, it sleeps near magma.
 Generation = 2
 Evolutions = MAGCARGO,Level,38
 #-------------------------------
@@ -6622,7 +6622,7 @@ Color = Gray
 Shape = Winged
 Habitat = RoughTerrain
 Category = Armor Bird
-Pokedex = A Pokémon that has a body and wings of steel. People in the past used feathers fallen from Skarmory to make swords and knives.
+Pokedex = A Pokï¿½mon that has a body and wings of steel. People in the past used feathers fallen from Skarmory to make swords and knives.
 Generation = 2
 WildItemUncommon = METALCOAT
 #-------------------------------
@@ -6650,7 +6650,7 @@ Color = Black
 Shape = Quadruped
 Habitat = RoughTerrain
 Category = Dark
-Pokedex = Houndour communicate with each other using a variety of cries to corner their prey. This Pokémon's remarkable teamwork is simply unparalleled.
+Pokedex = Houndour communicate with each other using a variety of cries to corner their prey. This Pokï¿½mon's remarkable teamwork is simply unparalleled.
 Generation = 2
 Evolutions = HOUNDOOM,Level,24
 #-------------------------------
@@ -6813,7 +6813,7 @@ Color = Brown
 Shape = Quadruped
 Habitat = Forest
 Category = Big Horn
-Pokedex = Stantler's magnificent antlers were once traded at high prices as works of art. As a result, this Pokémon was hunted close to extinction.
+Pokedex = Stantler's magnificent antlers were once traded at high prices as works of art. As a result, this Pokï¿½mon was hunted close to extinction.
 Generation = 2
 #-------------------------------
 [SMEARGLE]
@@ -6839,7 +6839,7 @@ Color = White
 Shape = BipedalTail
 Habitat = Urban
 Category = Painter
-Pokedex = A Smeargle marks its territory using a fluid that leaks out from the tip of its tail. About 5,000 different marks left by this Pokémon have been found.
+Pokedex = A Smeargle marks its territory using a fluid that leaks out from the tip of its tail. About 5,000 different marks left by this Pokï¿½mon have been found.
 Generation = 2
 #-------------------------------
 [TYROGUE]
@@ -6865,7 +6865,7 @@ Color = Purple
 Shape = Bipedal
 Habitat = Urban
 Category = Scuffle
-Pokedex = Tyrogue become stressed out if they do not get to train every day. When raising this Pokémon, the trainer must establish a regular training schedule.
+Pokedex = Tyrogue become stressed out if they do not get to train every day. When raising this Pokï¿½mon, the trainer must establish a regular training schedule.
 Generation = 2
 Evolutions = HITMONLEE,AttackGreater,20,HITMONCHAN,DefenseGreater,20,HITMONTOP,AtkDefEqual,20
 #-------------------------------
@@ -7278,7 +7278,7 @@ Color = Green
 Shape = Bipedal
 Habitat = Forest
 Category = Time Travel
-Pokedex = This Pokémon came from the future by crossing over time. It is thought that so long as Celebi appears, a bright and shining future awaits us.
+Pokedex = This Pokï¿½mon came from the future by crossing over time. It is thought that so long as Celebi appears, a bright and shining future awaits us.
 Generation = 2
 Flags = Mythical
 WildItemCommon = LUMBERRY
@@ -7336,7 +7336,7 @@ Color = Green
 Shape = BipedalTail
 Habitat = Forest
 Category = Wood Gecko
-Pokedex = Leaves grow out of this Pokémon's body. They help obscure a Grovyle from the eyes of its enemies while it is in a thickly overgrown forest.
+Pokedex = Leaves grow out of this Pokï¿½mon's body. They help obscure a Grovyle from the eyes of its enemies while it is in a thickly overgrown forest.
 Generation = 3
 Evolutions = SCEPTILE,Level,36
 #-------------------------------
@@ -7364,7 +7364,7 @@ Color = Green
 Shape = BipedalTail
 Habitat = Forest
 Category = Forest
-Pokedex = In the jungle, its power is without equal. This Pokémon carefully grows trees and plants. It regulates its body temperature by basking in sunlight.
+Pokedex = In the jungle, its power is without equal. This Pokï¿½mon carefully grows trees and plants. It regulates its body temperature by basking in sunlight.
 Generation = 3
 #-------------------------------
 [TORCHIC]
@@ -7774,7 +7774,7 @@ Color = Green
 Shape = MultiWinged
 Habitat = Forest
 Category = Poison Moth
-Pokedex = It is a nocturnal Pokémon that flies from fields and mountains to the attraction of streetlights at night. It looses highly toxic powder from its wings.
+Pokedex = It is a nocturnal Pokï¿½mon that flies from fields and mountains to the attraction of streetlights at night. It looses highly toxic powder from its wings.
 Generation = 3
 WildItemUncommon = SHEDSHELL
 #-------------------------------
@@ -7802,7 +7802,7 @@ Color = Green
 Shape = Insectoid
 Habitat = WatersEdge
 Category = Water Weed
-Pokedex = This Pokémon lives in ponds with clean water. It is known to ferry small Pokémon across ponds by carrying them on the broad leaf on its head.
+Pokedex = This Pokï¿½mon lives in ponds with clean water. It is known to ferry small Pokï¿½mon across ponds by carrying them on the broad leaf on its head.
 Generation = 3
 WildItemUncommon = MENTALHERB
 Evolutions = LOMBRE,Level,14
@@ -7914,7 +7914,7 @@ Color = Brown
 Shape = Bipedal
 Habitat = Forest
 Category = Wily
-Pokedex = A forest-dwelling Pokémon that is skilled at climbing trees. Its long and pointed nose is its weak point. It loses power if the nose is gripped.
+Pokedex = A forest-dwelling Pokï¿½mon that is skilled at climbing trees. Its long and pointed nose is its weak point. It loses power if the nose is gripped.
 Generation = 3
 WildItemUncommon = POWERHERB
 Evolutions = SHIFTRY,Item,LEAFSTONE
@@ -7942,7 +7942,7 @@ Color = Brown
 Shape = Bipedal
 Habitat = Forest
 Category = Wicked
-Pokedex = It is said to arrive on chilly, wintry winds. Feared from long ago as the guardian of forests, this Pokémon lives in a deep forest where people do not venture.
+Pokedex = It is said to arrive on chilly, wintry winds. Feared from long ago as the guardian of forests, this Pokï¿½mon lives in a deep forest where people do not venture.
 Generation = 3
 WildItemUncommon = POWERHERB
 #-------------------------------
@@ -8082,7 +8082,7 @@ Color = White
 Shape = Bipedal
 Habitat = Urban
 Category = Feeling
-Pokedex = A Ralts has the power to sense the emotions of people and Pokémon with the horns on its head. It takes cover if it senses any hostility.
+Pokedex = A Ralts has the power to sense the emotions of people and Pokï¿½mon with the horns on its head. It takes cover if it senses any hostility.
 Generation = 3
 Evolutions = KIRLIA,Level,20
 #-------------------------------
@@ -8410,7 +8410,7 @@ Color = Brown
 Shape = HeadBase
 Habitat = Forest
 Category = Shed
-Pokedex = A peculiar Pokémon that floats in air even though its wings remain completely still. The inside of its body is hollow and utterly dark.
+Pokedex = A peculiar Pokï¿½mon that floats in air even though its wings remain completely still. The inside of its body is hollow and utterly dark.
 Generation = 3
 #-------------------------------
 [WHISMUR]
@@ -8742,7 +8742,7 @@ Color = Gray
 Shape = Quadruped
 Habitat = Mountain
 Category = Iron Armor
-Pokedex = A Pokémon that is clad in steel armor. A new suit of armor is made when it evolves. The old, discarded armor is salvaged as metal for making iron products.
+Pokedex = A Pokï¿½mon that is clad in steel armor. A new suit of armor is made when it evolves. The old, discarded armor is salvaged as metal for making iron products.
 Generation = 3
 WildItemUncommon = HARDSTONE
 Evolutions = LAIRON,Level,32
@@ -8935,7 +8935,7 @@ Color = Yellow
 Shape = BipedalTail
 Habitat = Grassland
 Category = Cheering
-Pokedex = It has the trait of cheering on its fellow Pokémon. By shorting out the electricity it releases from its paws, it creates pom-poms for cheering.
+Pokedex = It has the trait of cheering on its fellow Pokï¿½mon. By shorting out the electricity it releases from its paws, it creates pom-poms for cheering.
 Generation = 3
 WildItemUncommon = CELLBATTERY
 #-------------------------------
@@ -8964,7 +8964,7 @@ Color = Yellow
 Shape = BipedalTail
 Habitat = Grassland
 Category = Cheering
-Pokedex = At a meeting of Pokémon academics, it was announced that simultaneous exposure to electricity from a Plusle and Minun will promote circulation and boost vitality.
+Pokedex = At a meeting of Pokï¿½mon academics, it was announced that simultaneous exposure to electricity from a Plusle and Minun will promote circulation and boost vitality.
 Generation = 3
 WildItemUncommon = CELLBATTERY
 #-------------------------------
@@ -9020,7 +9020,7 @@ Color = Purple
 Shape = Bipedal
 Habitat = Forest
 Category = Firefly
-Pokedex = A nocturnal Pokémon that becomes active upon nightfall. It leads a Volbeat swarm to draw patterns in the night sky. Over 200 different patterns have been seen.
+Pokedex = A nocturnal Pokï¿½mon that becomes active upon nightfall. It leads a Volbeat swarm to draw patterns in the night sky. Over 200 different patterns have been seen.
 Generation = 3
 WildItemUncommon = BRIGHTPOWDER
 Offspring = VOLBEAT,ILLUMISE
@@ -9076,7 +9076,7 @@ Color = Green
 Shape = HeadArms
 Habitat = Grassland
 Category = Stomach
-Pokedex = This Pokémon's stomach fluid can even digest scrap iron. In one gulp, it can swallow something that is as large as itself.
+Pokedex = This Pokï¿½mon's stomach fluid can even digest scrap iron. In one gulp, it can swallow something that is as large as itself.
 Generation = 3
 WildItemCommon = ORANBERRY
 WildItemUncommon = SITRUSBERRY
@@ -9132,7 +9132,7 @@ Color = Red
 Shape = Finned
 Habitat = Sea
 Category = Savage
-Pokedex = Carvanha attack ships in swarms, making them sink. Although it is said to be a very vicious Pokémon, it timidly flees as soon as it finds itself alone.
+Pokedex = Carvanha attack ships in swarms, making them sink. Although it is said to be a very vicious Pokï¿½mon, it timidly flees as soon as it finds itself alone.
 Generation = 3
 WildItemUncommon = DEEPSEATOOTH
 Evolutions = SHARPEDO,Level,30
@@ -9186,7 +9186,7 @@ Color = Blue
 Shape = Finned
 Habitat = Sea
 Category = Ball Whale
-Pokedex = While this Pokémon usually lives in the sea, it can survive on land, although not too long. It loses vitality if its body becomes dried out.
+Pokedex = While this Pokï¿½mon usually lives in the sea, it can survive on land, although not too long. It loses vitality if its body becomes dried out.
 Generation = 3
 Evolutions = WAILORD,Level,40
 #-------------------------------
@@ -9238,7 +9238,7 @@ Color = Yellow
 Shape = Quadruped
 Habitat = Mountain
 Category = Numb
-Pokedex = A Numel stores boiling magma in the hump on its back. It is a hardy Pokémon that can transport a 220-pound load. It has served humans at work since long ago.
+Pokedex = A Numel stores boiling magma in the hump on its back. It is a hardy Pokï¿½mon that can transport a 220-pound load. It has served humans at work since long ago.
 Generation = 3
 Evolutions = CAMERUPT,Level,33
 #-------------------------------
@@ -9264,7 +9264,7 @@ Color = Red
 Shape = Quadruped
 Habitat = Mountain
 Category = Eruption
-Pokedex = A Pokémon that lives in the crater of a volcano. Every 10 years, the volcanoes on its back erupt violently. Research is under way on the cause of eruption.
+Pokedex = A Pokï¿½mon that lives in the crater of a volcano. Every 10 years, the volcanoes on its back erupt violently. Research is under way on the cause of eruption.
 Generation = 3
 #-------------------------------
 [TORKOAL]
@@ -9317,7 +9317,7 @@ Color = Black
 Shape = HeadArms
 Habitat = Mountain
 Category = Bounce
-Pokedex = A Pokémon that manipulates psychic power at will. It doesn't stop bouncing even when it is asleep. It loves eating mushrooms that grow underground.
+Pokedex = A Pokï¿½mon that manipulates psychic power at will. It doesn't stop bouncing even when it is asleep. It loves eating mushrooms that grow underground.
 Generation = 3
 Evolutions = GRUMPIG,Level,32
 #-------------------------------
@@ -9526,7 +9526,7 @@ Color = Blue
 Shape = Winged
 Habitat = Forest
 Category = Cotton Bird
-Pokedex = A Pokémon that has wings like cottony clouds. After enduring winter, in which little food is available, Swablu flocks move closer to towns in the spring.
+Pokedex = A Pokï¿½mon that has wings like cottony clouds. After enduring winter, in which little food is available, Swablu flocks move closer to towns in the spring.
 Generation = 3
 Evolutions = ALTARIA,Level,35
 #-------------------------------
@@ -9630,7 +9630,7 @@ Color = Yellow
 Shape = Head
 Habitat = Cave
 Category = Meteorite
-Pokedex = It becomes very active on the night of a full moon. This Pokémon was first discovered 40 years ago at the site of a meteor strike.
+Pokedex = It becomes very active on the night of a full moon. This Pokï¿½mon was first discovered 40 years ago at the site of a meteor strike.
 Generation = 3
 WildItemCommon = STARDUST
 WildItemUncommon = MOONSTONE
@@ -9656,7 +9656,7 @@ Color = Red
 Shape = Head
 Habitat = Cave
 Category = Meteorite
-Pokedex = Solar energy is the source of this Pokémon's power. On sunny days, groups of Solrock line up facing the sun and absorb its light.
+Pokedex = Solar energy is the source of this Pokï¿½mon's power. On sunny days, groups of Solrock line up facing the sun and absorb its light.
 Generation = 3
 WildItemCommon = STARDUST
 WildItemUncommon = SUNSTONE
@@ -9736,7 +9736,7 @@ Color = Red
 Shape = Insectoid
 Habitat = WatersEdge
 Category = Ruffian
-Pokedex = Once it grips prey with its large pincers, it will never let go, no matter what. It is a hardy Pokémon that can thrive in any environment.
+Pokedex = Once it grips prey with its large pincers, it will never let go, no matter what. It is a hardy Pokï¿½mon that can thrive in any environment.
 Generation = 3
 Evolutions = CRAWDAUNT,Level,30
 #-------------------------------
@@ -9762,7 +9762,7 @@ Color = Red
 Shape = Insectoid
 Habitat = WatersEdge
 Category = Rogue
-Pokedex = A brutish Pokémon that loves to battle. A veteran Crawdaunt that has prevailed in hundreds of battles has giant pincers marked with countless scars.
+Pokedex = A brutish Pokï¿½mon that loves to battle. A veteran Crawdaunt that has prevailed in hundreds of battles has giant pincers marked with countless scars.
 Generation = 3
 #-------------------------------
 [BALTOY]
@@ -9812,7 +9812,7 @@ Color = Black
 Shape = HeadArms
 Habitat = RoughTerrain
 Category = Clay Doll
-Pokedex = A Claydol sleeps while hovering in midair. Its arms are separate from its body. They are kept floating by the Pokémon's manipulation of psychic power.
+Pokedex = A Claydol sleeps while hovering in midair. Its arms are separate from its body. They are kept floating by the Pokï¿½mon's manipulation of psychic power.
 Generation = 3
 WildItemUncommon = LIGHTCLAY
 #-------------------------------
@@ -9977,7 +9977,7 @@ Color = Pink
 Shape = Serpentine
 Habitat = WatersEdge
 Category = Tender
-Pokedex = It is said to live at the bottom of large lakes. Considered to be the most beautiful of all Pokémon, it has been depicted in paintings and statues.
+Pokedex = It is said to live at the bottom of large lakes. Considered to be the most beautiful of all Pokï¿½mon, it has been depicted in paintings and statues.
 Generation = 3
 #-------------------------------
 [CASTFORM]
@@ -10034,7 +10034,7 @@ Color = Green
 Shape = BipedalTail
 Habitat = Forest
 Category = Color Swap
-Pokedex = A Pokémon that has the ability to alter its body colors to match its surroundings. A Kecleon reverts to its original colors if it is startled.
+Pokedex = A Pokï¿½mon that has the ability to alter its body colors to match its surroundings. A Kecleon reverts to its original colors if it is startled.
 Generation = 3
 #-------------------------------
 [SHUPPET]
@@ -10061,7 +10061,7 @@ Color = Black
 Shape = Head
 Habitat = Urban
 Category = Puppet
-Pokedex = This Pokémon roams about deep in the night seeking such negative emotions as grudges and envy. It retreats to its nest when the sun begins to rise.
+Pokedex = This Pokï¿½mon roams about deep in the night seeking such negative emotions as grudges and envy. It retreats to its nest when the sun begins to rise.
 Generation = 3
 WildItemUncommon = SPELLTAG
 Evolutions = BANETTE,Level,37
@@ -10089,7 +10089,7 @@ Color = Black
 Shape = BipedalTail
 Habitat = Urban
 Category = Marionette
-Pokedex = An abandoned plush doll became this Pokémon. They are said to live in garbage dumps and wander about in search of the children that threw them away.
+Pokedex = An abandoned plush doll became this Pokï¿½mon. They are said to live in garbage dumps and wander about in search of the children that threw them away.
 Generation = 3
 WildItemUncommon = SPELLTAG
 #-------------------------------
@@ -10117,7 +10117,7 @@ Color = Black
 Shape = HeadArms
 Habitat = Forest
 Category = Requiem
-Pokedex = A glare from its single scarlet eye makes even burly grown-ups freeze in utter fear. It is a nocturnal Pokémon that roams about under the cloak of darkness.
+Pokedex = A glare from its single scarlet eye makes even burly grown-ups freeze in utter fear. It is a nocturnal Pokï¿½mon that roams about under the cloak of darkness.
 Generation = 3
 WildItemUncommon = SPELLTAG
 Evolutions = DUSCLOPS,Level,37
@@ -10228,7 +10228,7 @@ Color = White
 Shape = Quadruped
 Habitat = Mountain
 Category = Disaster
-Pokedex = It sharply senses even subtle changes in the sky and the land to predict natural disasters. It is a long-lived Pokémon that has a life-span of 100 years.
+Pokedex = It sharply senses even subtle changes in the sky and the land to predict natural disasters. It is a long-lived Pokï¿½mon that has a life-span of 100 years.
 Generation = 3
 #-------------------------------
 [WYNAUT]
@@ -10504,7 +10504,7 @@ Color = Gray
 Shape = Finned
 Habitat = Sea
 Category = Longevity
-Pokedex = A Pokémon that was once believed to be extinct. The species has not changed its form for 100 million years. It walks on the seafloor using its pectoral fins.
+Pokedex = A Pokï¿½mon that was once believed to be extinct. The species has not changed its form for 100 million years. It walks on the seafloor using its pectoral fins.
 Generation = 3
 Flags = Fossil
 WildItemUncommon = DEEPSEASCALE
@@ -10561,7 +10561,7 @@ Color = Blue
 Shape = Bipedal
 Habitat = RoughTerrain
 Category = Rock Head
-Pokedex = Although it is small, this Pokémon is very powerful because its body is a bundle of muscles. It launches head-butts with its ironlike skull.
+Pokedex = Although it is small, this Pokï¿½mon is very powerful because its body is a bundle of muscles. It launches head-butts with its ironlike skull.
 Generation = 3
 WildItemUncommon = DRAGONFANG
 Evolutions = SHELGON,Level,30
@@ -10644,7 +10644,7 @@ Color = Blue
 Shape = HeadBase
 Habitat = RoughTerrain
 Category = Iron Ball
-Pokedex = When Beldum gather in a swarm, they move in perfect unison as if they were but one Pokémon. They communicate with each other using brain waves.
+Pokedex = When Beldum gather in a swarm, they move in perfect unison as if they were but one Pokï¿½mon. They communicate with each other using brain waves.
 Generation = 3
 WildItemUncommon = METALCOAT
 Evolutions = METANG,Level,20
@@ -10700,7 +10700,7 @@ Color = Blue
 Shape = MultiBody
 Habitat = RoughTerrain
 Category = Iron Leg
-Pokedex = Metagross has four brains that are joined by a complex neural network. As a result of integration, this Pokémon is smarter than a supercomputer.
+Pokedex = Metagross has four brains that are joined by a complex neural network. As a result of integration, this Pokï¿½mon is smarter than a supercomputer.
 Generation = 3
 WildItemUncommon = METALCOAT
 #-------------------------------
@@ -10727,7 +10727,7 @@ Color = Brown
 Shape = Bipedal
 Habitat = Cave
 Category = Rock Peak
-Pokedex = A Pokémon that is made entirely of rocks and boulders. If parts of its body chip off in battle, Regirock repairs itself by adding new rocks.
+Pokedex = A Pokï¿½mon that is made entirely of rocks and boulders. If parts of its body chip off in battle, Regirock repairs itself by adding new rocks.
 Generation = 3
 Flags = Legendary
 #-------------------------------
@@ -10807,7 +10807,7 @@ Color = Red
 Shape = Winged
 Habitat = WatersEdge
 Category = Eon
-Pokedex = They make a small herd of only several members. They rarely make contact with people or other Pokémon. They disappear if they sense enemies.
+Pokedex = They make a small herd of only several members. They rarely make contact with people or other Pokï¿½mon. They disappear if they sense enemies.
 Generation = 3
 Flags = Legendary
 #-------------------------------
@@ -10911,7 +10911,7 @@ Color = Green
 Shape = Serpentine
 Habitat = Rare
 Category = Sky High
-Pokedex = A Pokémon that flies endlessly in the ozone layer. It is said it would descend to the ground if Kyogre and Groudon were to fight.
+Pokedex = A Pokï¿½mon that flies endlessly in the ozone layer. It is said it would descend to the ground if Kyogre and Groudon were to fight.
 Generation = 3
 Flags = Legendary
 #-------------------------------
@@ -10967,7 +10967,7 @@ Color = Red
 Shape = Bipedal
 Habitat = Rare
 Category = DNA
-Pokedex = A Pokémon that mutated from an extraterrestrial virus exposed to a laser beam. Its body is configured for superior agility and speed.
+Pokedex = A Pokï¿½mon that mutated from an extraterrestrial virus exposed to a laser beam. Its body is configured for superior agility and speed.
 Generation = 3
 Flags = Mythical
 #-------------------------------
@@ -11043,7 +11043,7 @@ Weight = 310.0
 Color = Green
 Shape = Quadruped
 Category = Continent
-Pokedex = Small Pokémon occasionally gather on its unmoving back to begin building their nests.
+Pokedex = Small Pokï¿½mon occasionally gather on its unmoving back to begin building their nests.
 Generation = 4
 #-------------------------------
 [CHIMCHAR]
@@ -11243,7 +11243,7 @@ Weight = 15.5
 Color = Brown
 Shape = Winged
 Category = Starling
-Pokedex = It flies around forests and fields in search of bug Pokémon. It stays within a huge flock.
+Pokedex = It flies around forests and fields in search of bug Pokï¿½mon. It stays within a huge flock.
 Generation = 4
 Evolutions = STARAPTOR,Level,34
 #-------------------------------
@@ -11573,7 +11573,7 @@ Weight = 57.0
 Color = Gray
 Shape = Quadruped
 Category = Shield
-Pokedex = A Pokémon that lived in jungles around 100 million years ago. Its facial hide is extremely hard.
+Pokedex = A Pokï¿½mon that lived in jungles around 100 million years ago. Its facial hide is extremely hard.
 Generation = 4
 Flags = Fossil
 Evolutions = BASTIODON,Level,30
@@ -11599,7 +11599,7 @@ Weight = 149.5
 Color = Gray
 Shape = Quadruped
 Category = Shield
-Pokedex = Any frontal attack is repulsed. It is a docile Pokémon that feeds on grass and berries.
+Pokedex = Any frontal attack is repulsed. It is a docile Pokï¿½mon that feeds on grass and berries.
 Generation = 4
 Flags = Fossil
 #-------------------------------
@@ -11652,7 +11652,7 @@ Weight = 6.5
 Color = Green
 Shape = HeadBase
 Category = Bagworm
-Pokedex = When Burmy evolved, its cloak became a part of this Pokémon's body. The cloak is never shed.
+Pokedex = When Burmy evolved, its cloak became a part of this Pokï¿½mon's body. The cloak is never shed.
 Generation = 4
 Flags = InheritFormFromMother
 WildItemUncommon = SILVERPOWDER
@@ -11704,7 +11704,7 @@ Weight = 5.5
 Color = Yellow
 Shape = MultiBody
 Category = Tiny Bee
-Pokedex = A Pokémon formed by three others. It busily carries sweet floral honey to Vespiquen.
+Pokedex = A Pokï¿½mon formed by three others. It busily carries sweet floral honey to Vespiquen.
 Generation = 4
 WildItemUncommon = HONEY
 Evolutions = VESPIQUEN,LevelFemale,21
@@ -11856,7 +11856,7 @@ Weight = 9.3
 Color = Purple
 Shape = HeadLegs
 Category = Blossom
-Pokedex = Its folded petals are pretty tough. Bird Pokémon can peck at them all they want, and Cherrim won't be bothered at all.
+Pokedex = Its folded petals are pretty tough. Bird Pokï¿½mon can peck at them all they want, and Cherrim won't be bothered at all.
 Generation = 4
 WildItemUncommon = MIRACLESEED
 #-------------------------------
@@ -11883,7 +11883,7 @@ Weight = 6.3
 Color = Purple
 Shape = Serpentine
 Category = Sea Slug
-Pokedex = This Pokémon's habitat shapes its physique. According to some theories, life in warm ocean waters causes this variation to develop.
+Pokedex = This Pokï¿½mon's habitat shapes its physique. According to some theories, life in warm ocean waters causes this variation to develop.
 Generation = 4
 Flags = InheritFormFromMother
 Evolutions = GASTRODON,Level,30
@@ -11960,7 +11960,7 @@ Weight = 1.2
 Color = Purple
 Shape = HeadArms
 Category = Balloon
-Pokedex = A Pokémon formed by the spirits of people and Pokémon. It loves damp, humid seasons.
+Pokedex = A Pokï¿½mon formed by the spirits of people and Pokï¿½mon. It loves damp, humid seasons.
 Generation = 4
 Evolutions = DRIFBLIM,Level,28
 #-------------------------------
@@ -12035,7 +12035,7 @@ Weight = 33.3
 Color = Brown
 Shape = BipedalTail
 Category = Rabbit
-Pokedex = An extremely cautious Pokémon. It cloaks its body with its fluffy ear fur when it senses danger.
+Pokedex = An extremely cautious Pokï¿½mon. It cloaks its body with its fluffy ear fur when it senses danger.
 Generation = 4
 #-------------------------------
 [MISMAGIUS]
@@ -12133,7 +12133,7 @@ Weight = 43.8
 Color = Gray
 Shape = Quadruped
 Category = Tiger Cat
-Pokedex = It is a brazen brute that barges its way into another Pokémon's nest and claims it as its own.
+Pokedex = It is a brazen brute that barges its way into another Pokï¿½mon's nest and claims it as its own.
 Generation = 4
 #-------------------------------
 [CHINGLING]
@@ -12314,7 +12314,7 @@ Weight = 13.0
 Color = Pink
 Shape = Bipedal
 Category = Mime
-Pokedex = It habitually mimics foes. Once mimicked, the foe cannot take its eyes off this Pokémon.
+Pokedex = It habitually mimics foes. Once mimicked, the foe cannot take its eyes off this Pokï¿½mon.
 Generation = 4
 Evolutions = MRMIME,HasMove,MIMIC
 Incense = ODDINCENSE
@@ -12395,7 +12395,7 @@ Weight = 108.0
 Color = Purple
 Shape = HeadBase
 Category = Forbidden
-Pokedex = A Pokémon that was formed by 108 spirits. It is bound to a fissure in an odd keystone.
+Pokedex = A Pokï¿½mon that was formed by 108 spirits. It is bound to a fissure in an odd keystone.
 Generation = 4
 #-------------------------------
 [GIBLE]
@@ -12804,7 +12804,7 @@ Weight = 65.0
 Color = Blue
 Shape = Winged
 Category = Kite
-Pokedex = A friendly Pokémon that captures the subtle flows of seawater using its two antennae.
+Pokedex = A friendly Pokï¿½mon that captures the subtle flows of seawater using its two antennae.
 Generation = 4
 Evolutions = MANTINE,HasInParty,REMORAID
 Incense = WAVEINCENSE
@@ -13208,7 +13208,7 @@ Weight = 34.0
 Color = Red
 Shape = HeadArms
 Category = Virtual
-Pokedex = Additional software was installed to make it a better Pokémon. It began acting oddly, however.
+Pokedex = Additional software was installed to make it a better Pokï¿½mon. It began acting oddly, however.
 Generation = 4
 #-------------------------------
 [GALLADE]
@@ -13500,7 +13500,7 @@ Weight = 420.0
 Color = White
 Shape = Bipedal
 Category = Colossal
-Pokedex = There is an enduring legend that states this Pokémon towed continents with ropes.
+Pokedex = There is an enduring legend that states this Pokï¿½mon towed continents with ropes.
 Generation = 4
 Flags = Legendary
 #-------------------------------
@@ -13526,7 +13526,7 @@ Weight = 750.0
 Color = Black
 Shape = Multiped
 Category = Renegade
-Pokedex = A Pokémon that is said to live in a world on the reverse side of ours. It appears in an ancient cemetery.
+Pokedex = A Pokï¿½mon that is said to live in a world on the reverse side of ours. It appears in an ancient cemetery.
 Generation = 4
 Flags = Legendary
 #-------------------------------
@@ -13574,7 +13574,7 @@ Weight = 3.1
 Color = Blue
 Shape = HeadArms
 Category = Sea Drifter
-Pokedex = A Pokémon that lives in warm seas. It inflates the flotation sac on its head to drift and search for food.
+Pokedex = A Pokï¿½mon that lives in warm seas. It inflates the flotation sac on its head to drift and search for food.
 Generation = 4
 Flags = Mythical
 #-------------------------------
@@ -13676,7 +13676,7 @@ Weight = 320.0
 Color = White
 Shape = Quadruped
 Category = Alpha
-Pokedex = It is described in mythology as the Pokémon that shaped the universe with its 1,000 arms.
+Pokedex = It is described in mythology as the Pokï¿½mon that shaped the universe with its 1,000 arms.
 Generation = 4
 Flags = Mythical
 #-------------------------------
@@ -13700,7 +13700,7 @@ Weight = 4.0
 Color = Yellow
 Shape = Bipedal
 Category = Victory
-Pokedex = This Pokémon brings victory. It is said that Trainers with Victini always win, regardless of the type of encounter.
+Pokedex = This Pokï¿½mon brings victory. It is said that Trainers with Victini always win, regardless of the type of encounter.
 Generation = 5
 Flags = Mythical
 #-------------------------------
@@ -14029,7 +14029,7 @@ Weight = 14.7
 Color = Gray
 Shape = Quadruped
 Category = Loyal Dog
-Pokedex = It loyally follows its Trainer's orders. For ages, they have helped Trainers raise Pokémon.
+Pokedex = It loyally follows its Trainer's orders. For ages, they have helped Trainers raise Pokï¿½mon.
 Generation = 5
 Evolutions = STOUTLAND,Level,32
 #-------------------------------
@@ -14054,7 +14054,7 @@ Weight = 61.0
 Color = Gray
 Shape = Quadruped
 Category = Big-Hearted
-Pokedex = This extremely wise Pokémon excels at rescuing people stranded at sea or in the mountains.
+Pokedex = This extremely wise Pokï¿½mon excels at rescuing people stranded at sea or in the mountains.
 Generation = 5
 #-------------------------------
 [PURRLOIN]
@@ -14130,7 +14130,7 @@ Weight = 10.5
 Color = Green
 Shape = BipedalTail
 Category = Grass Monkey
-Pokedex = It shares the leaf on its head with weary-looking Pokémon. These leaves are known to relieve stress.
+Pokedex = It shares the leaf on its head with weary-looking Pokï¿½mon. These leaves are known to relieve stress.
 Generation = 5
 Evolutions = SIMISAGE,Item,LEAFSTONE
 #-------------------------------
@@ -14182,7 +14182,7 @@ Weight = 11.0
 Color = Red
 Shape = BipedalTail
 Category = High Temp
-Pokedex = This Pokémon lives in caves in volcanoes. The fire within the tuft on its head can reach 600º F.
+Pokedex = This Pokï¿½mon lives in caves in volcanoes. The fire within the tuft on its head can reach 600ï¿½ F.
 Generation = 5
 Evolutions = SIMISEAR,Item,FIRESTONE
 #-------------------------------
@@ -14286,7 +14286,7 @@ Weight = 23.3
 Color = Pink
 Shape = Quadruped
 Category = Dream Eater
-Pokedex = It eats the dreams of people and Pokémon. When it eats a pleasant dreams, it expels pink-colored mist.
+Pokedex = It eats the dreams of people and Pokï¿½mon. When it eats a pleasant dreams, it expels pink-colored mist.
 Generation = 5
 Evolutions = MUSHARNA,Item,MOONSTONE
 #-------------------------------
@@ -14337,7 +14337,7 @@ Weight = 2.1
 Color = Gray
 Shape = Winged
 Category = Tiny Pigeon
-Pokedex = These Pokémon live in cities. They are accustomed to people. Flocks often gather in parks and plazas.
+Pokedex = These Pokï¿½mon live in cities. They are accustomed to people. Flocks often gather in parks and plazas.
 Generation = 5
 Evolutions = TRANQUILL,Level,21
 #-------------------------------
@@ -14439,7 +14439,7 @@ Weight = 79.5
 Color = Black
 Shape = Quadruped
 Category = Thunderbolt
-Pokedex = This ill-tempered Pokémon is dangerous because when it's angry, it shoots lightning from its mane in all directions.
+Pokedex = This ill-tempered Pokï¿½mon is dangerous because when it's angry, it shoots lightning from its mane in all directions.
 Generation = 5
 #-------------------------------
 [ROGGENROLA]
@@ -14675,7 +14675,7 @@ Weight = 12.5
 Color = Gray
 Shape = Bipedal
 Category = Muscular
-Pokedex = These Pokémon appear at building sites and help out with construction. They always carry squared logs.
+Pokedex = These Pokï¿½mon appear at building sites and help out with construction. They always carry squared logs.
 Generation = 5
 Evolutions = GURDURR,Level,25
 #-------------------------------
@@ -14875,7 +14875,7 @@ Weight = 2.5
 Color = Yellow
 Shape = Insectoid
 Category = Sewing
-Pokedex = This Pokémon makes clothes for itself. It chews up leaves and sews them with sticky thread extruded from its mouth.
+Pokedex = This Pokï¿½mon makes clothes for itself. It chews up leaves and sews them with sticky thread extruded from its mouth.
 Generation = 5
 WildItemUncommon = MENTALHERB
 Evolutions = SWADLOON,Level,20
@@ -15057,7 +15057,7 @@ Weight = 6.6
 Color = Green
 Shape = Bipedal
 Category = Windveiled
-Pokedex = Riding whirlwinds, they appear. These Pokémon sneak through gaps into houses and cause all sorts of mischief.
+Pokedex = Riding whirlwinds, they appear. These Pokï¿½mon sneak through gaps into houses and cause all sorts of mischief.
 Generation = 5
 WildItemUncommon = ABSORBBULB
 #-------------------------------
@@ -15136,7 +15136,7 @@ Weight = 18.0
 Color = Green
 Shape = Finned
 Category = Hostile
-Pokedex = Savage, violent Pokémon, red and blue Basculin are always fighting each other over territory.
+Pokedex = Savage, violent Pokï¿½mon, red and blue Basculin are always fighting each other over territory.
 Generation = 5
 Flags = InheritFormFromMother
 WildItemUncommon = DEEPSEATOOTH
@@ -15318,7 +15318,7 @@ Weight = 14.5
 Color = Red
 Shape = Insectoid
 Category = Rock Inn
-Pokedex = It makes a hole in a suitable rock. If that rock breaks, the Pokémon remains agitated until it locates a replacement.
+Pokedex = It makes a hole in a suitable rock. If that rock breaks, the Pokï¿½mon remains agitated until it locates a replacement.
 Generation = 5
 WildItemUncommon = HARDSTONE
 Evolutions = CRUSTLE,Level,34
@@ -15446,7 +15446,7 @@ Weight = 1.5
 Color = Black
 Shape = HeadArms
 Category = Spirit
-Pokedex = These Pokémon arose from the spirits of people interred in graves in past ages. Each retains memories of its former life.
+Pokedex = These Pokï¿½mon arose from the spirits of people interred in graves in past ages. Each retains memories of its former life.
 Generation = 5
 WildItemUncommon = SPELLTAG
 Evolutions = COFAGRIGUS,Level,34,RUNERIGUS,None,
@@ -15497,7 +15497,7 @@ Weight = 16.5
 Color = Blue
 Shape = Quadruped
 Category = Prototurtle
-Pokedex = About 100 million years ago, these Pokémon swam in oceans. It is thought they also went on land to attack prey.
+Pokedex = About 100 million years ago, these Pokï¿½mon swam in oceans. It is thought they also went on land to attack prey.
 Generation = 5
 Flags = Fossil
 Evolutions = CARRACOSTA,Level,37
@@ -15548,7 +15548,7 @@ Weight = 9.5
 Color = Yellow
 Shape = Winged
 Category = First Bird
-Pokedex = Revived from a fossil, this Pokémon is thought to be the ancestor of all bird Pokémon.
+Pokedex = Revived from a fossil, this Pokï¿½mon is thought to be the ancestor of all bird Pokï¿½mon.
 Generation = 5
 Flags = Fossil
 Evolutions = ARCHEOPS,Level,37
@@ -15599,7 +15599,7 @@ Weight = 31.0
 Color = Green
 Shape = Bipedal
 Category = Trash Bag
-Pokedex = The combination of garbage bags and industrial waste caused the chemical reaction that crated this Pokémon.
+Pokedex = The combination of garbage bags and industrial waste caused the chemical reaction that crated this Pokï¿½mon.
 Generation = 5
 WildItemUncommon = SILKSCARF
 Evolutions = GARBODOR,Level,36
@@ -15653,7 +15653,7 @@ Weight = 12.5
 Color = Gray
 Shape = Quadruped
 Category = Tricky Fox
-Pokedex = To protect themselves from danger, they hide their true identities by transforming into people and Pokémon.
+Pokedex = To protect themselves from danger, they hide their true identities by transforming into people and Pokï¿½mon.
 Generation = 5
 Evolutions = ZOROARK,Level,30
 #-------------------------------
@@ -15704,7 +15704,7 @@ Weight = 5.8
 Color = Gray
 Shape = Quadruped
 Category = Chinchilla
-Pokedex = These Pokémon prefer a tidy habitat. They are always sweeping and dusting, using their tails as brooms.
+Pokedex = These Pokï¿½mon prefer a tidy habitat. They are always sweeping and dusting, using their tails as brooms.
 Generation = 5
 Evolutions = CINCCINO,Item,SHINYSTONE
 #-------------------------------
@@ -15754,7 +15754,7 @@ Weight = 5.8
 Color = Purple
 Shape = Bipedal
 Category = Fixation
-Pokedex = They intently observe both Trainers and Pokémon. Apparently, they are looking at something that only Gothita can see.
+Pokedex = They intently observe both Trainers and Pokï¿½mon. Apparently, they are looking at something that only Gothita can see.
 Generation = 5
 Evolutions = GOTHORITA,Level,32
 #-------------------------------
@@ -15854,7 +15854,7 @@ Weight = 8.0
 Color = Green
 Shape = Head
 Category = Mitosis
-Pokedex = When their brains, now divided in two, are thinking the same thoughts, these Pokémon exhibit their maximum power.
+Pokedex = When their brains, now divided in two, are thinking the same thoughts, these Pokï¿½mon exhibit their maximum power.
 Generation = 5
 Evolutions = REUNICLUS,Level,41
 #-------------------------------
@@ -15879,7 +15879,7 @@ Weight = 20.1
 Color = Green
 Shape = HeadArms
 Category = Multiplying
-Pokedex = These remarkably intelligent Pokémon fight by controlling arms that can grip with rock-crushing power.
+Pokedex = These remarkably intelligent Pokï¿½mon fight by controlling arms that can grip with rock-crushing power.
 Generation = 5
 #-------------------------------
 [DUCKLETT]
@@ -15957,7 +15957,7 @@ Weight = 5.7
 Color = White
 Shape = HeadBase
 Category = Fresh Snow
-Pokedex = This Pokémon formed from icicles bathed in energy from the morning sun. It sleeps buried in snow.
+Pokedex = This Pokï¿½mon formed from icicles bathed in energy from the morning sun. It sleeps buried in snow.
 Generation = 5
 WildItemUncommon = NEVERMELTICE
 Evolutions = VANILLISH,Level,35
@@ -16011,7 +16011,7 @@ Weight = 57.5
 Color = White
 Shape = MultiBody
 Category = Snowstorm
-Pokedex = If both heads get angry simultaneously, this Pokémon expels a blizzard, burying everything in snow.
+Pokedex = If both heads get angry simultaneously, this Pokï¿½mon expels a blizzard, burying everything in snow.
 Generation = 5
 WildItemCommon = NEVERMELTICE
 #-------------------------------
@@ -16038,7 +16038,7 @@ Weight = 19.5
 Color = Pink
 Shape = Quadruped
 Category = Season
-Pokedex = The turning of the seasons changes the color and scent of this Pokémon's fur. People use it to mark the seasons.
+Pokedex = The turning of the seasons changes the color and scent of this Pokï¿½mon's fur. People use it to mark the seasons.
 Generation = 5
 Evolutions = SAWSBUCK,Level,34
 #-------------------------------
@@ -16114,7 +16114,7 @@ Weight = 5.9
 Color = Blue
 Shape = Bipedal
 Category = Clamping
-Pokedex = When they feel threatened, they spit an acidic liquid to drive attackers away. This Pokémon targets Shelmet.
+Pokedex = When they feel threatened, they spit an acidic liquid to drive attackers away. This Pokï¿½mon targets Shelmet.
 Generation = 5
 Evolutions = ESCAVALIER,TradeSpecies,SHELMET
 #-------------------------------
@@ -16139,7 +16139,7 @@ Weight = 33.0
 Color = Gray
 Shape = HeadArms
 Category = Cavalry
-Pokedex = These Pokémon evolve by wearing the shell covering of a Shelmet. The steel armor protects their whole body.
+Pokedex = These Pokï¿½mon evolve by wearing the shell covering of a Shelmet. The steel armor protects their whole body.
 Generation = 5
 #-------------------------------
 [FOONGUS]
@@ -16164,7 +16164,7 @@ Weight = 1.0
 Color = White
 Shape = HeadArms
 Category = Mushroom
-Pokedex = For some reason, this Pokémon resembles a Poké Ball. They release poison spores to repel those who try to catch them.
+Pokedex = For some reason, this Pokï¿½mon resembles a Pokï¿½ Ball. They release poison spores to repel those who try to catch them.
 Generation = 5
 WildItemCommon = TINYMUSHROOM
 WildItemUncommon = BIGMUSHROOM
@@ -16191,7 +16191,7 @@ Weight = 10.5
 Color = White
 Shape = HeadArms
 Category = Mushroom
-Pokedex = They show off their Poké Ball caps to lure prey, but very few Pokémon are fooled by this.
+Pokedex = They show off their Pokï¿½ Ball caps to lure prey, but very few Pokï¿½mon are fooled by this.
 Generation = 5
 WildItemCommon = TINYMUSHROOM
 WildItemUncommon = BIGMUSHROOM
@@ -16268,7 +16268,7 @@ Weight = 31.6
 Color = Pink
 Shape = Finned
 Category = Caring
-Pokedex = Floating in the open sea is how they live. When they find a wounded Pokémon, they embrace it and bring it to shore.
+Pokedex = Floating in the open sea is how they live. When they find a wounded Pokï¿½mon, they embrace it and bring it to shore.
 Generation = 5
 #-------------------------------
 [JOLTIK]
@@ -16293,7 +16293,7 @@ Weight = 0.6
 Color = Yellow
 Shape = Insectoid
 Category = Attaching
-Pokedex = They attach themselves to large-bodied Pokémon and absorb static electricity, which they store in an electric pouch.
+Pokedex = They attach themselves to large-bodied Pokï¿½mon and absorb static electricity, which they store in an electric pouch.
 Generation = 5
 Evolutions = GALVANTULA,Level,36
 #-------------------------------
@@ -16466,7 +16466,7 @@ Weight = 0.3
 Color = White
 Shape = Finned
 Category = EleFish
-Pokedex = These Pokémon move in schools. They have an electricity-generating organ, so they discharge electricity if in danger.
+Pokedex = These Pokï¿½mon move in schools. They have an electricity-generating organ, so they discharge electricity if in danger.
 Generation = 5
 Evolutions = EELEKTRIK,Level,39
 #-------------------------------
@@ -16490,7 +16490,7 @@ Weight = 22.0
 Color = Blue
 Shape = Finned
 Category = EleFish
-Pokedex = These Pokémon have a big appetite. When they spot their prey, they attack it and paralyze it with electricity.
+Pokedex = These Pokï¿½mon have a big appetite. When they spot their prey, they attack it and paralyze it with electricity.
 Generation = 5
 Evolutions = EELEKTROSS,Item,THUNDERSTONE
 #-------------------------------
@@ -16539,7 +16539,7 @@ Weight = 9.0
 Color = Blue
 Shape = BipedalTail
 Category = Cerebral
-Pokedex = This Pokémon had never been seen until it appeared from far in the desert 50 years ago.
+Pokedex = This Pokï¿½mon had never been seen until it appeared from far in the desert 50 years ago.
 Generation = 5
 Evolutions = BEHEEYEM,Level,42
 #-------------------------------
@@ -16714,7 +16714,7 @@ Weight = 105.5
 Color = Yellow
 Shape = BipedalTail
 Category = Axe Jaw
-Pokedex = Their sturdy tusks will stay sharp even if used to cut steel beams. These Pokémon are covered in hard armor.
+Pokedex = Their sturdy tusks will stay sharp even if used to cut steel beams. These Pokï¿½mon are covered in hard armor.
 Generation = 5
 #-------------------------------
 [CUBCHOO]
@@ -16967,7 +16967,7 @@ Weight = 92.0
 Color = Green
 Shape = Bipedal
 Category = Automaton
-Pokedex = These Pokémon are thought to have been created by the science of an ancient and mysterious civilization.
+Pokedex = These Pokï¿½mon are thought to have been created by the science of an ancient and mysterious civilization.
 Generation = 5
 WildItemUncommon = LIGHTCLAY
 Evolutions = GOLURK,Level,43
@@ -16993,7 +16993,7 @@ Weight = 330.0
 Color = Green
 Shape = Bipedal
 Category = Automaton
-Pokedex = It is said that Golurk were ordered to protect people and Pokémon by the ancient people who made them.
+Pokedex = It is said that Golurk were ordered to protect people and Pokï¿½mon by the ancient people who made them.
 Generation = 5
 WildItemUncommon = LIGHTCLAY
 #-------------------------------
@@ -17143,7 +17143,7 @@ Weight = 9.0
 Color = Brown
 Shape = Winged
 Category = Diapered
-Pokedex = They tend to guard their posteriors with suitable bones they have found. They pursue weak Pokémon.
+Pokedex = They tend to guard their posteriors with suitable bones they have found. They pursue weak Pokï¿½mon.
 Generation = 5
 Evolutions = MANDIBUZZ,Level,54
 #-------------------------------
@@ -17168,7 +17168,7 @@ Weight = 39.5
 Color = Brown
 Shape = Winged
 Category = Bone Vulture
-Pokedex = Watching from the sky, they swoop to strike weakened Pokémon on the ground. They decorate themselves with bones.
+Pokedex = Watching from the sky, they swoop to strike weakened Pokï¿½mon on the ground. They decorate themselves with bones.
 Generation = 5
 #-------------------------------
 [HEATMOR]
@@ -17370,7 +17370,7 @@ Weight = 250.0
 Color = Blue
 Shape = Quadruped
 Category = Iron Will
-Pokedex = It has a body and heart of steel. Its glare is sufficient to make even an unruly Pokémon obey it.
+Pokedex = It has a body and heart of steel. Its glare is sufficient to make even an unruly Pokï¿½mon obey it.
 Generation = 5
 Flags = Legendary
 #-------------------------------
@@ -17394,7 +17394,7 @@ Weight = 260.0
 Color = Gray
 Shape = Quadruped
 Category = Cavern
-Pokedex = Its charge is strong enough to break through a giant castle wall in one blow. This Pokémon is spoken of in legends.
+Pokedex = Its charge is strong enough to break through a giant castle wall in one blow. This Pokï¿½mon is spoken of in legends.
 Generation = 5
 Flags = Legendary
 #-------------------------------
@@ -17520,7 +17520,7 @@ Weight = 345.0
 Color = Black
 Shape = BipedalTail
 Category = Deep Black
-Pokedex = This Pokémon appears in legends. In its tail, it has a giant generator that creates electricity.
+Pokedex = This Pokï¿½mon appears in legends. In its tail, it has a giant generator that creates electricity.
 Generation = 5
 Flags = Legendary
 #-------------------------------
@@ -17649,7 +17649,7 @@ Weight = 82.5
 Color = Purple
 Shape = Bipedal
 Category = Paleozoic
-Pokedex = This ancient bug Pokémon was altered by Team Plasma. They upgraded the cannon on its back.
+Pokedex = This ancient bug Pokï¿½mon was altered by Team Plasma. They upgraded the cannon on its back.
 Generation = 5
 Flags = Mythical
 #-------------------------------
@@ -17954,7 +17954,7 @@ Weight = 1.7
 Color = Red
 Shape = Winged
 Category = Tiny Robin
-Pokedex = These friendly Pokémon send signals to one another with beautiful chirps and tail-feather movements.
+Pokedex = These friendly Pokï¿½mon send signals to one another with beautiful chirps and tail-feather movements.
 Generation = 6
 Evolutions = FLETCHINDER,Level,17
 #-------------------------------
@@ -18032,7 +18032,7 @@ Weight = 2.5
 Color = Black
 Shape = Insectoid
 Category = Scatterdust
-Pokedex = When under attack from bird Pokémon, it spews a poisonous black powder that causes paralysis on contact.
+Pokedex = When under attack from bird Pokï¿½mon, it spews a poisonous black powder that causes paralysis on contact.
 Generation = 6
 Evolutions = SPEWPA,Level,9
 #-------------------------------
@@ -18111,7 +18111,7 @@ Weight = 13.5
 Color = Brown
 Shape = Quadruped
 Category = Lion Cub
-Pokedex = They set off on their own from their pride and live by themselves to become stronger. These hot-blooded Pokémon are quick to fight.
+Pokedex = They set off on their own from their pride and live by themselves to become stronger. These hot-blooded Pokï¿½mon are quick to fight.
 Generation = 6
 Evolutions = PYROAR,Level,35
 #-------------------------------
@@ -18141,7 +18141,7 @@ Pokedex = With fiery breath of more than 6,000 degrees Celsius, they viciously t
 Generation = 6
 #-------------------------------
 [FLABEBE]
-Name = Flabébé
+Name = Flabï¿½bï¿½
 FormName = Red Flower
 Types = FAIRY
 BaseStats = 44,38,39,42,61,79
@@ -18424,7 +18424,7 @@ Weight = 2.0
 Color = Brown
 Shape = HeadBase
 Category = Sword
-Pokedex = Apparently this Pokémon is born when a departed spirit inhabits a sword. It attaches itself to people and drinks their life force.
+Pokedex = Apparently this Pokï¿½mon is born when a departed spirit inhabits a sword. It attaches itself to people and drinks their life force.
 Generation = 6
 Evolutions = DOUBLADE,Level,35
 #-------------------------------
@@ -18904,7 +18904,7 @@ Weight = 25.2
 Color = Blue
 Shape = Quadruped
 Category = Tundra
-Pokedex = This ancient Pokémon was restored from part of its body that had been frozen in ice for over 100 million years.
+Pokedex = This ancient Pokï¿½mon was restored from part of its body that had been frozen in ice for over 100 million years.
 Generation = 6
 Flags = Fossil
 Evolutions = AURORUS,LevelNight,39
@@ -19086,7 +19086,7 @@ Weight = 17.5
 Color = Purple
 Shape = Serpentine
 Category = Soft Tissue
-Pokedex = This Pokémon's mucous can dissolve anything. Toothless, it sprays mucous on its prey. Once they're nicely dissolved, it slurps them up.
+Pokedex = This Pokï¿½mon's mucous can dissolve anything. Toothless, it sprays mucous on its prey. Once they're nicely dissolved, it slurps them up.
 Generation = 6
 WildItemUncommon = SHEDSHELL
 Evolutions = GOODRA,LevelRain,50
@@ -19162,7 +19162,7 @@ Weight = 7.0
 Color = Brown
 Shape = HeadArms
 Category = Stump
-Pokedex = These Pokémon are stumps possessed by the spirits of children who died in the forest. Their cries sound like eerie screams.
+Pokedex = These Pokï¿½mon are stumps possessed by the spirits of children who died in the forest. Their cries sound like eerie screams.
 Generation = 6
 Evolutions = TREVENANT,Trade,
 #-------------------------------
@@ -19611,7 +19611,7 @@ Weight = 25.0
 Color = Red
 Shape = Quadruped
 Category = Fire Cat
-Pokedex = It can act spoiled if it grows close to its Trainer. A powerful Pokémon, its sharp claws can leave its Trainer's whole body covered in scratches.
+Pokedex = It can act spoiled if it grows close to its Trainer. A powerful Pokï¿½mon, its sharp claws can leave its Trainer's whole body covered in scratches.
 Generation = 7
 Evolutions = INCINEROAR,Level,34
 #-------------------------------
@@ -19661,7 +19661,7 @@ Weight = 7.5
 Color = Blue
 Shape = Finned
 Category = Sea Lion
-Pokedex = This Pokémon snorts body fluids from its nose, blowing balloons to smash into its foes. It's famous for being a hard worker.
+Pokedex = This Pokï¿½mon snorts body fluids from its nose, blowing balloons to smash into its foes. It's famous for being a hard worker.
 Generation = 7
 Evolutions = BRIONNE,Level,17
 #-------------------------------
@@ -19965,7 +19965,7 @@ Weight = 180.0
 Color = White
 Shape = Insectoid
 Category = Woolly Crab
-Pokedex = It aimed for the top but got lost and ended up on a snowy mountain. Being forced to endure the cold, this Pokémon evolved and grew fur.
+Pokedex = It aimed for the top but got lost and ended up on a snowy mountain. Being forced to endure the cold, this Pokï¿½mon evolved and grew fur.
 Generation = 7
 WildItemUncommon = CHERIBERRY
 #-------------------------------
@@ -20070,7 +20070,7 @@ Weight = 9.2
 Color = Brown
 Shape = Quadruped
 Category = Puppy
-Pokedex = This Pokémon has lived with people since times long ago. It can sense when its Trainer is in the dumps and will stick close by its Trainer's side.
+Pokedex = This Pokï¿½mon has lived with people since times long ago. It can sense when its Trainer is in the dumps and will stick close by its Trainer's side.
 Generation = 7
 Evolutions = LYCANROC,Level,25
 #-------------------------------
@@ -20276,7 +20276,7 @@ Weight = 82.0
 Color = Green
 Shape = Insectoid
 Category = Water Bubble
-Pokedex = It delivers headbutts with the water bubble on its head. Small Pokémon get sucked into the bubble, where they drown.
+Pokedex = It delivers headbutts with the water bubble on its head. Small Pokï¿½mon get sucked into the bubble, where they drown.
 Generation = 7
 WildItemUncommon = MYSTICWATER
 #-------------------------------
@@ -20510,7 +20510,7 @@ Weight = 3.2
 Color = Purple
 Shape = HeadLegs
 Category = Fruit
-Pokedex = Because of its sweet, delicious aroma, bird Pokémon are always after it, but it's not intelligent enough to care.
+Pokedex = Because of its sweet, delicious aroma, bird Pokï¿½mon are always after it, but it's not intelligent enough to care.
 Generation = 7
 WildItemUncommon = GRASSYSEED
 Evolutions = STEENEE,Level,18
@@ -20536,7 +20536,7 @@ Weight = 8.2
 Color = Purple
 Shape = Bipedal
 Category = Fruit
-Pokedex = It's protected by its hard sepals, so it plays with bird Pokémon without worry. They peck it relentlessly, but it doesn't care.
+Pokedex = It's protected by its hard sepals, so it plays with bird Pokï¿½mon without worry. They peck it relentlessly, but it doesn't care.
 Generation = 7
 WildItemUncommon = GRASSYSEED
 Evolutions = TSAREENA,HasMove,STOMP
@@ -20562,7 +20562,7 @@ Weight = 21.4
 Color = Purple
 Shape = Bipedal
 Category = Fruit
-Pokedex = A Pokémon with an aggressive personality and a mastery of kicking, it cackles every time it kicks an opponent.
+Pokedex = A Pokï¿½mon with an aggressive personality and a mastery of kicking, it cackles every time it kicks an opponent.
 Generation = 7
 WildItemCommon = GRASSYSEED
 #-------------------------------
@@ -20588,7 +20588,7 @@ Weight = 0.3
 Color = Green
 Shape = Head
 Category = Posy Picker
-Pokedex = Baths prepared with the flowers from its vine have a relaxing effect, so this Pokémon is a hit with many people.
+Pokedex = Baths prepared with the flowers from its vine have a relaxing effect, so this Pokï¿½mon is a hit with many people.
 Generation = 7
 WildItemUncommon = MISTYSEED
 #-------------------------------
@@ -20614,7 +20614,7 @@ Weight = 76.0
 Color = White
 Shape = Bipedal
 Category = Sage
-Pokedex = It normally spends its time meditating in the treetops. It throws Poké Balls and gives other Pokémon orders as it pleases.
+Pokedex = It normally spends its time meditating in the treetops. It throws Pokï¿½ Balls and gives other Pokï¿½mon orders as it pleases.
 Generation = 7
 #-------------------------------
 [PASSIMIAN]
@@ -20663,7 +20663,7 @@ Weight = 12.0
 Color = Gray
 Shape = Multiped
 Category = Turn Tail
-Pokedex = This Pokémon is a coward. As it desperately dashes off, the flailing of its many legs leaves a sparkling clean path in its wake.
+Pokedex = This Pokï¿½mon is a coward. As it desperately dashes off, the flailing of its many legs leaves a sparkling clean path in its wake.
 Generation = 7
 Evolutions = GOLISOPOD,Level,30
 #-------------------------------
@@ -20787,7 +20787,7 @@ Weight = 120.5
 Color = Gray
 Shape = Quadruped
 Category = Synthetic
-Pokedex = The heavy control mask it wears suppresses its intrinsic capabilities. This Pokémon has some hidden special power.
+Pokedex = The heavy control mask it wears suppresses its intrinsic capabilities. This Pokï¿½mon has some hidden special power.
 Generation = 7
 Flags = Alchemy,Legendary
 Evolutions = SILVALLY,Happiness,
@@ -20813,7 +20813,7 @@ Weight = 100.5
 Color = Gray
 Shape = Quadruped
 Category = Synthetic
-Pokedex = Its trust in its partner is what awakens it. This Pokémon is capable of changing its type, a flexibility that is well displayed in battle.
+Pokedex = Its trust in its partner is what awakens it. This Pokï¿½mon is capable of changing its type, a flexibility that is well displayed in battle.
 Generation = 7
 Flags = Alchemy,Legendary
 #-------------------------------
@@ -20939,7 +20939,7 @@ Weight = 0.7
 Color = Yellow
 Shape = Serpentine
 Category = Disguise
-Pokedex = A lonely Pokémon, it conceals its terrifying appearance beneath an old rag so it can get closer to people and other Pokémon.
+Pokedex = A lonely Pokï¿½mon, it conceals its terrifying appearance beneath an old rag so it can get closer to people and other Pokï¿½mon.
 Generation = 7
 WildItemUncommon = CHESTOBERRY
 #-------------------------------
@@ -20991,7 +20991,7 @@ Weight = 185.0
 Color = White
 Shape = Serpentine
 Category = Placid
-Pokedex = This Pokémon is friendly to people and loves children most of all. It comes from deep in the mountains to play with children it likes in town.
+Pokedex = This Pokï¿½mon is friendly to people and loves children most of all. It comes from deep in the mountains to play with children it likes in town.
 Generation = 7
 WildItemUncommon = PERSIMBERRY
 #-------------------------------
@@ -21015,7 +21015,7 @@ Weight = 210.0
 Color = Green
 Shape = HeadBase
 Category = Sea Creeper
-Pokedex = The soul of seaweed adrift in the waves became reborn as this Pokémon. It maintains itself with new infusions of seabed detritus and seaweed.
+Pokedex = The soul of seaweed adrift in the waves became reborn as this Pokï¿½mon. It maintains itself with new infusions of seabed detritus and seaweed.
 Generation = 7
 #-------------------------------
 [JANGMOO]
@@ -21117,7 +21117,7 @@ Weight = 20.5
 Color = Yellow
 Shape = HeadArms
 Category = Land Spirit
-Pokedex = Although it's called a guardian deity, if a person or Pokémon puts it in a bad mood, it will become a malevolent deity and attack.
+Pokedex = Although it's called a guardian deity, if a person or Pokï¿½mon puts it in a bad mood, it will become a malevolent deity and attack.
 Generation = 7
 Flags = Legendary
 #-------------------------------
@@ -21216,7 +21216,7 @@ Weight = 0.1
 Color = Blue
 Shape = Head
 Category = Nebula
-Pokedex = Whether or not it's a Pokémon from this world is a mystery. When it's in a jam, it warps away to a safe place to hide.
+Pokedex = Whether or not it's a Pokï¿½mon from this world is a mystery. When it's in a jam, it warps away to a safe place to hide.
 Generation = 7
 Flags = Legendary
 Evolutions = COSMOEM,Level,43
@@ -21290,7 +21290,7 @@ Weight = 120.0
 Color = Purple
 Shape = Winged
 Category = Moone
-Pokedex = Said to live in another world, this Pokémon devours light, drawing the moonless dark veil of night over the brightness of day.
+Pokedex = Said to live in another world, this Pokï¿½mon devours light, drawing the moonless dark veil of night over the brightness of day.
 Generation = 7
 Flags = Legendary
 #-------------------------------
@@ -21506,7 +21506,7 @@ Weight = 80.5
 Color = Gray
 Shape = Bipedal
 Category = Artificial
-Pokedex = This artificial Pokémon, constructed more than 500 years ago, can understand human speech but cannot itself speak.
+Pokedex = This artificial Pokï¿½mon, constructed more than 500 years ago, can understand human speech but cannot itself speak.
 Generation = 7
 Flags = Mythical
 #-------------------------------
@@ -21799,7 +21799,7 @@ Weight = 4.5
 Color = White
 Shape = BipedalTail
 Category = Rabbit
-Pokedex = A warm-up of running around gets fire energy coursing through this Pokémon's body. Once that happens, it's ready to fight at full power.
+Pokedex = A warm-up of running around gets fire energy coursing through this Pokï¿½mon's body. Once that happens, it's ready to fight at full power.
 Generation = 8
 Evolutions = RABOOT,Level,16
 #-------------------------------
@@ -21874,7 +21874,7 @@ Weight = 4.0
 Color = Blue
 Shape = Quadruped
 Category = Water Lizard
-Pokedex = When scared, this Pokémon cries. Its tears pack the chemical punch of 100 onions, and attackers won't be able to resist weeping.
+Pokedex = When scared, this Pokï¿½mon cries. Its tears pack the chemical punch of 100 onions, and attackers won't be able to resist weeping.
 Generation = 8
 Evolutions = DRIZZILE,Level,16
 #-------------------------------
@@ -21899,7 +21899,7 @@ Weight = 11.5
 Color = Blue
 Shape = BipedalTail
 Category = Water Lizard
-Pokedex = A clever combatant, this Pokémon battles using water balloons created with moisture secreted from its palms.
+Pokedex = A clever combatant, this Pokï¿½mon battles using water balloons created with moisture secreted from its palms.
 Generation = 8
 Evolutions = INTELEON,Level,35
 #-------------------------------
@@ -21949,7 +21949,7 @@ Weight = 2.5
 Color = Brown
 Shape = BipedalTail
 Category = Cheeky
-Pokedex = It eats berries nonstop—a habit that has made it more resilient than it looks. It'll show up on farms, searching for yet more berries.
+Pokedex = It eats berries nonstopï¿½a habit that has made it more resilient than it looks. It'll show up on farms, searching for yet more berries.
 Generation = 8
 WildItemUncommon = ORANBERRY
 Evolutions = GREEDENT,Level,24
@@ -21975,7 +21975,7 @@ Weight = 6.0
 Color = Brown
 Shape = BipedalTail
 Category = Greedy
-Pokedex = It stashes berries in its tail - so many berries that they fall out constantly. But this Pokémon is a bit slow-witted, so it doesn't notice the loss.
+Pokedex = It stashes berries in its tail - so many berries that they fall out constantly. But this Pokï¿½mon is a bit slow-witted, so it doesn't notice the loss.
 Generation = 8
 WildItemUncommon = SITRUSBERRY
 #-------------------------------
@@ -22001,7 +22001,7 @@ Weight = 1.8
 Color = Blue
 Shape = Winged
 Category = Tiny Bird
-Pokedex = Jumping nimbly about, this small-bodied Pokémon takes advantage of even the slightest opportunity to disorient larger opponents.
+Pokedex = Jumping nimbly about, this small-bodied Pokï¿½mon takes advantage of even the slightest opportunity to disorient larger opponents.
 Generation = 8
 Evolutions = CORVISQUIRE,Level,18
 #-------------------------------
@@ -22026,7 +22026,7 @@ Weight = 16.0
 Color = Blue
 Shape = Winged
 Category = Raven
-Pokedex = Smart enough to use tools in battle, these Pokémon have been seen picking up rocks and flinging them or using ropes to wrap up enemies.
+Pokedex = Smart enough to use tools in battle, these Pokï¿½mon have been seen picking up rocks and flinging them or using ropes to wrap up enemies.
 Generation = 8
 Evolutions = CORVIKNIGHT,Level,38
 #-------------------------------
@@ -22051,7 +22051,7 @@ Weight = 75.0
 Color = Purple
 Shape = Winged
 Category = Raven
-Pokedex = This Pokémon reigns supreme in the skies. The black luster of its steel body could drive terror into the heart of any foe.
+Pokedex = This Pokï¿½mon reigns supreme in the skies. The black luster of its steel body could drive terror into the heart of any foe.
 Generation = 8
 #-------------------------------
 [BLIPBUG]
@@ -22076,7 +22076,7 @@ Weight = 8.0
 Color = Blue
 Shape = Insectoid
 Category = Larva
-Pokedex = Often found in gardens, this Pokémon has hairs on its body that it uses to assess its surroundings.
+Pokedex = Often found in gardens, this Pokï¿½mon has hairs on its body that it uses to assess its surroundings.
 Generation = 8
 Evolutions = DOTTLER,Level,10
 #-------------------------------
@@ -22153,7 +22153,7 @@ Weight = 8.9
 Color = Brown
 Shape = Quadruped
 Category = Fox
-Pokedex = Aided by the soft pads on its feet, it silently raids the food stores of other Pokémon. It survives off its ill-gotten gains.
+Pokedex = Aided by the soft pads on its feet, it silently raids the food stores of other Pokï¿½mon. It survives off its ill-gotten gains.
 Generation = 8
 Evolutions = THIEVUL,Level,18
 #-------------------------------
@@ -22228,7 +22228,7 @@ Weight = 2.5
 Color = Green
 Shape = HeadBase
 Category = Cotton Bloom
-Pokedex = The seeds attached to its cotton fluff are full of nutrients. It spreads them on the wind so that plants and other Pokémon can benefit from them.
+Pokedex = The seeds attached to its cotton fluff are full of nutrients. It spreads them on the wind so that plants and other Pokï¿½mon can benefit from them.
 Generation = 8
 #-------------------------------
 [WOOLOO]
@@ -22253,7 +22253,7 @@ Weight = 6.0
 Color = White
 Shape = Quadruped
 Category = Sheep
-Pokedex = Its curly fleece is such an effective cushion that this Pokémon could fall off a cliff and stand right back up at the bottom, unharmed.
+Pokedex = Its curly fleece is such an effective cushion that this Pokï¿½mon could fall off a cliff and stand right back up at the bottom, unharmed.
 Generation = 8
 Evolutions = DUBWOOL,Level,24
 #-------------------------------
@@ -22303,7 +22303,7 @@ Weight = 8.5
 Color = Green
 Shape = Quadruped
 Category = Snapping
-Pokedex = It starts off battles by attacking with its rock-hard horn, but as soon as the opponent flinches, this Pokémon bites down and never lets go.
+Pokedex = It starts off battles by attacking with its rock-hard horn, but as soon as the opponent flinches, this Pokï¿½mon bites down and never lets go.
 Generation = 8
 Evolutions = DREDNAW,Level,22
 #-------------------------------
@@ -22328,7 +22328,7 @@ Weight = 115.5
 Color = Green
 Shape = Quadruped
 Category = Bite
-Pokedex = With jaws that can shear through steel rods, this highly aggressive Pokémon chomps down on its unfortunate prey.
+Pokedex = With jaws that can shear through steel rods, this highly aggressive Pokï¿½mon chomps down on its unfortunate prey.
 Generation = 8
 #-------------------------------
 [YAMPER]
@@ -22353,7 +22353,7 @@ Weight = 13.5
 Color = Yellow
 Shape = Quadruped
 Category = Puppy
-Pokedex = This gluttonous Pokémon only assists people with their work because it wants treats. As it runs, it crackles with electricity.
+Pokedex = This gluttonous Pokï¿½mon only assists people with their work because it wants treats. As it runs, it crackles with electricity.
 Generation = 8
 Evolutions = BOLTUND,Level,25
 #-------------------------------
@@ -22378,7 +22378,7 @@ Weight = 34.0
 Color = Yellow
 Shape = Quadruped
 Category = Dog
-Pokedex = This Pokémon generates electricity and channels it into its legs to keep them going strong. Boltund can run nonstop for three full days.
+Pokedex = This Pokï¿½mon generates electricity and channels it into its legs to keep them going strong. Boltund can run nonstop for three full days.
 Generation = 8
 #-------------------------------
 [ROLYCOLY]
@@ -22403,7 +22403,7 @@ Weight = 12.0
 Color = Black
 Shape = Head
 Category = Coal
-Pokedex = Most of its body has the same composition as coal. Fittingly, this Pokémon was first discovered in coal mines about 400 years ago.
+Pokedex = Most of its body has the same composition as coal. Fittingly, this Pokï¿½mon was first discovered in coal mines about 400 years ago.
 Generation = 8
 Evolutions = CARKOL,Level,18
 #-------------------------------
@@ -22478,7 +22478,7 @@ Weight = 0.5
 Color = Green
 Shape = Serpentine
 Category = Apple Core
-Pokedex = It spends its entire life inside an apple. It hides from its natural enemies, bird Pokémon, by pretending it's just an apple and nothing more.
+Pokedex = It spends its entire life inside an apple. It hides from its natural enemies, bird Pokï¿½mon, by pretending it's just an apple and nothing more.
 Generation = 8
 Evolutions = FLAPPLE,Item,TARTAPPLE,APPLETUN,Item,SWEETAPPLE
 #-------------------------------
@@ -22626,7 +22626,7 @@ Weight = 1.0
 Color = Brown
 Shape = Finned
 Category = Rush
-Pokedex = If it sees any movement around it, this Pokémon charges for it straightaway, leading with its sharply pointed jaw. It's very proud of that jaw.
+Pokedex = If it sees any movement around it, this Pokï¿½mon charges for it straightaway, leading with its sharply pointed jaw. It's very proud of that jaw.
 Generation = 8
 Evolutions = BARRASKEWDA,Level,26
 #-------------------------------
@@ -22651,7 +22651,7 @@ Weight = 30.0
 Color = Brown
 Shape = Finned
 Category = Skewer
-Pokedex = This Pokémon has a jaw that's as sharp as a spear and as strong as steel. Apparently Barraskewda's flesh is surprisingly tasty, too.
+Pokedex = This Pokï¿½mon has a jaw that's as sharp as a spear and as strong as steel. Apparently Barraskewda's flesh is surprisingly tasty, too.
 Generation = 8
 #-------------------------------
 [TOXEL]
@@ -22702,7 +22702,7 @@ Weight = 40.0
 Color = Purple
 Shape = BipedalTail
 Category = Punk
-Pokedex = When this Pokémon sounds as if it's strumming a guitar, it's actually clawing at the protrusions on its chest to generate electricity.
+Pokedex = When this Pokï¿½mon sounds as if it's strumming a guitar, it's actually clawing at the protrusions on its chest to generate electricity.
 Generation = 8
 #-------------------------------
 [SIZZLIPEDE]
@@ -22752,7 +22752,7 @@ Weight = 120.0
 Color = Red
 Shape = Multiped
 Category = Radiator
-Pokedex = While its burning body is already dangerous on its own, this excessively hostile Pokémon also has large and very sharp fangs.
+Pokedex = While its burning body is already dangerous on its own, this excessively hostile Pokï¿½mon also has large and very sharp fangs.
 Generation = 8
 #-------------------------------
 [CLOBBOPUS]
@@ -22802,7 +22802,7 @@ Weight = 39.0
 Color = Blue
 Shape = Multiped
 Category = Jujitsu
-Pokedex = A body made up of nothing but muscle makes the grappling moves this Pokémon performs with its tentacles tremendously powerful.
+Pokedex = A body made up of nothing but muscle makes the grappling moves this Pokï¿½mon performs with its tentacles tremendously powerful.
 Generation = 8
 #-------------------------------
 [SINISTEA]
@@ -22827,7 +22827,7 @@ Weight = 0.2
 Color = Purple
 Shape = Head
 Category = Black Tea
-Pokedex = The teacup in which this Pokémon makes its home is a famous piece of antique tableware. Many forgeries are in circulation.
+Pokedex = The teacup in which this Pokï¿½mon makes its home is a famous piece of antique tableware. Many forgeries are in circulation.
 Generation = 8
 Evolutions = POLTEAGEIST,Item,CRACKEDPOT
 #-------------------------------
@@ -22952,7 +22952,7 @@ Weight = 5.5
 Color = Pink
 Shape = Bipedal
 Category = Wily
-Pokedex = Through its nose, it sucks in the emanations produced by people and Pokémon when they feel annoyed. It thrives off this negative energy.
+Pokedex = Through its nose, it sucks in the emanations produced by people and Pokï¿½mon when they feel annoyed. It thrives off this negative energy.
 Generation = 8
 Evolutions = MORGREM,Level,32
 #-------------------------------
@@ -23053,7 +23053,7 @@ Weight = 28.0
 Color = Brown
 Shape = BipedalTail
 Category = Viking
-Pokedex = What appears to be an iron helmet is actually hardened hair. This Pokémon lives for the thrill of battle.
+Pokedex = What appears to be an iron helmet is actually hardened hair. This Pokï¿½mon lives for the thrill of battle.
 Generation = 8
 Flags = DefaultForm_2,InheritFormWithEverStone
 #-------------------------------
@@ -23079,7 +23079,7 @@ Weight = 0.4
 Color = White
 Shape = HeadArms
 Category = Coral
-Pokedex = Its shell is overflowing with its heightened otherworldly energy. The ectoplasm serves as protection for this Pokémon's core spirit.
+Pokedex = Its shell is overflowing with its heightened otherworldly energy. The ectoplasm serves as protection for this Pokï¿½mon's core spirit.
 Generation = 8
 Flags = DefaultForm_1,InheritFormWithEverStone
 #-------------------------------
@@ -23183,7 +23183,7 @@ Weight = 0.3
 Color = White
 Shape = Head
 Category = Cream
-Pokedex = This Pokémon was born from sweet-smelling particles in the air. Its body is made of cream.
+Pokedex = This Pokï¿½mon was born from sweet-smelling particles in the air. Its body is made of cream.
 Generation = 8
 Evolutions = ALCREMIE,HoldItem,STRAWBERRYSWEET,ALCREMIE,HoldItem,BERRYSWEET,ALCREMIE,HoldItem,LOVESWEET,ALCREMIE,HoldItem,STARSWEET,ALCREMIE,HoldItem,CLOVERSWEET,ALCREMIE,HoldItem,FLOWERSWEET,ALCREMIE,HoldItem,RIBBONSWEET
 #-------------------------------
@@ -23233,7 +23233,7 @@ Weight = 62.0
 Color = Yellow
 Shape = MultiBody
 Category = Formation
-Pokedex = The six of them work together as one Pokémon. Teamwork is also their battle strategy, and they constantly change their formation as they fight.
+Pokedex = The six of them work together as one Pokï¿½mon. Teamwork is also their battle strategy, and they constantly change their formation as they fight.
 Generation = 8
 #-------------------------------
 [PINCURCHIN]
@@ -23409,7 +23409,7 @@ Weight = 3.0
 Color = Yellow
 Shape = Bipedal
 Category = Two-Sided
-Pokedex = As it eats the seeds stored up in its pocket-like pouches, this Pokémon is not just satisfying its constant hunger. It's also generating electricity.
+Pokedex = As it eats the seeds stored up in its pocket-like pouches, this Pokï¿½mon is not just satisfying its constant hunger. It's also generating electricity.
 Generation = 8
 #-------------------------------
 [CUFANT]
@@ -23460,7 +23460,7 @@ Weight = 650.0
 Color = Green
 Shape = Quadruped
 Category = Copperderm
-Pokedex = These Pokémon live in herds. Their trunks have incredible grip strength, strong enough to crush giant rocks into powder.
+Pokedex = These Pokï¿½mon live in herds. Their trunks have incredible grip strength, strong enough to crush giant rocks into powder.
 Generation = 8
 WildItemUncommon = LAGGINGTAIL
 #-------------------------------
@@ -23611,7 +23611,7 @@ Weight = 2.0
 Color = Green
 Shape = Serpentine
 Category = Lingering
-Pokedex = After being reborn as a ghost Pokémon, Dreepy wanders the areas it used to inhabit back when it was alive in prehistoric seas.
+Pokedex = After being reborn as a ghost Pokï¿½mon, Dreepy wanders the areas it used to inhabit back when it was alive in prehistoric seas.
 Generation = 8
 Evolutions = DRAKLOAK,Level,50
 #-------------------------------
@@ -23685,7 +23685,7 @@ Weight = 110.0
 Color = Blue
 Shape = Quadruped
 Category = Warrior
-Pokedex = Known as a legendary hero, this Pokémon absorbs metal particles, transforming them into a weapon it uses to battle.
+Pokedex = Known as a legendary hero, this Pokï¿½mon absorbs metal particles, transforming them into a weapon it uses to battle.
 Generation = 8
 Flags = Legendary
 WildItemCommon = RUSTEDSWORD
@@ -23713,7 +23713,7 @@ Weight = 210.0
 Color = Red
 Shape = Quadruped
 Category = Warrior
-Pokedex = This Pokémon slept for aeons while in the form of a statue. It was asleep for so long, people forgot that it ever existed.
+Pokedex = This Pokï¿½mon slept for aeons while in the form of a statue. It was asleep for so long, people forgot that it ever existed.
 Generation = 8
 Flags = Legendary
 WildItemCommon = RUSTEDSHIELD
@@ -23789,7 +23789,7 @@ Weight = 105.0
 Color = Gray
 Shape = Bipedal
 Category = Wushu
-Pokedex = Inhabiting the mountains of a distant region, this Pokémon races across sheer cliffs, training its legs and refining its moves.
+Pokedex = Inhabiting the mountains of a distant region, this Pokï¿½mon races across sheer cliffs, training its legs and refining its moves.
 Generation = 8
 #-------------------------------
 [ZARUDE]
@@ -23836,7 +23836,7 @@ Weight = 145.0
 Color = Yellow
 Shape = Bipedal
 Category = Electron
-Pokedex = This Pokémon is a cluster of electrical energy. It's said that removing the rings on Regieleki's body will unleash the Pokémon's latent power.
+Pokedex = This Pokï¿½mon is a cluster of electrical energy. It's said that removing the rings on Regieleki's body will unleash the Pokï¿½mon's latent power.
 Generation = 8
 Flags = Legendary
 #-------------------------------
@@ -23860,7 +23860,7 @@ Weight = 200.0
 Color = Green
 Shape = Bipedal
 Category = Dragon Orb
-Pokedex = Its body is composed of crystallized dragon energy. Regidrago is said to have the powers of every dragon Pokémon.
+Pokedex = Its body is composed of crystallized dragon energy. Regidrago is said to have the powers of every dragon Pokï¿½mon.
 Generation = 8
 Flags = Legendary
 #-------------------------------
@@ -23932,6 +23932,6 @@ Weight = 7.7
 Color = Green
 Shape = Bipedal
 Category = King
-Pokedex = Calyrex is a merciful Pokémon, capable of providing healing and blessings. It reigned over the Galar region in times of yore.
+Pokedex = Calyrex is a merciful Pokï¿½mon, capable of providing healing and blessings. It reigned over the Galar region in times of yore.
 Generation = 8
 Flags = Legendary

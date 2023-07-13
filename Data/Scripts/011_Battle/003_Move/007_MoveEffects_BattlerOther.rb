@@ -129,7 +129,7 @@ class Battle::Move::BadPoisonTarget < Battle::Move::PoisonTarget
   end
 
   def pbOverrideSuccessCheckPerHit(user, target)
-    return (Supplementals::MORE_TYPE_EFFECTS && statusMove? && user.pbHasType?(:POISON))
+    return (Settings::MORE_TYPE_EFFECTS && statusMove? && user.pbHasType?(:POISON))
   end
 end
 
@@ -363,7 +363,7 @@ class Battle::Move::GiveUserStatusToTarget < Battle::Move
       target.pbSleep
       msg = _INTL("{1} woke up.", user.pbThis)
     when :POISON
-      target.pbPoison(user, nil, user.statusCount != 0)
+      target.pbPoison(user, nil, (user.statusCount < 0))
       msg = _INTL("{1} was cured of its poisoning.", user.pbThis)
     when :BURN
       target.pbBurn(user)
@@ -374,6 +374,9 @@ class Battle::Move::GiveUserStatusToTarget < Battle::Move
     when :FROZEN
       target.pbFreeze
       msg = _INTL("{1} was thawed out.", user.pbThis)
+    when :FROSTBITE
+      target.pbFrostbite(user)
+      msg = _INTL("{1}'s frostbite was healed.", user.pbThis)
     end
     if msg != ""
       user.pbCureStatus(false)
@@ -460,6 +463,8 @@ class Battle::Move::CureUserPartyStatus < Battle::Move
       @battle.pbDisplay(_INTL("{1} was cured of paralysis.", curedName))
     when :FROZEN
       @battle.pbDisplay(_INTL("{1} was thawed out.", curedName))
+    when :FROSTBITE
+      @battle.pbDisplay(_INTL("{1}'s frostbite was healed.", curedName))
     end
   end
 

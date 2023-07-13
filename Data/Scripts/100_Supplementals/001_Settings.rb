@@ -54,6 +54,44 @@ module Supplementals
   REWRITE_DOOR_EVENTS = false
 
   #=============================================================================
+  ### SYSTEM OPTIONS ###
+  #=============================================================================
+  # Use Effort Levels (ELs) instead of EVs and IVs
+  USE_EFFORT_LEVELS = true
+
+  # The number of effort levels, and what IVs and EVs correspond to them
+  MAX_EFFORT_LEVEL = 10
+  # The total number of effort levels you can go above IGNORE_TOTAL_EFFORT_LEVELS
+  MAX_TOTAL_EFFORT_LEVEL = 14
+  # Only the levels above this number will be counted towards the total
+  IGNORE_TOTAL_EFFORT_LEVELS = 3
+  EFFORT_LEVEL_IVS = [  0,  10,  20,  31,  31,  31,  31,  31,  31,  31,  31]
+  EFFORT_LEVEL_EVS = [  0,   0,   0,   0,  36,  72, 108, 144, 180, 216, 252]
+
+  # Whether or not Pokemon gain EVs during battle. Disable this to only level ELs with items
+  GAIN_EVS = !USE_EFFORT_LEVELS
+
+  # When the level reaches a new tier, the next increasing item is required
+  EFFORT_LEVEL_TIERS = [3, 10]
+
+  EFFORT_LEVEL_INCREASE_ITEMS = {
+    :HP              => [:HEALTHFEATHER, :HPUP],
+    :ATTACK          => [:MUSCLEFEATHER, :PROTEIN],
+    :DEFENSE         => [:RESISTFEATHER, :IRON],
+    :SPECIAL_ATTACK  => [:GENIUSFEATHER, :CALCIUM],
+    :SPECIAL_DEFENSE => [:CLEVERFEATHER, :ZINC],
+    :SPEED           => [:SWIFTFEATHER,  :CARBOS]
+  }
+  EFFORT_LEVEL_DECREASE_ITEMS = {
+    :HP              => :POMEGBERRY,
+    :ATTACK          => :KELPSYBERRY,
+    :DEFENSE         => :QUALOTBERRY,
+    :SPECIAL_ATTACK  => :HONDEWBERRY,
+    :SPECIAL_DEFENSE => :GREPABERRY,
+    :SPEED           => :TAMATOBERRY
+  }
+
+  #=============================================================================
   ### BATTLE OPTIONS ###
   #=============================================================================
   # Whether battles should use the double battle format by default instead of singles
@@ -85,7 +123,7 @@ module Supplementals
   # Show a splash on the target as they take damage to indicate critical hits and type effectiveness
   CRITICAL_SPLASH = true
   WEAKNESS_SPLASH = true
-  RESISTED_SPLASH = true
+  RESISTED_SPLASH = false
   # Whether or not to show the regular message boxes telling the player about criticals and type effectiveness
   SHOW_CRITICAL_MESSAGE = !CRITICAL_SPLASH
   SHOW_WEAKNESS_MESSAGE = !WEAKNESS_SPLASH
@@ -116,6 +154,35 @@ module Supplementals
   BURN_TYPE_EFFECT = true
   # Grass-types skip accuracy checks for Leech Seed
   LEECH_SEED_TYPE_EFFECT = true
+
+  # Replace Freeze with Frostbite (this option alone does very little, Freeze and Frostbite both exist)
+  # To fully implement Frostbite, replace "Freeze" with "Frostbite" in all function codes in moves.txt
+  FROSTBITE_REPLACE_FREEZE = true
+
+  # Whether or not major status conditions (Burn, Poison, etc.) should disappear after a set number of turns.
+  # You can reapply the same status to refresh the number of turns, but cannot overwrite the status with a different one.
+  # Reapply Toxic to let it build up more damage.
+  FADE_MAJOR_STATUS_CONDITIONS = true
+  # Below you specify how many turns each status effect should last
+  BURN_TURNS      = 5
+  FROSTBITE_TURNS = 5
+  POISON_TURNS    = 5
+  TOXIC_TURNS     = 5
+  PARALYSIS_TURNS = 5
+
+  # Whether or not sleep should always last the same number of turns when infilcted by an opponent.
+  USE_FIXED_SLEEP_TURNS = false
+  FIXED_SLEEP_TURNS = 3  # 3 is the same as Rest
+  # Whether or not a Pokemon will be immune to sleep for a while after waking up.
+  # Immunity lasts for as many turns as the Pokemon was asleep.
+  SLEEP_WAKE_UP_IMMUNITY = false
+  # Whether a Pokémon should wake up from sleep if it is hit by a move (indirect damage does not wake)
+  # Dream Eater is does not wake the target.
+  SLEEP_DAMAGE_WAKE_UP = false
+  
+  # If FADE_MAJOR_STATUS_CONDITIONS is enabled, causes paralysis to always and only trigger its
+  # immobilizing effect the turn it dissipates
+  PARALYZE_ON_PARALYSIS_FADE = false
 
   # Whether or not regular wild Pokemon should be scaled to the player level
   SCALE_WILD_POKEMON = false

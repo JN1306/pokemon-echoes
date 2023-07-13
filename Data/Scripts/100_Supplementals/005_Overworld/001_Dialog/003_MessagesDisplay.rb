@@ -670,11 +670,11 @@ class TalkMessageWindowWrapper
         elsif brackets == 0 && value[i - 1] != "\\"
           case value[i]
           when ".", "!", "?"
-            add = "\\wt[12]"
+            add = "\\wt[8]"
             value = (value[0..i] + add + value[(i+1)...value.length])
             i += add.length
           when ",", ":", ";"
-            add = "\\wt[8]"
+            add = "\\wt[6]"
             value = (value[0..i] + add + value[(i+1)...value.length])
             i += add.length
           end
@@ -682,6 +682,8 @@ class TalkMessageWindowWrapper
         i += 1
       end
     end
+
+    value.gsub!("[.]", ".")
 
     value = _INTL("\\l[{1}]{2}", @line_count, value) if @line_count != Supplementals::MESSAGE_WINDOW_LINES
 
@@ -808,7 +810,11 @@ class TalkMessageWindows
       }
     end
     loop do
-      break if windows.all? { |w| w.refresh }
+      finish = true
+      windows.each { |w|
+        finish = w.refresh && finish
+      }
+      break if finish
       Graphics.update
       Input.update
       pbUpdateSceneMap
@@ -933,7 +939,7 @@ class TalkMessageWindows
   end
 
   def update
-    @msgwindows.each { |w| w.update }
+    #@msgwindows.each { |w| w.update }
   end
 
   def add_window(position)

@@ -400,6 +400,8 @@
 003_Battler_ChangeSelf
 @@@012_Overworld
 001_Overworld
+@@@014_Pokemon
+001_Pokemon
 @@@016_UI
 015_UI_Options
 @@002_Utilities
@@ -426,6 +428,7 @@
 003_VFX
 004_InGameTime
 005_OverworldPokemon
+006_Items
 @@@001_Dialog
 001_Dialog
 002_Talk
@@ -437,6 +440,7 @@
 001_ScaleLevel
 002_Abilities
 003_Modifier
+004_Moves
 @@@001_AI
 001_AI_EffectScores
 002_AI_ChooseMoves

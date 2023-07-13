@@ -1120,6 +1120,7 @@ class Pokemon
 
   # Recalculates this Pokémon's stats.
   def calc_stats
+    self.clampEL if Supplementals::USE_EFFORT_LEVELS
     base_stats = self.baseStats
     this_level = self.level
     this_IV    = self.calcIV
@@ -1217,6 +1218,9 @@ class Pokemon
     GameData::Stat.each_main do |s|
       @iv[s.id]       = rand(IV_STAT_LIMIT + 1)
       @ev[s.id]       = 0
+    end
+    if Supplementals::USE_EFFORT_LEVELS
+      self.align_el
     end
     case owner
     when Owner

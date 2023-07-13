@@ -295,6 +295,7 @@ class Battle::Battler
     @effects[PBEffects::PassageOfFate]       = false
     @effects[PBEffects::SporeShield]         = false
     @effects[PBEffects::TachyonShield]       = false
+    @effects[PBEffects::WellRested]          = 0
   end
 
   #=============================================================================

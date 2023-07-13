@@ -175,6 +175,7 @@ end
 #===============================================================================
 class Battle::Move::HealUserByHalfOfDamageDoneIfTargetAsleep < Battle::Move
   def healingMove?; return Settings::MECHANICS_GENERATION >= 6; end
+  def wakesTarget?; return false; end
 
   def pbFailsAgainstTarget?(user, target, show_message)
     if !target.asleep?
@@ -266,6 +267,8 @@ class Battle::Move::HealUserAndAlliesQuarterOfTotalHPCureStatus < Battle::Move
         @battle.pbDisplay(_INTL("{1} was cured of paralysis.", target.pbThis))
       when :FROZEN
         @battle.pbDisplay(_INTL("{1} was thawed out.", target.pbThis))
+      when :FROSTBITE
+        @battle.pbDisplay(_INTL("{1}'s frostbite was healed.", target.pbThis))
       end
     end
   end
@@ -439,7 +442,7 @@ class Battle::Move::StartLeechSeedTarget < Battle::Move
   end
 
   def pbOverrideSuccessCheckPerHit(user, target)
-    return (Settings::LEECH_SEED_TYPE_EFFECT && statusMove? && user.pbHasType?(:GRASS))
+    return (Supplementals::LEECH_SEED_TYPE_EFFECT && statusMove? && user.pbHasType?(:GRASS))
   end
 end
 

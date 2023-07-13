@@ -58,7 +58,8 @@ class Game_Temp
     when "smartwildbattle"        then rules["smartWildBattle"]     = true
     when "playeruseai"            then rules["playerUseAI"]         = true
     when "startover"              then rules["startOver"]           = var
-    when "scalelevel"             then rules["scaleLevel"]          = var
+    when "scalelevel"             then rules["scaleLevel"]          = true
+    when "fixedlevel"             then rules["scaleLevel"]          = false
     when "levelmod"               then rules["levelMod"]            = var
     else
       raise _INTL("Battle rule \"{1}\" does not exist.", rule)
@@ -234,7 +235,7 @@ module BattleCreationHelperMethods
     battle.showAnims = battleRules["battleAnims"] if !battleRules["battleAnims"].nil?
     # Whether a wild Pokémon should use the trainer AI
     battle.smartWildBattle = battleRules["smartWildBattle"] if !battleRules["smartWildBattle"].nil?
-    battle.playerUseAI = battleRules["smartWildBattle"] if !battleRules["smartWildBattle"].nil?
+    battle.playerUseAI = battleRules["playerUseAI"] if !battleRules["playerUseAI"].nil?
     # Terrain
     if battleRules["defaultTerrain"].nil? && Settings::OVERWORLD_WEATHER_SETS_BATTLE_TERRAIN
       case $game_screen.weather_type
@@ -305,7 +306,7 @@ module BattleCreationHelperMethods
 
   def after_battle(outcome, can_lose, start_over = false)
     $player.party.each do |pkmn|
-      pkmn.statusCount = 0 if pkmn.status == :POISON   # Bad poison becomes regular
+      pkmn.statusCount = pkmn.statusCount.abs   # Bad poison becomes regular
       pkmn.makeUnmega
       pkmn.makeUnprimal
     end
@@ -325,10 +326,10 @@ module BattleCreationHelperMethods
         if pbGet(1)==0
           canLose = true
           pbCancelVehicles
-          $game_temp.player_new_map_id = startOver[0]
-          $game_temp.player_new_x = startOver[1]
-          $game_temp.player_new_y = startOver[2]
-          $game_temp.player_new_direction = (startOver.length > 3) ? startOver[3] : 8
+          $game_temp.player_new_map_id = start_over[0]
+          $game_temp.player_new_x = start_over[1]
+          $game_temp.player_new_y = start_over[2]
+          $game_temp.player_new_direction = (start_over.length > 3) ? start_over[3] : 8
           $scene.transfer_player
         end
       end

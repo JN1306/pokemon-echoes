@@ -119,6 +119,7 @@ module PBEffects
   WaterSport          = 114
   WeightChange        = 115
   Yawn                = 116
+  WellRested          = 117
   #===============================================================================
   AbsoluteZero        = 200
   ArcSphere           = 201
@@ -136,6 +137,8 @@ module PBEffects
   SporeShield         = 213
   TachyonShield       = 214
   
+ 
+
   #=============================================================================
   # These effects apply to a battler position
   #=============================================================================

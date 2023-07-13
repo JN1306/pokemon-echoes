@@ -569,6 +569,11 @@ class Battle::Move
        !user.hasActiveAbility?(:GUTS)
       multipliers[:final_damage_multiplier] /= 2
     end
+    # Frostbite
+    if user.status == :FROSTBITE && specialMove? && damageReducedByFrostbite? &&
+       !user.hasActiveAbility?(:GUTS)
+      multipliers[:final_damage_multiplier] /= 2
+    end
     # Aurora Veil, Reflect, Light Screen, Bastion Shell
     if !ignoresReflect? && !target.damageState.critical &&
        !user.hasActiveAbility?(:INFILTRATOR)

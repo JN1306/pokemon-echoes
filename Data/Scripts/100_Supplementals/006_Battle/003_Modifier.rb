@@ -57,7 +57,6 @@ class EncounterModifiers
 
   def optimize
     @iv      = [31,31,31,31,31,31]
-    @ability = 0
     @nature  = :SERIOUS
   end
 end
@@ -111,7 +110,6 @@ end
 def pbWildModify(pokemon)
   mod = $game_variables[Supplementals::WILD_MODIFIER]
 
-  pokemon.form = mod.form if mod.form
   pokemon.name = mod.name if mod.name
   pokemon.ability = mod.ability if mod.ability
   pokemon.gender = mod.gender if mod.gender
@@ -127,6 +125,7 @@ def pbWildModify(pokemon)
       pokemon.moves.push(Pokemon::Move.new(m))
     end
   end
+  pokemon.form = mod.form if mod.form
   pokemon.calc_stats
   pokemon.hp = pokemon.totalhp * mod.hpmult if mod.hpmult
   pokemon.hp = mod.hp if mod.hp
